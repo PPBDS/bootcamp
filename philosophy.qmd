@@ -35,7 +35,7 @@ Second, "Kill The Math and Let the Introductory Course Be Born" is an [article](
 
 Any introductory course which, for example, does not teach Git/Github is doing its students a disservice.
 
-Third, the heart of the course are the [tutorials](https://ppbds.github.io/primer.tutorials/) which students complete on their own. This [essay](https://ppbds.github.io/primer.tutorials/articles/instructions.html) about how to write tutorials provides some background details. Highlights:
+Third, the heart of the course are the [tutorials](https://ppbds.github.io/all.primer.tutorials/) which students complete on their own. This [essay](https://ppbds.github.io/all.primer.tutorials/articles/instructions.html) about how to write tutorials provides some background details. Highlights:
 
 > Imagine the shallowest possible learning curve. Almost every student should be able to answer almost every Exercise, albeit perhaps with the help of the Hint. There are no hard questions. In fact, there really aren’t questions at all. Instead, there are instructions: Do this. Do that. Next do this other thing.
 
