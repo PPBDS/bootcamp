@@ -120,8 +120,9 @@ Class always begins by looking at the Preceptor's Notes for the day, available h
 
 2) Links to consider today:
 
-NYT article: https://shorturl.at/o4b0n
-NYT article (pdf): https://shorturl.at/SBLCF
+NYT article: https://www.nytimes.com/interactive/2022/08/01/upshot/rich-poor-friendships.html
+NYT article (pdf): https://github.com/PPBDS/primer.data/blob/master/data-raw/social_capital_nyt.pdf
+
 
 3) Update this package now from the R Console.
 

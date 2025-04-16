@@ -1,4 +1,51 @@
-This document provides an overview of the course --- its structure, schedule and philosophy. 
+
+## Key TODO List for the start of the course
+
+* Identify one or more head TFs.
+
+* Set up new Google form.
+
+* New Github organization: name-yyyy-mm
+
+* New Discord server. Channels include #class-work, #preceptors-notes, 
+#projects. Might just use the old bootcamp server.
+
+* Require submission of the "Getting Started with Tutorials" tutorial in 
+order to "register" for the class. This guarantees that you will have a spot, 
+but you still need to do all the work. Give students who submit a Discord link.
+
+* Require submission of the "Introduction" tutorial in order to get a Zoom 
+link for the first class. Require this be submitted Sunday at midnight.
+
+* Spend Monday getting the class list organized. Need to put students into 
+breakout rooms and assign rooms to TFs. Details will depend on # of students 
+and of TFs. Also, how many students will skip out after going to the trouble of 
+submitting the Introduction tutorial? Not sure! I think that giving each TF 
+two rooms and 4 to 6 students per room works OK. Either way, we need a 
+spreadsheet with those details which we can share both via email and 
+
+* Sign up for Zoom with big meeting addition. 
+
+
+
+* Solicit email from "special" students who should be grouped together. 
+Two common examples are younger ones (<=14) and older ones (>22). Put these 
+together in separate groups.
+
+* Create a new location for example reprexes at Posit Community for the Getting 
+Help tutorial. Here is the most recent one: 
+https://forum.posit.co/t/thread-for-students-posting-practice-reprexes-please-do-not-answer-them/196503
+
+* Update Getting Help tutorial links.
+
+* Set up class list and cold_call function.
+
+* Set up empty project for first class so your set up looks like student set up.
+
+* Setup Excel spreadsheet for Data and Model Projects.
+
+This document provides an overview of the course --- its structure, schedule and
+philosophy. 
 
 ## Students to Contact in April
 
@@ -63,17 +110,28 @@ Get RStudio Copilot working:
 
 ## Next Time
 
-* Most important change is to front-load the Primer chapters. Chapters 1 and 2 should be done during week 4, even though students are doing presentations. Then 3, 4 and 5 are due the Monday of week 5. Then 6 and 8 due on Wednesday, with 7 on Thursday. (Maybe change the order of the tutorials.)  We want them to be comfortable with modeling as soon as possible so that class work can be more productive. 
+* Most important change is to front-load the Primer chapters. Chapters 1 and 2 
+should be done during week 4, even though students are doing presentations. 
+Then 3, 4 and 5 are due the Monday of week 5. Then 6 and 8 due on Wednesday, 
+with 7 on Thursday. (Maybe change the order of the tutorials.)  We want them 
+to be comfortable with modeling as soon as possible so that class work can be 
+more productive. 
 
-* Switch the order of the R4DS tutorials by moving hierarchical data and iteration up to weeks 3/4 so that students have completed them before they read the Probability chapter.
+* Switch the order of the R4DS tutorials by moving hierarchical data and 
+iteration up to weeks 3/4 so that students have completed them before they 
+read the Probability chapter.
 
-* Switch days 5 and 6. Need to explore the Census data first, perhaps making a boxplot. Then, entire class session needed for a complex beeswarm plot.
+* Switch days 5 and 6. Need to explore the Census data first, perhaps making 
+a boxplot. Then, entire class session needed for a complex beeswarm plot.
 
-* Add another tidycensus tutorial or two, need to show at least some cool maps. Should do during week 2. R4DS tutorials can wait.
+* Add another tidycensus tutorial or two, need to show at least some cool 
+maps. Should do during week 2. R4DS tutorials can wait.
 
-* Add a tidytext tutorial, if only to set the groundwork for a class exercise in week 3.
+* Add a tidytext tutorial, if only to set the groundwork for a class exercise 
+in week 3.
 
-* Standardize (either in a tutorial or as a spreadsheet) students submitting their data project ideas (and a URL) before class #7.
+* Standardize (either in a tutorial or as a spreadsheet) students submitting 
+their data project ideas (and a URL) before class #7.
 
 * Consider just having two classes a week.
 
@@ -82,7 +140,8 @@ Get RStudio Copilot working:
 
 ## Key Ideas
 
-* Make stuff. Each week (and many individual classes) ends with the construction of something cool.
+* Make stuff. Each week (and many individual classes) ends with the 
+construction of something cool.
 
 * Present stuff. Have a public presentation every four weeks.
 
@@ -90,70 +149,98 @@ Get RStudio Copilot working:
 
 * Use AI.
 
-* Keep careful track of students in the course. There is one spreadsheet in which the head TF keeps track of students in the class.
+* Keep careful track of students in the course. There is one spreadsheet in 
+which the head TF keeps track of students in the class.
 
 ## Zoom Issues
 
-If I get cancelled from Harvard Zoom, it looks like you can get a one seat pro License for $12 per month and then the big Meeting addin for $50 per month.
+If I get cancelled from Harvard Zoom, it looks like you can get a one seat 
+pro License for $12 per month and then the big Meeting addin for $50 per month.
 
-When using breakout rooms, just pick the option that allows people to move wherever they want. No need to pre-assign or grant co-host status, I think.
+When using breakout rooms, just pick the option that allows people to move 
+wherever they want. No need to pre-assign or grant co-host status, I think.
 
 ## Class Preparation
 
-* Identify one or more head TFs.
 
-* Require submission of the "Getting Started with Tutorials" tutorial in order to "register" for the class. This guarantees that you will have a spot, but you still need to do all the work. Give students who submit a Discord link.
-
-* Require submission of the "Introduction" tutorial in order to get a Zoom link for the first class. (Need to add another 15 minutes of material to this tutorial.) Require this be submitted Sunday at midnight.
-
-* Solicit email from "special" students who should be grouped together. Two common examples are younger ones (<=14) and older ones (>22). Put these together in separate groups.
-
-* Spend Monday getting the class list organized. Need to put students into breakout rooms and assign rooms to TFs. Details will depend on # of students and of TFs. Also, how many students will skip out after going to the trouble of submitting the Introduction tutorial? Not sure! I think that giving each TF two rooms and 4 to 6 students per room works OK. Either way, we need a spreadsheet with those details which we can share both via email and 
 
 ## Running the Class
 
-* Class is organized by week. What do we want to accomplish by the end of the week? The goal will always be a completed project, published to the web either via RPubs or Quarto Pub.
+* Class is organized by week. What do we want to accomplish by the end of the 
+week? The goal will always be a completed project, published to the web either 
+via RPubs or Github Pages.
 
-* We have a target goal for each day, but we also have "extra" work/questions which we can use to challenge students who are going too fast. We never want students on Monday to start doing the work for Wednesday's class. All students start Wednesday's class from the same starting line.
+* We have a target goal for each day, but we also have "extra" work/questions 
+which we can use to challenge students who are going too fast. We never want 
+students on Monday to start doing the work for Wednesday's class. All students 
+start Wednesday's class from the same starting line.
 
-* Good extra/work questions are written ahead of time and, perhaps, included in the Preceptor Notes.
+* Good extra/work questions are written ahead of time and, perhaps, included in 
+the Preceptor Notes.
 
 
 ## Schedule
 
 ### Week 1: Github/Rpubs using library data
 
-We are only using data from a package: connectedness data from primer.data.  Use R projects and Github repos. Finish with a nice plot, available on Rpubs. Students going faster can make more plots, especially a scatterplot, even one with facets by state, but just for a few bigger, more interesting states.
+We are only using data from a package: connectedness data from primer.data.  
+Use R projects and Github repos. Finish with a nice plot, available on Rpubs. 
+Students going faster can make more plots, especially a scatterplot, 
+even one with facets by state, but just for a few bigger, more interesting 
+states.
 
 ### Week 2: Github/Rpubs using downloaded data
 
-Students must download and save their own copy of some Census data, which we give them via link to Github. First day is the Terminal and messing with the data. Second day, create a simple plot. Third day is beeswarm plot, perhaps with data from a different geographic area.
+Students must download and save their own copy of some Census data, 
+which we give them via link to Github. First day is the Terminal and messing 
+with the data. Second day, create a simple plot. Third day is beeswarm plot, 
+perhaps with data from a different geographic area.
 
 Really ought to show a map, either this week or next week.
 
 ### Week 3: Github/Quarto Website using different data sources
 
-Download data as part of a larger project. This is mimicing the process by which students create their data projects for next week. Create a Quarto website which will look alot like the data projects. If we use Census, we could encourage to pick different data items. We do this three times, even though finishing a whole website is tricky. Use a different data source each day, the better to introduce students to good data sources for their projects: one day (and maybe two days) is Census. One day might be text, if we have assigned them at least one tutorial from tidytext book.
+Download data as part of a larger project. This is mimicing the process by 
+which students create their data projects for next week. Create a Quarto 
+website which will look alot like the data projects. If we use Census, we 
+could encourage to pick different data items. We do this three times, even 
+though finishing a whole website is tricky. Use a different data source each 
+day, the better to introduce students to good data sources for their projects: 
+one day (and maybe two days) is Census. One day might be text, if we have 
+assigned them at least one tutorial from tidytext book.
 
 Include several different scripts and saved images.
 
 ### Week 4: Data Projects
 
-Need to think more about the best way to spend M/W of this week. Certainly want to have, for Monday, a rough draft of room assignments. Spend money looking at projects within the breakout rooms, especially since students don't see their breakout room peers' projects on Demo Day.
+Need to think more about the best way to spend M/W of this week. Certainly 
+want to have, for Monday, a rough draft of room assignments. Spend money 
+looking at projects within the breakout rooms, especially since students 
+don't see their breakout room peers' projects on Demo Day.
 
 ### Week 5: First Model
 
-First four chapters of Primer. This gets the basics down and also gives us the easiest brms model in the models chapter. Focus on the Cardinal Virtues. Understand the whole process. Learn all the key terms. Finish with an RPubs that does and shows an entire model. Maybe use recent survey data? Could always use presidential approval.
+First four chapters of Primer. This gets the basics down and also gives us 
+the easiest brms model in the models chapter. Focus on the Cardinal Virtues. 
+Understand the whole process. Learn all the key terms. Finish with an RPubs 
+that does and shows an entire model. Maybe use recent survey data? Could 
+always use presidential approval.
 
 ### Week 6
 
-Each of weeks 6 and 7 we complete the entire modeling process. Starting with some data and a question. Finishing with an graphic which shows the answer to the question. Entire thing becomes a Quarto website by the end of the week. The more we show students what a good Model Project looks like, the better theirs will be. 
+Each of weeks 6 and 7 we complete the entire modeling process. Starting with 
+some data and a question. Finishing with an graphic which shows the answer to 
+the question. Entire thing becomes a Quarto website by the end of the week. 
+The more we show students what a good Model Project looks like, the better 
+theirs will be. 
 
 ### Week 7
 
 Aspirations for next summer, or maybe if we had 10 weeks.
 
-Drop the Bayesian tools but not the Bayesian interpretation. Use Tidymodels, first with the bayesian() engine and then without. Use other tools, especially the good ones, like random forest and catboost.
+Drop the Bayesian tools but not the Bayesian interpretation. Use Tidymodels, 
+first with the bayesian() engine and then without. Use other tools, especially 
+the good ones, like random forest and catboost.
 
 
 ### Week 8: Model Projects

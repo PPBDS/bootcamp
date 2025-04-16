@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Key resources: [*R for Data Science (2e)*](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/) by David Kane, [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/) by Kyle Walker, along with their [their](https://ppbds.github.io/r4ds.tutorials/) [associated](https://ppbds.github.io/primer.tutorials/) [tutorials](https://ppbds.github.io/tidycensus.tutorials/). Homework should be completed before the class meeting for which it is assigned.
 
-See the home pages for the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/), [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/), and [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) for installation instructions.
+See the home pages for [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/), [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/), [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/), and [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) for installation instructions.
 
 **Always reinstall the relevant package before starting a new tutorial.** Example for **primer.tutorials**:
 
@@ -25,7 +25,7 @@ Completed tutorials are submitted via [this Google form](https://forms.gle/ScrSY
 
 # Registration
 
-To register for the class and reserve your spot, please read [Getting Started](https://ppbds.github.io/primer/getting-started.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package. Submit your answers, as an html file, via [this Google form](https://forms.gle/ScrSYjb6pYPbtvNj7).
+To register for the class and reserve your spot, please read [Getting Started with Positron](https://ppbds.github.io/primer/getting-started-with-positron.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package. Submit your answers, as an html file, via [this Google form](https://forms.gle/ScrSYjb6pYPbtvNj7).
 
 # Week 1: Data
 

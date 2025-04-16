@@ -1,6 +1,27 @@
 Thanks for volunteering to be a Head TF! 
 
-Make a separate email account for the course.
+## Technical Set Up
+
+Make a separate Google email account for the course. This will be shared among Preceptor and the TFs, but you will still be in charge of it. Make the address something like june.2025.kdsb (where the letters stand for Kane's Data Science Bootcamp). The month is the start month of the course.
+
+In this account, set up a Google form which will be used for students submitting homework. It has two questions: "Name", and "Email". It then asks students to submit one or more html files. See previous examples.
+
+Test the email and the Google form from your personal account. Have the TFs submit some homework answers as well.
+
+Familiarize yourself with the website repo: https://github.com/PPBDS/bootcamp. You will be submitting pull requests to this repo. (I will accept the PRs and publish the site.) Not sure what a PR is? Read: https://ppbds.github.io/primer/set-up.html
+
+Prove that you can submit PRs by submitting one which adds your name to the top of this text file, which is located in _internal/advice-for-head-tf.txt.
+
+Familiarize yourself with the tutorial.helpers package, especially the process_submissions() function. This is what you will use to monitor homework completion and, thereby, determine which students to mail out the Zoom link to for the next class.
+
+## Your Senior TFs
+
+Recruit a set of senior TFs. At your discretion, one or more might be co-Head TFs, but that is up to you. These will generally be TFs from previous courses, but don't hesitate to select new TFs who seem enthusiastic and/or who might be interested in being Head TF next year. 
+
+Key point is that you will want to delegate some of your responsibilities to these senior TFs. Spreading the work around makes your life easier! Of course, you still need to supervise and ensure that everything gets done. I recommend having one Senior TF in charge of homeworking checking and Zoom link sending. Another Senior TF might be in charge of the Discord, with a special focus on answering student questions. A third Senior TF might, depending on class size, be responsible for TF scheduling and ensuring that 
+
+
+## Your TFs
 
 Set the tone early on that TFs *own* the students in their breakout room. They need to be in regular, direct contact with them. They are responsible for ensuring that their students are following all instructions.
 
