@@ -6,12 +6,16 @@ title: "Schedule"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+**THIS IS AN INCOMPLETE DRAFT SCHEDULE**
 
-Key resources: [*R for Data Science (2e)*](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/) by David Kane, [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/) by Kyle Walker, along with their [their](https://ppbds.github.io/r4ds.tutorials/) [associated](https://ppbds.github.io/primer.tutorials/) [tutorials](https://ppbds.github.io/tidycensus.tutorials/). Homework should be completed before the class meeting for which it is assigned.
+**Submit your homework answers, as an html file, via [this Google form](https://forms.gle/j3hBXL1XT3JMiscN8) before midnight on the day before the class for which the homework was assigned.**
+
+
+Key resources: [*R for Data Science (2e)*](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/) by David Kane, [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/) by Kyle Walker. 
 
 See the home pages for [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/), [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/), [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/), and [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) for installation instructions.
 
-**Always reinstall the relevant package before starting a new tutorial.** Example for **primer.tutorials**:
+Always reinstall the relevant package before starting a new tutorial. Example for **primer.tutorials**:
 
 ```
 remove.packages("primer.tutorials")
@@ -20,12 +24,15 @@ remotes::install_github("PPBDS/primer.tutorials")
 
 We are always fixing mistakes. You want to use the latest version.
 
-Completed tutorials are submitted via [this Google form](https://forms.gle/ScrSYjb6pYPbtvNj7). If you do not complete the tutorials on time, you will be removed from the class. Send in your tutorial answers saved in *html* format. Please try to ensure that the name of the file is the default name, like `getting-started_answers.html`. Avoid using the name which will be assigned to the file if you download the same answers twice (or more), stuff like `getting-started_answers (2).html`. You can just change the name of the file by hand if this happens.
+
+If you do not complete the tutorials on time, you will be removed from the class. Send in your tutorial answers saved in *html* format. Please try to ensure that the name of the file is the default name, like `tutorials-in-positron_answers.html`. Avoid using the name which will be assigned to the file if you download the same answers twice (or more), stuff like `tutorials-in-positron_answers (2).html`. You can just change the name of the file by hand if this happens.
 
 
 # Registration
 
-To register for the class and reserve your spot, please read [Getting Started with Positron](https://ppbds.github.io/primer/getting-started-with-positron.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package. Submit your answers, as an html file, via [this Google form](https://forms.gle/ScrSYjb6pYPbtvNj7).
+Do not start the registration process yet.
+
+<!-- To register for the class and reserve your spot, please read [Getting Started with Positron](https://ppbds.github.io/primer/getting-started-with-positron.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package.  -->
 
 # Week 1: Data
 
@@ -35,15 +42,30 @@ Looking at the data is the first step in data science. Note that Monday's homewo
 
 * Read the Introduction from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Introduction" tutorial. Submit your answers via the usual [Google form](https://forms.gle/ScrSYjb6pYPbtvNj7). 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Introduction" (`00-introduction`) tutorial. 
+
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and Code" (`01-code`) tutorial.
+
+## Wednesday
+
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and Quarto" (`02-quarto`) and "Terminal" (`03-terminal`) tutorials.
+
+* Read Chapters 1 - 3 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
+
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data visualization" (`01-data-visualization`) and "Data transformation" (`03-data-transformation`) tutorials. 
+
+**Reminder**: All work must be completed before class. Failure to submit your tutorial answers will result in you being removed from the course. It is not fair to your fellow students, with whom you will be working in small groups, for you to not be prepared for class.
+
 
 ## Thursday 
 
-* Read Chapters 1 -- 4 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete four tutorials: "Data Visualization," "RStudio and Code," "Data Transformation," and "RStudio and Github." Submit your answers via the usual [Google form](https://forms.gle/ScrSYjb6pYPbtvNj7). 
+* Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html).  
 
-**Reminder**: All work must be completed before class. Failure to submit your tutorial answers will result in you being removed from the course. It is not fair to your fellow students, with whom you will be working in small groups, for you to not be prepared for class.
+* From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete "Rubin Causal Model" and "Probability" tutorials.
+
+
 
 # Week 2: Models
 
@@ -51,7 +73,12 @@ Now that we know how to visualize data that is already clean, we need to learn h
 
 ## Monday 
 
-* Read Chapters 5, 6, 7, and 8 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/), and from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the tutorials associated with the readings: "Data Tidying," "Terminal," "Data Import," and "Getting Help."   
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
+
+
+* Read Chapters 4 and 5 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
+
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying `). 
  
 
 ## Thursday 
@@ -69,6 +96,9 @@ Now that we know how to visualize data that is already clean, we need to learn h
 # Week 3: Inference
 
 ## Monday 
+
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) and "Quarto Websites Advanced" (`07-websites-2`) tutorials.
+
 
 * Read chapters 12, 13, 28 and 29 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors," "Numbers," and "Quarto Websites" tutorials.
 

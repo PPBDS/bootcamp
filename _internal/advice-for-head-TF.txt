@@ -2,9 +2,9 @@ Thanks for volunteering to be a Head TF!
 
 ## Technical Set Up
 
-Make a separate Google email account for the course. This will be shared among Preceptor and the TFs, but you will still be in charge of it. Make the address something like june.2025.kdsb (where the letters stand for Kane's Data Science Bootcamp). The month is the start month of the course.
+Make a separate Google email account for the course. This will be shared among Preceptor and the TFs, but you will still be in charge of it. Make the address something like june.2025.kdsb (where the letters stand for Kane's Data Science Bootcamp). The month is the start month of the course. All lowercase letters. The password is like june.2025.kdsbPWD.
 
-In this account, set up a Google form which will be used for students submitting homework. It has two questions: "Name", and "Email". It then asks students to submit one or more html files. See previous examples.
+In this account, set up a Google form which will be used for students submitting homework. It has two questions: "Name", and "Email". It then asks students to submit one or more html files. See previous examples. https://forms.gle/j3hBXL1XT3JMiscN8
 
 Test the email and the Google form from your personal account. Have the TFs submit some homework answers as well.
 
@@ -14,11 +14,23 @@ Prove that you can submit PRs by submitting one which adds your name to the top 
 
 Familiarize yourself with the tutorial.helpers package, especially the process_submissions() function. This is what you will use to monitor homework completion and, thereby, determine which students to mail out the Zoom link to for the next class.
 
+Make sure you have full admin rights on the Discord.
+
+Make sure you have rights to the repo.
+
 ## Your Senior TFs
 
 Recruit a set of senior TFs. At your discretion, one or more might be co-Head TFs, but that is up to you. These will generally be TFs from previous courses, but don't hesitate to select new TFs who seem enthusiastic and/or who might be interested in being Head TF next year. 
 
-Key point is that you will want to delegate some of your responsibilities to these senior TFs. Spreading the work around makes your life easier! Of course, you still need to supervise and ensure that everything gets done. I recommend having one Senior TF in charge of homeworking checking and Zoom link sending. Another Senior TF might be in charge of the Discord, with a special focus on answering student questions. A third Senior TF might, depending on class size, be responsible for TF scheduling and ensuring that 
+Key point is that you will want to delegate some of your responsibilities to these senior TFs. Spreading the work around makes your life easier! Of course, you still need to supervise and ensure that everything gets done. Some possible Senior TF roles include:
+
+* In charge of homework checking and Zoom link sending. This person needs access to the Google account and needs to be able to use process_submissions() from tutorial.helpers.
+
+* In charge of the Discord, with a special focus on answering student questions. This person should have admin rights to the Discord.
+
+* Responsible for TF scheduling and ensuring that there is a TF assigned to each breakout room for each class.
+
+* In charge of class materials. This mainly involves writing/checking the "script" for each class session---which is generally a QMD file---and then distributing it to the teaching staff ahead of class. They would then also post the potentially cleaned up 
 
 
 ## Your TFs
