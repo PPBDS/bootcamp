@@ -56,6 +56,11 @@ knitr::include_graphics("images/khang.jpg")
 
 [Gia Khang](https://github.com/giakhang1906) (phamgiakhang19062003 at gmail.com) is a Senior at Fulbright University Vietnam who is interested in Economics and Data Science. 
 
+
+<!-- # Program Directors -->
+
+
+
 <!-- ## Tejas Mundhe
 
 ```{r}
@@ -145,7 +150,7 @@ knitr::include_graphics("images/dash.jpg")
 
 [Sanaka Dash](github.com/SanakaDash)  (sanakadash at gmail.com) is a Sophomore in High school with a special passion for cars and computers.
 
-# Program Directors
+
 
 
 ## Adhithan Manivassakam

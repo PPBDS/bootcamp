@@ -130,7 +130,7 @@
     "href": "index.html",
     "title": "Kane’s Data Science Course",
     "section": "",
-    "text": "Sign up for our e-mail list to receive updates about the course going forward.\nKane’s (Free) Data Science Course runs for 8 weeks, mostly each summer. The next session will begin in June 2025. The workload is 10 hours per week: 3 hours in class with former Harvard Preceptor David Kane, lecturing live on Zoom at around 8:00 PM ET on M/W/Th and 7 hours of work completed by students on their own. By the end of this course, students will be able to do basic data science! There is no charge.\n\n\n\n\n\n\n\n\n\nCheck out the final projects created by prior students. Want to make something like that? Take the course! See here for details on my teaching philosophy.\nThere are no prerequisites. The programming language we will be using is R. You must have a computer with R, Positron, and Git installed. You must be able to use Zoom (with a working camera) and to share your screen. The course is designed for absolute beginners. Neither programming nor statistics experience is required.\nSign up for our e-mail list to receive updates."
+    "text": "Sign up for our e-mail list to receive updates about the course going forward.\nKane’s (Free) Data Science Course runs for 8 weeks, mostly each summer. The next session will begin on June 16. The workload is 10 hours per week: 3 hours in class with former Harvard Preceptor David Kane, lecturing live on Zoom at 8:00 PM ET on M/W/Th and 7 hours of work completed by students on their own. By the end of this course, students will be able to do basic data science! There is no charge.\n\n\n\n\n\n\n\n\n\nCheck out the final projects created by prior students. Want to make something like that? Take the course! See here for details on my teaching philosophy.\nThere are no prerequisites. The programming language we will be using is R. You must have a computer with R, Positron, and Git installed. You must be able to use Zoom (with a working camera) and to share your screen. The course is designed for absolute beginners. Neither programming nor statistics experience is required.\nSign up for our e-mail list to receive updates."
   },
   {
     "objectID": "schedule.html",
@@ -144,7 +144,7 @@
     "href": "schedule.html#monday",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\n\nRead the Introduction from R for Data Science (2e).\nFrom the r4ds.tutorials package, complete the “Introduction” (00-introduction) tutorial.\nFrom the positron.tutorials package, complete the “Positron and Code” (01-code) tutorial."
+    "text": "Monday\n\nRead the Introduction from R for Data Science (2e).\nFrom the r4ds.tutorials package, complete the “Introduction” (00-introduction) tutorial.\nFrom the positron.tutorials package, complete the “Positron and Code” (01-code) tutorial. Make sure that you have already completed the “Introduction” tutorial above before you start the “Positron and Code” tutorial."
   },
   {
     "objectID": "schedule.html#wednesday",

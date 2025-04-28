@@ -44,7 +44,7 @@ Looking at the data is the first step in data science. Note that Monday's homewo
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Introduction" (`00-introduction`) tutorial. 
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and Code" (`01-code`) tutorial.
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and Code" (`01-code`) tutorial. Make sure that you have already completed the "Introduction" tutorial above before you start the "Positron and Code" tutorial.
 
 ## Wednesday
 
