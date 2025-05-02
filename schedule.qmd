@@ -34,11 +34,15 @@ Do not start the registration process yet.
 
 <!-- To register for the class and reserve your spot, please read [Getting Started with Positron](https://ppbds.github.io/primer/getting-started-with-positron.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package.  -->
 
+<!-- DK: Find place for Getting Help. -->
+
 # Week 1: June 16
 
-Looking at the data is the first step in data science. Note that Monday's homework must be completed before Monday's class. I ensure this by only sending the Zoom link for class to students who submitted the homework.
+Introduction to the tools we use for doing data science.
 
 ## Monday 
+
+Note that Monday's homework must be completed before Monday's class. I ensure this by only sending the Zoom link for class to students who submitted the homework.
 
 * Read the Introduction from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
 
@@ -61,57 +65,63 @@ Looking at the data is the first step in data science. Note that Monday's homewo
 
 * From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
 
+* Read Chapters 4 and 5 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
+
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying`). 
+
 * Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
 
 # Week 2: June 23
 
-Now that we know how to visualize data that is already clean, we need to learn how to clean up messy data. 
+Going forward, we recommend that you read the chapters in [*R for Data Science (2e)*](https://r4ds.hadley.nz/) associated with each tutorial we assign from the **r4ds.tutorials** package. However, we stop listing them explicitly.
+
+Finish learning about tools like Quarto and GitHub Pages. Start learning about models and inference.
 
 ## Monday 
 
 * Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial (`011-rubin-causal-model`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-
 * From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
 
-
-* Read Chapters 4 and 5 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying `). 
- 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data import" (`07-data-import`) and "Layers" (`09-layers`) tutorials. 
 
 ## Wednesday
 
 * Read [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html) and complete the "Probability" tutorial (`021-probability`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
+
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) and "Communication" (`11-communication`) tutorials. 
+
 ## Thursday 
 
 * Read [Chapter 3 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial (`031-Sampling`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
+* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
 
-* Read Chapters 9, 10 and 11 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/), and from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the tutorials associated with the readings: "Layers," "Exploratory Data Analysis," and "Communication."  
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (`12-logical-vectors`) tutorial. 
+ 
 
 
-* Read chapters 1 and 2 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. The U.S. Census is a great source of data for your projects.
 
-
-* From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "An introduction to tidycensus" tutorial.  
 
 * Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
 # Week 3: June 30
 
+Identify the data which you will use for your Data Project.
+
 ## Monday 
+
+<!-- DK: Revisit tidycensus.tutorials package. Does it work? Does it use GitHub version of tutorial.helpers for no reason in the DESCRIPTION? -->
 
 * Read [Chapter 4 Models](https://ppbds.github.io/primer/models.html) and complete the "Models" tutorial (`041-Models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
+* Read chapters 1 and 2 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. The U.S. Census is a great source of data for your projects.
 
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) and "Quarto Websites Advanced" (`07-websites-2`) tutorials.
-
-
-* Read chapters 12, 13, 28 and 29 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors," "Numbers," and "Quarto Websites" tutorials.
+* From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "An introduction to tidycensus" tutorial.  
 
 * Come to class with the url for at least one data source you will be using for your Data Project.
 
@@ -132,19 +142,16 @@ Now that we know how to visualize data that is already clean, we need to learn h
 
 The main focus on the 4th week is individual presentations of your Data Project. Do you love soccer or wine or NYC politics? The Data Project provides you with an opportunity to study that topic in depth. Your Data Project will be, for most of you, the first item in your professional portfolio, something so impressive that you will be eager to show it to graduate schools or potential employers.
 
-<!-- DK: Add back in the final project tutorial. -->
-
 ## Monday
 
-* Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * Read chapter 17 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Dates and times" tutorial.
 
-* Complete the "Data Project" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. Be sure to reinstall the package before starting the tutorial.
+* Complete the "Data Project" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 ## Wednesday 
 
-* Read [Chapter 8 Four Parameters: Categorical](https://ppbds.github.io/primer/four-parameters-categorical.html) and complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+ 
 
 * Read chapter 18 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Missing values" tutorial.
 
@@ -152,29 +159,34 @@ The main focus on the 4th week is individual presentations of your Data Project.
 
 ## Thursday 
 
-* Read [Chapter 9 Five Parameters](https://ppbds.github.io/primer/five-parameters.html) and complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Data Project presentations
 
-* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
+
 
 # Week 5: July 14
 
+Renewed focus on models for inference.
+
 ## Monday
 
-* Read [Chapter 10 N Parameters](https://ppbds.github.io/primer/n-parameters.html) and complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
+
+* Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
 
 
 * Read chapter 19 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Joins" tutorial.
 
 ## Wednesday
 
-* Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Read [Chapter 8 Four Parameters: Categorical](https://ppbds.github.io/primer/four-parameters-categorical.html) and complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * Read chapter 20 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Spreadsheets" tutorial.
 
 
 ## Thursday
 
-* Complete the "Stops" tutorial (`131-stops`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Read [Chapter 9 Five Parameters](https://ppbds.github.io/primer/five-parameters.html) and complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * Read chapter 21 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Databases" tutorial.
 
@@ -183,12 +195,16 @@ The main focus on the 4th week is individual presentations of your Data Project.
 
 ## Monday
 
+* Read [Chapter 10 N Parameters](https://ppbds.github.io/primer/n-parameters.html) and complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 
 ## Wednesday
 
+* Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 ## Thursday
+
+* Complete the "Stops" tutorial (`131-stops`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * Read chapter 22 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Arrow" tutorial. 
 

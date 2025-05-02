@@ -2,6 +2,19 @@
 
 First project is an AI project!
 
+Outline class schedule for future summers. Example: All positron and related tutorials are done by week 2 so that students can start building websites in week 3, in preparation for Demo Day in week 4. All Primer tutorials are done by week 6, so week 7 can be spent building models, in preparation for Demo Day in week 8. Main homework for week 3 is lots of introductions to all sorts of data sources. Want to give students plenty of suggestions so that they can find something they like.
+
+Weeks 1/2: Positron and related tools.
+Week 3: Data sources, like tidycensus.
+Week 4: Demo Day
+Weeks 5/6: Finish Primer tutorials
+Week 7: Lots of example models to build
+Week 8: Demo Day
+
+Who is in charge of data suggestions?
+
+Get Data Project and Model Project tutorials ready. Or maybe there is just one tutorial, and you can skip the model questions if they are not relevant.
+
 Add tutorial running instructions in each README for tutorial packages.
 
 https://www.youtube.com/channel/UC7nH64nO2LVaWWhJLtiV-mg
