@@ -1,13 +1,34 @@
 # TF Advice
 
+Someone is always sharing their screen. Someone is always telling that screen sharer what to type. There is always one sharer and one driver. And those roles switch often, at least every time we go back to breakout rooms from the main room. Your most important job is to make that happen, and make sure that all students participate.
 
 Motto: Always tell. Never ask.
 
 That is, do not ask "Who wants to share their screen?" Instead, say "Joe, please share your screen." This class is serious and we have no time for dawdling. You are in charge. This helps to ensure that everyone shares their screen, and drives, the same amount.
 
-Start by telling someone to share their screen. If they are messed up somehow, switch to a different person. Tell another person to drive. If they are clueless, no worries! Just say, "No worries. John (new person), please direct Sarah." If John is clueless, switch immediately to a new person. After a few minutes, have a different person share their screen. Choose a different driver. Never share your screen. Never waste time with people who are having weird difficulties.
+Start by telling someone to share their screen. If they are messed up somehow, switch to a different person. Tell another person to drive. If they are clueless, no worries! Just say, "No worries. John (new person), please direct Sarah." If John is clueless, switch immediately to a new person. After a few minutes, have a different person share their screen. Choose a different driver. Never share your screen. Never, or at least rarely, drive. Never waste time with people who are having weird difficulties. Fix weird difficulties after class is over.
 
-When we are doing a data science project, please emphasize how there are often a variety of plausible approaches. Reasonable people will often, for example differ in the rows of the Preceptor Table or in the variables they include in the model. We see that in how different breakout rooms make different choices. But it is easiest if every student in a single breakout room make the same choices for that day's class. So, you should guide each of your breakout rooms to do so.
+When we are doing a data science project, emphasize how there are often a variety of plausible approaches. Reasonable people will often, for example differ in the rows of the Preceptor Table or in the variables they include in the model. We see that in how different breakout rooms make different choices. But it is easiest if every student in a single breakout room make the same choices for that day's class. So, you should guide each of your breakout rooms to do so. In fact, it is best to guide all rooms toward the path in our answer. If they get too far off-track, it may be tough to bring them back. 
+
+### Week 1
+
+We place all your students, even if there are a 12+ of them, in a single breakout room during week 1. This is OK. You need to guide them all the time, so you can't switch from room-to-room. Also, more than a few students will fail to have a clue and/or have major computer problems. (Never try to solve a student's computer problems during class. There isn't enough time and you will lose the rest of the class.) With everyone is the same room, you can run the show, changing sharers and drivers each time, always having plenty of options if a sharer or driver isn't working.
+
+After week 1, we should have lost most of the students we are going to lose, at least in the first few weeks. You will also have a much better sense of your students strengths and weaknesses.
+
+### Week 2
+
+You work with the head TF to have smaller breakout rooms for week 2. These might still be bigger than the ideal number of 3 or 4. In general, the head TF will just let you decide. Take your 12 students and split them into three breakout rooms as you see fit. But make sure that you have done so by Sunday night. Advice:
+
+* Keep friends together.
+
+* Keep sensible groups together. If you have a bunch of 8th graders, it is generally better to keep them together.
+
+* No worries if all breakout rooms are not the same size. Indeed, it is often useful, if you have two strong, committed friends, to just give them a breakout room of two, assuming that they are both committed to showing up to almost every class.
+
+### Week 3
+
+
 
 
 ## Class 1

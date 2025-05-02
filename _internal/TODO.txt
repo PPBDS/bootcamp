@@ -1,5 +1,7 @@
 ## Priorities for June Class
 
+First project is an AI project!
+
 Add tutorial running instructions in each README for tutorial packages.
 
 https://www.youtube.com/channel/UC7nH64nO2LVaWWhJLtiV-mg
@@ -40,8 +42,6 @@ Baseline Cross-Sectional Estimates of Child and Parent Income Distributions by C
 
 * Change Day 2 and Day 3 lectures to use the data from there. 
 
-* Change the Visualization chapter to use the data.
-
 * Change the initial tutorials to use the data.
 
 
@@ -56,10 +56,3 @@ Is whimsical a useful tool for teaching the class itself?
 Rweekly.
 
 #rstats
-
-# Future TFs
-
-
-
-
-

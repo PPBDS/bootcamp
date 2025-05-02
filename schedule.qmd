@@ -34,7 +34,7 @@ Do not start the registration process yet.
 
 <!-- To register for the class and reserve your spot, please read [Getting Started with Positron](https://ppbds.github.io/primer/getting-started-with-positron.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package.  -->
 
-# Week 1: Data
+# Week 1: June 16
 
 Looking at the data is the first step in data science. Note that Monday's homework must be completed before Monday's class. I ensure this by only sending the Zoom link for class to students who submitted the homework.
 
@@ -61,17 +61,17 @@ Looking at the data is the first step in data science. Note that Monday's homewo
 
 * From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
 
-* Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html).  
-
-* From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete "Rubin Causal Model" and "Probability" tutorials.
+* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
 
-
-# Week 2: Models
+# Week 2: June 23
 
 Now that we know how to visualize data that is already clean, we need to learn how to clean up messy data. 
 
 ## Monday 
+
+* Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial (`011-rubin-causal-model`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
 
 * From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
 
@@ -81,7 +81,14 @@ Now that we know how to visualize data that is already clean, we need to learn h
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying `). 
  
 
+## Wednesday
+
+* Read [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html) and complete the "Probability" tutorial (`021-probability`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
 ## Thursday 
+
+* Read [Chapter 3 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial (`031-Sampling`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
 
 * Read Chapters 9, 10 and 11 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/), and from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the tutorials associated with the readings: "Layers," "Exploratory Data Analysis," and "Communication."  
 
@@ -91,11 +98,15 @@ Now that we know how to visualize data that is already clean, we need to learn h
 
 * From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "An introduction to tidycensus" tutorial.  
 
+* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
-
-# Week 3: Inference
+# Week 3: June 30
 
 ## Monday 
+
+* Read [Chapter 4 Models](https://ppbds.github.io/primer/models.html) and complete the "Models" tutorial (`041-Models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
+
 
 * From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) and "Quarto Websites Advanced" (`07-websites-2`) tutorials.
 
@@ -105,13 +116,19 @@ Now that we know how to visualize data that is already clean, we need to learn h
 * Come to class with the url for at least one data source you will be using for your Data Project.
 
 
+## Wednesday
+
+* Read [Chapter 5 Two Parameters](https://ppbds.github.io/primer/two-parameters.html) and complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
 ## Thursday 
+
+* Read [Chapter 6 Three Parameters: Causal](https://ppbds.github.io/primer/three-parameters-causal.html) and complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * Read chapters 14, 15 and 16 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings," "Regular expressions" and "Factors" tutorials. 
 
+* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
-
-# Week 4: Wisdom
+# Week 4: July 7
 
 The main focus on the 4th week is individual presentations of your Data Project. Do you love soccer or wine or NYC politics? The Data Project provides you with an opportunity to study that topic in depth. Your Data Project will be, for most of you, the first item in your professional portfolio, something so impressive that you will be eager to show it to graduate schools or potential employers.
 
@@ -119,11 +136,15 @@ The main focus on the 4th week is individual presentations of your Data Project.
 
 ## Monday
 
+* Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+
 * Read chapter 17 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Dates and times" tutorial.
 
 * Complete the "Data Project" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. Be sure to reinstall the package before starting the tutorial.
 
 ## Wednesday 
+
+* Read [Chapter 8 Four Parameters: Categorical](https://ppbds.github.io/primer/four-parameters-categorical.html) and complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * Read chapter 18 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Missing values" tutorial.
 
@@ -131,58 +152,41 @@ The main focus on the 4th week is individual presentations of your Data Project.
 
 ## Thursday 
 
-* Data Project presentations. You must invite someone, and bcc your TF when you do so. The presentations are public.
+* Read [Chapter 9 Five Parameters](https://ppbds.github.io/primer/five-parameters.html) and complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
+* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
-
-
-
-# Week 5: Justice
-
-<!-- Next time, assign three chapters from the Primer for Monday. Need to get going. Then do the fourth chapter for Wednesday. This ensures that students are neck-deep in the Cardindal Virtues as quickly as possible. Move around the 4rds.tutorials as needed. -->
+# Week 5: July 14
 
 ## Monday
 
-* Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html).  
+* Read [Chapter 10 N Parameters](https://ppbds.github.io/primer/n-parameters.html) and complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-* From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete "Rubin Causal Model" and "Probability" tutorials.
 
 * Read chapter 19 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Joins" tutorial.
 
 ## Wednesday
 
-* Read [Chapter 3: Sampling](https://ppbds.github.io/primer/sampling.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Sampling" tutorial.
+* Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * Read chapter 20 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Spreadsheets" tutorial.
 
 
 ## Thursday
 
-* Read [Chapter 4: Models](https://ppbds.github.io/primer/models.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Models" tutorial.
+* Complete the "Stops" tutorial (`131-stops`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * Read chapter 21 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Databases" tutorial.
 
 
-# Week 6: Courage
+# Week 6: July 21
 
 ## Monday
-
-* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
-
-* Read [Chapter 5: Two Parameters](https://ppbds.github.io/primer/two-parameters.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Two Parameters" tutorial.
-
-* Read [Chapter 6: Three Parameters: Causal](https://ppbds.github.io/primer/three-parameters-causal.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Three Parameters: Causal" tutorial.
 
 
 
 ## Wednesday
 
-* Read [Chapter 7: Mechanics](https://ppbds.github.io/primer/mechanics.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Mechanics" tutorial.
-
-* Read [Chapter 8: Four Parameters: Categorical](https://ppbds.github.io/primer/four-parameters-categorical.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Four Parameters: Categorical" tutorial.
-
-
-<!-- DK: Class meets Wednesday. -->
 
 ## Thursday
 
@@ -191,13 +195,9 @@ The main focus on the 4th week is individual presentations of your Data Project.
 * Read chapter 23 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Hierarchical data" tutorial. 
 
 
-# Week 7: Temperance
+# Week 7: July 28
 
 ## Monday
-
-* Read [Chapter 9: Five Parameters](https://ppbds.github.io/primer/five-parameters.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Five Parameters" tutorial.
-
-* Read [Chapter 10: N Parameters](https://ppbds.github.io/primer/five-parameters.html) and, from the [**primer.tutorials**](https://ppbds.github.io/primer/n-parameters.html) package, complete the "N Parameters" tutorial.
 
 
 ## Wednesday
@@ -217,7 +217,7 @@ The main focus on the 4th week is individual presentations of your Data Project.
 * Read chapter 27 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "A field guide to base R" tutorial. 
 
 
-# Week 8: Projects
+# Week 8: August 4
 
 The last week will consist of projects that the students will make. 
 
@@ -236,7 +236,3 @@ The last week will consist of projects that the students will make.
 ## Thursday 
 
 * Final project presentations. You must invite someone, and bcc your TF when you do so.
-
-
-
-
