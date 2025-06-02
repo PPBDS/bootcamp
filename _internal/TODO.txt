@@ -11,6 +11,15 @@ Weeks 5/6: Finish Primer tutorials
 Week 7: Lots of example models to build
 Week 8: Demo Day
 
+
+* I hope to have hundreds of students next summer. I need to work on tools now for managing that. See PraireLearn, Moodle, Google sheets and so on. 
+
+  + 1) Where should students upload files? We currently use Google forms which puts stuff in a Google drive folder. This works pretty well! But I need to download the resulting folder by hand, which is no good. Surely, we can automate this. But can we automate it for all TFs. (We want TFs to be able to see and analyze the homeworks submitted by their students.) A second option would be DropBox. Others?
+  
+  + 2) Where do we keep track of the students in the class and key information associated with them? That information would be name, email, TF, breakout room, presentation room. Maybe only me and the head TFs need to edit it. I think that this might just be a Google sheet. We would want all staff to be able to access it since doing so would provide the info to allow scripts to just return a given TF's students' work.
+  
+  + 3) Where do we populate information about work completed? That is, we want to be able to report who has submitted each homework, perhaps also with the number of answers. We need to put that information somewhere, update it with scripts, and then allow TFs to be able to access it. 
+
 Who is in charge of data suggestions?
 
 Get Data Project and Model Project tutorials ready. Or maybe there is just one tutorial, and you can skip the model questions if they are not relevant.

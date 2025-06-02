@@ -48,14 +48,14 @@ knitr::include_graphics("images/deka.jpg")
 
 [Luit Deka](https://github.com/luitdeka) (luitdeka at gmail.com) is an freshman at Carnegie Mellon University, PA in the School of Computer Science.
 
-## Gia Khang Phạm
+<!-- ## Gia Khang Phạm
 
 ```{r}
 knitr::include_graphics("images/khang.jpg")
 ```
 
 [Gia Khang](https://github.com/giakhang1906) (phamgiakhang19062003 at gmail.com) is a Senior at Fulbright University Vietnam who is interested in Economics and Data Science. 
-
+ -->
 
 <!-- # Program Directors -->
 

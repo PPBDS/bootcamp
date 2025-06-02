@@ -6,7 +6,7 @@ library(tutorial.helpers)
 homework <- function(pattern = "."){
   
   
-  x <- process_submissions("~/Downloads/submissions", 
+  x <- process_submissions("~/Downloads/responses", 
                            pattern = pattern, 
                            key_vars = c("name", 
                                         "email", 
