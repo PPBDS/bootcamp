@@ -30,15 +30,17 @@ knitr::include_graphics("images/joshi.jpeg")
 
 Navya Joshi (roopajoshi00 at gmail.com) is a junior at Conant High School with an interest in Computer Science and Mathematics.
 
-# Teaching Fellows
+# Senior Teaching Fellows
 
 ## Aadhira Satheesh
 
 ```{r}
-knitr::include_graphics("images/aadhira.jpg")
+knitr::include_graphics("images/aadhira.png")
 ```
 
 [Aadhira Satheesh](https://github.com/aadhira12) (aadhira.satheesh.12 at gmail.com) is a middle schooler attending Acera School, with interest in mathematics, computer science and health care.
+
+# Teaching Fellows
 
 ## Luit Deka
 

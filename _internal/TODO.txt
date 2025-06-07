@@ -1,5 +1,7 @@
 ## Priorities for June Class
 
+Consider this as an example: https://www.nytimes.com/interactive/2025/06/05/us/politics/congress-age.html
+
 First project is an AI project!
 
 Outline class schedule for future summers. Example: All positron and related tutorials are done by week 2 so that students can start building websites in week 3, in preparation for Demo Day in week 4. All Primer tutorials are done by week 6, so week 7 can be spent building models, in preparation for Demo Day in week 8. Main homework for week 3 is lots of introductions to all sorts of data sources. Want to give students plenty of suggestions so that they can find something they like.
