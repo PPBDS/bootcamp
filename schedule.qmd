@@ -24,13 +24,12 @@ remotes::install_github("PPBDS/primer.tutorials")
 
 We are always fixing mistakes. You want to use the latest version.
 
+If you do not complete the tutorials on time, you will be removed from the class. Send in your tutorial answers saved in *html* format. Please try to ensure that the name of the file is the default name, like `positron_answers.html`. Avoid using the name which will be assigned to the file if you download the same answers twice (or more), stuff like `positron_answers (2).html`. You can just change the name of the file by hand if this happens.
 
-If you do not complete the tutorials on time, you will be removed from the class. Send in your tutorial answers saved in *html* format. Please try to ensure that the name of the file is the default name, like `tutorials-in-positron_answers.html`. Avoid using the name which will be assigned to the file if you download the same answers twice (or more), stuff like `tutorials-in-positron_answers (2).html`. You can just change the name of the file by hand if this happens.
 
+<!-- # Registration
 
-# Registration
-
-Do not start the registration process yet.
+Do not start the registration process yet. -->
 
 <!-- To register for the class and reserve your spot, please read [Getting Started with Positron](https://ppbds.github.io/primer/getting-started-with-positron.html) and follow all the associated instructions. Complete the "Getting Started with Tutorials" tutorial from the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package.  -->
 
@@ -42,7 +41,7 @@ Introduction to the tools we use for doing data science.
 
 ## Monday 
 
-Note that Monday's homework must be completed before Monday's class. I ensure this by only sending the Zoom link for class to students who submitted the homework.
+Note that Monday's homework must be completed before midnight on Sunday. I ensure this by only sending the Zoom link for class to students who submitted the homework.
 
 * Read the Introduction from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
 
@@ -60,7 +59,6 @@ Note that Monday's homework must be completed before Monday's class. I ensure th
 
 **Reminder**: All work must be completed before class. Failure to submit your tutorial answers will result in you being removed from the course. It is not fair to your fellow students, with whom you will be working in small groups, for you to not be prepared for class.
 
-
 ## Thursday 
 
 * From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
@@ -70,7 +68,6 @@ Note that Monday's homework must be completed before Monday's class. I ensure th
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying`). 
 
 * Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
-
 
 # Week 2: June 23
 
@@ -102,8 +99,6 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (`12-logical-vectors`) tutorial. 
  
-
-
 * Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
 # Week 3: June 30
