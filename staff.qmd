@@ -48,7 +48,7 @@ knitr::include_graphics("images/aadhira.png")
 knitr::include_graphics("images/deka.jpg")
 ```
 
-[Luit Deka](https://github.com/luitdeka) (luitdeka at gmail.com) is an freshman at Carnegie Mellon University, PA in the School of Computer Science.
+[Luit Deka](https://github.com/luitdeka) (luitdeka at gmail.com) is a freshman at Carnegie Mellon University, PA in the School of Computer Science.
 
 ## Aashna Patel
 
@@ -56,7 +56,7 @@ knitr::include_graphics("images/deka.jpg")
 knitr::include_graphics("images/apatel.jpg")
 ```
 
-[Aashna Patel](https://github.com/aashna-a-patel) (aashnapatel2008 at gmail.com) is a rising senior at Warren Township High School with an interest in computer engineering and robotics.
+[Aashna Patel](https://github.com/aashna-a-patel) (aashnapatel2008 at gmail.com) is a senior at Warren Township High School with an interest in computer engineering and robotics.
 
 ## Jamie Dongwan Seoh
 
@@ -64,5 +64,36 @@ knitr::include_graphics("images/apatel.jpg")
 knitr::include_graphics("images/jseoh.jpg")
 ```
 
-[Jamie Dongwan Seoh](https://github.com/dwseoh) (contact at dwseoh.com) is an incoming freshman at the University of Waterloo for Software Engineering.
+[Jamie Dongwan Seoh](https://github.com/dwseoh) (contact at dwseoh.com) is a freshman at the University of Waterloo for Software Engineering.
 
+## Ivy Spratt
+
+```{r}
+knitr::include_graphics("images/spratt.jpg")
+```
+
+[Ivy Spratt](https://github.com/ivyspratt) (ivy.spratt at gmail.com) is a senior at Metea Valley High School with an interest of computer science and music.
+
+## Anish Talla
+
+```{r}
+knitr::include_graphics("images/talla.jpg")
+```
+
+[Anish Talla](https://github.com/anishtalla27) (anish.talla99 at gmail.com) is a sophomore at Lightridge High School with an interest in software and mechanical engineering.
+
+## Amogh Patil
+
+```{r}
+knitr::include_graphics("images/apatil.jpg")
+```
+
+[Amogh Patil](https://github.com/AmoghPatil314) (amogh@arjunp.com) is an junior at Blaine High School, MN.
+
+## Sophia Yao
+
+```{r}
+knitr::include_graphics("images/syao.jpg")
+```
+
+[Sophia Yao](https://github.com/sophiay14) (sophia.jiani.yao at gmail.com) is a freshman at Abbey Park High School with interests in music and electrical engineering.
