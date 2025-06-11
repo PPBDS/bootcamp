@@ -97,3 +97,11 @@ knitr::include_graphics("images/syao.jpg")
 ```
 
 [Sophia Yao](https://github.com/sophiay14) (sophia.jiani.yao at gmail.com) is a freshman at Abbey Park High School with interests in music and electrical engineering.
+
+## Thomas Seoh
+
+```{r}
+knitr::include_graphics("images/tseoh.jpg")
+```
+
+[Thomas Seoh](https://github.com/tdwseoh) (tommyseoh@gmail.com) is a freshman at Iroquois Ridge High School.
