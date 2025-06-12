@@ -105,3 +105,11 @@ knitr::include_graphics("images/tseoh.jpg")
 ```
 
 [Thomas Seoh](https://github.com/tdwseoh) (tommyseoh@gmail.com) is a freshman at Iroquois Ridge High School.
+
+## Sruthi Gandhi
+
+```{r}
+knitr::include_graphics("images/sgandhi.jpg")
+```
+
+[Sruthi Gandhi](https://github.com/sruthigandhi)(sruthi.gandhi at outlook.com) is a senior at Ryle High School with an interest in computer science, machine learning, and data science.

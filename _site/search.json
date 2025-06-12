@@ -91,6 +91,13 @@
     "text": "Thomas Seoh\n\n\n\n\n\n\n\n\n\nThomas Seoh (tommyseoh@gmail.com) is a freshman at Iroquois Ridge High School."
   },
   {
+    "objectID": "staff.html#sruthi-gandhi",
+    "href": "staff.html#sruthi-gandhi",
+    "title": "Preceptor",
+    "section": "Sruthi Gandhi",
+    "text": "Sruthi Gandhi\n\n\n\n\n\n\n\n\n\nSruthi Gandhi(sruthi.gandhi at outlook.com) is a senior at Ryle High School with an interest in computer science, machine learning, and data science."
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Final Projects",
@@ -228,7 +235,7 @@
     "href": "schedule.html#monday-2",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\n\n\nRead Chapter 4 Models and complete the “Models” tutorial (041-Models) from the primer.tutorials package.\nRead chapters 1 – 3 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “An introduction to tidycensus” (02-introduction) and “Wrangling Census data with Tidyverse tools” (03-wrangling) tutorials.\nCome to class with the url for at least one data source you will be using for your Data Project."
+    "text": "Monday\nNote that chapters 4 and higher from the Primer are a mess, using packages/functions which we no longer recommend. We are re-writing the Primer this summer. In the meantime, don’t feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.\n\nRead Chapter 4 Models and complete the “Models” tutorial (041-Models) from the primer.tutorials package.\nRead chapters 1 – 3 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “An introduction to tidycensus” (02-introduction) and “Wrangling Census data with Tidyverse tools” (03-wrangling) tutorials.\nCome to class with the url for at least one data source you will be using for your Data Project."
   },
   {
     "objectID": "schedule.html#wednesday-2",
@@ -242,7 +249,7 @@
     "href": "schedule.html#thursday-2",
     "title": "Schedule",
     "section": "Thursday",
-    "text": "Thursday\n\nRead Chapter 6 Three Parameters: Causal and complete the “Three Parameters: Causal” tutorial (061-three-parameters-causal) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Numbers” (13-numbers) tutorial.\nRead Cardinal Virtues."
+    "text": "Thursday\n\nRead Chapter 6 Three Parameters: Causal and complete the “Three Parameters: Causal” tutorial (061-three-parameters-causal) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Numbers” (13-numbers) tutorial."
   },
   {
     "objectID": "schedule.html#monday-3",

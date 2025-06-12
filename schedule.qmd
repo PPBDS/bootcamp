@@ -107,7 +107,7 @@ Identify the data which you will use for your Data Project. The U.S. Census is a
 
 ## Monday 
 
-<!-- DK: Revisit tidycensus.tutorials package. Does it work?  -->
+Note that chapters 4 and higher from the *Primer* are a mess, using packages/functions which we no longer recommend. We are re-writing the *Primer* this summer. In the meantime, don't feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.
 
 * Read [Chapter 4 Models](https://ppbds.github.io/primer/models.html) and complete the "Models" tutorial (`041-Models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
@@ -133,8 +133,6 @@ Identify the data which you will use for your Data Project. The U.S. Census is a
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Numbers" (`13-numbers`) tutorial. 
 
-
-* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
 # Week 4: July 7
 
@@ -165,8 +163,6 @@ Renewed focus on models for inference.
 * Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * Read chapters 14, 15 and 16 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings," "Regular expressions" and "Factors" tutorials. 
-
-
 
 ## Wednesday
 

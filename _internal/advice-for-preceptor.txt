@@ -1,5 +1,5 @@
 
-## Key TODO List for the start of the course
+## Class Preparation
 
 * Identify one or more head TFs, and also some Senior TFs.
 
@@ -9,21 +9,21 @@
 
 * New Github organization: bootcamp-yyyy-mm
 
-* New Discord server. Channels include #class-work, #preceptors-notes, 
-#projects. Probably easiest to just use the old bootcamp server.
+* Check the old bootcamp server. Just use it again.
 
 * Sign up for Zoom which has enough slots of students. Can wait until enrollment firms up.
 
-* Require submission of the "Getting Started with Tutorials" tutorial in 
-order to "register" for the class. This guarantees that you will have a spot, 
-but you still need to do all the work. Give students who submit a Discord link.
+## Enrollment
 
 * Start registration process three weeks before course starts. After a week, let people know that registration ends in a week, a week before class starts. Close registration a week ahead. Of course, you can let in, by hand, some extra students, but the sooner you nail down the students, the better.
 
-* Inform about homework for class 1 at the same time you close registration.
+* Require submission of the "Tutorials with Positron" tutorial in order to "register" for the class. This guarantees that you will have a spot, but you still need to do all the work. 
 
-* Require submission of the "Introduction" and "01-code" tutorial in order to get a Zoom 
-link for the first class. Require this be submitted by Sunday at midnight.
+* Inform about the survey and the homework for class 1 at the same time you close registration, which is the Monday before.
+
+* On Wednesday, email them a link to the class survey which includes, full name, email (to use for assignments), age, birth country, city/country from where you will take the course, programming experience (either zero or some). Tell them they have 24 hours to complete the (trivial!) survey, or you reserve the right to remove them from the class. The big advantage of this is that the vast majority will do the survey, allowing the head TF to get going on the 
+
+* Require submission of the "Introduction" and "01-code" tutorial in order to get a Zoom link for the first class. Require this be submitted by Sunday at midnight.
 
 * 
 
