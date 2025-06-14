@@ -6,7 +6,7 @@ author: "David Kane"
 
 ## Goal
 
-Start with an RStudio project and a new Quarto document. Publish a nice looking histogram of county population on RPubs. 
+New Positron project which includes a new Quarto document. Publish to #class-work channel a nice looking histogram of county population. 
 
 ```{r}
 library(tidyverse)

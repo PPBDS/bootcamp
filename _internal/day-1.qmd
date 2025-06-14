@@ -6,9 +6,8 @@ author: "David Kane"
 
 ## Goal
 
-Explore the connectedness data from the primer.data package. Answer some questions. Students will have completed the Introduction tutorial, so they have been exposed to both ggplot2 and to the pipe.
+Explore the connectedness data from the primer.data package. Answer some questions. Students will have completed the Introduction and the 01-code tutorials, so they have been exposed to both ggplot2 and to the pipe and to R scripts.
 
-Lesson from last time: Less time in the breakout rooms in the first few sessions. More time once you start asking R questions.
 
 ## Session 1
 
@@ -18,11 +17,11 @@ Go to the Preceptor's Notes. Talk through the first few items. Finish with room 
 
 Cold call to tell me one thing about one student in the breakout room
 
-Review breakout room behavior. One person always sharing, and then doing nothing but what they are told. Another person driving, telling the screen-sharer what to do.
+Review breakout room behavior. One person always sharing, and then doing nothing but what they are told. Another person driving, telling the screen-sharer what to do. There is a "Sharer" and a "Driver."
 
-Go through items 2 (useful links) and 3 (install tutorial.helpers). 
+Go through items 2 (useful links). 
 
-Give a quick tour of RStudio. (Make sure that you are starting your session in an empty project and with no code visible.) Show the three *panes*: Console, Environment and Output. Mention the different *tabs*. 
+Give a quick tour of Poistron. (Make sure that you are starting your session in an empty project and with no code visible.) Show the three *panes*. Mention the different *tabs*. 
 
 Type 2 + 2. 
 
