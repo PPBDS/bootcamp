@@ -106,6 +106,14 @@ knitr::include_graphics("images/tseoh.jpg")
 
 [Thomas Seoh](https://github.com/tdwseoh) (tommyseoh@gmail.com) is a freshman at Iroquois Ridge High School.
 
+## Lowell Ethan
+
+```{r}
+knitr::include_graphics("images/lethan.png")
+```
+
+Lowell Ethan is a senior at Oakdale High School and is interested in Computer Science and Music.
+
 ## Sruthi Gandhi
 
 ```{r}
@@ -113,3 +121,11 @@ knitr::include_graphics("images/sgandhi.jpg")
 ```
 
 [Sruthi Gandhi](https://github.com/sruthigandhi)(sruthi.gandhi at outlook.com) is a senior at Ryle High School with an interest in computer science, machine learning, and data science.
+
+## Aaditya Gupta
+
+```{r}
+knitr::include_graphics("images/agupta.jpg")
+```
+
+[Aaditya Gupta](https://github.com/AadityaG2011) (aadi10may@gmail.com) is a freshman at Rocklin High School.
