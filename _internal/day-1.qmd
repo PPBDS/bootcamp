@@ -3,32 +3,31 @@ title: "Day 1"
 author: "David Kane"
 ---
 
-
 ## Goal
 
-Explore the connectedness data from the primer.data package. Answer some questions. Students will have completed the Introduction and the 01-code tutorials, so they have been exposed to both ggplot2 and to the pipe and to R scripts.
-
+Explore the connectedness data from the primer.data package. Answer some questions. Students will have completed the Introduction and the 01-code tutorials, so they have been exposed to both ggplot2 and to the pipe and to R scripts. Make a histogram of county population. Share the plot in #class-work.
 
 ## Session 1
 
-Go to the Preceptor's Notes. Talk through the first few items. Finish with room assignments. Send them to those rooms to meet each other. Each person gives one sentence about themselves. 
+Go to the Preceptor's Notes. Talk through items 1 and 2. Finish with room assignments. Send them to those rooms to meet each other. Each person gives one sentence about themselves. 
+
+Make 36 rooms. Allow participants to assign themselves.
 
 ## Session 2
 
-Cold call to tell me one thing about one student in the breakout room
+Cold call to tell me one thing about one student in the breakout room.
 
 Review breakout room behavior. One person always sharing, and then doing nothing but what they are told. Another person driving, telling the screen-sharer what to do. There is a "Sharer" and a "Driver."
 
-Go through items 2 (useful links). 
-
-Give a quick tour of Poistron. (Make sure that you are starting your session in an empty project and with no code visible.) Show the three *panes*. Mention the different *tabs*. 
+Give a quick tour of Poistron. (Make sure that you are starting your session in an empty project and with no code visible.) 
 
 Type 2 + 2. 
 
-Tell them to update tutorial.helpers
+Tell them to update the two packages:
 
 ```
-remotes::install_github("PPBDS/tutorial.helpers")
+remotes::install_github("PPBDS/positron.tutorial")
+remotes::install_github("PPBDS/r4ds.tutorial")
 ```
 
 Send them to breakout rooms to do the same.
@@ -37,9 +36,11 @@ But do this together! One person shares their screen. One other person drives.
 
 There may be problems, especially for students who are using a different computer from the one they used when they did the Getting Started chapter.
 
+After a student shares their screen, ask to see their Terminal. Does it look like it should? If not (especially common for Windows users), send them to: https://ppbds.github.io/primer/getting-started-with-positron.html#the-terminal
+
 ## Session 3
 
-Review items 4 (Ulysses), 5 (Discord) and 6 (chatGPT).
+Review items 4 (Ulysses), 5 (AI).
 
 Show them library(tidyverse). Discuss those weird messages. Explain the concept of the Tidyverse. Mention that we load up this package (i.e., this collection of packages) whenever we use R.
 
@@ -47,11 +48,11 @@ Show them library(primer.data).
 
 Make sure all students have primer.data installed. They certainly need this for the next class. Show page in Getting Started for doing so.
 
-Pull up chatGPT. Require them to sign up for one of the services. No need to pay! Free service is fine. Mention that I use Claude. Show the tab for Claude.
+Pull up AI. Require them to sign up for one of the services. No need to pay! Free service is fine. Mention that I use Claude. 
 
 Send them to breakout rooms to do the same. Tell them to help (by having them share their screen) whomever is having the most problems.
 
-Ask chatGPT something goofy. Like write an haiku about what a cool language R is.
+Ask AI something goofy. Like write an haiku about what a cool language R is. I will cold call.
 
 ## Session 4
 
@@ -61,31 +62,54 @@ Type connectedness. Run ?connectedness.
 
 See Preceptor Notes for links.
 
-Explain the need to reinstall r4ds.tutorials each week-end. We are always fixing bugs!
+How should we explore this data? Let's ask AI: What functions are useful for exploring a new tibble in R? 
 
-remotes::install_github("PPBDS/r4ds.tutorials")
-
-Go to breakout rooms. Reinstall r4ds.tutorials. Switch the screen-sharer and driver. Then, answer this question:
-
-How should we explore this data? Let's ask chatGPT: What functions are useful for exploring a new tibble in R?
-
+Go to breakout rooms. Explore data. Different people share. Different people drive.
 
 ## Session 5
 
-Call on someone at random to tell me about interesting functions.
+Cold call: What functions did you explore?
 
-What is the third biggest, by population, county in the US?
+Make a new project. Create a script. Want to make a histogram of county population? Ask AI!
 
-Go to breakout rooms, ask chatGPT, and follow its advice.
+Go to breakout rooms. Different people share. Different people drive.
 
 ## Session 6
 
-Call on someone at random to tell me what to code.
+How are your plots looking? Show them to AI and ask for advice!
+
+Iterate between the main room and breakout rooms. Everyone needs to make a script which makes a nice looking plot? If a student is behind, have him share his screen and have a different student drive. Tell students to use AI. Ask to see their screens to see what they asked and what they got back.
+
+Titles should tell about the variables.
+Subtitles give a key takeaway about the plot.
+Captions describe the source.
+Axis labels should look nice.
+
+Finish with each student posting a nice image to #class-work.
+
+Example script:
+
+```{r}
+library(tidyverse)
+library(primer.data)
+
+connectedness |> 
+  drop_na() |> 
+  ggplot(aes(x = population)) +
+    geom_histogram(bins = 100) +
+    scale_x_log10(labels = scales::comma_format()) +
+    labs(title = "US County Populations in 2018",
+         subtitle = "Populations are highly skewed",
+         x = "Population",
+         y = "Number of Counties",
+         caption = "Opportunity Insights")
+```
+
+## Other Questions
+
+What is the third biggest, by population, county in the US?
 
 What are the counties with the lowest connectedness? Why is that? Maybe ask chatGPT.
 
 
-## Extra Questions
-
-If a group is too far ahead, ask them to create a graphic which makes a histogram of county populations. Or a scatterplot of population versus connectedness.
 

@@ -82,13 +82,12 @@ This email is going out to all the students who have completed the first homewor
 
 1) Class today at 8:00 PM EST at 
 
-https://harvard.zoom.us/j/92188147735?pwd=STOd2TSKEm2hVcpygA9NvbnwoA4wIr.1
+
 
 Be early, not late. I will often shut the room at 8:01 and not allow anyone to attend late. Make sure that you have updated your Zoom client ahead of time.
 
 2) Login in to our Discord server at:
 
-https://discord.gg/GWPYn3pG
 
 We distribute class material on Discord, so you must use it.
 
@@ -108,42 +107,44 @@ The goal for the first part of the course is to get good enough at R/RStudio/Git
 
 ### Day 1
 
+Link for breakout rooms: https://tinyurl.com/4py8abtu 
+
+(Find the room which you have been assigned to. If you are not listed, stay in the main room with me.)
+
 Call me "Preceptor."
 
 No eight week course does a better job of increasing your odds of getting the future you want.
 
-Video on --- unless there is something going on in your life which prevents it. In which case, discuss with a TF.
+Video on --- unless there is something going on in your life which prevents it. In which case, discuss with your TF.
 
 Class always begins by looking at the Preceptor's Notes for the day, available here, in Discord.
 
-1) After today, we start on time, often by going to breakout rooms immediately. Let's go now! Introduce yourself to your fellow students with one sentence. TFs will try and swing by. Your room assignment is specified on the spreadsheet in the course #announcements channel on Discord.  
+1) After today, we start on time, often by going to breakout rooms immediately. Let's go now! Introduce yourself to your fellow students with one sentence.  
 
-2) Links to consider today:
+2) Link to consider today (was distributed earlier at #general)
 
-NYT article: https://www.nytimes.com/interactive/2022/08/01/upshot/rich-poor-friendships.html
-NYT article (pdf): https://github.com/PPBDS/primer.data/blob/master/data-raw/social_capital_nyt.pdf
+https://tinyurl.com/muafxp9u
 
+Over the last four decades, the financial circumstances into which children have been born have increasingly determined where they have ended up as adults. But an expansive new study, based on billions of social media connections, has uncovered a powerful exception to that pattern that helps explain why certain places offer a path out of poverty.
 
-3) Update this package now from the R Console.
+For poor children, living in an area where people have more friendships that cut across class lines significantly increases how much they earn in adulthood, the new research found.
 
-```
-remotes::install_github("PPBDS/tutorial.helpers")
-```
-
-This should be the last time you need to mess with this package.
-
-4) Submit the assignments or you will be removed from the class. Central metaphor of the class is Ulysses and the Sirens. There are several tutorials due on Wednesday before class. Skip any questions which give you trouble. Don't forget to answer the questions about your name, email and the number of minutes it took to complete the tutorial. 
-
-Use the default name for your HTML submissions, e.g., `rstudio-and-code_answers.html`
-
-5) Sign up for free version of chatGPT (https://chatgpt.com/), or the equivalent.
-
-6) It is always a good idea to reinstall the r4ds.tutorials package before you start a new tutorial. The reason is that we are fixing bugs as they are reported, but you only get those fixes if you reinstall:
+3) Update these packages now from the R Console.
 
 ```
-remotes::install_github("PPBDS/r4ds.tutorials")
+remotes::install_github("PPBDS/positron.tutorial")
+remotes::install_github("PPBDS/r4ds.tutorial")
 ```
 
+This should be the last time you need to mess with these packages.
+
+4) Submit the assignments or you will be removed from the class. Central metaphor of the class is Ulysses and the Sirens. There are several tutorials due on Tuesday at midnight. Skip any questions which gives you trouble. Don't forget to answer the questions about your name, email and the number of minutes it took to complete the tutorial. 
+
+Use the default name for your HTML submissions, e.g., `02-quarto_answers.html`
+
+5) Sign up for free version of chatGPT (https://chatgpt.com/) as well as other services.
+
+6) Thanks to Ansh Patel, Ali Ahmad, Naveed Ahmad, Annus Haider, Faisal Jan, Paramanyu Gupta, posh989, and others.
 
 ### Day 2
 
