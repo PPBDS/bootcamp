@@ -132,8 +132,8 @@ For poor children, living in an area where people have more friendships that cut
 3) Update these packages now from the R Console.
 
 ```
-remotes::install_github("PPBDS/positron.tutorial")
-remotes::install_github("PPBDS/r4ds.tutorial")
+remotes::install_github("PPBDS/positron.tutorials")
+remotes::install_github("PPBDS/r4ds.tutorials")
 ```
 
 This should be the last time you need to mess with these packages.
