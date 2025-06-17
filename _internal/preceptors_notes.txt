@@ -149,7 +149,7 @@ Use the default name for your HTML submissions, e.g., `02-quarto_answers.html`
 ### Day 2
 
 
-0) Big thanks to e_jesse for pointing out typos/errors in the tutorials. Much appreciated!
+0) Big thanks to YouSeeABee for pointing out typos/errors in the tutorials. Much appreciated!
 
 1) If possible, please change your Discord and Zoom display name to be the name which we should use in addressing you. We are a community! 
 

@@ -39,11 +39,11 @@ Introduction to the tools we use for doing data science.
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Introduction" (`00-introduction`) tutorial. 
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and Code" (`01-code`) tutorial. Make sure that you have already completed the "Introduction" tutorial above before you start the "Positron and Code" tutorial.
+* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and Code" (`01-code`) tutorial. Make sure that you have already completed the "Introduction" tutorial above before you start the "Positron and Code" tutorial.
 
 ## Wednesday
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and Quarto" (`02-quarto`) and "Terminal" (`03-terminal`) tutorials.
+* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and Quarto" (`02-quarto`) and "Terminal" (`03-terminal`) tutorials.
 
 * Read Chapters 1 - 3 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
 
@@ -55,7 +55,7 @@ Introduction to the tools we use for doing data science.
 
 Going forward, we recommend that you read the chapters in [*R for Data Science (2e)*](https://r4ds.hadley.nz/) associated with each tutorial we assign from the **r4ds.tutorials** package. However, we stop listing them explicitly.
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
+* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying`). 
 
@@ -68,7 +68,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial (`011-rubin-causal-model`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
+* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data import" (`07-data-import`) and "Layers" (`09-layers`) tutorials. 
 
@@ -76,7 +76,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * Read [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html) and complete the "Probability" tutorial (`021-probability`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
+* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) and "Communication" (`11-communication`) tutorials. 
 
@@ -84,7 +84,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * Read [Chapter 3 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial (`031-Sampling`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* From the [**positron.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
+* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
  
 * Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
 
@@ -102,7 +102,7 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 * From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "An introduction to tidycensus" (`02-introduction`) and "Wrangling Census data with Tidyverse tools" (`03-wrangling`) tutorials.  
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (`12-logical-vectors`) tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (``12-logical-vectors`) tutorial. 
 
 * Come to class with the url for at least one data source you will be using for your Data Project.
 
@@ -151,22 +151,20 @@ Renewed focus on models for inference.
 
 * Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* Read chapters 14, 15 and 16 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings," "Regular expressions" and "Factors" tutorials. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings" (`14-estrings`), "Regular expressions" (`15-regular-expressions`), and "Factors" (`16-factors`) tutorials. 
 
 ## Wednesday
 
 * Read [Chapter 8 Four Parameters: Categorical](https://ppbds.github.io/primer/four-parameters-categorical.html) and complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-* Read chapter 17 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Dates and times" tutorial.
-
-* Read chapter 18 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Missing values" tutorial.
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Dates and times" (`17-dates-and-times`) and "Missing values" (`18-missing-values`) tutorials.
 
 
 ## Thursday
 
 * Read [Chapter 9 Five Parameters](https://ppbds.github.io/primer/five-parameters.html) and complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-* Read chapter 19 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Joins" tutorial.
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Joins" (`19-joins`) tutorial.
 
 
 # Week 6: July 21
@@ -175,38 +173,37 @@ Renewed focus on models for inference.
 
 * Read [Chapter 10 N Parameters](https://ppbds.github.io/primer/n-parameters.html) and complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-* Read chapter 20 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Spreadsheets" tutorial.
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Spreadsheets" (`20-spreadsheets`) and "Databases" (`21-databases`) tutorials.
 
-* Read chapter 21 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Databases" tutorial.
+
 
 ## Wednesday
 
 * Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-* Read chapter 22 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Arrow" tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Arrow" (`22-arrow`) and "Hierarchical data" (`23-hierarchical-data`) tutorials. 
 
-* Read chapter 23 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Hierarchical data" tutorial. 
 
 ## Thursday
 
 * Complete the "Stops" tutorial (`131-stops`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-* Read chapter 24 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Web scraping" tutorial. 
+* Fom the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Web scraping" (`24-web-scraping`) tutorial. 
 
 
 # Week 7: July 28
 
 ## Monday
 
-* Read chapter 25 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Functions" tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Functions" (`25-functions`) tutorial. 
 
 ## Wednesday
 
-* Read chapter 26 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Iteration" tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Iteration" (`26-iteration`) tutorial. 
 
 ## Thursday 
 
-* Read chapter 27 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/) and, from the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "A field guide to base R" tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "A field guide to base R" (`27-a-field-guide-to-base-R`) tutorial. 
 
 # Week 8: August 4
 
