@@ -5,7 +5,7 @@ author: "David Kane"
 
 ## Goal
 
-Start with a Github repository, RStudio project and a new Quarto document. Publish a scatterplot of county size versus economic connectedness to Rpubs.
+Start with a Github repository, project and a new Quarto document. Publish a scatterplot of county size versus economic connectedness to Rpubs.
 
 ## Prep 
 

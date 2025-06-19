@@ -7,6 +7,24 @@ author: "David Kane"
 
 Explore the connectedness data from the primer.data package. Answer some questions. Students will have completed the Introduction and the 01-code tutorials, so they have been exposed to both ggplot2 and to the pipe and to R scripts. Make a histogram of county population. Share the plot in #class-work.
 
+New Positron project which includes a new Quarto document. Publish to #class-work channel a nice looking histogram of county population. 
+
+```{r}
+library(tidyverse)
+library(primer.data)
+
+connectedness |> 
+  drop_na() |> 
+  ggplot(aes(x = population)) +
+    geom_histogram(bins = 100) +
+    scale_x_log10(labels = scales::comma_format()) +
+    labs(title = "US County Populations in 2018",
+         subtitle = "Populations are highly skewed",
+         x = "Population",
+         y = "Number of Counties",
+         caption = "Opportunity Insights")
+```
+
 ## Session 1
 
 Go to the Preceptor's Notes. Talk through items 1 and 2. Finish with room assignments. Send them to those rooms to meet each other. Each person gives one sentence about themselves. 

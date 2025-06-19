@@ -1,3 +1,8 @@
+## Things to do when class is Over
+
+Change the id's in r4ds.tutorials so that they match the folder names, like 00-introduction because it is best if how you call the tutorial matches the default file name.
+
+
 ## Priorities for June Class
 
 Consider this as an example: https://www.nytimes.com/interactive/2025/06/05/us/politics/congress-age.html

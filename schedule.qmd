@@ -70,7 +70,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data import" (`07-data-import`) and "Layers" (`09-layers`) tutorials. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data import" (`07-data-import`) tutorial.
 
 ## Wednesday
 
@@ -78,7 +78,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) and "Communication" (`11-communication`) tutorials. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the and "Layers" (`09-layers`) tutorial. 
 
 ## Thursday 
 
@@ -86,7 +86,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
  
-* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
+* Read [Cardinal Virtues](https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html).
 
 # Week 3: June 30
 
@@ -102,7 +102,7 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 * From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "An introduction to tidycensus" (`02-introduction`) and "Wrangling Census data with Tidyverse tools" (`03-wrangling`) tutorials.  
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (``12-logical-vectors`) tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) tutorial. 
 
 * Come to class with the url for at least one data source you will be using for your Data Project.
 
@@ -120,20 +120,26 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 * Read [Chapter 6 Three Parameters: Causal](https://ppbds.github.io/primer/three-parameters-causal.html) and complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Numbers" (`13-numbers`) tutorial. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Communication" (`11-communication`) tutorial.  
 
 
 # Week 4: July 7
 
 The main focus on the 4th week is individual presentations of your Data Project. Do you love soccer or wine or NYC politics? The Data Project provides you with an opportunity to study that topic in depth. Your Data Project will be, for most of you, the first item in your professional portfolio, something so impressive that you will be eager to show it to graduate schools or potential employers.
 
+ 
+
 ## Monday 
 
 * From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Project" tutorial before class, or you will be removed the course. There are no extensions for this assignment.
 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (``12-logical-vectors`)  tutorial.  
+
 * You must have a draft of your final project, including a Quarto website and your paragraph introduction. 
 
 ## Wednesday 
+
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Numbers" (`13-numbers`) tutorial.  
 
 * Practice presentations and feedback. You must have your presentation ready to go! 
 
@@ -151,7 +157,7 @@ Renewed focus on models for inference.
 
 * Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings" (`14-estrings`), "Regular expressions" (`15-regular-expressions`), and "Factors" (`16-factors`) tutorials. 
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings" (`14-strings`), "Regular expressions" (`15-regular-expressions`), and "Factors" (`16-factors`) tutorials. 
 
 ## Wednesday
 

@@ -3,29 +3,33 @@ title: "Day 2"
 author: "David Kane"
 ---
 
-
 ## Goal
 
-New Positron project which includes a new Quarto document. Publish to #class-work channel a nice looking histogram of county population. 
+New Positron project which includes a new Quarto document. Publish to #class-work channel a nice looking scatterplot.
 
 ```{r}
+#| echo: false
+#| warning: false
+
 library(tidyverse)
 library(primer.data)
 
 connectedness |> 
   drop_na() |> 
-  ggplot(aes(x = population)) +
-    geom_histogram(bins = 100) +
+  ggplot(aes(x = population, y = connectedness)) +
+    geom_point() +
+    geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
     scale_x_log10(labels = scales::comma_format()) +
-    labs(title = "US County Populations in 2018",
-         subtitle = "Populations are highly skewed",
+    labs(title = "US County Populations versus Economic Connectedness",
+         subtitle = "Population size does not matter to EC",
          x = "Population",
-         y = "Number of Counties",
+         y = "Economic Connectedness",
          caption = "Opportunity Insights")
 ```
 
-
 ## Session 1
+
+Review Preceptor's Note.
 
 Send students to breakout rooms right away. They need to get used to starting on time. Two questions: 
 
@@ -39,9 +43,9 @@ Don't dawdle! Three minutes at most.
 
 Cold call: Tell me what your group discussed about the two questions.
 
-Start by making an R project. Note how it, by default, is placed in my `projects` folder. Note that all this only makes sense if you have done the "RStudio and Code" tutorial.
+Start by making a project. Note how it, by default, is placed in my `projects` folder. Note that all this only makes sense if you have done the "01-code" tutorial.
 
-Look in the Files tab. Talk about the two things that are there. Show the hidden files button. Mention that this was set by set_rstudio_settings(). Mention trickiness with Posit Cloud.
+Review Positron window.
 
 Also, make sure that typing library(primer.data) at the Console works for everyone in your room.
 
@@ -88,7 +92,6 @@ Things that are likely to be tricky:
 
 Don't tell them these tricks! Make them figure it out themselves! chatGPT is amazing!
 
-
 ## Session 6
 
 Try to call them in when they have the whole plot done, but perhaps without some details.
@@ -102,18 +105,17 @@ Edit my document to include the answer.
 Code call: What gave your group the most problems?
 
 Show how my plot solves those problems.
+ 
 
-Publish the plot on Rpubs. Make sure the slug is cool. No need to add a description. Post a url link to #class-work. 
-
-Goal: Ensure that everyone in the group posts a link. But, once you get to that stage, make your plot better than mine. You can always re-publish!
+Goal: Ensure that everyone in the group posts a graphic. But, once you get to that stage, make your plot better than mine. You can always re-publish! Ask AI for suggestions.
 
 ## Extra Questions
 
-Most important thing is that everyone in a breakout room gets to publish. Leave no student behind! But, if the whole group has posted a url in #class-work, then, by all means, challenge them to do more.
+Most important thing is that everyone in a breakout room gets to publish. Leave no student behind! But, if the whole group has posted a graphic in #class-work, then, by all means, challenge them to do more.
 
-Consider removing the author and the title of Quarto document and publishing again. Looks better.
+Font seems tough to read. Are there recommendations for text sizes on web images that we might follow? Ask AI!
 
-Font seems tough to read. Are there recommendations for text sizes on web images that we might follow? chatGPT
+Restrict the plot to your five favorite states, then facet by state.
 
-Restrict the plot to your five favorite states, then facet by state
+What does the plot mean?
 
