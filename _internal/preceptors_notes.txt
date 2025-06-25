@@ -264,24 +264,23 @@ Removing file(s) '05-github-2_answers - Junaid(1).html' due to missing key varia
 
 ### Day 5
 
+0) Homework for Thursday:
+
+Read Chapter 3 Sampling and complete the “Sampling” tutorial (031-Sampling) from the primer.tutorials package.
+
+From the positron.tutorials package, complete the “Quarto Websites Advanced” (07-websites-2) tutorial.
+
+Read Cardinal Virtues.
+
 1) Uhappy with your Zoom room? No worries! Not all students work well together. Email Navya and your TF together and they will adjust for Thursday.
 
-2) Thanks to everyone ( and others) for asking/answering questions on Discord. Much appreciated!
+2) Thanks to everyone (Naveed Ahmad, Paramanyu Gupta, Hassan Ali, Rashid, Ansh Patel and others) for asking/answering questions on Discord. Much appreciated!
 
-3) "not trying to be grammar police just wanted to let you know" We need the grammar police! Thanks to everyone for pointing out errors in the tutorials. 
+3) Let's learn how to fork a repo: 
 
-4) "Nvm I figured it out" Tell us what you figured out! Whenever you, after asking a question on Discord, figure something out, please edit/update your question with the correct answer.
+https://github.com/bootcamp-2025-06/nyc-census-tracts
 
-5) "You can't copy text. but the way i did it was to take a screenshot and have gpt format the arguments for me." Yes!!! Use Ai every chance you get, anyway you can.
-
-
-8) Let's learn how to delete a repo. Keep your Github account clean.
-
-9) Let's learn how to fork a repo: 
-
-https://github.com/Bootcamp-June-2024/nyc-census-tracts
-
-Connect this to a new project. Data science work often begins with a fork like this. 
+For it. Connect this it to a new project. Data science work often begins with a fork like this. 
 
 
 

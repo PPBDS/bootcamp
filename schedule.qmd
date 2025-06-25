@@ -86,7 +86,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
  
-* Read [Cardinal Virtues](https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html).
+* Read about the [Cardinal Virtues](https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html).
 
 # Week 3: June 30
 
@@ -96,7 +96,7 @@ Identify the data which you will use for your Data Project. The U.S. Census is a
 
 Note that chapters 4 and higher from the *Primer* are a mess, using packages/functions which we no longer recommend. We are re-writing the *Primer* this summer. In the meantime, don't feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.
 
-* Read [Chapter 4 Models](https://ppbds.github.io/primer/models.html) and complete the "Models" tutorial (`041-Models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Complete the "Models" tutorial (`041-Models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * Read chapters 1 -- 3 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. 
 
@@ -109,7 +109,7 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 ## Wednesday
 
-* Read [Chapter 5 Two Parameters](https://ppbds.github.io/primer/two-parameters.html) and complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * Read chapters 4 and 5 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. 
 
@@ -118,7 +118,7 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 ## Thursday 
 
-* Read [Chapter 6 Three Parameters: Causal](https://ppbds.github.io/primer/three-parameters-causal.html) and complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Communication" (`11-communication`) tutorial.  
 
@@ -153,22 +153,20 @@ Renewed focus on models for inference.
 
 ## Monday
 
-* Read [Cardinal Virtues](https://ppbds.github.io/primer/cardinal-virtues.html).
-
-* Read [Chapter 7 Mechanics](https://ppbds.github.io/primer/mechanics.html) and complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings" (`14-strings`), "Regular expressions" (`15-regular-expressions`), and "Factors" (`16-factors`) tutorials. 
 
 ## Wednesday
 
-* Read [Chapter 8 Four Parameters: Categorical](https://ppbds.github.io/primer/four-parameters-categorical.html) and complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Dates and times" (`17-dates-and-times`) and "Missing values" (`18-missing-values`) tutorials.
 
 
 ## Thursday
 
-* Read [Chapter 9 Five Parameters](https://ppbds.github.io/primer/five-parameters.html) and complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Joins" (`19-joins`) tutorial.
 
@@ -177,11 +175,9 @@ Renewed focus on models for inference.
 
 ## Monday
 
-* Read [Chapter 10 N Parameters](https://ppbds.github.io/primer/n-parameters.html) and complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
 * From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Spreadsheets" (`20-spreadsheets`) and "Databases" (`21-databases`) tutorials.
-
-
 
 ## Wednesday
 

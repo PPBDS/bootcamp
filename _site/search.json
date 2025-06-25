@@ -242,28 +242,28 @@
     "href": "schedule.html#thursday-1",
     "title": "Schedule",
     "section": "Thursday",
-    "text": "Thursday\n\nRead Chapter 3 Sampling and complete the “Sampling” tutorial (031-Sampling) from the primer.tutorials package.\nFrom the positron.tutorials package, complete the “Quarto Websites Advanced” (07-websites-2) tutorial.\nRead Cardinal Virtues."
+    "text": "Thursday\n\nRead Chapter 3 Sampling and complete the “Sampling” tutorial (031-Sampling) from the primer.tutorials package.\nFrom the positron.tutorials package, complete the “Quarto Websites Advanced” (07-websites-2) tutorial.\nRead about the Cardinal Virtues."
   },
   {
     "objectID": "schedule.html#monday-2",
     "href": "schedule.html#monday-2",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\nNote that chapters 4 and higher from the Primer are a mess, using packages/functions which we no longer recommend. We are re-writing the Primer this summer. In the meantime, don’t feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.\n\nRead Chapter 4 Models and complete the “Models” tutorial (041-Models) from the primer.tutorials package.\nRead chapters 1 – 3 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “An introduction to tidycensus” (02-introduction) and “Wrangling Census data with Tidyverse tools” (03-wrangling) tutorials.\nFrom the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) tutorial.\nCome to class with the url for at least one data source you will be using for your Data Project."
+    "text": "Monday\nNote that chapters 4 and higher from the Primer are a mess, using packages/functions which we no longer recommend. We are re-writing the Primer this summer. In the meantime, don’t feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.\n\nComplete the “Models” tutorial (041-Models) from the primer.tutorials package.\nRead chapters 1 – 3 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “An introduction to tidycensus” (02-introduction) and “Wrangling Census data with Tidyverse tools” (03-wrangling) tutorials.\nFrom the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) tutorial.\nCome to class with the url for at least one data source you will be using for your Data Project."
   },
   {
     "objectID": "schedule.html#wednesday-2",
     "href": "schedule.html#wednesday-2",
     "title": "Schedule",
     "section": "Wednesday",
-    "text": "Wednesday\n\nRead Chapter 5 Two Parameters and complete the “Two Parameters” tutorial (051-two-parameters) from the primer.tutorials package.\nRead chapters 4 and 5 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “Exploring US Census data with visualization” (04-exploring) and “Census geographic data and applications in R” (05-geographic) tutorials."
+    "text": "Wednesday\n\nComplete the “Two Parameters” tutorial (051-two-parameters) from the primer.tutorials package.\nRead chapters 4 and 5 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “Exploring US Census data with visualization” (04-exploring) and “Census geographic data and applications in R” (05-geographic) tutorials."
   },
   {
     "objectID": "schedule.html#thursday-2",
     "href": "schedule.html#thursday-2",
     "title": "Schedule",
     "section": "Thursday",
-    "text": "Thursday\n\nRead Chapter 6 Three Parameters: Causal and complete the “Three Parameters: Causal” tutorial (061-three-parameters-causal) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Communication” (11-communication) tutorial."
+    "text": "Thursday\n\nComplete the “Three Parameters: Causal” tutorial (061-three-parameters-causal) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Communication” (11-communication) tutorial."
   },
   {
     "objectID": "schedule.html#monday-3",
@@ -291,28 +291,28 @@
     "href": "schedule.html#monday-4",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\n\nRead Cardinal Virtues.\nRead Chapter 7 Mechanics and complete the “Mechanics” tutorial (071-mechanics) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Strings” (14-strings), “Regular expressions” (15-regular-expressions), and “Factors” (16-factors) tutorials."
+    "text": "Monday\n\nComplete the “Mechanics” tutorial (071-mechanics) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Strings” (14-strings), “Regular expressions” (15-regular-expressions), and “Factors” (16-factors) tutorials."
   },
   {
     "objectID": "schedule.html#wednesday-4",
     "href": "schedule.html#wednesday-4",
     "title": "Schedule",
     "section": "Wednesday",
-    "text": "Wednesday\n\nRead Chapter 8 Four Parameters: Categorical and complete the “Four Parameters: Categorical” tutorial (081-four-parameters-categorical) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Dates and times” (17-dates-and-times) and “Missing values” (18-missing-values) tutorials."
+    "text": "Wednesday\n\nComplete the “Four Parameters: Categorical” tutorial (081-four-parameters-categorical) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Dates and times” (17-dates-and-times) and “Missing values” (18-missing-values) tutorials."
   },
   {
     "objectID": "schedule.html#thursday-4",
     "href": "schedule.html#thursday-4",
     "title": "Schedule",
     "section": "Thursday",
-    "text": "Thursday\n\nRead Chapter 9 Five Parameters and complete the “Five Parameters” tutorial (091-five-parameters) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Joins” (19-joins) tutorial."
+    "text": "Thursday\n\nComplete the “Five Parameters” tutorial (091-five-parameters) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Joins” (19-joins) tutorial."
   },
   {
     "objectID": "schedule.html#monday-5",
     "href": "schedule.html#monday-5",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\n\nRead Chapter 10 N Parameters and complete the “N Parameters” tutorial (101-n-parameters) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Spreadsheets” (20-spreadsheets) and “Databases” (21-databases) tutorials."
+    "text": "Monday\n\nComplete the “N Parameters” tutorial (101-n-parameters) from the primer.tutorials package.\nFrom the r4ds.tutorials package, complete the “Spreadsheets” (20-spreadsheets) and “Databases” (21-databases) tutorials."
   },
   {
     "objectID": "schedule.html#wednesday-5",
