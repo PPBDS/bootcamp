@@ -266,7 +266,7 @@ Removing file(s) '05-github-2_answers - Junaid(1).html' due to missing key varia
 
 0) Homework for Thursday:
 
-Read Chapter 3 Sampling and complete the “Sampling” tutorial (031-Sampling) from the primer.tutorials package.
+Read Chapter 3 Sampling and complete the “Sampling” tutorial (031-sampling) from the primer.tutorials package. (This is the last chapter you should read in the Primer.)
 
 From the positron.tutorials package, complete the “Quarto Websites Advanced” (07-websites-2) tutorial.
 
@@ -278,11 +278,17 @@ Read Cardinal Virtues.
 
 3) Let's learn how to fork a repo: 
 
-https://github.com/bootcamp-2025-06/nyc-census-tracts
+https://github.com/bootcamp-2025-06/nyc-census-tracts-to-fork
 
-For it. Connect this it to a new project. Data science work often begins with a fork like this. 
+Fork it. Connect this it to a new project. Data science work often begins with a fork like this. 
 
+4) Let's explore some of final projects from previous years: https://bootcamp.davidkane.info/projects.html Take a look with your breakout room.
 
+5) Come to class tomorrow with some thoughts on what you want to do your project on and where you will get the data for it.
+
+6) "Hey my problem got resolved." Tell us how!
+
+7) "Would it be okay if I didn’t come to class tonight and just completed all due homework (that of tonight and for tomorrow) by Thursday?" Always YES! Just ask your TFs, while cc'ing Navya.
 
 ### Day 6
 
@@ -315,9 +321,7 @@ Breakout Rooms: https://shorturl.at/La73d
 
 0) Enter your data project topic and at least one url with relevant data now: https://shorturl.at/WEA6C
 
-1) Thanks to everyone (Adhi and Alan Cai (amazing patience from both!), Aedan, Rajeev, Grant Quattlebaum, Ronit Dash, John Menzies, Deepak, alex, gsheth, and others) for asking/answering questions on Discord. Much appreciated! Also, thanks to everyone for pointing out errors in the tutorials. 
-
-2) Kushagra Singh, Ronit Dash, Sharav Joshi: Please follow the instructions: https://discord.com/channels/1066524559240597595/1247676325880402045/1251707786602090506
+1) Thanks to everyone (XX and others) for asking/answering questions on Discord. Much appreciated! Also, thanks to everyone for pointing out errors in the tutorials. 
 
 3) Want to do a data science apprenticeship with me this summer? You now have enough background to do so, starting either now (while you take the course) or after the course ends. More details: https://davidkane.substack.com/p/data-science-apprenticeships. This is only open to people with 30+ hours per week available -- in addition to the 10 you already spend in the course. Email me to discuss. Luit, Anish and Tongyan worked with me last summer. Feel free to ask them about the experience.
 

@@ -82,7 +82,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 ## Thursday 
 
-* Read [Chapter 3 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial (`031-Sampling`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Read [Chapter 3 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial (`031-sampling`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
  
@@ -96,7 +96,7 @@ Identify the data which you will use for your Data Project. The U.S. Census is a
 
 Note that chapters 4 and higher from the *Primer* are a mess, using packages/functions which we no longer recommend. We are re-writing the *Primer* this summer. In the meantime, don't feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.
 
-* Complete the "Models" tutorial (`041-Models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Complete the "Models" tutorial (`041-models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
 * Read chapters 1 -- 3 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. 
 

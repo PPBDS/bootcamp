@@ -242,14 +242,14 @@
     "href": "schedule.html#thursday-1",
     "title": "Schedule",
     "section": "Thursday",
-    "text": "Thursday\n\nRead Chapter 3 Sampling and complete the “Sampling” tutorial (031-Sampling) from the primer.tutorials package.\nFrom the positron.tutorials package, complete the “Quarto Websites Advanced” (07-websites-2) tutorial.\nRead about the Cardinal Virtues."
+    "text": "Thursday\n\nRead Chapter 3 Sampling and complete the “Sampling” tutorial (031-sampling) from the primer.tutorials package.\nFrom the positron.tutorials package, complete the “Quarto Websites Advanced” (07-websites-2) tutorial.\nRead about the Cardinal Virtues."
   },
   {
     "objectID": "schedule.html#monday-2",
     "href": "schedule.html#monday-2",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\nNote that chapters 4 and higher from the Primer are a mess, using packages/functions which we no longer recommend. We are re-writing the Primer this summer. In the meantime, don’t feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.\n\nComplete the “Models” tutorial (041-Models) from the primer.tutorials package.\nRead chapters 1 – 3 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “An introduction to tidycensus” (02-introduction) and “Wrangling Census data with Tidyverse tools” (03-wrangling) tutorials.\nFrom the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) tutorial.\nCome to class with the url for at least one data source you will be using for your Data Project."
+    "text": "Monday\nNote that chapters 4 and higher from the Primer are a mess, using packages/functions which we no longer recommend. We are re-writing the Primer this summer. In the meantime, don’t feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.\n\nComplete the “Models” tutorial (041-models) from the primer.tutorials package.\nRead chapters 1 – 3 from from Analyzing US Census Data: Methods, Maps, and Models in R by Kyle Walker.\nFrom the tidycensus.tutorials package, complete the “An introduction to tidycensus” (02-introduction) and “Wrangling Census data with Tidyverse tools” (03-wrangling) tutorials.\nFrom the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) tutorial.\nCome to class with the url for at least one data source you will be using for your Data Project."
   },
   {
     "objectID": "schedule.html#wednesday-2",

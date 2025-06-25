@@ -1,80 +1,133 @@
 ---
 title: "Day 6"
+author: "David Kane"
 ---
 
 ## Goal
 
-Work with and understand Massachusetts Census tracks data. Make a simpler plot. This will become Day 5 next time, although with NYC data probably.
+Make another website, this time from scratch.
+
+
+You are data scientists! How do you start a project? Github -> Project -> Download the data into the `data` directory -> Start a Quarto document -> Load the data.
+
+Of course, you have done this before. But we need to practice this procedure a dozen more times before the class is over. Practice makes perfect.
+
+
+Distribute a survey, getting background information on students and some opinions.
+
+TFs: More and more the flow of class will be:
+
+  * I tell students to do X and send them to the rooms, mostly without showing them X.
+  * I bring them back and cold-call a students to describe what they did.
+  * I then (often quickly) show them what they should have done.
+  * I tell them to do Y and send them back to the rooms.
+  
+Your key role is occurs at this point. You might be tempted to help them with Y. After all, I just told them to do Y. They are confused! They need your help! Ignore the urge to help them with Y until you ensure that everyone in the group has X done correctly. That is most important. Leave no student behind! 
+
+Once everyone is caught up with X, let them try to work on Y on their own. If they complete Y before being called back by me, you should challenge them to do more. (You can always remind them to commit and push their work.) 
+
+
+The plot we are making:
+
+```{r}
+#| label: plot
+
+library(tidyverse)
+library(ggbeeswarm)
+
+x <- read_csv("data/nyc_tracts.csv", show_col_types = FALSE)
+
+
+x |> 
+  drop_na() |> 
+  ggplot(aes(y = med_income, x = race, color = med_income)) +
+  geom_quasirandom(alpha = 0.5) + 
+  coord_flip() + 
+  theme_minimal(base_size = 13) + 
+  scale_color_viridis_c(guide = "none") + 
+  scale_y_continuous(labels = scales::label_dollar()) + 
+  labs(x = "Largest group in Census tract", 
+       y = "Median household income", 
+       title = "Household income distribution by largest racial/ethnic group", 
+       subtitle = "Census tracts, New York City", 
+       caption = "Data source: 2018-2022 ACS")
+  
+```
+
 
 ## Session 1
 
-You are data scientists! How do you start a project? Github -> RStudio Project -> Download the data into the `data` directory -> Start a Quarto document -> Load the data.
+Talk about Github. Give a tour. Start at https://github.com/ (and are logged in), you get one view of your account. To get a better view, you need your account name, like: https://github.com/davidkane9. And there is the repo view: https://github.com/davidkane9?tab=repositories
 
-Of course, you have done this several times already. But we need to practice this procedure a dozen more times before the class is over. Practice makes perfect.
+Find a repo to delete. (Make sure that there is one there!) Show how to delete.
+
+We don't keep all the repos we make. 
+
+Send to breakout rooms to delete repo from Day 3.
 
 ## Session 2
 
-Cold call: Walk me through the initial stages.
+Cold call: Did everyone in your group delete the repo?
+
+Go to repo which is like the one from Monday:
+
+https://github.com/Bootcamp-June-2024/nyc-census-tracts
+
+Fork it. Connect the forked repo to a new R project on your computer. Send the breakout rooms so that students get started quickly on this work. They should:
+
+Instructions to put in #class-work:
+
+1) Delete one of last week's repos from your Github account.
+2) Delete the corresponding project from your computer.
+3) Fork and connect, and start loading up the data.
 
 ## Session 3
 
-Cold call: Finish up the initial steps.
+Cold call: Did everyone remember to delete the project from your computer?
 
-Did you edit the .gitignore? Including the _files? Did you push to Github? 
+Start a Quarto document. Read in the data. Assign to an object `x`.
 
-Make sure that everyone in your group has done this.
+Render the document. No ugly warnings. I won't show them this, but it is what we are looking for.
+
+```{r}
+#| echo: false
+#| label: setup
+library(tidyverse)
+
+x <- read_csv("data/nyc_tracts.csv", show_col_types = FALSE)
+```
+
 
 ## Session 4
 
-Let's take a closer look at the data. (We should have done this yesterday.)
+Cold call: What did your group do?
 
-What are some commands to look at a new data set? How about print(), summary(), slice_sample(n = 5), tail()? Maybe skimr::skim?
+Get x working.
 
-What about doing these calculations for each group separately?
+Cold call: What should I do to explore x?
 
-What do the words in tract mean? How many counties are there in Massachusetts? Do we have data from all of them?
+Recall the difference between Console World and QMD World.
+
+Instructions: Start to create the plot. Use a new code chunk.
 
 ## Session 5
 
-Cold call: What did you group do?
+Cold call: Did anyone in your group use chatGPT. Why not?
 
-Make a plot. Don't make it the same as yesterday! Do something different. How about overlapping density plots? Maybe a box-plot by race? Maybe a plot which shows a bar plot with the standard deviation for each race? Maybe a histogram of med_income, faceted by race? 
+Cold call: What did your group type?
 
-```{r}
-#| message: false
-#| echo: false
-#| label: setup
-
-library(tidyverse)
-
-x <- read_csv("~/Downloads/mass-tracts.csv", show_col_types = FALSE)
-```
-
-```{r}
-x |> 
-  mutate(race = factor(race, levels = c("Hispanic", "Black", 
-                                         "Asian", "White"))) |> 
-  ggplot(aes(x = med_income, fill = race)) +
-    geom_density(alpha = 0.5, adjust = 2) +
-    theme_minimal() +
-    scale_x_continuous(labels = scales::dollar_format()) +
-    theme(axis.text.y = element_blank()) +
-    labs(title = "Median Income for Massachusetts Census Tracts",
-         subtitle = "The richest tracts are White",
-         x = "Median Income",
-         y = NULL,
-         fill = "Race",
-         caption = "The race of each tract is determined by the most numerous racial group\n present in that tract. Data from the American Community Survey 2022.")
-```
-
-
+Cold call: Have you checked in your work to Github? Why not?
 
 ## Session 6
 
-Cold call: How are things going?
+Finish the plot. Publish to Rpubs. Post link in #class-work.
 
-## Session 7
+## Extra Stuff
 
-Publish the plot to Rpubs. Looks OK. But it is a little ugly to have the title and, maybe the author, edit the YAML to remove. Re-publish. Add link to class-work.
+Explain the distinction between just vomiting output right into the document (as we do here) and first assigning it to an object and then printing that output. Neither approach is always right! But, in general, we use the first approach when creating our plots. It is so handy!
+
+If there is time, consider assiging the plot to an object and then printing that object. If there is a lot of time (there won't be), consider saving the plot to permanent object and then loading that object. Note the Git implications of this approach. Mention that a script would be the natural tool for this approach, and that is especially useful if the plot takes a long time to build.
+
+
 
 
