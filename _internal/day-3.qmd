@@ -5,13 +5,13 @@ author: "David Kane"
 
 ## Goal
 
-Start with a Github repository, project and a new Quarto document. Publish a scatterplot of county size versus economic connectedness to Rpubs.
+Start with a Github repository, project and a new Quarto document. Publish the two plots from Monday/Wednesday. And some other plots, for fast moving students.
 
 ## Prep 
 
-Put plot in #course-work. 
+Go to your Github organization account for this class session. Have that webpage already on your browser. Note that it looks different from a personal account.
 
-Go to your Github organization account for this class session. Have that webpage already on your browser. Note that it looks different for a personal account.
+
 
 ```{r}
 #| echo: false
@@ -19,6 +19,17 @@ Go to your Github organization account for this class session. Have that webpage
 
 library(tidyverse)
 library(primer.data)
+
+connectedness |> 
+  drop_na() |> 
+  ggplot(aes(x = population)) +
+    geom_histogram(bins = 100) +
+    scale_x_log10(labels = scales::comma_format()) +
+    labs(title = "US County Populations in 2018",
+         subtitle = "Populations are highly skewed",
+         x = "Population",
+         y = "Number of Counties",
+         caption = "Opportunity Insights")
 
 connectedness |> 
   drop_na() |> 
@@ -36,58 +47,49 @@ connectedness |>
 
 ## Session 1
 
-Start with a Github repo, named class-yyyy-mm-dd. Make sure it is public. Add a README. Connect it to RStudio.  
+Start with a Github repo, named class-yyyy-mm-dd. Make sure it is public. Add a README. Connect it to Positron.  
 
 Send to rooms to create. If you succeeded while I was demonstrating, that is OK! Now help your classmates.
 
-If you have not done the RStudio and Github homework, then this will be really hard. And it is not fair to your classmates! Either catch up this weekend or don't come back on Monday.
+If you have not done the Positron and Github homework, then this will be really hard. And it is not fair to your classmates! Either catch up this weekend or don't come back on Monday.
 
 ## Session 2
 
-Explore files pane. 
+Click on Explorer.
 
-Check out the Git pane.
+Click on Source Control.
 
-Take a look at the .gitignore file.
+Edit the README. Save it. Check Source Control. Commit the README. 
 
-Add the .Rproj file to the .gitignore. Save it. Note how that cleans up the Git pane. 
+Check the website. Where is your change? You need to push it. 
 
-Check in your change to the .gitignore. Add a message.
+Sync it. Your computer is now fully backed up on the cloud. 
 
-Edit the README. Save it. Check the Git pane. Add the README. Check it in.
-
-Check the website. Where is your change? You need to push it.
-
-Your computer is now fully backed up on the cloud. 
-
-To the rooms to make sure everyone can do this. Extra time? Start work on the plot.
+To the rooms to make sure everyone can do this. Extra time? Start on the Quarto document.
 
 ## Session 3
 
 Cold call: Did everyone on your team get this working?
 
-Start a Quarto document, called ec.Rmd. Render to confirm that everything works. Remove the junk. Render.
+Start a Quarto document, called ec.Rmd. Render to confirm that everything works. 
 
-Check the Git pane. Changes! Add ec_files to the .gitignore. Add the qmd and the html. Commit and push. See the new files on the web.
+Check Source Control. Changes! Create a .gitignore. Add `ec_files` to the .gitignore. Commmit the qmd and the html. Commit and sync. See the new files on the web.
 
 Add code chunk with library(tidyverse) and library(primer.data). Render. Annoying messages! 
 
 Add appropriate options. Don't like messages or code.
 
-
 ## Session 4
 
 Cold call: Did everyone on your team get this working?
 
-Create a new code chunk. Start working on your plot. Keep an eye on the difference between QMD World and Console World. 
+Create a new code chunk. Start working on your plots. Keep an eye on the difference between QMD World and Console World. 
 
 Cycle back-and-forth to breakout rooms, making progress on the plot. Cold call each time.
 
 ## Session Last
 
-Don't forget rsconnect in .gitignore!
-
-Publish the plot to rpubs. Looks OK. But it is a little ugly to have the title and, maybe the author, edit the YAML to remove. Re-publish. Add link to class-work. Update .gitignore for rsconnect. Push everything.
+Publish the plot to GitHub Pages. Looks OK. But it is a little ugly to have the title and, maybe the author, edit the YAML to remove. Re-publish. Add link to class-work. Commit/sync everything.
 
 Now we are ready to do data science!
 

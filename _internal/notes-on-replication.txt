@@ -1,0 +1,10 @@
+This document provides some notes about performing the replication of an academic article.
+
+
+
+https://www.aeaweb.org/journals
+https://github.com/davidkane9/Gov-1006-Papers-Spring-2020
+
+
+https://gking.harvard.edu/files/abs/paperspub-abs.shtml
+https://gking.harvard.edu/papers

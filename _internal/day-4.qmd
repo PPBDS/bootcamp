@@ -9,9 +9,9 @@ Make sure to practice the exact download procedure so that the file goes to the 
 
 Key question to answer this week: What is the relationship between the plurality race of NYC census tracts and their median incomes?
 
-Core purpose of this week is to get comfortable using our tools to answer simple data science questions. We want students to be comfortable with R/RStudio/Git/Github/Quarto. 
+Core purpose of this week is to get comfortable using our tools to answer simple data science questions. We want students to be comfortable with R/Positron/Quarto/Git/Github. 
 
-For today, we are getting more comfortable with the Terminal and with file locations on our machines. Keep in mind that environment variables in Windows are surrounded with %. That is, $R_HOME on Mac is %R_HOME% on Windows. Also, backward slash on Windows (forward slash on Mac) for directory separators on the path.
+For today, we are getting more comfortable with the Terminal and with file locations on our machines. Check that all your students are using a Unix-alike command line. If not, point them to: https://ppbds.github.io/primer/getting-started-with-positron.html#the-terminal
 
 By end of class, we should have the data downloaded. If we have time, we might start playing around with the data in Quarto. 
 
@@ -23,15 +23,17 @@ Final class does another data download and plot all in 60 minutes.
 
 Don't forget to do things in the class organization repo, not your personal one.
 
-Start with a Github repo, named class-yyyy-mm-dd. Make sure it is public. Add a README. Connect it to RStudio.  
+Start with a Github repo, named class-yyyy-mm-dd. Make sure it is public. Add a README. Connect it to Positron.  
 
 ## Session 2
 
 Cold call: Did everyone in your group succeed? Did you go on to start working on the data? Read the Preceptor's Notes!
 
-Check out the Git window. Note the nagging. 
+Check out the Source Control window. Note that there is no nagging. 
 
-Edit the .gitignore but with *Rproj. Wild cards are handy! Note that the file name is red and has an asterisk, because we have not saved it. Show how nothing changes in the Git window until we save the file. Once we save it, the nagging about the Rproj ends, but we still need to commit .gitignore. Then we push.
+Create an empty .gitignore. Save it. Note the nagging.
+
+Edit the README. Note the 
 
 Send to rooms to clean up. If you succeeded while I was demonstrating, that is OK! Now help your classmates.
 

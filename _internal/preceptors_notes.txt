@@ -182,6 +182,8 @@ STUDENTS WHO DON'T SUBMIT AT LEAST 04-github-1 BEFORE 7:00 PM TOMORROW WON'T BE 
 
 ### Day 3
 
+Next year: Install primer.data together. Then, install primer.tutorials. Show options download time trick.
+
 1) Homework due Monday (updated!):
 
 * Read Chapter 1 Rubin Causal Model and complete the “Rubin Causal Model” tutorial (011-rubin-causal-model) from the primer.tutorials package. THIS IS REALLY GOOD!
@@ -215,9 +217,11 @@ Monday: Get the data downloaded and placed in a data directory.
 
 Wednesday: Fork the repo from Monday, read in the data. Explore and understand the data. Maybe make some rough plots.
 
-Thursday: Use the same project as Wednesday. Make a nice plot. Publish it to Rpubs.
+Thursday: Use the same project as Wednesday. Make a nice plot. Publish it.
 
 See the daily scripts for more details. Key things this week are getting comfortable with rendering qmd, using Git/Github and then publishing the page to the web. 
+
+Review RCM and probability.
 
 
 ### Day 4
@@ -226,37 +230,43 @@ Call me "Preceptor."
 
 No eight week course does a better job of increasing your odds of getting the future you want.
 
-0) Tell your TF and Tejas (not me) if you will be missing a class, need an extension on the assignments and so on. They are nice people! They will always say "Yes," but you need to tell/ask them.
+0) Tell your TF and Navya (not me) if you will be missing a class, need an extension on the assignments and so on. They are nice people! They will always say "Yes," but you need to tell/ask them.
 
-1) Big thanks to those (including Yesmine, Sophia Y, meow, Joshua, Nick, Natalie and others) pointing our typos and errors in the tutorials, and to those helping out their classmates. Much appreciated.
+1) Big thanks to those (including Abdul Hannan, Yasir Khan, Muhammad Numan, **Hassan Ali**, Naveed Ahmad and others) pointing our typos and errors in the tutorials, and to those helping out their classmates. Much appreciated!
 
-2) New version of tutorial.tidycensus is available. Install it now:
+2) Homework for Wednesday:
 
-install_github("PPBDS/r4ds.tutorials")
+  * Read Chapter 2 Probability and complete the “Probability” tutorial (021-probability) from the primer.tutorials package.
 
-3) Whenever starting a new R4DS tutorial, please:
+  * From the positron.tutorials package, complete the “Quarto Websites Introduction” (06-websites-1) tutorial.
 
-install_github("PPBDS/r4ds.tutorials")
+  * From the r4ds.tutorials package, complete the and “Layers” (09-layers) tutorial.
 
-Do it now! (Never hurts.) And restart R with Command-shift-0. Note that this is zero not the letter O.
+3) Before you start a new Primer tutorial, run:
 
-3) Key goal today is to practice some of the techniques you learned in the Terminal tutorial. You completed that right . . .
+remotes::install_github("PPBDS/primer.tutorials")
 
-4) File we will be using:
+The other packages are stable and don't need to be reinstalled.
+
+4) Key goal today is to practice some of the techniques you learned in the Terminal tutorial. You completed that right . . .
+
+5) File we will be using:
 
 https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv 
 
-5) This is sloppy. Stop doing it:
+6) This is sloppy. Stop doing it:
 
-Removing file(s) 'data-import_answers - aditya raut - Aditya Raut.html', 'data-import_answers - astrxr.html', 'data-import_answers - Ethan Koshy.html', 'data-tidying_answers - Ethan Koshy.html', 'data-tidying_answers - kushal kanuparthi.html', 'terminal_answers - Ivy S.html', 'terminal_answers - Kushagra Singh.html', 'terminal_answers - kushal kanuparthi.html', 'terminal_answers - Phanithan K(1).html' due to missing key variables.
+Removing file(s) '05-github-2_answers - Junaid(1).html' due to missing key variables. Removing file(s) 'data-import_answers - Junaid(1).html' due to missing key variables. Removing file(s) 'rubin-causal-model_answers - Muhammad Numan.html' due to missing key variables.
 
-6) Make your Zoom and Discord display name the same thing as how you want to be addressed.
+7) Make your Zoom and Discord display name the same thing as how you want to be addressed.
+
+8) If you are using Windows and your Terminal does not look like mine: https://ppbds.github.io/primer/getting-started-with-positron.html#the-terminal
 
 ### Day 5
 
-1) Uhappy with your Zoom room? No worries! Not all students work well together. Email Tejas and your TF together and they will adjust for Thursday.
+1) Uhappy with your Zoom room? No worries! Not all students work well together. Email Navya and your TF together and they will adjust for Thursday.
 
-2) Thanks to everyone (Rajeev, Dinesh Satyavolu, Leo, Sanaka, e_jesse, Sophia Y, Melody, Adhi, John Menzies, Aditya, Jacob, and others) for asking/answering questions on Discord. Much appreciated!
+2) Thanks to everyone ( and others) for asking/answering questions on Discord. Much appreciated!
 
 3) "not trying to be grammar police just wanted to let you know" We need the grammar police! Thanks to everyone for pointing out errors in the tutorials. 
 
@@ -264,12 +274,6 @@ Removing file(s) 'data-import_answers - aditya raut - Aditya Raut.html', 'data-i
 
 5) "You can't copy text. but the way i did it was to take a screenshot and have gpt format the arguments for me." Yes!!! Use Ai every chance you get, anyway you can.
 
-6)  Always reinstall the tutorials before starting a new tutorial. It certain weird situations, it may be necessary to explicitly remove and then reinstall:
-
-remove.packages("r4ds.tutorials")
-remotes::install_github("PPBDS/r4ds.tutorials")
-
-7) Posit Cloud (https://posit.cloud/) is an option for people with computer problems. (Posit is the company behind RStudio.) See: https://ppbds.github.io/tutorial.helpers/articles/cloud.html
 
 8) Let's learn how to delete a repo. Keep your Github account clean.
 
@@ -277,25 +281,23 @@ remotes::install_github("PPBDS/r4ds.tutorials")
 
 https://github.com/Bootcamp-June-2024/nyc-census-tracts
 
-Connect this to a new RStudio project. Data science work often begins with a fork like this. 
+Connect this to a new project. Data science work often begins with a fork like this. 
 
 
 
 ### Day 6
 
-0) You must catch up with all tutorials by Sunday at midnight, if you want to stay in the course. This includes those tutorials due Monday, especially Quarto. It is unfair to your classmates if you don't. 
+0) You must catch up with all tutorials by Sunday at midnight, if you want to stay in the course. This includes those tutorials due Monday. It is unfair to your classmates if you don't. 
 
 1) We will be using the same data as earlier, but downloading it again from a new location. Go to #course-announcements channel.
 
-2) Run `/nick yourname` to change your Discord name in this server. (Thanks to Leo.)
+2) Run `/nick yourname` to change your Discord name in this server. 
 
 3) Data Project presentations (Demo Day) on Thursday June 27. Read more: https://bootcamp.davidkane.info/demo_day.html
 
 4) Figure out this weekend a topic for your Data Project, and at least one url with some data. You will need to share that with your classmates on Monday, although you can change your topic later. 
 
-5) Always reinstall, from Github, any tutorial package before starting a new tutorial.
-
-6) "I was curious if I could get an extension on today's homework?" Don't ask me! Ask Tejas and your TF. They are in charge of extensions, attendance, et cetera.
+6) "I was curious if I could get an extension on today's homework?" Don't ask me! Ask Navya and your TF. They are in charge of extensions, attendance, et cetera.
 
 
 ## Week 3
