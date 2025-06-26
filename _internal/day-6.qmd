@@ -12,7 +12,7 @@ You are data scientists! How do you start a project? Github -> Project -> Downlo
 Of course, you have done this before. But we need to practice this procedure a dozen more times before the class is over. Practice makes perfect.
 
 
-Distribute a survey, getting background information on students and some opinions.
+Consider distributing a survey, getting background information on students and some opinions.
 
 TFs: More and more the flow of class will be:
 
@@ -26,13 +26,12 @@ Your key role is occurs at this point. You might be tempted to help them with Y.
 Once everyone is caught up with X, let them try to work on Y on their own. If they complete Y before being called back by me, you should challenge them to do more. (You can always remind them to commit and push their work.) 
 
 
-The plot we are making:
+The plot we are making. Put this in #class-work before class:
 
 ```{r}
-#| label: plot
-
+#| message: false
 library(tidyverse)
-library(ggbeeswarm)
+library(plotly)
 
 x <- read_csv(
   "https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv", 
@@ -46,22 +45,25 @@ x <- read_csv(
       str_detect(tract, "Richmond County") ~ "Staten Island",
       TRUE ~ NA_character_
     )
-  )
+  ) |> 
+  mutate(tract_number = str_extract(tract, "Census Tract [^;]+"))
 
-
-x |> 
-  drop_na() |> 
-  ggplot(aes(y = med_income, x = race, color = med_income)) +
-  geom_quasirandom(alpha = 0.5) + 
+p <- x |> 
+  drop_na() |>
+  ggplot(aes(y = med_income, x = race, color = med_income, text = tract_number)) +
+  geom_point(alpha = 0.5) + 
   coord_flip() + 
   theme_minimal(base_size = 13) + 
   scale_color_viridis_c(guide = "none") + 
   scale_y_continuous(labels = scales::label_dollar()) + 
+  facet_wrap(~ borough, ncol = 1) +
   labs(x = "Largest group in Census tract", 
        y = "Median household income", 
-       title = "Household income distribution by largest racial/ethnic group", 
-       subtitle = "Census tracts, New York City", 
+       title = "Race and Income Across Census Tracts in New York City", 
+       subtitle = "Richest areas are very likely to be white", 
        caption = "Data source: 2018-2022 ACS")
+
+ggplotly(p, tooltip = "text")
   
 ```
 
@@ -70,52 +72,70 @@ x |>
 
 Talk about Github. Give a tour. Start at https://github.com/ (and are logged in), you get one view of your account. To get a better view, you need your account name, like: https://github.com/davidkane9. And there is the repo view: https://github.com/davidkane9?tab=repositories
 
-Find a repo to delete. (Make sure that there is one there!) Show how to delete.
+Find a repo to delete, if you did not do so in the last class. (Make sure that there is one there!) Show how to delete.
 
 We don't keep all the repos we make. 
 
-Send to breakout rooms to delete repo from Day 3.
+Send to breakout rooms to talk briefly about projects, or to delete repo.
 
 ## Session 2
 
-Cold call: Did everyone in your group delete the repo?
+Cold call: Tell me about a classmates project idea.
 
-Go to repo which is like the one from Monday:
+New repo, connect to computer, `quarto create project website .`
 
-https://github.com/Bootcamp-June-2024/nyc-census-tracts
-
-Fork it. Connect the forked repo to a new R project on your computer. Send the breakout rooms so that students get started quickly on this work. They should:
-
-Instructions to put in #class-work:
-
-1) Delete one of last week's repos from your Github account.
-2) Delete the corresponding project from your computer.
-3) Fork and connect, and start loading up the data.
+Send to breakout rooms. Start quizing AI about the plot.
 
 ## Session 3
 
 Cold call: Did everyone remember to delete the project from your computer?
 
-Start a Quarto document. Read in the data. Assign to an object `x`.
+Start a Quarto document. Read in the data. Don't assign to an object `x` yes.
 
-Render the document. No ugly warnings. I won't show them this, but it is what we are looking for.
+Render the document. No ugly warnings. This is what we are looking for.
 
 ```{r}
-#| echo: false
-#| label: setup
+#| message: false
 library(tidyverse)
 
-x <- read_csv("data/nyc_tracts.csv", show_col_types = FALSE)
+read_csv(
+  "https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv", 
+  show_col_types = FALSE)
 ```
 
+Note that the plot has Manhattan and other borough names. Does the data? 
+
+In addition to pulling out the county name, what else do we need? Probably Census Tract number. (Perhaps show them the tooltip if I have that available somewhere?)
 
 ## Session 4
 
 Cold call: What did your group do?
 
-Get x working.
 
-Cold call: What should I do to explore x?
+```{r}
+#| message: false
+library(tidyverse)
+
+read_csv(
+  "https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv", 
+  show_col_types = FALSE) |> 
+    mutate(
+    borough = case_when(
+      str_detect(tract, "Kings County") ~ "Brooklyn",
+      str_detect(tract, "New York County") ~ "Manhattan", 
+      str_detect(tract, "Bronx County") ~ "Bronx",
+      str_detect(tract, "Queens County") ~ "Queens",
+      str_detect(tract, "Richmond County") ~ "Staten Island",
+      TRUE ~ NA_character_
+    )
+  ) |> 
+  mutate(tract_number = str_extract(tract, "Census Tract [^;]+"))
+
+```
+
+Often useful to not assign until it is doing what you want. Assign to `x`.
+
+Cold call: What should I do to explore `x`?
 
 Recall the difference between Console World and QMD World.
 
@@ -123,7 +143,7 @@ Instructions: Start to create the plot. Use a new code chunk.
 
 ## Session 5
 
-Cold call: Did anyone in your group use chatGPT. Why not?
+Cold call: Did anyone in your group use AI. Why not? Which one?
 
 Cold call: What did your group type?
 
@@ -131,13 +151,17 @@ Cold call: Have you checked in your work to Github? Why not?
 
 ## Session 6
 
-Finish the plot. Publish to Rpubs. Post link in #class-work.
+Finish the plot. Publish the website. Post link in #class-work.
 
 ## Extra Stuff
 
 Explain the distinction between just vomiting output right into the document (as we do here) and first assigning it to an object and then printing that output. Neither approach is always right! But, in general, we use the first approach when creating our plots. It is so handy!
 
-If there is time, consider assiging the plot to an object and then printing that object. If there is a lot of time (there won't be), consider saving the plot to permanent object and then loading that object. Note the Git implications of this approach. Mention that a script would be the natural tool for this approach, and that is especially useful if the plot takes a long time to build.
+If there is time, consider assigning the plot to an object and then printing that object. If there is a lot of time (there won't be), consider saving the plot to permanent object and then loading that object. Put the data download in a script, like in the 07-websites-2 tutorial. Put the plot creation in a script. Note the Git implications of this approach. Mention that a script would be the natural tool for this approach, and that is especially useful if the plot takes a long time to build.
+
+There is not much time to do any of this, but you always want to have ways of pushing the best students further and faster, even while your focus is on ths struggling students.
+
+It is OK if you have the struggling students share their screens much more often than the stronger students. This is the easiest way of helping them without slowing everyone else down.
 
 
 
