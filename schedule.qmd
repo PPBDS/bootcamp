@@ -102,8 +102,6 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 * From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "An introduction to tidycensus" (`02-introduction`) and "Wrangling Census data with Tidyverse tools" (`03-wrangling`) tutorials.  
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) tutorial. 
-
 * Come to class with the url for at least one data source you will be using for your Data Project.
 
 
@@ -120,8 +118,6 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 * Complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Communication" (`11-communication`) tutorial.  
-
 
 # Week 4: July 7
 
@@ -133,13 +129,13 @@ The main focus on the 4th week is individual presentations of your Data Project.
 
 * From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Project" tutorial before class, or you will be removed the course. There are no extensions for this assignment.
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (``12-logical-vectors`)  tutorial.  
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) and the "Communication" (`11-communication`)  tutorials.  
 
 * You must have a draft of your final project, including a Quarto website and your paragraph introduction. 
 
 ## Wednesday 
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Numbers" (`13-numbers`) tutorial.  
+* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (``12-logical-vectors`) and the "Numbers" (`13-numbers`) tutorials.  
 
 * Practice presentations and feedback. You must have your presentation ready to go! 
 

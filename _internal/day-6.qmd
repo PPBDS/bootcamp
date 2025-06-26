@@ -7,7 +7,6 @@ author: "David Kane"
 
 Make another website, this time from scratch.
 
-
 You are data scientists! How do you start a project? Github -> Project -> Download the data into the `data` directory -> Start a Quarto document -> Load the data.
 
 Of course, you have done this before. But we need to practice this procedure a dozen more times before the class is over. Practice makes perfect.
@@ -35,7 +34,19 @@ The plot we are making:
 library(tidyverse)
 library(ggbeeswarm)
 
-x <- read_csv("data/nyc_tracts.csv", show_col_types = FALSE)
+x <- read_csv(
+  "https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv", 
+  show_col_types = FALSE) |> 
+    mutate(
+    borough = case_when(
+      str_detect(tract, "Kings County") ~ "Brooklyn",
+      str_detect(tract, "New York County") ~ "Manhattan", 
+      str_detect(tract, "Bronx County") ~ "Bronx",
+      str_detect(tract, "Queens County") ~ "Queens",
+      str_detect(tract, "Richmond County") ~ "Staten Island",
+      TRUE ~ NA_character_
+    )
+  )
 
 
 x |> 
