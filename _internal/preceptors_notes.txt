@@ -336,21 +336,32 @@ This week, we do it all again, but with a Quarto website. Not sure if we should 
 
 ### Day 7
 
-Breakout Rooms: https://shorturl.at/La73d
+0) Enter your data project topic and at least one url with relevant data now: https://docs.google.com/spreadsheets/d/1DjxXJE-bWXpNB_yPI19siZDlGGRTFT9_mIn0Gvob7UE/edit?usp=sharing
 
-0) Enter your data project topic and at least one url with relevant data now: https://shorturl.at/WEA6C
+1) MAKE SURE TO REINSTALL primer.tutorials
 
-1) Thanks to everyone (XX and others) for asking/answering questions on Discord. Much appreciated! Also, thanks to everyone for pointing out errors in the tutorials. 
+> remove.packages("primer.tutorials")
+> remotes::install_github("PPBDS/primer.tutorials")
 
-3) Want to do a data science apprenticeship with me this summer? You now have enough background to do so, starting either now (while you take the course) or after the course ends. More details: https://davidkane.substack.com/p/data-science-apprenticeships. This is only open to people with 30+ hours per week available -- in addition to the 10 you already spend in the course. Email me to discuss. Luit, Anish and Tongyan worked with me last summer. Feel free to ask them about the experience.
+Check that this works by running:
 
-4) Happy Git and GitHub for the useR is an incredible resource: https://happygitwithr.com/. 
+> packageVersion("primer.tutorials")
 
-5) "Ok I goosed around w the website name and hte title in the _quarto.yml file, then deleted the changes I made and re-tried the instructions in the tutorial and it somehow worked" Welcome to professional data science! 
+Answer should be >= 1.4.9000.
 
-6) "fixed it, but it really is super picky it is about formatting" So true!
+2) Homework:
 
-7) Begin every project with AI!
+Complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+
+* Read chapters 4 and 5 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. 
+
+* From the [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) package, complete the "Exploring US Census data with visualization" (`04-exploring`) and "Census geographic data and applications in R" (`05-geographic`) tutorials.  
+
+3) Want to do an unpaid data science internship with me this summer? You now have enough background to do so, starting either now (while you take the course) or after the course ends. More details: https://davidkane.substack.com/p/data-science-apprenticeships. This is only open to people with 30+ hours per week available -- in addition to the 10 you already spend on the course. Email me to discuss. Anish, Ivy, Aashna are working with me now. Feel free to ask them about the experience.
+
+4) Use AI more!
+
+5) If you are ahead of your group, then work harder! Data download should be in a separate script, as should graphic creation. Expand the analysis to the whole state, or the whole country. Do more! 
 
 ### Day 8
 

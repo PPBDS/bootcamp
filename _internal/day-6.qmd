@@ -36,7 +36,7 @@ library(plotly)
 x <- read_csv(
   "https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv", 
   show_col_types = FALSE) |> 
-    mutate(
+  mutate(
     borough = case_when(
       str_detect(tract, "Kings County") ~ "Brooklyn",
       str_detect(tract, "New York County") ~ "Manhattan", 
@@ -84,7 +84,7 @@ Cold call: Tell me about a classmates project idea.
 
 New repo, connect to computer, `quarto create project website .`
 
-Send to breakout rooms. Start quizing AI about the plot.
+Send to breakout rooms. Start quizzing AI about the plot.
 
 ## Session 3
 

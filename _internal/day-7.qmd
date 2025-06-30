@@ -9,7 +9,7 @@ Today and this week, we practice making websites. Not sure if we can do one each
 
 ## Session 1
 
-Start up a data science project! That means, a new Github repo, connected to a new RStudio project on your computer, with appropriate changes made in your .gitignore and everything pushed to Github. Make sure everyone in your group is set up. 
+Start up a data science project! That means, a new Github repo, connected to a new project on your computer, with appropriate changes made in your ..gitignore and everything pushed to Github. Make sure everyone in your group is set up. 
 
 Extra time? Take a tour through the data associated with one person's project. (This is one time in which we allow the person who is sharing their screen to also do some talking.)
 
