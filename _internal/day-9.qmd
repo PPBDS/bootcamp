@@ -2,8 +2,6 @@
 title: "Day 9"
 execute: 
   echo: false
-  message: false
-  warning: false
 ---
 
 Let's explore some weather data. I really like this NYT [article](https://www.nytimes.com/interactive/2021/06/29/upshot/portland-seattle-vancouver-weather.html) and the associated plot:
@@ -15,6 +13,7 @@ knitr::include_graphics("data/seattle-temps.png")
 Which we will replicate (and update) like so:
 
 ```{r}
+#| message: false
 library(tidyverse)
 library(worldmet)
 ```
@@ -25,8 +24,8 @@ library(worldmet)
 #| cache: true
 
 x <- importNOAA(code = "727935-24234", 
-                          year = 1979:2025,
-                          hourly = FALSE) 
+                year = 1979:2025,
+                hourly = FALSE) 
 ```
 
 
@@ -76,15 +75,25 @@ ggplot(daily_max, aes(x = day_of_year, y = tmax_f)) +
  )
 ```
 
+Could make this plot nicer, or at least more like the NYT. Could also make it different. What about a smoothed line for each year. 50 lines might show an interesting pattern.
+
 ## Questions Which I Asked AI
 
+Interspersed with some comments for your info.
+
 ````
-I am using R. How can I gather the data to make a plot like this?
+I am using the worldmet package in R. How can I gather the data to make a plot like this?
 ````
+
+Note that rnoaa, a formerly popular package, is deprecated. I think that worldmet is good. Note that it will produce a map to help you find the location code you want for the city you give it. This is useful, especially since it shows the code you need --- something like `727935-24234` --- and indicates how far back the data goes.
 
 ````
 How about worldmet package since rnoaa seems deprecated?
 ````
+
+Encourage students to pick different cities from me, but it is useful for the whole breakout room to use the same city. Not a requirement though!
+
+Note that the data download can take some time. This means that, immediately, you either want to move that data download code into a separate script, which saves out an RDS object, or you want to set `cache = TRUE` in the code chunk.
 
 ````
 Here is the data:
@@ -94,12 +103,19 @@ x
 Obviously, I need to calculate a high for each day. I also need a new day-of-the-year variable to make the plotting easier.
 ````
 
+worldmet data comes out hourly.
+
+Note that the code you get might be confusing, depending on how it deals with missing values. Have the AI write the code but then you look at the code!
+
 ````
 daily_max
 ..
 
 Plot for graphic. Just do a basic version first, using ggplot()
 ````
+
+Show the data to the AI at each step. Asking for a simple version first is often very helpful.
+
 
 ## Session 1
 
@@ -110,56 +126,45 @@ Note that that command gives us the `.gitginore`. Without it, we would need to c
 
 At some point, we need to add `_site` to the `.gitignore`.
 
-Not too early to make
+Not too early to think about organization.
 
 ## Session 2
-
-Cold call: Tell me about your peer's project? Or your project!
-
-In the project, create a Quarto website. From the Terminal:
-
-quarto create project website .
 
 Remind yourself, from the tutorial, what the files mean/do. Preview the website:
 
 quarto preview
 
-Make sure this works for everyone in your group. Extra time? Student 2 gives a tour of her data.
+Make sure this works for everyone in your group. 
 
 Start editing the index.qmd.
+
+Ask the AI. Even better, do like I do! Ask multiple AIs!
 
 ## Session 3
 
 Cold call: Tell me about another project in your group.
 
-Edit the index.qmd to load some libraries and read in the data. Looks at the data! Poke around! Start thinking about a plot.
+Edit the index.qmd to load some libraries and download the data. Looks at the data! Poke around! Start thinking about a plot.
+
+If the download takes some time, move it to a script, like I did last class and like you have seen in the Positron websites tutorials.
+
+Note the "path" argument to importNOAA. Very handy! Also, the downloaded data should not be on GitHub, so we need to add the name of the file to `.gitignore`.
 
 ## Session 4
 
-Cold call: How did your group do?
-
-Ask ChatGPT:
-
-```
-I have a tibble x, which looks like this:
-
-x
-
-How can I make a nice graphic?
-```
-
-Use whatever text you like. If the plot doesn't look good. Tell AI what to change.
+If the plot doesn't look good. Tell AI what to change.
 
 Once the plot starts looking good, consider organizing things a bit better, as we did in the Quarto Websites tutorial. Perhaps clean_data.R script. Perhaps a make_graphic.R script. Maybe index.qmd only loads an image.
 
-Clean up about.qmd.
+Maybe make a very different plot, an interactive one which shows the dates when you click on a point. Challenger your stronger students to use gganimate to make an animation. Lot's of possibilities.
 
+Clean up about.qmd.
 
 ## Session 5
 
 Publish your website with:
 
-quarto publish quarto-pub
+quarto publish gh-pages
 
 Make sure this works for everyone in your room.
 
@@ -172,4 +177,5 @@ Clean up your website.
 1) Make your plot nicer. There is obviously a lot that one might do.
 
 2) Clean up the about.qmd, the title, and so on.
+
 
