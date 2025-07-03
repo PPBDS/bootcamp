@@ -365,59 +365,53 @@ Complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer
 
 ### Day 8
 
-1) We have made some changes to the breakout rooms in order to adjust TF workload: https://shorturl.at/La73d. Big change is moving students in room 14 to room 4. Say Hello to Anish!
+1) Homework for Thursday:
 
-2) Read the instructions for Demo Day: https://bootcamp.davidkane.info/demo_day.html
+Complete the “Three Parameters: Causal” tutorial (061-three-parameters-causal) from the primer.tutorials package.
 
-Email your TF now (cc Tejas) to confirm that you will be there.
+Leaving you time to start thinking about your project!
 
-3) If commands like `quarto preview` and `quarto publish` are giving you trouble, switch to Posit Cloud:  https://ppbds.github.io/tutorial.helpers/articles/cloud.html 
+2) Not sure what to do for your project? Use Census data!
 
-4) Thanks to Iris Li, John Menzies, Alan Cai, Rajeev, Karam, Dinesh Satyavolu, Zephan, SriRitvik, and others for all their help on Discord. Much appreciated!
+3) Email your TF(s) now (cc Aadhira) to confirm that you will be there and to request a private meeting to discuss your project. See https://bootcamp.davidkane.info/staff.html for emails.
 
-5) Please
+4) Read the instructions for Demo Day: https://bootcamp.davidkane.info/demo_day.html
 
-remotes::install_github("PPBDS/r4ds.tutorials")
+5) Today, we will make another website, and create another map. We will try the leaflet package. You might need to install it.
 
-before you start a new tutorial. Of course, you should do this before each tutorial, including tutorials from other packages like primer.tutorials and tidycensus.tutorials.
+6) Big thanks to Naveed Ahmad, Darakhshan, Ali Ahmad, **Ansh Patel** and others for pointing out tutorials errors. Future students thank you!
 
-6) Today, we will make another website, and create another map. We will try the leaflet package. You might need to install it.
-
-7) "I wanted to inform you all that I'm going to be on vacation for the week of June 24th and as a result will miss the presentation day for our final projects." A very professional email sent to me/Tejas and this student's TF. Well done! Family first!
-
-Class Github: 
+Class repo: 
 Class website: 
 
 
 ### Day 9
 
-0) Each group will work with a dataset from a member of their breakout room. Think now about volunteering. Your data must be relatively simple to deal with. (This is a first time experiment for me!)
+1) Reinstall primer.tutorials
 
-1) Install the primer.tutorials package. I recently made some changes:
+> remove.packages("primer.tutorials")
+> remotes::install_github("PPBDS/primer.tutorials")
 
-```
-remotes::install_github("PPBDS/primer.tutorials")
-```
+2) Homework for Monday:
 
-2) Due Sunday at midnight:
+* From the primer.tutorials package, complete the “Project” tutorial (991-project) before class, or you will be removed the course. There are no extensions for this assignment.
 
-```
-Read chapter 17 from R for Data Science (2e) and, from the r4ds.tutorials package, complete the “Dates and times” tutorial.
+Link to spreadsheet mentioned in tutorial: https://docs.google.com/spreadsheets/d/1JuIMh0_HaJ1YNVy7LXYl6Y3iKTNwcLZAdZdjRRqwbSk/edit?usp=sharing
 
-Complete the “Data Project” tutorial from the primer.tutorials package. Be sure to reinstall the package before starting the tutorial.
-```
+* From the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) and the “Communication” (11-communication) tutorials.
 
-If you don't complete these on time, you will be removed from the course.
+* You must have a draft of your final project, including a Quarto website and your paragraph introduction.
 
-3) Still having trouble with Quarto website? Most common mistake for Windows users is a failure to install Rtools as explained in the Getting Started chapter in the Primer. Backup plan is to use Posit Cloud.
+3) You have read the Demo Day guide, right? https://bootcamp.davidkane.info/demo_day.html
 
-4) You have read the Demo Day guide, right? https://bootcamp.davidkane.info/demo_day.html
+4) We will send out invitation emails to our friends and/or family on Monday in class. Decide who you want to invite. Make sure you have their email addresses. I urge you to invite your grandparents. They love you!
 
-5) We will send out invitation emails to our friends and/or family on Monday in class. Decide who you want to invite. Make sure you have their email addresses. I urge you to invite your grandparents. They love you!
+5) Let's look at weather! Check out #announcements channel for the NYT graphic which serves as inspiration.
 
-Class website: 
 Class Github: 
-AI Log:
+Class website: 
+
+
 
 ## Week 4
 

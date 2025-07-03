@@ -2,24 +2,115 @@
 title: "Day 9"
 execute: 
   echo: false
+  message: false
+  warning: false
 ---
 
-Make another website. Need to think more about what the topics should be, the better to push students toward interesting projects. What other topic besides tidycensus and tidytext would be good for this purpose? In any event, let's experiment with a different approach today. Working with a random student's data.
+Let's explore some weather data. I really like this NYT [article](https://www.nytimes.com/interactive/2021/06/29/upshot/portland-seattle-vancouver-weather.html) and the associated plot:
+
+```{r}
+knitr::include_graphics("data/seattle-temps.png")
+```
+
+Which we will replicate (and update) like so:
+
+```{r}
+library(tidyverse)
+library(worldmet)
+```
+
+
+```{r}
+#| message: false
+#| cache: true
+
+x <- importNOAA(code = "727935-24234", 
+                          year = 1979:2025,
+                          hourly = FALSE) 
+```
+
+
+```{r}
+daily_max <- x %>%
+  mutate(
+    date_only = as.Date(date),
+    temp_f = air_temp * 9/5 + 32,  # Convert Celsius to Fahrenheit
+    year = year(date),
+    month = month(date),
+    day = day(date)
+  ) %>%
+  # Filter out NA temperatures before grouping
+  filter(!is.na(temp_f)) %>%
+  group_by(date_only, year, month, day) %>%
+  summarise(
+    tmax_f = max(temp_f),  # No need for na.rm since we filtered NAs
+    n_obs = n(),  # Count of observations per day
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    day_of_year = yday(date_only)
+  )
+```
+
+```{r}
+ggplot(daily_max, aes(x = day_of_year, y = tmax_f)) +
+ geom_point(alpha = 0.3, size = 0.5, color = "gray60") +
+ scale_x_continuous(
+   breaks = c(1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335),
+   labels = c("Jan.", "Feb.", "March", "April", "May", "June",
+              "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec.")
+ ) +
+ scale_y_continuous(
+   limits = c(20, 120),
+   breaks = seq(20, 120, by = 20)
+ ) +
+ labs(
+   title = "Daily maximum temperatures in Seattle, 1979-2025",
+   x = "",
+   y = "deg. Fahrenheit"
+ ) +
+ theme_minimal() +
+ theme(
+   panel.grid.minor = element_blank(),
+   axis.text = element_text(size = 10)
+ )
+```
+
+## Questions Which I Asked AI
+
+````
+I am using R. How can I gather the data to make a plot like this?
+````
+
+````
+How about worldmet package since rnoaa seems deprecated?
+````
+
+````
+Here is the data:
+
+x
+
+Obviously, I need to calculate a high for each day. I also need a new day-of-the-year variable to make the plotting easier.
+````
+
+````
+daily_max
+..
+
+Plot for graphic. Just do a basic version first, using ggplot()
+````
 
 ## Session 1
 
-Start up a data science project! That means, a new Github repo, connected to a new RStudio project on your computer, with appropriate changes made in your .gitignore and everything pushed to Github. 
+Start up a data science project! That means, a new Github repo, connected to a new project on your computer.
+Since we are making a website, we also do `quarto create project website .`
 
-Have someone in your group volunteer to have their data used. (Must be relatively simple data.) Everyone downloads their own copy. This is what I am using (thanks Areeb!)
+Note that that command gives us the `.gitginore`. Without it, we would need to create by hand.
 
-```
-https://www.kaggle.com/datasets/jainaru/ranking-sports-by-skill-requirement
-```
+At some point, we need to add `_site` to the `.gitignore`.
 
-Make sure everyone in your group is set up. 
-
-Extra time? Take a tour through the data associated with one person's project. (This is one time in which we allow the person who is sharing their screen to also do some talking.)
-
+Not too early to make
 
 ## Session 2
 

@@ -57,12 +57,11 @@ plot(ma_income["estimate"])
 
 Make sure that this works for everyone.
 
-
 ## Session 4
 
 Publish your website with:
 
-quarto publish quarto-pub
+quarto publish gh-pages
 
 Make sure this works for everyone in your room.
 

@@ -1,17 +1,14 @@
 ---
 title: "Day 8"
-execute: 
-  echo: false
 ---
 
-Make another website. Need to think more about what the topics should be, the better to push students toward interesting projects. I think that tidytext is interesting, but there is too much there for just a class. Maybe we should add a tutorial for that next year. If we did, then we should do an example from there for today's project.
+Make another website. Need to think more about what the topics should be, the better to push students toward interesting projects. I think that tidytext is interesting, but there is too much there for just a class. Maybe we should add a tutorial for that next year. If we did, then we should do an example from there for today's project. What about weather for a give city? worldmet package seems good.
 
 ## Session 1
 
 Start up a data science project! That means, a new Github repo, connected to a new project on your computer, with appropriate changes made in your .gitignore and everything pushed to Github. Make sure everyone in your group is set up. 
 
-Extra time? Take a tour through the data associated with one person's project. (This is one time in which we allow the person who is sharing their screen to also do some talking.)
-
+Extra time? Take a tour through the data associated with one person's project. (This is one time in which we allow the student who is sharing their screen to also do some talking.)
 
 ## Session 2
 
@@ -19,11 +16,12 @@ Cold call: Tell me about your peer's project? Or your project!
 
 In the project, create a Quarto website. From the Terminal:
 
-quarto create project website .
+`quarto create project website .`
 
-Remind yourself, from the tutorial, what the files mean/do. Preview the website:
+Remind yourself, from the tutorial, what the files mean/do. Preview/publish the website:
 
-quarto preview
+`quarto preview`
+`quarto publish gh-pages`
 
 Make sure this works for everyone in your group. Extra time? Student 2 gives a tour of her data.
 
@@ -40,8 +38,6 @@ I am using tidycensus and R. Give me code to download info about the percentage 
 But change the code to the state (and/or county) picked by whoever shares their screen next. And change the variable too!
 
 We will follow a similar structure as we did with the tutorial, first doing everything in index.qmd, then pulling it apart into different files. 
-
-
 
 ```{r}
 library(tidycensus)
@@ -122,7 +118,7 @@ map
 
 Publish your website with:
 
-quarto publish quarto-pub
+`quarto publish gh-pages`
 
 Make sure this works for everyone in your room.
 
@@ -134,9 +130,11 @@ Clean up your website.
 
 1) Make your plot nicer. There is obviously a lot that one might do.
 
-2) Clean up the about.qmd, the title, and so on.
+2) Clean up the about.qmd, the title, and so on. Make it look like mine.
 
-3) This is the code I got when I just asked chatGPT:
+3) Ask AI to write some about what the graphic is telling us.
+
+4) Consider creating another page which shows something related, like percent with PhD's. You need to edit _quarto.yml to change the website so that it shows this page.
 
 
 

@@ -270,7 +270,7 @@
     "href": "schedule.html#monday-3",
     "title": "Schedule",
     "section": "Monday",
-    "text": "Monday\n\nFrom the primer.tutorials package, complete the “Project” tutorial before class, or you will be removed the course. There are no extensions for this assignment.\nFrom the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) and the “Communication” (11-communication) tutorials.\nYou must have a draft of your final project, including a Quarto website and your paragraph introduction."
+    "text": "Monday\n\nFrom the primer.tutorials package, complete the “Project” tutorial (991-project) before class, or you will be removed the course. There are no extensions for this assignment.\nFrom the r4ds.tutorials package, complete the “Exploratory data analysis” (10-exploratory-data-analysis) and the “Communication” (11-communication) tutorials.\nYou must have a draft of your final project, including a Quarto website and your paragraph introduction."
   },
   {
     "objectID": "schedule.html#wednesday-3",
@@ -369,12 +369,5 @@
     "title": "Schedule",
     "section": "Thursday",
     "text": "Thursday\n\nFinal project presentations. You must invite someone, and bcc your TF when you do so."
-  },
-  {
-    "objectID": "junk.html",
-    "href": "junk.html",
-    "title": "Untitled",
-    "section": "",
-    "text": "[1] 4"
   }
 ]
