@@ -4,6 +4,8 @@ execute:
   echo: false
 ---
 
+<!-- DK: For next time, give them more guidance in getting a location code, and knowing that they have a good code, and what years it covers. -->
+
 Let's explore some weather data. I really like this NYT [article](https://www.nytimes.com/interactive/2021/06/29/upshot/portland-seattle-vancouver-weather.html) and the associated plot:
 
 ```{r}

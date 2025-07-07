@@ -20,25 +20,23 @@ Basic idea is that all students are in two groups: A and B. Students in Group A 
 
 At the start, we are all in the main room. I offer introductions. I open the breakout rooms. Students go to their assigned rooms. (Guests will also go to the room featuring the student they want to listen to.) Chat politely. I will then issue a breakout room message saying to start. The A student presents her work for about 4 minutes. The B student asks a lot of questions. So do the guests. 
 
-After three and a half minutes, I send a Message saying: 30 seconds left. At four minutes, I message “Switch Rooms!”
+After three and a half minutes, I send a Message saying: 30 seconds left. At four minutes, I message “New Presenter!”
 
-Please switch rooms when I ask you to!
+Please switch presenters when I ask you to!
 
-Student A stays in the room. Student B moves one room up. From room 26 to room 27, for example. (If you are the B student in the highest room, you move to the lowest room number in your grouping which, in this case, might be something like room 22.) Then, Student A presents again.
+The same sequence repeats, with students in Group B sharing their screens and doing the presentations while Group A students listen and ask lots of questions. A warming message comes after with 30 seconds left, followed by a message to "Switch Rooms." The initial room assignments have lasted about 10 minutes.
 
-After 30 minutes of this, the A students will have presented 5 or 6 times. Good stuff! I bring back everyone to the main room. I say a few words. And then we do the whole thing again, with students again starting in the same rooms as in the first round, but, this time, with the B students presenting and staying put in the rooms. And now the A students move from room to room.
+Student A stays in the room. Student B moves one room up. From room 26 to room 27, for example. (If you are the B student in the highest room, you move to the lowest room number in your grouping which, in this case, might be something like room 22.) Then, Student A presents again. Followed by Student B. (Neither A nor B has seen the other present before.)
 
-After the B students present, I close the breakout rooms, thereby bringing everyone back together. I offer thanks and congratulations.
+After 50 minutes of this (which usually means about 4 room changes), I bring back everyone to the main room. I say a few words. We are done!
 
 ## Advice for Guests
 
-You need three things: a Zoom link for Demo Day, the breakout room number in which your student is presenting, and whether she is in Group A (presenting first) or Group B (presenting second). 
+You need two things: a Zoom link for Demo Day and the breakout room number in which your student is presenting. 
 
 But please be flexible! We sometimes need a student to switch breakout rooms and/or switch from Group A to B. In Zoom, you should be able to see all the rooms (and who is in them) if you are having trouble finding your student.
 
-If your student is in Group A, please try to arrive on time. If she is in Group B, you can arrive at the start and watch other presentations. Or, you can show up at the class midpoint so that you just watch her presentations.
-
-You can also leave early, once you have seen your student present. (Many parents and grandparents like to watch their student present more than once. This is encouraged.) You are also welcome to check out other student presentations. Just move to any other breakout room whenever you like.
+You can also leave early, once you have seen your student present a time or two. (Many parents and grandparents like to watch their student present more than once. This is encouraged.) You are also welcome to check out other student presentations. Just move to any other breakout room whenever you like.
 
 Most importantly: ASK LOTS OF QUESTIONS!
 
@@ -71,11 +69,3 @@ Always allow the student you are listening to to give their opening paragraph, p
 Check out the spreadsheet to see which student presentations you are likely to attend. Check out the webpages and Github repos ahead of time. Learn a little bit about the topics. The more you prepare, the better an audience you will be.
 
 Note that, in larger classes, we (conceptually) break up Demo Day into smaller collections which combine the students from two TFs together. This means that your TF (and her students) and another TF (and his students) are together, only using breakout rooms 22 to 28, for example. This means that, after you listen to the presentation in room 28, you don't go to 29, you go back to room 22, the first room assigned to your collection.
-
-
-
-
-
-
-
-

@@ -424,49 +424,47 @@ Whole thing worked very well last time. It is really good to make them comfortab
 
 ### Day 10
 
-Demo Day Room Assignments: https://shorturl.at/KLlVn
-Demo Day Projects: https://shorturl.at/guyh3 
-Demo Day Zoom: https://shorturl.at/dafDQ
+Please check that these links work for you.
 
-0) Thanks to Eric, Rajeev, Akhil B, shibaaaaaa, Melody, Deepak, Sanaka, SriRitvik, Iris Li, Ronit Dash, John Menzies (especially!) and others for their participation on Discord. Much appreciated!
+Demo Day Room Assignments: https://shorturl.at/zHfCR
+Demo Day Projects: https://shorturl.at/wHsAp
+Demo Day Zoom: https://shorturl.at/PDzd1
 
-1) Confirm your attendance (or otherwise) on the Demo Day Room Assignment Sheet: https://shorturl.at/KLlVn
+1) After class, download/install latest Positron: https://positron.posit.co/download.html
 
-2) Check out the data projects: https://shorturl.at/guyh3 Add your material, even just your name, if you have not already. We need to know who is presenting.
+2) Confirm your attendance (or otherwise) on the Demo Day Room Assignment Sheet: https://shorturl.at/zHfCR
 
-3) All my/TF comments today will seem more critical than we intend them to be. Sorry! We love your projects and all the hard work you have done. Our comments are meant to be constructive, but they will mostly be things you should change . . .
+3) Check out the data projects: https://shorturl.at/wHsAp. Add your material, even just your name, if you have not already. We need to know who is presenting what. You will not be allowed to continue in class if this is not done, or you have discussed your absence with your TF.
 
-4) You must invite at least one friend or family member to Demo Day. You must bcc Tejas (tejasnm07 at gmail.com) and your TF when you send the email.
+4) All my/TF comments today will seem more critical than we intend them to be. Sorry! We love your projects and all the hard work you have done. Our comments are meant to be constructive, but they will mostly be things you should change . . .
+
+5) You must invite at least one friend or family member to Demo Day. You must bcc Aadhira (june.2025.kdsb@gmail.com) and your TF when you send the email.
 
 Below is a draft email. Modify as you like. We will send this email during class tonight.
 
 ---
-Please come watch me present my final project for Kane’s Data Science Course at 8:00 PM EDT on Thursday, June 27. Links: 
+Please come watch me present my final project for Kane’s Data Science Course at 8:00 PM EDT on Thursday, July 10. Links: 
 
-Zoom: https://shorturl.at/dafDQ
-(Draft) Room Assignments: https://shorturl.at/KLlVn
+Zoom: https://shorturl.at/PDzd1
+(Draft) Room Assignments: https://shorturl.at/zHfCR
 Background: http://bootcamp.davidkane.info/demo_day.html
-
-I don't know whether I will be presenting at 8:00 or 8:30, but I can update you about that on Wednesday.
 
 No worries if you can't make it!
 ---
 
-4) Goal today is to take a look at everyone's draft project. We will do practice presentations on Wednesday and then public presentations on Thursday. 
-
-5) Make sure to read and follow the Style Guide: https://ppbds.github.io/primer/style-guide.html
+5) Goal today is to take a look at other's draft projects. We will do practice presentations on Wednesday and then public presentations on Thursday. 
 
 6) Make sure you have as many lines of comments as you have lines of code. There is no better way to distinguish between student and professional code than by looking at the comments.
 
-7) Consider splitting your project up, as you learned to do in the Quarto Websites tutorial. You don't want your index.qmd file to take a lot of time to process. Use scripts for data download/cleaning and for graphic creation.
+7) Consider splitting your project up, as you learned to do in the Quarto Websites tutorials. You don't want your `index.qmd` file to take a lot of time to process. Use scripts for data download/cleaning and, possibly, for graphic creation.
 
 
 
 ### Day 11
 
-Demo Day Room Assignments: https://shorturl.at/KLlVn
-Demo Day Projects: https://shorturl.at/guyh3 
-Demo Day Zoom: https://shorturl.at/dafDQ
+Demo Day Room Assignments: https://shorturl.at/zHfCR
+Demo Day Projects: https://shorturl.at/wHsAp
+Demo Day Zoom: https://shorturl.at/PDzd1
 
 1) Thank your TFs! Run this code:
 

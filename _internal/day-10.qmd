@@ -16,8 +16,6 @@ The culture of data science is one that encourages inspiration from other data s
 
 Make sure to point out errors in following the Style Guide. Tell students to read it!
 
-Tell students to write code comments. In fact, spend 10 minutes during your breakout room having all students add comments. And then walk through those comments, giving feedback. Key paragraph: https://ppbds.github.io/primer/style-guide.html#comments
-
 Discuss students' 4 sentence summaries. Focus on the takeaway point. What is the one sentence which they hope viewers will walk away with?
 
 Review the submissions to the spreadsheet. Several are not following the instructions. Ensure that they do. 
@@ -25,7 +23,7 @@ Review the submissions to the spreadsheet. Several are not following the instruc
 
 ## Session 1
 
-Go to breakout rooms. One student volunteers to share their project. She shares her screen. She reads her paragraph. (Presumably, she hasn't memorized it yet. For Demo Day, it should be memorized.) She explains the key plot in no more than a paragraph/
+Go to breakout rooms. One student volunteers to share their project. She shares her screen. She reads her paragraph. (Presumably, she hasn't memorized it yet. For Demo Day, it should be memorized.) She explains the key plot in no more than a paragraph.
 
 And that is all! We don't let her prattle on. We take control. At that point, you share your screen. You open her project. You give a guided tour, including your thoughts. You highlight any place in which she failed to follow the instructions.
 
@@ -33,7 +31,7 @@ Obviously, you have more than one room. So, you might visit both rooms quickly a
 
 ## Session 2
 
-Go to breakout rooms and each person in the group sends the invitation email to someone, cc'ing Tejas and your TF. Once everyone has done this, another person gives a tour of their project.
+Go to breakout rooms and each person in the group sends the invitation email to someone, cc'ing Navya and the TF. Once everyone has done this, another person gives a tour of their project.
 
 
 ## Session 3
