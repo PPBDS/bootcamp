@@ -458,39 +458,41 @@ No worries if you can't make it!
 
 7) Consider splitting your project up, as you learned to do in the Quarto Websites tutorials. You don't want your `index.qmd` file to take a lot of time to process. Use scripts for data download/cleaning and, possibly, for graphic creation.
 
+8) Feeling brave! Volunteer to have me provide feedback on your project by putting the URL for your project in the Zoom chat. Highly recommended!
 
+9) Good comments are the easiest way to distinguish professional from amateur code: https://ppbds.github.io/primer/style-guide.html#comments
 
 ### Day 11
 
-Demo Day Room Assignments: https://shorturl.at/zHfCR
-Demo Day Projects: https://shorturl.at/wHsAp
-Demo Day Zoom: https://shorturl.at/PDzd1
+Demo Day Room Assignments: https://docs.google.com/spreadsheets/d/1GV2JuZr-kLLskIID58w9QqReXhJ40R13Bweb7CpSWvA
+Demo Day Projects: https://docs.google.com/spreadsheets/d/1JuIMh0_HaJ1YNVy7LXYl6Y3iKTNwcLZAdZdjRRqwbSk
+Demo Day Zoom: https://us06web.zoom.us/j/81184262640
 
-1) Thank your TFs! Run this code:
+* Check your room assignment.
+* Make sure your entry on the Projects file is correct.
 
-```
-Sys.Date() + runif(n = 1, min = 365*5, max = 365*6)
-```
+-1) Read the instructions: https://bootcamp.davidkane.info/demo_day.html
 
-This is a random day sometime in the range of 5 to 6 years from now. Add a note in your calendar for that date to send us a thank you email, letting your TF know what you are up to, with data science or anything else. Good teachers love to hear from their former students!
+0) Reinstall r4ds.tutorials package. Thanks to Ansh Patel for pointing out an error.
 
-2) We will complete this survey in class: https://forms.gle/HWRyTLAjxQxxz5hF9
+  remotes::install_github("PPBDS/r4ds.tutorials")
 
-3) Get ready for vacation! Don't start the primer.tutorials assignments until Wednesday July 10. And, when you start them, make sure to reinstall the package.
+  You can start Monday's homework as soon as you do.
 
-4) If you are eager to do some stuff during the vacation, all the r4ds.tutorials are ready to go although, as always, you should reinstall (with remotes:: ...) each time you start a new tutorial. But, before starting any r4ds.tutorials, make sure to 
+1) Don't start the primer.tutorials assignments until Saturday July 12. We are making a bunch of changes. Before you start the next homework, reinstall the package with:
 
-`install.packages("tutorial.helpers", type = "source")`.
+remotes::install_github("PPBDS/primer.tutorials")
 
-In fact, you should probably do that now. No worries if it fails. Background is that I just released to CRAN a new version of tutorial.helpers which includes show_file(). The package is so new that binary versions of not available yet. That is why we need to use type = "source". If that command fails for you, just wait till this week-end and use just install.packages("tutorial.helpers").
+2) No homework due tomorrow. But, for Monday, we have:
 
-5) Your data for tomorrow is whatever it is. No worries. But your data for the Final Project must be rich enough to allow for the creation of a statistical model. Advice: https://davidkane.info/writings/data-for-projects.html
+  Complete the “Mechanics” tutorial (071-mechanics) from the primer.tutorials package.
 
-6) The main project today is to have one person in your breakout room volunteer to have her data project replicated. That means, that everyone else in the group will fork her repo, connect it to an R project on their computer, and then run quarto preview and quarto publish. Good data science is replicable by others. 
+  From the r4ds.tutorials package, complete the “Strings” (14-strings), “Regular expressions” (15-regular-expressions), and “Factors” (16-factors) tutorials.
 
-In doing this, some warnings. First, delete _publish.yml and rsconnect if the student has (mistakenly) included in in her repo. (She should have included those in her .gitignore file.) Second, it is possible that the student failed to include her data in the repo. Or that she hard-coded some file paths. In any event, trying to replicate someone else's work is a valuable exercise, as is watching/helping someone else trying to rpelicate your work. If someone in the group is having trouble with the replication, help him. If everyone can replicate one student's work, then another student should volunteer. Then, the forking/replication exercise is repeated.
+3) Your data for tomorrow is whatever it is. No worries. But your data for the Final Project must be rich enough to allow for the creation of a statistical model. Advice: https://davidkane.info/writings/data-for-projects.html
 
-7) Everyone should practice saying (NOT READING) their one paragraph introduction.
+4) Everyone should practice saying their one paragraph introduction.
+
 
 
 

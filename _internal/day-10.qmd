@@ -8,13 +8,17 @@ Set the stage for a successful Demo Day.
 
 Try the "Broadcast Voice" to chat room button. Confirm that it will be usable for Demo Day.
 
+I am honestly unsure what I will do tonight or the order in which I will do it! TF Advice is good, though.
+
 ## TF Advice
+
+You talk more tonight than you have in all the previous classes put together. You know what students need to improve their projects. They generally don't. So, it is OK if you do lots and lots of talking.
+
+But you should also call on students, especially after going through the first project. Ask them for suggestions. They will, mostly, repeat back some of your comments from the first project. And that is what we want!
 
 Goal is to help students have a successful project. We do this by both helping them directly but also by highlighting cool stuff in other students' projects. After all, if student A is making interesting use of animation, there is still time for student B to add animation to his project. 
 
 The culture of data science is one that encourages inspiration from other data scientists!
-
-Make sure to point out errors in following the Style Guide. Tell students to read it!
 
 Discuss students' 4 sentence summaries. Focus on the takeaway point. What is the one sentence which they hope viewers will walk away with?
 
@@ -31,20 +35,23 @@ Obviously, you have more than one room. So, you might visit both rooms quickly a
 
 ## Session 2
 
-Go to breakout rooms and each person in the group sends the invitation email to someone, cc'ing Navya and the TF. Once everyone has done this, another person gives a tour of their project.
-
+Go to breakout rooms and each person in the group sends the invitation email to someone, cc'ing `june.2025.kdsb@gmail.com` and their TF. Once everyone has done this, another person gives a tour of their project.
 
 ## Session 3
 
-Tell students to confirm/deny whether or not they are attending demo day. Point them to the room assignment spreadsheet. Try to confirm everything. Make note of students that are still problematic. Email them. Move them to the last rooms in your grouping. That is the easiest place from which to just delete them.
+Tell students to confirm/deny whether or not they are attending demo day. Point them to the room assignment spreadsheet. Try to confirm everything. Make note of students that are still problematic. Email them. Tell Aadhire about them. She can then move them to the last rooms in your grouping. That is the easiest place from which to just delete them, should we need to.
 
-Make the edits which you can right after class. Email Tejas to discuss problem cases. By default, just kick people out. If they did not fill out the data project sheet then, by default, they are out. They can still stay in the course.
+Make the edits which you can right after class. Email Aadhira to discuss problem cases. By default, just kick people out. If they did not fill out the data project sheet then, by default, they are out for Demo Day. They can still stay in the course.
 
 ## Session 4
 
 Go to breakout rooms. Everyone pulls up their code. Everyone starts adding comments. You rotate who is sharing their screen. Someone always is. But everyone is adding their own comments. Highlight the paragraphs in the Style Guide which describes good comments.
 
+https://ppbds.github.io/primer/style-guide.html#comments
+
 ## Session 5
+
+I might try a replication exercise in which I fork a student's repo and then try to replicate their projects. If I do, I will send you back to the breakout rooms to do the same, but selecting one student in the room to be the forkee. You and all the other students will fork them.
 
 Later sessions just feature more students showing their work, as in session 1. With luck, everyone will get a chance to go.
 

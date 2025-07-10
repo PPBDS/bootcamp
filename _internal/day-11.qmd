@@ -4,30 +4,41 @@ title: "Day 11"
 
 ## Goal
 
-Set the stage for a successful Demo Day.
+Demo Day Room Assignments: https://docs.google.com/spreadsheets/d/1GV2JuZr-kLLskIID58w9QqReXhJ40R13Bweb7CpSWvA
+Demo Day Projects: https://docs.google.com/spreadsheets/d/1JuIMh0_HaJ1YNVy7LXYl6Y3iKTNwcLZAdZdjRRqwbSk
+Demo Day Zoom: https://us06web.zoom.us/j/81184262640
 
-Note for Preceptor: Try having two connections. The laptop to run things and then an ipad to send the voice messages to switch rooms. Or vice versa.
+Set the stage for a successful Demo Day. 
 
+This is not so much a script as a collection of notes.
 
-## Session 1
+Note for Preceptor: Make sure you can make an audible voice announcement. If not, try having two connections. The laptop to run things and then an Ipad to send the voice messages to switch rooms. Or vice versa.
 
-Show the 
+### TFs
 
+* Make sure that all the students in your breakout rooms will be there on Thursday. (It is OK if non-presenting students are here tonight. Put them anywhere.)
 
-## Session 2
+* Make sure that there is an entry for each presenting student in the Projects spreadsheet.
 
+* Check the class spreadsheet to confirm that all rows correspond to students in the class, even if they won't present on Thursday. 
 
+https://docs.google.com/spreadsheets/d/1tcyqjwCBAcH8xtX9BTEDTRxPXr4A1SIqtJSNc5rC2eY
 
-
-## Session 3
-
-
-
-## Session 4
-
-
-
-## Session 5
+Ensure that no still enrolled student is missing.
 
 
+
+### Preceptor
+
+* Ask for volunteers to present in front of entire class.
+
+* Ask students to read the guide and then ask them questions.
+
+* Ask students to pick out a causal data set that interests them.
+
+* Practice going to rooms, sharing your screen (make the font bigger), browser should have website and repo, saying your paragraph. Then switch. Second person goes. Then B's move rooms. With person in highest room going to the first room in the group.
+
+Describe the Preceptor Table for answering the question: What happens to student's who take Kane's Data Science Bootcamp?
+
+Units? Outcome? Covariates?
 
