@@ -1,7 +1,7 @@
 # Collection of scripts I use for managing the course
 
-library(tidyverse)
 library(tutorial.helpers)
+library(tidyverse)
 
 homework <- function(pattern = "."){
   

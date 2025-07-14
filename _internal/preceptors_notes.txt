@@ -504,10 +504,10 @@ The goal for this part for students to be able to take a question and a data set
 
 ## Week 5
 
-Keep in mind that talking about the Cardinal Virtues and a new data science project takes a lot of time. Just having students write down a description of a Preceptor Table is a 5+ minute exercise in the breakout rooms. Try to do Wisdome/Justice on Monday, Courage on Wednesday and Temperance on Thursday, finishing with a Rpubs. (Encourage ambitious students to make a Quarto website.)
+Keep in mind that talking about the Cardinal Virtues and a new data science project takes a lot of time. Just having students write down a description of a Preceptor Table is a 5+ minute exercise in the breakout rooms. Try to do Wisdom/Justice on Monday, Courage on Wednesday and Temperance on Thursday, finishing with a published website. 
 
 
-On day 1, it is hard to go beyond just describing the Preceptor Table. That is hard for students to do! Maybe next time don't even bother to set up the project till Day 14. Just descibe the questions, the Preceptor Table. Then I describe the data, then ask them to come up with reasons why all the assumptions fail.
+On day 1, it is hard to go beyond just describing the Preceptor Table. That is hard for students to do! Maybe next time don't even bother to set up the project till Day 14. Just describe the questions, the Preceptor Table. Then I describe the data, then ask them to come up with reasons why all the assumptions fail.
 
 ### Day 13
 
@@ -519,15 +519,31 @@ The central metaphor for this class is Ulysses and the Sirens. You are Ulysses. 
 
 Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we start with Wisdom and, I hope, Justice.
 
+Wednesday homework:
+
+Complete the “Four Parameters: Categorical” tutorial (081-four-parameters-categorical) from the primer.tutorials package.
+
+From the r4ds.tutorials package, complete the “Dates and times” (17-dates-and-times) and “Missing values” (18-missing-values) tutorials.
+
+0) Always write down your notes as you answer these questions. It is OK if everyone in the group has the same answers, but you all need your own notes. I will
+
 1) Start thinking about the data for your Model Project: https://davidkane.info/writings/data-for-projects.html
 
-2) Welcome to our new TFs: Gia Khang and Sanaka Dash!
+2) Repo -> project -> R script to explore the data. Some useful albeit awkward code:
 
-3) Start a data science project. Repo -> Project -> Quarto Document. Download the data from https://shorturl.at/H0cju. Put in a data/ directory. Edit .gitignore. Commit/push everything. Read in the data. 
+```
+install.packages("AER")
+library(AER)
+help(package = "AER")
+data("ResumeNames")
+x <- as_tibble(ResumeNames)
+```
 
-4) What is the broad topic/question we are interested in? What is the specific question we will answer? Useful reference: https://ppbds.github.io/primer/cardinal-virtues.html#question
+3) See #annoucements for an abstract and a link to the paper.
 
-5) Describe the Preceptor Table in words. Hint: Think in terms of units, outcomes, covariates, treatments. Useful reference: https://ppbds.github.io/primer/cardinal-virtues.html#preceptor-table
+4) "Imagine that you are . . ." Come up with at least two such situations which lead to very different Preceptor Tables. 
+
+5) Describe the Preceptor Table in words. Hint: Think in terms of units, outcomes, covariates, treatments. Useful reference: https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html#preceptor-table
 
 6) Explore the data.
 
@@ -535,11 +551,7 @@ Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we
 
 8) Also, find a reason why stability, representativeness, and unconfoundedness might not hold.
 
-Class website: 
-Class Github: 
-AI Log:
 
-Add Discord post information.
 
 
 ### Day 14

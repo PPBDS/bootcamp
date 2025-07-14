@@ -8,3 +8,41 @@ https://github.com/davidkane9/Gov-1006-Papers-Spring-2020
 
 https://gking.harvard.edu/files/abs/paperspub-abs.shtml
 https://gking.harvard.edu/papers
+
+
+## Choosing an article
+
+
+## Replicating at least one table
+
+
+
+## Replicating at least one regression
+
+## Starting your PDF
+
+Your main article will be in PDF form. It will downloadable from your website, which you have not yet built. The article is built from a QMD file. See examples here: https://github.com/davidkane9/Gov-1006-Papers-Spring-2020
+
+Start by building a PDF with just a title, author, abstract and reference section. (Have AI teach you about references in quarto. You will probably make a .bib file.) The abstract has just one sentence which begins like: "Jones and Smith (2024) argue that . . ." That is, it is just a one sentence summary of what the original article argued. 
+
+Not sure what to write? Ask AI, but only for well-defined sentences/sections. Asking AI to write the whole thing is useless. Asking it to write one sentence which summarizes your replication article is good.
+
+
+## Writing an abstract
+
+First sentence is a summary of the replication article.
+
+Second sentence highlights what you were able to replicate and what you were not. Again, this is just a summary of your work. You will go into more detail later. There are different sorts of replications. Examples:
+
+    * I was able to replicate all of their results. (You replicated everything.)
+
+    * I was able to replicate their key results. (You replicated some of the tables, but lacked the time/energy to replicate everything.)
+
+    * I could only replicate some of their results. (You found some mistakes, but nothing critical.)
+
+    * I could not replicate some of their key results. (You found major problems.)
+
+Third and fourth sentences.     
+
+
+## Writing an introduction and summary

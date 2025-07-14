@@ -134,3 +134,18 @@ The highest priority is to keep the process flowing. The show must go on! Make s
 * Involve other students by calling on them by name. For example, click on the About page for George's project and say, "Sarah: What items should we see on George's about page?" Of course, correct her if she misses any that should be there.
 
 * Depending on time, you might have the chance to do a replication. Ask for a volunteer and/or ask a strong students if you can replicate her work. Then, have a different student share their screen, but you do the driving. (Students are no experienced enough to drive a replication themselves, especially if things start breaking.) Fork, connect R project, and see if `quarto preview` works. Very fun when it doesn't!
+
+
+### Class after first Demo day
+
+The biggest difference in the last four weeks of class is that the TFs do a lot more talking now. There is much less screen-sharing and student-driving, mainly because there is much less coding. There is less coding because we have AI to code for us. But, so far, we do not have an AI which can think for us. So, we need to help students think. In particular, we need to help them to apply the Cardinal Virtues to a new data science problem.
+
+You should interact with your breakout room in the same way that you see me interact with the entire class.
+
+1) Ask question after question after question. You organize the discussion. You prevent it from going off track. You call on people by name. You ensure that everyone speaks. To the extent possible, you avoid answering your own questions.
+
+2) Always ask the basic definition questions. I am going to cold-call the students when we come back to the room, so doing so is doing them a favor. What are the four Cardinal Virtues? How does Courage apply when doing data science? What is unconfoundedness? 
+
+3) In many cases, there is not a "right" answer. It all depends! The goal is to get students to, on their own, come up with reasonable answers, understand their limitations, and create a coherent approach.
+
+4) You should still require students to write things down, even though these will be notes, not code. Sharing a screen (and even student-driving) is often useful in facilitating this.
