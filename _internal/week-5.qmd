@@ -18,14 +18,14 @@ x <- read_csv("data/resume.csv", show_col_types = FALSE)
 ```
 
 
-### Background Information
+## Background Information
 
 Bertrand, Marianne and Sendhil Mullainathan. 2004. "Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination." American Economic Review, 94 (4): 991–1013. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
 
 "We study race in the labor market by sending fictitious resumes to help-wanted ads in Boston and Chicago newspapers. To manipulate perceived race, resumes are randomly assigned African-American- or White-sounding names. White names receive 50 percent more callbacks for interviews. Callbacks are also more responsive to resume quality for White names than for African-American ones. The racial gap is uniform across occupation, industry, and employer size. We also find little evidence that employers are inferring social class from the names. Differential treatment by race still appears to still be prominent in the U.S. labor market."
 
 
-### Overview
+## Overview
 
 This document includes background material for Week 5. Copy selected parts of the material out to a document which is shared with students, and then give them the answers later. The main audience for this document is Teaching Fellows so that they are better prepared to lead discussions.
 
@@ -33,14 +33,35 @@ Day 1: Covers Wisdom and Justice
 Day 2: Courage
 Day 3: Temperance
 
+Key lesson from last year is that we can't have students try to create their own "Imagine" sentence. That is too hard! Instead, we need to give them two "Imagine" sentences, one causal and one predictive, each asking about a different moment in time and a different set of units. Within that framework, they can then build a Preceptor Table and then examine the assumptions behind the creation of a Population Table.
 
-### Day 1: Wisdom and Jutice
+Note that we use the same data, and the same statistical models, to help both people!
 
-Feel free, in your breakout room, to use a different approach than what you see me doing in the main room. The most common example starts with the "Imagine that you are ..." sentence. There is no right answer! Lots of different sorts of people face different sorts of decisions and so have different questions. But all those people might end up using the same dataset in different ways.
+## Day 1: Wisdom
 
-Examples: 
+### Examples for students
 
-  1) Imagine that you are a contemporary historian studying US employment discrimination in the year 2000. You are . . . 
+1) Imagine that you are a contemporary historian studying US employment in the year 2000 in Baltimore. You want to understand the process by which some people got jobs and some did not.
+
+2) Imagine that you work for a civil rights organization in Chicago. You want to understand the process by which black US citizens are discriminated against in hiring.
+
+Repo -> project -> R script to explore the data. 
+
+### Examine the data
+
+Need to clean up this process for next year. Need to figure out which variables to keep.
+
+```
+# install.packages("AER")
+library(AER)
+library(tidyverse)
+help(package = "AER")
+data("ResumeNames")
+x <- as_tibble(ResumeNames) |> 
+  select(call, name, gender, ethnicity, quality, call, city, experience)
+```
+
+
 
   Implies that questions are just about the past, so the Preceptor Table includes only rows for people in the year 2000. Whether or not the historian is interested in a causal or predictive model is unclear. Might be both.
 
@@ -163,6 +184,8 @@ tibble(ID = c("1", "2", "...", "10", "11", "...", "N"),
   tab_spanner(label = "Covariates", columns = c(treatment, sex))
 ```
  
+
+ ## Day 1: Justice
 
 ## Scene 1
 
