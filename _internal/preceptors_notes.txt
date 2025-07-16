@@ -556,22 +556,24 @@ x <- as_tibble(ResumeNames)
 
 ### Day 14
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we finish Wisdom and Justice
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we do Courage
 
-1) You must have a dataset with an outcome variable and more than 2 covariates by tomorrow. Reminder: https://davidkane.info/writings/data-for-projects.html
+1) You must schedule a 1-on-1 meeting with your TF. Email them now. cc june.2025.kdsb@gmail.com when you do so. In that meeting, you will discuss ideas for your final project. Reminder: https://davidkane.info/writings/data-for-projects.html
 
 2) Zoom work is the same as always. Someone is always sharing a screen. That person does not talk. They just type what the "driver" tells them to type. Everyone else is also typing. Switch the "sharer" and the "driver" often, certainly at least every time we go back to the main room.
 
-3) We will fork this repo: https://github.com/Bootcamp-June-2024/prep-2024-07-17
+3) We will continue work on the repo you created on Monday. Check out mine here:
 
-4) No code today! We are trying to understand conceptual issues. Best guide: https://ppbds.github.io/primer/cardinal-virtues.html
+https://github.com/bootcamp-2025-06/resumes
 
-5) If your group answers the assigned questions quickly (I will only assign a couple at a time), then load the data and start exploring it. Don't rush through all the questions at once.
+Check out my `analysis.qmd`. Use my code to get started.
+
+
 
 
 ### Day 15
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we finish with Courage and Temperance.
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we finish with Temperance.
 
 Goal complete a published Rpubs analysis of the resume experiment. 
 

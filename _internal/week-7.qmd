@@ -14,17 +14,19 @@ library(tidybayes)
 library(brms)
 ```
 
-FOR NEXT YEAR
+### For Next Year
 
-* Figure out what cleaned up data you want to use. Ensure that, on Day 1, during the EDA, we look at those variables and then write the code which cleans up the data so that we have a clean tibble to stary with on Wednesday.
+* Figure out what cleaned up data you want to use. Ensure that, on Day 1, during the EDA, we look at those variables and then write the code which cleans up the data so that we have a clean tibble to start with on Wednesday.
+
+
+
+### Background Information
 
 This document includes background material for Week 7. I will copy selected parts of the material out to a document which is shared with students, and then give them the answers later. The main audience for this document is Teaching Fellows so that they are better prepared to lead discussions.
 
 Day 1: Covers Wisdom and Justice
 Day 2: Courage
 Day 3: Temperance
-
-### Background Information
 
 Barfort, S., Klemmensen, R., and Larsen, E. G. (2021). Longevity returns to political office. Political Science Research and Methods 9, 658–664.
 
