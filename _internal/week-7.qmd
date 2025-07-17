@@ -11,14 +11,14 @@ execute:
 library(tidyverse)
 library(gt)
 library(tidybayes)
-library(brms)
+library(brms) #AT: remove brms add broom eventually
 ```
 
 ### For Next Year
 
 * Figure out what cleaned up data you want to use. Ensure that, on Day 1, during the EDA, we look at those variables and then write the code which cleans up the data so that we have a clean tibble to start with on Wednesday.
 
-
+<!-- AT: Discuss? -->
 
 ### Background Information
 
@@ -38,6 +38,8 @@ Does political office cause worse or better longevity prospects? Two perspective
 Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
 Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
+<!-- AT: Will students be instructed to read this before class? -->
+
 ### Day 1 Discussion 
 
 Subject: Longevity
@@ -56,7 +58,8 @@ Preceptor Table:
   * Causal/predictive: a causal model  
   
   * Covariates: gender, year, incumbent, race, income, marital status, health, votes received
-  
+    <!-- AT: add age? -->
+
   * Treatment: win or lose a close election 
 
 ## Example Preceptor Table
@@ -136,9 +139,6 @@ Unconfoundedness means that the treatment assignment is independent of the poten
 The central problem is that there might be another factor --- healthiness, wealth, et cetera --- which might have a causal effect in both the treatment assignment (winning the election or not) and on the outcome (years lived). If so, there lonng life among election winners might have nothing to do with winning the election. Instead, the cause of both longevity and winning is some third factor, like wealth. In that case, we could expect Preceptor to live to the same age regardless of whether or not he wins the election.
 
 The authors try to argue that unconfoundedness is less of an issue if we focus on close elections. Consider the extreme case between an election you win by 1% or lose by 1%. In that case, the result is the proverbial "coin flip," something that we can treat as more or less random, as unconnected to any other factors. After all, it is easy to imagine, with a close election, that a given candidate might have won a race she, in fact, lost, or vice versa.
-
-
-
 
 ## Day 1  
   
@@ -231,6 +231,7 @@ fit_elec_1 <- brm(formula = death_age ~ treatment + win_margin +
                   silent = 2, 
                   seed = 9) 
 ```
+<!-- AT: This takes forever to run. -->
 
 ```{r}
 #| echo: true
