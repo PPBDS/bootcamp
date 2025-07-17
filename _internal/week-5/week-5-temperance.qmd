@@ -62,3 +62,9 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+## Temperance
+
+What are the questions you want to answer?
+
+How can you use the **marginaleffects** package to answer them?
