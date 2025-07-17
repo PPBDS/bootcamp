@@ -14,9 +14,7 @@ Only 3 tutorials due Wednesday.
 
 See the big_picture.txt file.
 
-End of week 1, Github/Rpubs using library data
-End of week 2, Github/Rpubs using downloaded data
-End of week 3, Github/Quarto Website. Three different practice websites, each time using a potential data type: census, tidytext, and . . .
+
 
 
 ## Standard Preparations
@@ -25,11 +23,26 @@ End of week 3, Github/Quarto Website. Three different practice websites, each ti
 
 * Make sure all TFs appear on the staff page, with their emails.
 
-* Set up new Github organization under your personal account. Use this for class repos. Follow bootcamp-2023-01 as a naming convention https://github.com/Bootcamp-June-2024
+* Identify a head TF and any senior TFs.
 
-* Create a new location for example reprexes at Posit Community for the Getting Help tutorial. Here is the most recent one: https://forum.posit.co/t/thread-for-students-posting-practice-reprexes-please-do-not-answer-them/187087
+* Schedule weekly course sessions in Zoom for each of M/W/Th. There is no easy way to make M/W/Th course and, anyway, it is nice to have three different Zooms because it makes it harder for students to see that we don't change the Zoom link each day.
 
-* Update link in Getting Help tutorial with this new location.
+* Have TF leadership create class roster and TF schedule Google sheets.
+
+* Set up a pinned page in the #staff channel which looks like:
+
+
+  Monday: https://us06web.zoom.us/j/85366774494 
+
+  Wednesday: https://us06web.zoom.us/j/81604872246
+
+  Thursday: https://us06web.zoom.us/j/81184262640
+
+  TF Schedule: https://tinyurl.com/5979cvv7
+
+  Class Roster: https://tinyurl.com/47nuwsc2 
+
+* Set up new Github organization under your personal account. Use this for class repos. Follow `bootcamp-2025-06` as a naming convention, using the start month of the class.
 
 * Update link in Data Project tutorial which goes to the spreadsheet students fill out.
 
@@ -556,7 +569,7 @@ x <- as_tibble(ResumeNames)
 
 ### Day 14
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we do Courage
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we do Courage.
 
 1) You must schedule a 1-on-1 meeting with your TF. Email them now. cc june.2025.kdsb@gmail.com when you do so. In that meeting, you will discuss ideas for your final project. Reminder: https://davidkane.info/writings/data-for-projects.html
 
@@ -568,7 +581,19 @@ https://github.com/bootcamp-2025-06/resumes
 
 Check out my `analysis.qmd`. Use my code to get started.
 
+4) Homework for Thursday:
 
+Complete the “Five Parameters” tutorial (091-five-parameters) from the primer.tutorials package.
+
+From the r4ds.tutorials package, complete the “Joins” (19-joins) tutorial.
+
+5) Consider two scenarios:
+
+  a) Imagine that you are a contemporary historian studying US employment in the year 2000 in Baltimore. You want to understand the process by which some people got jobs and some did not.
+
+  b) Imagine that you work for a civil rights organization in Chicago. You want to understand the process by which black US citizens are discriminated against in hiring today.
+
+Think about your Preceptor Table and Population Table. Despite the many differences, you can (mostly) use the same data and models to answer your questions.
 
 
 ### Day 15
