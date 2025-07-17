@@ -11,12 +11,15 @@ execute:
 library(tidyverse)
 library(gt)
 library(tidybayes)
-library(brms)
+library(brms) #AT: Most likely needs to be replaced by a different package. brms functions need to be replaced as well. 
+#AT: Add library(broom)?
 ```
 
 STILL A DRAFT
 
 This document includes background material for Week 6. I will copy selected parts of the material out to a document which is shared with students, and then give them the answers later. The main audience for this document is Teaching Fellows so that they are better prepared to lead discussions.
+
+AT: Will there essentially be two versions? A TF version and a seperate student version?
 
 Day 1: Covers Wisdom and Justice
 Day 2: Courage
@@ -33,11 +36,11 @@ The legislature and the educational community of Tennessee were mindful of a pro
 The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools."
 
 A potentially useful image from the documentation about the data:
+<!-- AT: Maybe mention what the image is about through a caption. -->
 
 ```{r}
 knitr::include_graphics("data/STAR-variables.png")
 ```
-
 
 ### Day 1 Discussion 
 
@@ -56,6 +59,7 @@ Preceptor Table:
   * Causal/predictive: a causal model  
   
   * Covariates: class structure, sex, zip code, birth weight, family income, parent education, race 
+    <!-- AT: Birth Weight? Maybe add school district or teacher experience-->
   
   * Treatment: assignment to a small versus regular classroom 
 
@@ -159,7 +163,6 @@ New repo, new project, new QMD, render, download data, load libraries, edit .git
 
 Design the Preceptor Table. See the discussion above for discussion. There are no right answers! The important point is to have students write down the key steps and provide some answers.
 
-
 ## Scene 3
 
 Come up with one reason why each of the assumptions --- validity, stability, representativeness and unconfoundedness --- might not hold.
@@ -181,6 +184,8 @@ library(tidybayes)
 raw <- read_csv("data/STAR.csv", show_col_types = FALSE)
 ```
 
+<!-- AT: Make sure to setwd() -->
+
 ## Scene 2
 
 Modify the variables so that they are easier to work with. You could type all this out yourself. Or you could ask ChatGPT: https://chatgpt.com/c/7b3ebad4-32f2-4f90-b0ee-087474f91bc1
@@ -193,7 +198,7 @@ Also, dropping rows with missing values is a dangerous game. We should look much
 
 Much easier to just have a treatment and control, so we throw out regular classes with an aid.
 
-
+<!-- AT: Should we explain the code below? -->
 ```{r}
 x <- raw |> 
   mutate(kind = recode(classtype,
@@ -231,6 +236,7 @@ fit_cs <- brm(formula = g4math ~ kind,
               seed = 9) 
 ```
 
+<!-- AT: the chunk above takes a while to load (at least for me). Replacing with a new function from a different package could reduce the time.-->
 
 ```{r}
 fit_cs
@@ -252,6 +258,8 @@ x |>
   ggplot(aes(x = g4math, fill = kind)) +
     geom_histogram()
 ```
+
+<!-- AT: Make more descriptive? -->
 
 I really have no idea what is going on!! Maybe look at raw data?
 
@@ -310,6 +318,8 @@ fit_cs |>
     )
 
 ```
+
+<!-- AT: Skips scene 4. Also explain code better or add more text.  -->
 
 ## Scene 5
 

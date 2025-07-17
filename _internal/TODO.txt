@@ -85,3 +85,6 @@ Is whimsical a useful tool for teaching the class itself?
 Rweekly.
 
 #rstats
+
+Anish Talla
+
