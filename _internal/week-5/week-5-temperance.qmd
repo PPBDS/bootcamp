@@ -1,0 +1,64 @@
+---
+title: "Resume Experiment"
+format: html
+execute: 
+  echo: false
+---
+
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(broom)
+library(marginaleffects)
+library(easystats)
+
+x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/resume.csv",
+        show_col_types = FALSE) |> 
+            mutate(call = as.factor(call))
+```
+
+## Background Information
+
+Bertrand, Marianne and Sendhil Mullainathan. 2004. "Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination." American Economic Review, 94 (4): 991–1013. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
+
+"We study race in the labor market by sending fictitious resumes to help-wanted ads in Boston and Chicago newspapers. To manipulate perceived race, resumes are randomly assigned African-American- or White-sounding names. White names receive 50 percent more callbacks for interviews. Callbacks are also more responsive to resume quality for White names than for African-American ones. The racial gap is uniform across occupation, industry, and employer size. We also find little evidence that employers are inferring social class from the names. Differential treatment by race still appears to still be prominent in the U.S. labor market."
+
+
+## Two Scenarios
+
+* Imagine that you are a contemporary historian studying US employment in the year 2000 in Baltimore. You want to understand the process by which some people got jobs and some did not.
+
+* Imagine that you work for a civil rights organization in Chicago. You want to understand the process by which black US citizens are discriminated against in hiring today.
+
+## Data Generating Mechanism
+
+```{r}
+fit_call <- logistic_reg() |> 
+    fit(call ~ gender + city + ethnicity + special, data = x) 
+```
+
+```{r}
+fit_call
+```
+
+```{r}
+fit_call |> 
+    tidy(conf.int = TRUE)
+```
+
+This is my data generating mechanism. 
+
+$$
+\begin{equation}
+\begin{aligned}
+\text{logit}(\Pr(\text{call} = 1)) =\; & -2.75 
+\; - \; 0.13 \cdot \text{male} 
+\; - \; 0.46 \cdot \text{chicago} \\
+& + \; 0.45 \cdot \text{caucasian} 
+\; + \; 0.82 \cdot \text{special}
+\end{aligned}
+\end{equation}
+$$
