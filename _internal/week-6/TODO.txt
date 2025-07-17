@@ -1,0 +1,11 @@
+Three separate qmd. The material which students will start each class with by forking a repo.
+
+* Day 1: Code for creating x, the object with the data. And the libraries. Also includes the abstract or a summary of the data. The two "Imagine that ... " scenarios. week-6-wisdom.qmd. 
+
+* Day 2: Some (all?) of the material for Day 1. Show the two different Preceptor Tables. Show different Population Tables. Show the counter-arguments to the assumptions. Note you need two couter-arguments, one for each Imagine that.
+
+* Day 3: All (?) the material from Day 2 start. Plus the DGM. Plus the nice LaTeX DGM.
+
+
+
+
