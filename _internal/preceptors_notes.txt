@@ -598,26 +598,24 @@ Think about your Preceptor Table and Population Table. Despite the many differen
 
 ### Day 15
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we finish with Temperance.
+0) Did you email your TF to request a 1-on-1 meeting to discuss the data for your final project? Do so now, cc'ing june.2025.kdsb@gmail.com when you do so. Reminder: https://davidkane.info/writings/data-for-projects.html
 
-Goal complete a published Rpubs analysis of the resume experiment. 
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Courage means coming up with a model. Temperance means using the fitted model, the data generating mechanism, to answer our questions.
 
-1) Repo to fork to begin: https://github.com/Bootcamp-June-2024/prep-resume
+1) Major thanks to Naveed Ahmad, Neelam Arshad, and others for answering questions on Discord. Much appreciated!
 
-2) From Discord: "I mean idk how to delete and reinstall a tutorial" 
+2) Homework for Monday:
 
-Arrg. I have only specified this several times in the Preceptor Notes. Reminder:
+  * Complete the “N Parameters” tutorial (101-n-parameters) from the primer.tutorials package.
 
-```
-remove.packages("primer.tutorials")
-remotes::install_github("PPBDS/primer.tutorials")
-```
+  * From the r4ds.tutorials package, complete the “Spreadsheets” (20-spreadsheets) and “Databases” (21-databases) tutorials.
 
-3) We will discuss model project data sources on Monday. Too much to do today!
+3) Do not start “N Parameters” until Saturday, at which point you will need to update primer.tutorials with:
 
-4) Courage means coming up with a model. Temperance means using the fitted model, the data generating mechanism, to answer our question.
+> remotes::install_github("PPBDS/primer.tutorials")
 
-
+4) Repo to fork to begin: https://github.com/bootcamp-2025-06/class-2025-07-17
+ 
 ## Week 6
 
 ### Day 16

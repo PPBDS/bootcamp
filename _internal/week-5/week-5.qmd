@@ -7,6 +7,8 @@ execute:
 ```{r}
 #| message: false
 
+library(gt)
+
 library(tidyverse)
 library(tidymodels)
 library(broom)
@@ -14,7 +16,8 @@ library(easystats)
 library(marginaleffects)
 
 x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/resume.csv",
-        show_col_types = FALSE)
+        show_col_types = FALSE) |> 
+          mutate(call = as.factor(call))
 ```
 
 ## Next Year
@@ -308,3 +311,90 @@ In either case, we will be using **marginaleffects** to come up with these numbe
 
 ## Day 3: Temperance
 
+
+```{r}
+fit_call <- logistic_reg() |> 
+    fit(call ~ gender + city + ethnicity + special + quality, data = x) 
+```
+
+
+## Scene 1
+
+Fork repo. Render QMD. Cmd/Ctrl + Enter to get everything in the Console. 
+
+Breakout rooms 1-6 use first Imagine. Rooms 7+ use second Imagine.
+
+Describe the Population Table in words.
+
+## Scene 2
+
+Start writing summary paragraph. (AI may be helpful for individual sentences but won't give you a paragraph at once.)
+
+Start playing with marginaleffects package. Run predictions(). What does the output mean? AI can help.
+
+
+```{r}
+predictions(fit_call, type = "prob")
+```
+
+```{r}
+predictions(fit_call, type = "prob", by = "city")
+```
+
+```{r}
+predictions(fit_call, type = "prob", by = "ethnicity")
+```
+
+## Scene 3
+
+Start think about what sort of graphic you want to make. Start experimenting.
+
+
+```{r}
+plot_predictions(fit_call, type = "prob", by = "city")
+```
+
+```{r}
+plot_predictions(fit_call, type = "prob", condition = "city")
+```
+
+```{r}
+plot_predictions(fit_call, type = "prob", condition = c("ethnicity", "city"))
+```
+
+Explain the difference between `by` and `condition`.
+
+```{r}
+plot_predictions(fit_call, type = "prob", by = c("ethnicity", "city"))
+```
+
+The `condition` argument is used to plot conditional predictions, which are predictions made on a user-specified grid of predictor values.
+
+Use `condition` when you want to explore how predictions vary across specific values of one or more predictors, holding others constant.
+
+
+The `by` argument is used to plot marginal predictions, which are predictions computed on the original data but averaged by subgroups defined by one or more variables.
+
+Use `by` when you want to visualize average predictions for specific subgroups in the data, rather than a hypothetical grid. This is useful for summarizing predictions across categorical or discrete variables.
+
+I still find this confusing! I use `by` because I think I understand it . . .
+
+
+## Scene 4
+
+Come up with an "interesting" plot. You almost certainly want to use a vector of three variables for `by` or `condition`.
+
+```{r}
+plot_predictions(fit_call, 
+                 type = "prob", 
+                 by = c("quality", "ethnicity", "city"))
+```
+
+
+## Scene 5
+
+But those plots are ugly, not least because seeing Yes and No for callback value is annoying. `draw = FALSE` and AI to make a nice looking plot.
+
+## Scene 6
+
+If you have time, make a website with this cool plot, and the finished summary paragraph.

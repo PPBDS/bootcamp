@@ -1,0 +1,64 @@
+---
+title: "Week 5 Wisdom"
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+
+library(tidyverse)
+
+x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/resume.csv",
+        show_col_types = FALSE) |> 
+          mutate(call = as.factor(call))
+```
+
+
+### Background Information
+
+Bertrand, Marianne and Sendhil Mullainathan. 2004. "Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination." American Economic Review, 94 (4): 991–1013. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
+
+"We study race in the labor market by sending fictitious resumes to help-wanted ads in Boston and Chicago newspapers. To manipulate perceived race, resumes are randomly assigned African-American- or White-sounding names. White names receive 50 percent more callbacks for interviews. Callbacks are also more responsive to resume quality for White names than for African-American ones. The racial gap is uniform across occupation, industry, and employer size. We also find little evidence that employers are inferring social class from the names. Differential treatment by race still appears to still be prominent in the U.S. labor market."
+
+### Scenarios
+
+Your breakout room should select (or might be assigned to) one of these two scenarios:
+
+    * Imagine that you are a contemporary historian studying US employment in the year 2000 in Baltimore. You want to understand the process by which some people got jobs and some did not.
+
+    * Imagine that you work for a civil rights organization in Chicago. You want to understand the process by which black US citizens are discriminated against in hiring.
+
+### Tasks
+
+* Come up with one question which this person might want to answer.
+
+* Explore the data. What is the outcome variable? How it is distributed?
+
+* Iterate on the question, given the data.
+
+### Preceptor Table
+
+* Causal or prediction?
+
+* Units:
+
+* Outcome:
+
+* Covariates:
+
+* Treatment:
+
+### Population Table
+
+* Describe Population Table in words.
+
+* Counter-argument to the assumption of validity:
+
+* Counter-argument to the assumption of stability:
+
+* Counter-argument to the assumption of representativeness:
+
+* Counter-argument to the assumption of unconfoundedness:
+
+* Describe the mathematical structure of the model:  

@@ -42,7 +42,20 @@ Second sentence highlights what you were able to replicate and what you were not
 
     * I could not replicate some of their key results. (You found major problems.)
 
-Third and fourth sentences.     
+Third and fourth sentences.   
+
+    * What did you do? What did you discover?
+
+ Last sentence (optional)
+
+    * General statement about why X is important.   
 
 
 ## Writing an introduction and summary
+
+Each sentence in the abstract becomes a paragraph. The introduction does not include a paragraph about why X is important. The summary does.
+
+## Results sections
+
+
+
