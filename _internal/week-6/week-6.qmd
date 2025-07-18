@@ -11,15 +11,13 @@ execute:
 library(tidyverse)
 library(gt)
 library(tidybayes)
-library(brms) #AT: Most likely needs to be replaced by a different package. brms functions need to be replaced as well. 
-#AT: Add library(broom)?
+library(broom)
+library(tidymodels)
 ```
 
 STILL A DRAFT
 
 This document includes background material for Week 6. I will copy selected parts of the material out to a document which is shared with students, and then give them the answers later. The main audience for this document is Teaching Fellows so that they are better prepared to lead discussions.
-
-AT: Will there essentially be two versions? A TF version and a seperate student version?
 
 Day 1: Covers Wisdom and Justice
 Day 2: Courage
@@ -42,7 +40,7 @@ A potentially useful image from the documentation about the data:
 knitr::include_graphics("data/STAR-variables.png")
 ```
 
-### Day 1 Discussion 
+### Day 1 Wisdom
 
 Subject: Education
 
@@ -223,23 +221,20 @@ x <- raw |>
 ## Scene 3
 
 
-Fit a **brms** model in which grade 4 math score is a function of the size of the class. Use the gaussian family since g4math is a continuous variable. Use `cache: true` as a code chunk option. Consider using the `refresh`, `silent` and `seed` arguments. Look at the fitted model.
+Fit a linear regression model to estimate how class size affects grade 4 math scores. Since `g4math` is a continuous variable, use the `linear_reg()` function from the tidymodels package, set the engine to `"lm"`, and fit the model with `g4math ~ kind` using your cleaned dataset. After fitting the model, examine the output using `tidy()`.
 
 ```{r}
 #| cache: true
  
-fit_cs <- brm(formula = g4math ~ kind, 
-              data = x, 
-              family = gaussian(), 
-              refresh = 0, 
-              silent = 2, 
-              seed = 9) 
+fit_cs <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(g4math ~ kind, data = x) 
 ```
 
-<!-- AT: the chunk above takes a while to load (at least for me). Replacing with a new function from a different package could reduce the time.-->
+Interpret the estimate values once you run `tidy()` on `fit_cs`
 
 ```{r}
-fit_cs
+tidy(fit_cs, conf.int = TRUE)
 ```
 
 Sure seems like size of class has no connection to grade 4 math score! Does this pass a simple smell test?
@@ -287,62 +282,52 @@ ndata <- tibble(kind = c("regular", "small"))
 Create draws for the posterior probability of the expected value of a student's 4th grade math score, given the size of their classroom.
 
 ```{r}
-fit_cs |>
-  add_epred_draws(newdata = ndata)
+augment(fit_cs, new_data = ndata, se_fit = TRUE)
 ```
-
-
-
 
 ## Scene 3
 
 Create a plot of the two posteriors. 
 
 ```{r}
-fit_cs |>
-  add_epred_draws(newdata = ndata) |> 
-  ungroup() |>
-  select(kind, .epred) |>
-  ggplot(aes(x = .epred, fill = kind)) +
-    geom_density(alpha = 0.5) +
-    labs(title = "Posterior for Exam Score",
-         subtitle = "Class size has no effect on exam score",
-         x = "Exam Score",
-         fill = "Classroom Size",
-         caption = "Data from Tennessee STAR Experiment") +
-    theme(
-      axis.title.y = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank(),
-      axis.line.y = element_blank()
-    )
-
+ndata <- tibble(kind = c("regular", "small"))
+augment(fit_cs, new_data = ndata) |>
+  ggplot(aes(x = kind, y = .pred, fill = kind)) +
+    geom_col(width = 0.5, alpha = 0.7) +
+    labs(
+      title = "Predicted Mean Exam Score by Class Size",
+      subtitle = "No clear difference in predicted means",
+      x = "Classroom Size",
+      y = "Predicted Exam Score",
+      fill = "Classroom Size"
+    ) +
+    theme_minimal()
 ```
 
-<!-- AT: Skips scene 4. Also explain code better or add more text.  -->
-
-## Scene 5
+## Scene 4
 
 Or create a plot of the posterior of the causal effect.
 
 ```{r}
-fit_cs |>
-  add_epred_draws(newdata = ndata) |>
-  ungroup() |>
-  select(.draw, kind, .epred) |>
-  pivot_wider(names_from = kind, values_from = .epred) |>
-  mutate(causal_effect = small - regular) |>
-  ggplot(aes(x = causal_effect)) +
-    geom_density() +
-    labs(title = "Posterior for the Causal Effect of Fewer Students",
-         subtitle = "Classes with fewer students do not have higher scores",
-         x = "Expected Difference in Exam Scores",
-         caption = "Data from Tennessee STAR Experiment") +
+tidy(fit_cs, conf.int = TRUE) |> 
+  filter(term == "kindsmall") |>
+  ggplot(aes(x = estimate, y = 0)) +
+    geom_point(size = 4) +
+    geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), height = 0.15, size = 1) +
+    labs(
+      title = "Estimated Causal Effect of Fewer Students",
+      subtitle = "No significant difference in mean scores",
+      x = "Expected Difference in Exam Scores (Small - Regular)",
+      y = "",
+      caption = "Model: Linear regression; Data: Tennessee STAR"
+    ) +
+    theme_minimal() +
     theme(
-      axis.title.y = element_blank(),
       axis.text.y = element_blank(),
-      axis.ticks.y = element_blank(),
-      axis.line.y = element_blank()
-    )
+      axis.ticks.y = element_blank()
+    ) +
+    xlim(-10, 10)  
 
 ```
+
+<!-- AT: The plots look a lot cooler with brms because its a Bayesian model. -->

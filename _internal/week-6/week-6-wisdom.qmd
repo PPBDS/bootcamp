@@ -1,0 +1,90 @@
+---
+title: "Week 6"
+execute: 
+  echo: false
+---
+
+STILL A DRAFT
+
+Day 1: Covers Wisdom and Justice
+
+## Background Information
+
+Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol. 5, no. 2, pp. 113–127. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
+
+"The Tennessee class size project is a three-phase study designed to determine the effect of smaller class size in the earliest grades on short-term and long-term pupil performance. The first phase of this project, termed Project STAR (for Student-Teacher Achievement Ratio), was begun in 1985, when Lamar Alexander was governor of Tennessee. Governor Alexander, who later served as secretary of education in the cabinet of President George Bush, had made education a top priority for his second term.
+
+The legislature and the educational community of Tennessee were mindful of a promising study of the benefits of small class size carried out in nearby Indiana, but were also aware of the costs associated with additional classrooms and teachers. Wishing to obtain data on the effectiveness of reduced class size before committing additional funds, the Tennessee legislature authorized this four-year study in which results obtained in kindergarten, first, second, and third grade classrooms of 13 to 17 pupils were compared with those obtained in classrooms of 22 to 25 pupils and in classrooms of this larger size where the teacher was assisted by a paid aide. Both standardized and curriculum-based tests were used to assess and compare the performance of some 6,500 pupils in about 330 classrooms at approximately 80 schools in the areas of reading, mathematics, and basic study skills. After four years, it was clear that smaller classes did produce substantial improvement in early learning and cognitive studies and that the effect of small class size on the achievement of minority children was initially about double that observed for majority children, but in later years, it was about the same.
+
+The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools."
+
+A potentially useful image from the documentation about the data:
+```{r}
+knitr::include_graphics("data/STAR-variables.png")
+```
+
+*Variable names and descriptions from the Tennessee STAR Project dataset, including student demographics, class type, and key academic outcomes.*
+
+## Day 1: Wisdom
+
+### Data Summary
+
+  The Tennessee STAR dataset comes from a landmark randomized controlled experiment conducted in the 1980s to study the impact of class size on student achievement in early elementary school. Over 6,000 students in approximately 80 Tennessee schools were randomly assigned to one of three classroom settings from kindergarten through third grade: small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. Students’ academic performance was tracked over several years, with a particular focus on standardized test scores in reading and mathematics. This dataset allows us to investigate how reducing class size affects academic outcomes and whether these effects differ by student characteristics such as race or socioeconomic status.
+
+<!-- AT: Should I remove the backround info from this file? -->
+
+### 
+
+Libraries
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(gt)
+library(tidybayes)
+library(broom)
+library(tidymodels)
+```
+
+
+Load your data
+
+```{r}
+x <- read_csv("data/STAR.csv", show_col_types = FALSE)
+```
+
+Fit a linear regression model to estimate effect of class size on math scores
+
+```{r}
+fit_cs <- linear_reg() |>
+  set_engine("lm") |>
+  fit(g4math ~ kind, data = x)
+```
+
+View tidy summary of the model (including coefficient estimates & CIs). Discuss the `estimate` values for `Intercept` and `kindsmall`. 
+
+```{r}
+tidy(fit_cs, conf.int = TRUE)
+```
+
+### Scenarios
+
+1) Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether moving some classes from 22 students to 15 students will likely boost math achievement next year in your school.
+
+2) Imagine you work for the Texas Department of Education. You want to use the STAR data to predict what might happen if Dallas adopted small class sizes, but you are worried about whether the findings from 1980s Tennessee would apply to Dallas today.
+
+<!-- AT: Check examples I think they could use some revising. -->
+
+## Discussion
+
+Consider the following questions:
+
+> What are the units, precisely?
+
+> What is the moment in time, precisely?
+
+> What does the preceptor table look like in words?
+
+>For each scenario, what specific question would the person be interested in answering using the STAR data?
+
