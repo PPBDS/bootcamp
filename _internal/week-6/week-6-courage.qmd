@@ -1,0 +1,167 @@
+## Day 2: Courage
+
+### Scenarios
+
+1) Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether moving some classes from 22 students to 15 students will likely boost math achievement next year in your school.
+
+2) Imagine you work for the Texas Department of Education. You want to use the STAR data to predict what might happen if Dallas adopted small class sizes, but you are worried about whether the findings from 1980s Tennessee would apply to Dallas today.
+
+<!-- AT: Check examples I think they could use some revising. -->
+
+### Counter-Arguments
+
+Before relying on the STAR data to answer these scenarios, consider the following counter-arguments that challenge whether the study’s findings can be applied directly to each context:
+
+Scenario 1) The STAR experiment was conducted in the 1980s, and your school in Nashville in 2000 may have different student demographics, curricula, or teaching practices. As a result, the relationship between class size and math achievement may not be stable over time, and the effect observed in STAR may not apply directly to your school next year.
+
+Scenario 2) Dallas schools in the 2020s may differ substantially from Tennessee schools in the 1980s in terms of resources, cultural context, and student needs. The representativeness assumption may not hold—meaning the effect of small class size observed in the STAR study might not generalize to Dallas today due to differences in population and educational environment.
+
+### Data Summary
+
+  The Tennessee STAR dataset comes from a landmark randomized controlled experiment conducted in the 1980s to study the impact of class size on student achievement in early elementary school. Over 6,000 students in approximately 80 Tennessee schools were randomly assigned to one of three classroom settings from kindergarten through third grade: small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. Students’ academic performance was tracked over several years, with a particular focus on standardized test scores in reading and mathematics. This dataset allows us to investigate how reducing class size affects academic outcomes and whether these effects differ by student characteristics such as race or socioeconomic status.
+
+Libraries
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(gt)
+library(tidybayes)
+library(broom)
+library(tidymodels)
+```
+
+
+Load your data
+
+```{r}
+x <- read_csv("data/STAR.csv", show_col_types = FALSE)
+```
+
+Fit a linear regression model to estimate effect of class size on math scores
+
+```{r}
+fit_cs <- linear_reg() |>
+  set_engine("lm") |>
+  fit(g4math ~ kind, data = x)
+```
+
+View tidy summary of the model (including coefficient estimates & CIs). Discuss the `estimate` values for `Intercept` and `kindsmall`. 
+
+```{r}
+tidy(fit_cs, conf.int = TRUE)
+```
+
+## Example Preceptor Tables
+  
+```{r}
+tibble(ID = c("1", "2", "...", "10", "11", "...", "N"),
+       attitude_after_control = c("706*", "565", "...", "654*", "547*", "...", "568"),
+       attitude_after_treated = c("638", "620*", "...", "710", "567", "...", "743*"),
+       treatment = c("Small", "Regular", "...", "Small", "Small", "...", "Regular")) |>
+  
+  gt() |>
+  tab_header(title = "Preceptor Table") |> 
+  cols_label(ID = md("ID"),
+             attitude_after_control = md("Score if Regular Class"),
+             attitude_after_treated = md("Score if Small Class"),
+             treatment = md("Treatment")) |>
+  tab_style(cell_borders(sides = "right"),
+            location = cells_body(columns = c(ID))) |>
+  tab_style(style = cell_text(align = "left", v_align = "middle", size = "large"), 
+            locations = cells_column_labels(columns = c(ID))) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  fmt_markdown(columns = everything()) |>
+  tab_spanner(label = "Potential Outcomes", columns = c(attitude_after_control, attitude_after_treated)) |>
+  tab_spanner(label = "Covariate", columns = c(treatment)) |> 
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome which we do not observe."),
+    locations = cells_column_spanners(spanners = "Potential Outcomes")
+  )
+```
+
+
+```{r}
+preceptor_tbl2 <- tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  score_regular = c("685", "672*", "...", "689", "661", "...", "670*"),
+  score_small   = c("700*", "679", "...", "695*", "675*", "...", "678"),
+  gain_if_small = c("15*", "7", "...", "6*", "14*", "...", "8"),
+  treatment     = c("Regular", "Small", "...", "Regular", "Regular", "...", "Small")
+)
+
+preceptor_tbl2 |>
+  gt() |>
+  tab_header(title = "Preceptor Table: Causal Effect of Small Class Size") |>
+  cols_label(
+    ID = md("ID"),
+    score_regular = md("Score if Regular Class"),
+    score_small = md("Score if Small Class"),
+    gain_if_small = md("Gain if Small Class"),
+    treatment = md("Observed Class Size")
+  ) |>
+  tab_spanner(label = "Potential Outcomes", columns = c(score_regular, score_small)) |>
+  tab_spanner(label = "Estimated Causal Effect", columns = c(gain_if_small)) |>
+  fmt_markdown(columns = everything()) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome or gain which we do not observe."),
+    locations = cells_column_spanners(spanners = c("Potential Outcomes", "Estimated Causal Effect"))
+  )
+
+```
+
+## Example Population Tables
+
+```{r}
+
+population_tbl <- tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  score_observed = c("638", "565", "...", "654", "547", "...", "743"),
+  treatment = c("Small", "Regular", "...", "Small", "Small", "...", "Regular"),
+  sex = c("female", "male", "...", "male", "female", "...", "female"),
+  school = c("A", "B", "...", "C", "A", "...", "B")
+)
+
+population_tbl |>
+  gt() |>
+  tab_header(title = "Population Table") |>
+  cols_label(
+    ID = md("ID"),
+    score_observed = md("Observed Math Score"),
+    treatment = md("Observed Class Size"),
+    sex = md("Sex"),
+    school = md("School")
+  ) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  fmt_markdown(columns = everything()) |>
+  tab_spanner(label = "Observed Data", columns = c(score_observed, treatment, sex, school))
+```
+
+
+```{r}
+population_tbl2 <- tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  score_observed = c("685", "679", "...", "689", "661", "...", "678"),
+  treatment = c("Regular", "Small", "...", "Regular", "Regular", "...", "Small")
+)
+
+population_tbl2 |>
+  gt() |>
+  tab_header(title = "Population Table: Observed Scores and Class Size") |>
+  cols_label(
+    ID = md("ID"),
+    score_observed = md("Observed Math Score"),
+    treatment = md("Observed Class Size")
+  ) |>
+  fmt_markdown(columns = everything()) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  tab_spanner(label = "Observed Data", columns = c(score_observed, treatment))
+
+```
+
