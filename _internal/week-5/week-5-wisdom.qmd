@@ -35,11 +35,15 @@ Your breakout room should select (or might be assigned to) one of these two scen
 
 * Explore the data. What is the outcome variable? How it is distributed?
 
+```{r}
+
+```
+
 * Iterate on the question, given the data.
 
 ### Preceptor Table
 
-* Causal or prediction?
+* Causal or predictive?
 
 * Units:
 
