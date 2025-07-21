@@ -64,7 +64,9 @@ x |>
 
 ### Preceptor Table
 
-In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments?
+What sorts of questions are we trying to answer?
+
+In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments? Describe the mathematical Structure of the model.
 
 * Causal or predictive?
 
