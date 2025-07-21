@@ -61,6 +61,8 @@ x |>
 
 <!-- DK: Remove bold. Fix Chicago and date.  Make nice sentences. -->
 
+In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictice? What are units? What are the outcomes? What are the covariates? What are the treatments?
+
 * Causal or predictive?
 >**Causal**
 
@@ -79,7 +81,9 @@ x |>
 
 <!-- DK: Insert two Preceptor Tables -->
 
-### Population Table Scenario 1
+### Population Table 
+
+A paragraph indicating what to do. Describe in words the Population Table. For each of the four key assumption of Justice --- validity, stability, representativeness, and unconfoundedness --- provide a counter-example, if relevant.
 
 <!-- DK: Insert two Population Tables. -->
 
@@ -115,12 +119,15 @@ x |>
 >**The relationship between class size and math achievement may have changed over time or may differ across locations, so the effect observed in 1980s Tennessee may not be stable in Dallas today.**
 
 * Counter-argument to the assumption of representativeness:
+
 >**The STAR study participants from Tennessee might not be representative of Dallas students today—differences in socioeconomic status, educational resources, or community factors could affect generalizability.**
 
 * Counter-argument to the assumption of unconfoundedness:
+
 >**If Dallas does not implement small classes randomly, schools or students selected for the intervention might differ in important ways, making it difficult to separate the effect of class size from other influences.**
 
 * Describe the mathematical structure of the model:  
+
 >**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
 
 ## More Information

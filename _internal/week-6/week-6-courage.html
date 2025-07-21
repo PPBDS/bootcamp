@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>week-6-courage</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="week-6-courage_files/libs/clipboard/clipboard.min.js"></script>
+<script src="week-6-courage_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="week-6-courage_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="week-6-courage_files/libs/quarto-html/popper.min.js"></script>
+<script src="week-6-courage_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="week-6-courage_files/libs/quarto-html/anchor.min.js"></script>
+<link href="week-6-courage_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="week-6-courage_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="week-6-courage_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="week-6-courage_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="week-6-courage_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="day-2-courage" class="level2">
+<h2 class="anchored" data-anchor-id="day-2-courage">Day 2: Courage</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(marginaleffects)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">mutate</span>(<span class="at">kind =</span> <span class="fu">recode</span>(classtype,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                       <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"small"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                       <span class="st">`</span><span class="at">2</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"regular"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                       <span class="st">`</span><span class="at">3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"regular_with_aid"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- DK: Change code and other stuff to be consistent.  -->
+</section>
+<section id="background-information" class="level2">
+<h2 class="anchored" data-anchor-id="background-information">Background Information</h2>
+<p>Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol.&nbsp;5, no. 2, pp.&nbsp;113–127. Data cleaned and discussed in “Quantitative Social Science: An Introduction” by Kosuke Imai.</p>
+<p>“The Tennessee class size project is a three-phase study designed to determine the effect of smaller class size in the earliest grades on short-term and long-term pupil performance. The first phase of this project, termed Project STAR (for Student-Teacher Achievement Ratio), was begun in 1985, when Lamar Alexander was governor of Tennessee. Governor Alexander, who later served as secretary of education in the cabinet of President George Bush, had made education a top priority for his second term.</p>
+<p>The legislature and the educational community of Tennessee were mindful of a promising study of the benefits of small class size carried out in nearby Indiana, but were also aware of the costs associated with additional classrooms and teachers. Wishing to obtain data on the effectiveness of reduced class size before committing additional funds, the Tennessee legislature authorized this four-year study in which results obtained in kindergarten, first, second, and third grade classrooms of 13 to 17 pupils were compared with those obtained in classrooms of 22 to 25 pupils and in classrooms of this larger size where the teacher was assisted by a paid aide. Both standardized and curriculum-based tests were used to assess and compare the performance of some 6,500 pupils in about 330 classrooms at approximately 80 schools in the areas of reading, mathematics, and basic study skills. After four years, it was clear that smaller classes did produce substantial improvement in early learning and cognitive studies and that the effect of small class size on the achievement of minority children was initially about double that observed for majority children, but in later years, it was about the same.</p>
+<p>The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools.”</p>
+<section id="scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="scenarios">Scenarios</h3>
+<ol type="1">
+<li><p>Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether reducing the students per class will likely boost math achievement next year in your school.</p></li>
+<li><p>Imagine you work for the Texas Department of Education. You want to use the STAR data to predict what might happen if Dallas adopted small class sizes, but you are worried about whether the findings from 1980s Tennessee would apply to Dallas today.</p></li>
+</ol>
+<!-- AT: Check examples. -->
+</section>
+<section id="counter-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="counter-arguments">Counter-Arguments</h3>
+</section>
+</section>
+<section id="scenario-1" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-1">Scenario 1</h2>
+<ul>
+<li><p>Counter-argument to the assumption of validity: &gt;<strong>The definition of “small class” or the math achievement test used in Nashville in 2000 may not perfectly match those from the STAR study in Tennessee, so the measured outcome may not be directly comparable.</strong></p></li>
+<li><p>Counter-argument to the assumption of stability: &gt;<strong>The effect of reducing class size on math achievement could be different in Nashville in 2000 than it was in Tennessee in the 1980s, due to differences in students, teachers, or school environments.</strong></p></li>
+<li><p>Counter-argument to the assumption of representativeness: &gt;<strong>Nashville’s students in 2000 may differ in key ways from students in the STAR study—such as demographics, family backgrounds, or school funding—which could limit how well the STAR results apply to Nashville.</strong></p></li>
+<li><p>Counter-argument to the assumption of unconfoundedness: &gt;<strong>In practice, it may not be possible to randomly assign students to small classes in Nashville, and other factors (like which schools or students are chosen for small classes) could affect math scores, making it hard to isolate the causal effect.</strong></p></li>
+</ul>
+</section>
+<section id="scenario-2" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-2">Scenario 2</h2>
+<ul>
+<li><p>Counter-argument to the assumption of validity: &gt;<strong>“Small class” and “math achievement” in Dallas today might be defined or measured differently than in 1980s Tennessee, so using STAR results directly may not be valid.</strong></p></li>
+<li><p>Counter-argument to the assumption of stability: &gt;<strong>The relationship between class size and math achievement may have changed over time or may differ across locations, so the effect observed in 1980s Tennessee may not be stable in Dallas today.</strong></p></li>
+<li><p>Counter-argument to the assumption of representativeness: &gt;<strong>The STAR study participants from Tennessee might not be representative of Dallas students today—differences in socioeconomic status, educational resources, or community factors could affect generalizability.</strong></p></li>
+<li><p>Counter-argument to the assumption of unconfoundedness: &gt;<strong>If Dallas does not implement small classes randomly, schools or students selected for the intervention might differ in important ways, making it difficult to separate the effect of class size from other influences.</strong></p></li>
+</ul>
+<section id="example-preceptor-tables" class="level3">
+<h3 class="anchored" data-anchor-id="example-preceptor-tables">Example Preceptor Tables</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"..."</span>, <span class="st">"10"</span>, <span class="st">"11"</span>, <span class="st">"..."</span>, <span class="st">"N"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">score_regular =</span> <span class="fu">c</span>(<span class="st">"706*"</span>, <span class="st">"565"</span>, <span class="st">"..."</span>, <span class="st">"654*"</span>, <span class="st">"547*"</span>, <span class="st">"..."</span>, <span class="st">"568"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">score_small =</span> <span class="fu">c</span>(<span class="st">"638"</span>, <span class="st">"620*"</span>, <span class="st">"..."</span>, <span class="st">"710"</span>, <span class="st">"567"</span>, <span class="st">"..."</span>, <span class="st">"743*"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">observed_class =</span> <span class="fu">c</span>(<span class="st">"Small"</span>, <span class="st">"Regular"</span>, <span class="st">"..."</span>, <span class="st">"Small"</span>, <span class="st">"Small"</span>, <span class="st">"..."</span>, <span class="st">"Regular"</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"..."</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"..."</span>, <span class="st">"female"</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">race =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"..."</span>, <span class="st">"black"</span>, <span class="st">"white"</span>, <span class="st">"..."</span>, <span class="st">"white"</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">school =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"..."</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"..."</span>, <span class="st">"B"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Preceptor Table: Potential Outcomes by Class Size"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ID =</span> <span class="fu">md</span>(<span class="st">"ID"</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">score_regular =</span> <span class="fu">md</span>(<span class="st">"Score if Regular Class"</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">score_small =</span> <span class="fu">md</span>(<span class="st">"Score if Small Class"</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">observed_class =</span> <span class="fu">md</span>(<span class="st">"Observed Class Size"</span>),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">md</span>(<span class="st">"Sex"</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">md</span>(<span class="st">"Race"</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">school =</span> <span class="fu">md</span>(<span class="st">"School"</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Potential Outcomes"</span>, <span class="at">columns =</span> <span class="fu">c</span>(score_regular, score_small)) <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Covariates"</span>, <span class="at">columns =</span> <span class="fu">c</span>(sex, race, school)) <span class="sc">|&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">columns =</span> <span class="fu">c</span>(ID)) <span class="sc">|&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="fu">md</span>(<span class="st">"A * indicates a potential outcome we do not observe."</span>),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_spanners</span>(<span class="at">spanners =</span> <span class="st">"Potential Outcomes"</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="lsupfnztrl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lsupfnztrl table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lsupfnztrl thead, #lsupfnztrl tbody, #lsupfnztrl tfoot, #lsupfnztrl tr, #lsupfnztrl td, #lsupfnztrl th {
+  border-style: none;
+}
+
+#lsupfnztrl p {
+  margin: 0;
+  padding: 0;
+}
+
+#lsupfnztrl .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lsupfnztrl .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lsupfnztrl .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lsupfnztrl .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lsupfnztrl .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lsupfnztrl .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lsupfnztrl .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lsupfnztrl .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lsupfnztrl .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lsupfnztrl .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lsupfnztrl .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lsupfnztrl .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lsupfnztrl .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lsupfnztrl .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lsupfnztrl .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lsupfnztrl .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lsupfnztrl .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lsupfnztrl .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lsupfnztrl .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lsupfnztrl .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lsupfnztrl .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lsupfnztrl .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lsupfnztrl .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lsupfnztrl .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lsupfnztrl .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lsupfnztrl .gt_left {
+  text-align: left;
+}
+
+#lsupfnztrl .gt_center {
+  text-align: center;
+}
+
+#lsupfnztrl .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lsupfnztrl .gt_font_normal {
+  font-weight: normal;
+}
+
+#lsupfnztrl .gt_font_bold {
+  font-weight: bold;
+}
+
+#lsupfnztrl .gt_font_italic {
+  font-style: italic;
+}
+
+#lsupfnztrl .gt_super {
+  font-size: 65%;
+}
+
+#lsupfnztrl .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lsupfnztrl .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lsupfnztrl .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lsupfnztrl .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lsupfnztrl .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lsupfnztrl .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lsupfnztrl .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lsupfnztrl .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lsupfnztrl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Preceptor Table: Potential Outcomes by Class Size</th>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="ID" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">ID</th>
+<th colspan="2" id="Potential Outcomes" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Potential Outcomes<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>
+</div></th>
+<th rowspan="2" id="observed_class" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Observed Class Size</th>
+<th colspan="3" id="Covariates" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Covariates
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="score_regular" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Score if Regular Class</th>
+<th id="score_small" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Score if Small Class</th>
+<th id="sex" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Sex</th>
+<th id="race" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Race</th>
+<th id="school" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">School</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">1</td>
+<td class="gt_row gt_center" headers="score_regular">706*</td>
+<td class="gt_row gt_center" headers="score_small">638</td>
+<td class="gt_row gt_center" headers="observed_class">Small</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="school">A</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">2</td>
+<td class="gt_row gt_center" headers="score_regular">565</td>
+<td class="gt_row gt_center" headers="score_small">620*</td>
+<td class="gt_row gt_center" headers="observed_class">Regular</td>
+<td class="gt_row gt_center" headers="sex">male</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="school">B</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="score_regular">…</td>
+<td class="gt_row gt_center" headers="score_small">…</td>
+<td class="gt_row gt_center" headers="observed_class">…</td>
+<td class="gt_row gt_center" headers="sex">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="school">…</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">10</td>
+<td class="gt_row gt_center" headers="score_regular">654*</td>
+<td class="gt_row gt_center" headers="score_small">710</td>
+<td class="gt_row gt_center" headers="observed_class">Small</td>
+<td class="gt_row gt_center" headers="sex">male</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="school">C</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">11</td>
+<td class="gt_row gt_center" headers="score_regular">547*</td>
+<td class="gt_row gt_center" headers="score_small">567</td>
+<td class="gt_row gt_center" headers="observed_class">Small</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="school">A</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="score_regular">…</td>
+<td class="gt_row gt_center" headers="score_small">…</td>
+<td class="gt_row gt_center" headers="observed_class">…</td>
+<td class="gt_row gt_center" headers="sex">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="school">…</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">N</td>
+<td class="gt_row gt_center" headers="score_regular">568</td>
+<td class="gt_row gt_center" headers="score_small">743*</td>
+<td class="gt_row gt_center" headers="observed_class">Regular</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="school">B</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="7" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> A * indicates a potential outcome we do not observe.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"..."</span>, <span class="st">"10"</span>, <span class="st">"11"</span>, <span class="st">"..."</span>, <span class="st">"N"</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">score_regular =</span> <span class="fu">c</span>(<span class="st">"685"</span>, <span class="st">"672*"</span>, <span class="st">"..."</span>, <span class="st">"689"</span>, <span class="st">"661"</span>, <span class="st">"..."</span>, <span class="st">"670*"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">score_small   =</span> <span class="fu">c</span>(<span class="st">"700*"</span>, <span class="st">"679"</span>, <span class="st">"..."</span>, <span class="st">"695*"</span>, <span class="st">"675*"</span>, <span class="st">"..."</span>, <span class="st">"678"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">gain_if_small =</span> <span class="fu">c</span>(<span class="st">"15*"</span>, <span class="st">"7"</span>, <span class="st">"..."</span>, <span class="st">"6*"</span>, <span class="st">"14*"</span>, <span class="st">"..."</span>, <span class="st">"8"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">observed_class =</span> <span class="fu">c</span>(<span class="st">"Regular"</span>, <span class="st">"Small"</span>, <span class="st">"..."</span>, <span class="st">"Regular"</span>, <span class="st">"Regular"</span>, <span class="st">"..."</span>, <span class="st">"Small"</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">race =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"..."</span>, <span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"..."</span>, <span class="st">"white"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">yearssmall =</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"4"</span>, <span class="st">"..."</span>, <span class="st">"0"</span>, <span class="st">"0"</span>, <span class="st">"..."</span>, <span class="st">"4"</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">school =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"..."</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"..."</span>, <span class="st">"B"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Preceptor Table: Causal Effect of Small Class Size"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ID =</span> <span class="fu">md</span>(<span class="st">"ID"</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">score_regular =</span> <span class="fu">md</span>(<span class="st">"Score if Regular Class"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">score_small =</span> <span class="fu">md</span>(<span class="st">"Score if Small Class"</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">gain_if_small =</span> <span class="fu">md</span>(<span class="st">"Gain if Small Class"</span>),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">observed_class =</span> <span class="fu">md</span>(<span class="st">"Observed Class Size"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">md</span>(<span class="st">"Race"</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">yearssmall =</span> <span class="fu">md</span>(<span class="st">"Years in Small Class"</span>),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">school =</span> <span class="fu">md</span>(<span class="st">"School"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Potential Outcomes"</span>, <span class="at">columns =</span> <span class="fu">c</span>(score_regular, score_small)) <span class="sc">|&gt;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Estimated Causal Effect"</span>, <span class="at">columns =</span> <span class="fu">c</span>(gain_if_small)) <span class="sc">|&gt;</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Covariates"</span>, <span class="at">columns =</span> <span class="fu">c</span>(observed_class, race, yearssmall, school)) <span class="sc">|&gt;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">columns =</span> <span class="fu">c</span>(ID)) <span class="sc">|&gt;</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="fu">md</span>(<span class="st">"A * indicates a potential outcome or gain we do not observe."</span>),</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_spanners</span>(<span class="at">spanners =</span> <span class="fu">c</span>(<span class="st">"Potential Outcomes"</span>, <span class="st">"Estimated Causal Effect"</span>))</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="iiszmaekzn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iiszmaekzn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#iiszmaekzn thead, #iiszmaekzn tbody, #iiszmaekzn tfoot, #iiszmaekzn tr, #iiszmaekzn td, #iiszmaekzn th {
+  border-style: none;
+}
+
+#iiszmaekzn p {
+  margin: 0;
+  padding: 0;
+}
+
+#iiszmaekzn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#iiszmaekzn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#iiszmaekzn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#iiszmaekzn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#iiszmaekzn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#iiszmaekzn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#iiszmaekzn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#iiszmaekzn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#iiszmaekzn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#iiszmaekzn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#iiszmaekzn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#iiszmaekzn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#iiszmaekzn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#iiszmaekzn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#iiszmaekzn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iiszmaekzn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#iiszmaekzn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#iiszmaekzn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#iiszmaekzn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iiszmaekzn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#iiszmaekzn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iiszmaekzn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#iiszmaekzn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iiszmaekzn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iiszmaekzn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iiszmaekzn .gt_left {
+  text-align: left;
+}
+
+#iiszmaekzn .gt_center {
+  text-align: center;
+}
+
+#iiszmaekzn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#iiszmaekzn .gt_font_normal {
+  font-weight: normal;
+}
+
+#iiszmaekzn .gt_font_bold {
+  font-weight: bold;
+}
+
+#iiszmaekzn .gt_font_italic {
+  font-style: italic;
+}
+
+#iiszmaekzn .gt_super {
+  font-size: 65%;
+}
+
+#iiszmaekzn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#iiszmaekzn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#iiszmaekzn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#iiszmaekzn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#iiszmaekzn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#iiszmaekzn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#iiszmaekzn .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#iiszmaekzn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#iiszmaekzn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Preceptor Table: Causal Effect of Small Class Size</th>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="ID" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">ID</th>
+<th colspan="2" id="Potential Outcomes" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Potential Outcomes<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>
+</div></th>
+<th id="Estimated Causal Effect" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+Estimated Causal Effect<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span>
+</div></th>
+<th colspan="4" id="Covariates" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Covariates
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="score_regular" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Score if Regular Class</th>
+<th id="score_small" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Score if Small Class</th>
+<th id="gain_if_small" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Gain if Small Class</th>
+<th id="observed_class" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Observed Class Size</th>
+<th id="race" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Race</th>
+<th id="yearssmall" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Years in Small Class</th>
+<th id="school" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">School</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">1</td>
+<td class="gt_row gt_center" headers="score_regular">685</td>
+<td class="gt_row gt_center" headers="score_small">700*</td>
+<td class="gt_row gt_center" headers="gain_if_small">15*</td>
+<td class="gt_row gt_center" headers="observed_class">Regular</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+<td class="gt_row gt_center" headers="school">A</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">2</td>
+<td class="gt_row gt_center" headers="score_regular">672*</td>
+<td class="gt_row gt_center" headers="score_small">679</td>
+<td class="gt_row gt_center" headers="gain_if_small">7</td>
+<td class="gt_row gt_center" headers="observed_class">Small</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+<td class="gt_row gt_center" headers="school">B</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="score_regular">…</td>
+<td class="gt_row gt_center" headers="score_small">…</td>
+<td class="gt_row gt_center" headers="gain_if_small">…</td>
+<td class="gt_row gt_center" headers="observed_class">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="yearssmall">…</td>
+<td class="gt_row gt_center" headers="school">…</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">10</td>
+<td class="gt_row gt_center" headers="score_regular">689</td>
+<td class="gt_row gt_center" headers="score_small">695*</td>
+<td class="gt_row gt_center" headers="gain_if_small">6*</td>
+<td class="gt_row gt_center" headers="observed_class">Regular</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+<td class="gt_row gt_center" headers="school">C</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">11</td>
+<td class="gt_row gt_center" headers="score_regular">661</td>
+<td class="gt_row gt_center" headers="score_small">675*</td>
+<td class="gt_row gt_center" headers="gain_if_small">14*</td>
+<td class="gt_row gt_center" headers="observed_class">Regular</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+<td class="gt_row gt_center" headers="school">A</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="score_regular">…</td>
+<td class="gt_row gt_center" headers="score_small">…</td>
+<td class="gt_row gt_center" headers="gain_if_small">…</td>
+<td class="gt_row gt_center" headers="observed_class">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="yearssmall">…</td>
+<td class="gt_row gt_center" headers="school">…</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">N</td>
+<td class="gt_row gt_center" headers="score_regular">670*</td>
+<td class="gt_row gt_center" headers="score_small">678</td>
+<td class="gt_row gt_center" headers="gain_if_small">8</td>
+<td class="gt_row gt_center" headers="observed_class">Small</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+<td class="gt_row gt_center" headers="school">B</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> A * indicates a potential outcome or gain we do not observe.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="example-population-tables" class="level2">
+<h2 class="anchored" data-anchor-id="example-population-tables">Example Population Tables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"..."</span>, <span class="st">"10"</span>, <span class="st">"11"</span>, <span class="st">"..."</span>, <span class="st">"N"</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">math_score =</span> <span class="fu">c</span>(<span class="st">"638"</span>, <span class="st">"565"</span>, <span class="st">"..."</span>, <span class="st">"654"</span>, <span class="st">"547"</span>, <span class="st">"..."</span>, <span class="st">"743"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">class_size =</span> <span class="fu">c</span>(<span class="st">"Small"</span>, <span class="st">"Regular"</span>, <span class="st">"..."</span>, <span class="st">"Small"</span>, <span class="st">"Small"</span>, <span class="st">"..."</span>, <span class="st">"Regular"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"..."</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"..."</span>, <span class="st">"female"</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">race =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"..."</span>, <span class="st">"black"</span>, <span class="st">"white"</span>, <span class="st">"..."</span>, <span class="st">"white"</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">yearssmall =</span> <span class="fu">c</span>(<span class="st">"4"</span>, <span class="st">"0"</span>, <span class="st">"..."</span>, <span class="st">"4"</span>, <span class="st">"4"</span>, <span class="st">"..."</span>, <span class="st">"0"</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">school =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"..."</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"..."</span>, <span class="st">"B"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Population Table: Observed Outcomes and Covariates"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">ID =</span> <span class="fu">md</span>(<span class="st">"ID"</span>),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">math_score =</span> <span class="fu">md</span>(<span class="st">"Observed Math Score"</span>),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_size =</span> <span class="fu">md</span>(<span class="st">"Observed Class Size"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">md</span>(<span class="st">"Sex"</span>),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">md</span>(<span class="st">"Race"</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">yearssmall =</span> <span class="fu">md</span>(<span class="st">"Years in Small Class"</span>),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">school =</span> <span class="fu">md</span>(<span class="st">"School"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">columns =</span> <span class="fu">c</span>(ID)) <span class="sc">|&gt;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Observed Data"</span>, <span class="at">columns =</span> <span class="fu">c</span>(math_score, class_size, sex, race, yearssmall, school))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="khuvrlhlsp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#khuvrlhlsp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#khuvrlhlsp thead, #khuvrlhlsp tbody, #khuvrlhlsp tfoot, #khuvrlhlsp tr, #khuvrlhlsp td, #khuvrlhlsp th {
+  border-style: none;
+}
+
+#khuvrlhlsp p {
+  margin: 0;
+  padding: 0;
+}
+
+#khuvrlhlsp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#khuvrlhlsp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#khuvrlhlsp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#khuvrlhlsp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#khuvrlhlsp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#khuvrlhlsp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#khuvrlhlsp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#khuvrlhlsp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#khuvrlhlsp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#khuvrlhlsp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#khuvrlhlsp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#khuvrlhlsp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#khuvrlhlsp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#khuvrlhlsp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#khuvrlhlsp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khuvrlhlsp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#khuvrlhlsp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#khuvrlhlsp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#khuvrlhlsp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khuvrlhlsp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#khuvrlhlsp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khuvrlhlsp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#khuvrlhlsp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khuvrlhlsp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#khuvrlhlsp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khuvrlhlsp .gt_left {
+  text-align: left;
+}
+
+#khuvrlhlsp .gt_center {
+  text-align: center;
+}
+
+#khuvrlhlsp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#khuvrlhlsp .gt_font_normal {
+  font-weight: normal;
+}
+
+#khuvrlhlsp .gt_font_bold {
+  font-weight: bold;
+}
+
+#khuvrlhlsp .gt_font_italic {
+  font-style: italic;
+}
+
+#khuvrlhlsp .gt_super {
+  font-size: 65%;
+}
+
+#khuvrlhlsp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#khuvrlhlsp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#khuvrlhlsp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#khuvrlhlsp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#khuvrlhlsp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#khuvrlhlsp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#khuvrlhlsp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#khuvrlhlsp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#khuvrlhlsp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Population Table: Observed Outcomes and Covariates</th>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="ID" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">ID</th>
+<th colspan="6" id="Observed Data" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Observed Data
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="math_score" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Observed Math Score</th>
+<th id="class_size" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Observed Class Size</th>
+<th id="sex" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Sex</th>
+<th id="race" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Race</th>
+<th id="yearssmall" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Years in Small Class</th>
+<th id="school" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">School</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">1</td>
+<td class="gt_row gt_center" headers="math_score">638</td>
+<td class="gt_row gt_center" headers="class_size">Small</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+<td class="gt_row gt_center" headers="school">A</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">2</td>
+<td class="gt_row gt_center" headers="math_score">565</td>
+<td class="gt_row gt_center" headers="class_size">Regular</td>
+<td class="gt_row gt_center" headers="sex">male</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+<td class="gt_row gt_center" headers="school">B</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="math_score">…</td>
+<td class="gt_row gt_center" headers="class_size">…</td>
+<td class="gt_row gt_center" headers="sex">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="yearssmall">…</td>
+<td class="gt_row gt_center" headers="school">…</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">10</td>
+<td class="gt_row gt_center" headers="math_score">654</td>
+<td class="gt_row gt_center" headers="class_size">Small</td>
+<td class="gt_row gt_center" headers="sex">male</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+<td class="gt_row gt_center" headers="school">C</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">11</td>
+<td class="gt_row gt_center" headers="math_score">547</td>
+<td class="gt_row gt_center" headers="class_size">Small</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+<td class="gt_row gt_center" headers="school">A</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="math_score">…</td>
+<td class="gt_row gt_center" headers="class_size">…</td>
+<td class="gt_row gt_center" headers="sex">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="yearssmall">…</td>
+<td class="gt_row gt_center" headers="school">…</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">N</td>
+<td class="gt_row gt_center" headers="math_score">743</td>
+<td class="gt_row gt_center" headers="class_size">Regular</td>
+<td class="gt_row gt_center" headers="sex">female</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+<td class="gt_row gt_center" headers="school">B</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"..."</span>, <span class="st">"10"</span>, <span class="st">"11"</span>, <span class="st">"..."</span>, <span class="st">"N"</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">math_score =</span> <span class="fu">c</span>(<span class="st">"685"</span>, <span class="st">"679"</span>, <span class="st">"..."</span>, <span class="st">"689"</span>, <span class="st">"661"</span>, <span class="st">"..."</span>, <span class="st">"678"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">class_size =</span> <span class="fu">c</span>(<span class="st">"Regular"</span>, <span class="st">"Small"</span>, <span class="st">"..."</span>, <span class="st">"Regular"</span>, <span class="st">"Regular"</span>, <span class="st">"..."</span>, <span class="st">"Small"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">race =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"..."</span>, <span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"..."</span>, <span class="st">"white"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">yearssmall =</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"4"</span>, <span class="st">"..."</span>, <span class="st">"0"</span>, <span class="st">"0"</span>, <span class="st">"..."</span>, <span class="st">"4"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Population Table: Alternate Version"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">ID =</span> <span class="fu">md</span>(<span class="st">"ID"</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">math_score =</span> <span class="fu">md</span>(<span class="st">"Observed Math Score"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_size =</span> <span class="fu">md</span>(<span class="st">"Observed Class Size"</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">race =</span> <span class="fu">md</span>(<span class="st">"Race"</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">yearssmall =</span> <span class="fu">md</span>(<span class="st">"Years in Small Class"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">columns =</span> <span class="fu">c</span>(ID)) <span class="sc">|&gt;</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Observed Data"</span>, <span class="at">columns =</span> <span class="fu">c</span>(math_score, class_size, race, yearssmall))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="xaubgoeaxh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xaubgoeaxh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xaubgoeaxh thead, #xaubgoeaxh tbody, #xaubgoeaxh tfoot, #xaubgoeaxh tr, #xaubgoeaxh td, #xaubgoeaxh th {
+  border-style: none;
+}
+
+#xaubgoeaxh p {
+  margin: 0;
+  padding: 0;
+}
+
+#xaubgoeaxh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xaubgoeaxh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xaubgoeaxh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xaubgoeaxh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xaubgoeaxh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xaubgoeaxh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xaubgoeaxh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xaubgoeaxh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xaubgoeaxh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xaubgoeaxh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xaubgoeaxh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xaubgoeaxh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xaubgoeaxh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xaubgoeaxh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xaubgoeaxh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xaubgoeaxh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xaubgoeaxh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xaubgoeaxh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xaubgoeaxh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xaubgoeaxh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xaubgoeaxh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xaubgoeaxh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xaubgoeaxh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xaubgoeaxh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xaubgoeaxh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xaubgoeaxh .gt_left {
+  text-align: left;
+}
+
+#xaubgoeaxh .gt_center {
+  text-align: center;
+}
+
+#xaubgoeaxh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xaubgoeaxh .gt_font_normal {
+  font-weight: normal;
+}
+
+#xaubgoeaxh .gt_font_bold {
+  font-weight: bold;
+}
+
+#xaubgoeaxh .gt_font_italic {
+  font-style: italic;
+}
+
+#xaubgoeaxh .gt_super {
+  font-size: 65%;
+}
+
+#xaubgoeaxh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xaubgoeaxh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xaubgoeaxh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xaubgoeaxh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xaubgoeaxh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xaubgoeaxh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xaubgoeaxh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xaubgoeaxh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xaubgoeaxh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Population Table: Alternate Version</th>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="ID" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">ID</th>
+<th colspan="4" id="Observed Data" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Observed Data
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="math_score" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Observed Math Score</th>
+<th id="class_size" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Observed Class Size</th>
+<th id="race" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Race</th>
+<th id="yearssmall" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Years in Small Class</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">1</td>
+<td class="gt_row gt_center" headers="math_score">685</td>
+<td class="gt_row gt_center" headers="class_size">Regular</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">2</td>
+<td class="gt_row gt_center" headers="math_score">679</td>
+<td class="gt_row gt_center" headers="class_size">Small</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="math_score">…</td>
+<td class="gt_row gt_center" headers="class_size">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="yearssmall">…</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">10</td>
+<td class="gt_row gt_center" headers="math_score">689</td>
+<td class="gt_row gt_center" headers="class_size">Regular</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">11</td>
+<td class="gt_row gt_center" headers="math_score">661</td>
+<td class="gt_row gt_center" headers="class_size">Regular</td>
+<td class="gt_row gt_center" headers="race">black</td>
+<td class="gt_row gt_center" headers="yearssmall">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ID">…</td>
+<td class="gt_row gt_center" headers="math_score">…</td>
+<td class="gt_row gt_center" headers="class_size">…</td>
+<td class="gt_row gt_center" headers="race">…</td>
+<td class="gt_row gt_center" headers="yearssmall">…</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ID">N</td>
+<td class="gt_row gt_center" headers="math_score">678</td>
+<td class="gt_row gt_center" headers="class_size">Small</td>
+<td class="gt_row gt_center" headers="race">white</td>
+<td class="gt_row gt_center" headers="yearssmall">4</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

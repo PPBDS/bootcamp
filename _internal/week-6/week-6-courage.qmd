@@ -18,6 +18,9 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
                        `3` = "regular_with_aid"))
 ```
 
+<!-- DK: Change code and other stuff to be consistent.  -->
+
+
 ## Background Information
 
 Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol. 5, no. 2, pp. 113–127. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.

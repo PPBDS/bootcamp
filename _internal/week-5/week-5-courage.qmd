@@ -31,3 +31,34 @@ Bertrand, Marianne and Sendhil Mullainathan. 2004. "Are Emily and Greg More Empl
 
 ## Models to Explore
 
+* Estimate a model in which `call` is the dependent variable and the `city` is the independent variable. How do you interpret the results? How can you see some confidence intervals for the unknown parameters?
+
+```{r}
+logistic_reg() |> 
+  fit(as.factor(call) ~ city, data = x)
+```
+
+
+```{r}
+logistic_reg() |> 
+  fit(as.factor(call) ~ city, data = x) |> 
+  tidy(conf.int = TRUE)
+```
+
+* Estimate a model in which `call` is the dependent variable and the `city` and `ethnicity` are the independent variables. How do you interpret the results? How can you see some confidence intervals for the unknown parameters?
+
+```{r}
+logistic_reg() |> 
+  fit(as.factor(call) ~ city + ethnicity, data = x) |> 
+  tidy(conf.int = TRUE)
+```
+
+ 
+* Change the independent variables to be `city + ethnicity + quality + ethnicity*quality`. How do you interpret the results? How can you see some confidence intervals for the unknown parameters?
+
+
+```{r}
+logistic_reg() |> 
+  fit(as.factor(call) ~ city + ethnicity + quality + ethnicity*quality, data = x) |> 
+  tidy(conf.int = TRUE)
+```
