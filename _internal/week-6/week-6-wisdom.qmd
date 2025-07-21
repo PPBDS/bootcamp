@@ -1,12 +1,9 @@
 ---
-title: "Week 6"
+title: "Wisdom about Tennessee STAR"
 execute: 
   echo: false
 ---
 
-STILL A DRAFT
-
-Day 1: Covers Wisdom and Justice
 
 ```{r}
 #| message: false
@@ -14,54 +11,39 @@ Day 1: Covers Wisdom and Justice
 library(tidyverse)
 
 x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv",
-              show_col_types = FALSE) |>
-                mutate(kind = recode(classtype,
-                       `1` = "small",
-                       `2` = "regular",
-                       `3` = "regular_with_aid"))
+              show_col_types = FALSE) |> 
+      mutate(kind = recode(classtype,
+                         `1` = "small",
+                         `2` = "regular",
+                         `3` = "regular with aid")) |> 
+      mutate(race = recode(race,
+                       `1` = "white",
+                       `2` = "black",
+                       `3` = "hispanic",
+                       `4` = "hispanic",
+                       `5` = "others",
+                       `6` = "others")) |> 
+      select(g4math, kind, race, yearssmall)          
 ```
 
 ## Background Information
 
-Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol. 5, no. 2, pp. 113–127. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
-
-"The Tennessee class size project is a three-phase study designed to determine the effect of smaller class size in the earliest grades on short-term and long-term pupil performance. The first phase of this project, termed Project STAR (for Student-Teacher Achievement Ratio), was begun in 1985, when Lamar Alexander was governor of Tennessee. Governor Alexander, who later served as secretary of education in the cabinet of President George Bush, had made education a top priority for his second term.
-
-The legislature and the educational community of Tennessee were mindful of a promising study of the benefits of small class size carried out in nearby Indiana, but were also aware of the costs associated with additional classrooms and teachers. Wishing to obtain data on the effectiveness of reduced class size before committing additional funds, the Tennessee legislature authorized this four-year study in which results obtained in kindergarten, first, second, and third grade classrooms of 13 to 17 pupils were compared with those obtained in classrooms of 22 to 25 pupils and in classrooms of this larger size where the teacher was assisted by a paid aide. Both standardized and curriculum-based tests were used to assess and compare the performance of some 6,500 pupils in about 330 classrooms at approximately 80 schools in the areas of reading, mathematics, and basic study skills. After four years, it was clear that smaller classes did produce substantial improvement in early learning and cognitive studies and that the effect of small class size on the achievement of minority children was initially about double that observed for majority children, but in later years, it was about the same.
-
-The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools."
-
-<!-- A potentially useful image from the documentation about the data:
-```{r}
-knitr::include_graphics("data/STAR-variables.png")
-```
-
-*Variable names and descriptions from the Tennessee STAR Project dataset, including student demographics, class type, and key academic outcomes.* -->
-<!-- AT: Delete or keep the image? -->
-
-<!-- ### Data Summary
-The Tennessee STAR dataset comes from a large-scale, multi-year educational experiment conducted in the 1980s across dozens of Tennessee schools. In the study, over 6,000 kindergarten through third-grade students were randomly assigned to either small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. The goal was to determine whether smaller class sizes improved academic performance, particularly in mathematics and reading. Academic outcomes were measured using standardized and curriculum-based tests, and the dataset also includes key student and classroom characteristics such as race, sex, school, and class assignment.  -->
-<!-- AT: Should I use the data summary or the backround info or both? -->
+The Tennessee STAR dataset comes from a large-scale, multi-year educational experiment conducted in the 1980s across dozens of Tennessee schools. In the study, over 6,000 kindergarten through third-grade students were randomly assigned to either small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. The goal was to determine whether smaller class sizes improved academic performance, particularly in mathematics and reading. Academic outcomes were measured using standardized and curriculum-based tests, and the dataset also includes key student and classroom characteristics such as race, sex, school, and class assignment. 
 
 ### Scenarios
 
-1) Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether reducing the students per class will likely boost math achievement next year in your school.
+1) Imagine that you are an elementary school principal in Chicago. You want to predict student performance. Fortunately, you have data today for your current students like the data available in the STAR project.
 
-2) Imagine you work for the Texas Department of Education. You want to use the STAR data to predict what might happen if Dallas adopted small class sizes, but you are worried about whether the findings from 1980s Tennessee would apply to Dallas today.
+2) Imagine you work for the Texas Department of Education. You want to understand student performance in small classes, relative to big classes, in Dallas. In Texas, there is data available like the data in the STAR project.
 
-<!-- AT: Check examples. -->
+### Data
 
-### Tasks
-
-* Come up with one question which this person might want to answer.
-
-* Explore the data. What is the outcome variable? How it is distributed?
+* Explore the data. What is the outcome variable? How it is distributed? What about the other variables? Any rows we should remove?
 
 ```{r}
 
 ```
 
-* Iterate on the question, given the data.
 
 ### Preceptor Table
 
@@ -88,3 +70,14 @@ The Tennessee STAR dataset comes from a large-scale, multi-year educational expe
 * Counter-argument to the assumption of unconfoundedness:
 
 * Describe the mathematical structure of the model:  
+
+
+## More Information
+
+Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol. 5, no. 2, pp. 113–127. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
+
+> The Tennessee class size project is a three-phase study designed to determine the effect of smaller class size in the earliest grades on short-term and long-term pupil performance. The first phase of this project, termed Project STAR (for Student-Teacher Achievement Ratio), was begun in 1985, when Lamar Alexander was governor of Tennessee. Governor Alexander, who later served as secretary of education in the cabinet of President George Bush, had made education a top priority for his second term.
+
+> The legislature and the educational community of Tennessee were mindful of a promising study of the benefits of small class size carried out in nearby Indiana, but were also aware of the costs associated with additional classrooms and teachers. Wishing to obtain data on the effectiveness of reduced class size before committing additional funds, the Tennessee legislature authorized this four-year study in which results obtained in kindergarten, first, second, and third grade classrooms of 13 to 17 pupils were compared with those obtained in classrooms of 22 to 25 pupils and in classrooms of this larger size where the teacher was assisted by a paid aide. Both standardized and curriculum-based tests were used to assess and compare the performance of some 6,500 pupils in about 330 classrooms at approximately 80 schools in the areas of reading, mathematics, and basic study skills. After four years, it was clear that smaller classes did produce substantial improvement in early learning and cognitive studies and that the effect of small class size on the achievement of minority children was initially about double that observed for majority children, but in later years, it was about the same.
+
+> The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools.
