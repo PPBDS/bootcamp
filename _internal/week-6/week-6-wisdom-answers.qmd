@@ -67,25 +67,31 @@ x |>
 In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments?
 
 * Causal or predictive?
+
 Scenario 1: Predictive — We are forecasting outcomes for current Chicago students using available data.
 
 Scenario 2: Causal — We want to estimate the effect of being in a small class vs. a regular class in Dallas, based on data.
 
 * Units:
+
 Individual students in elementary schools.
 
 (For Scenario 1: Chicago; For Scenario 2: Dallas, Texas, in the present day.)
 
 * Outcome:
+
 Standardized Math test score (e.g., 4th grade math score) for each student.
 
 * Covariates: 
+
 Possible covariates include class type (kind), years spent in small classes (yearssmall), race, sex, teacher experience, and school. If available, factors like parent education, birth weight, family income, and zip code can also be included. 
     
 * Treatment: 
+
 The treatment is whether a student is assigned to a small class, a regular class, or a regular class with a teacher’s aid.
 
 Scenario 1 Preceptor Table
+
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
@@ -111,6 +117,7 @@ tibble(
 ```
 
 Scenario 2 Preceptor Table
+
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
@@ -146,9 +153,10 @@ tibble(
 
 ### Population Table 
 
-A paragraph indicating what to do. Describe in words the Population Table. For each of the four key assumption of Justice --- validity, stability, representativeness, and unconfoundedness --- provide a counter-example, if relevant.
+Describe in words the Population Table. For each of the four key assumption of Justice --- validity, stability, representativeness, and unconfoundedness --- provide a counter-example, if relevant.
 
-Scenario 1 Population Table:
+Scenario 1 Population Table
+
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
@@ -215,7 +223,7 @@ Students in Chicago or Dallas today may not be fully comparable to those in the 
 
 Counter-example to the assumption of unconfoundedness:
 
-Scenario 1 (Chicago): If you are only making predictions about current students (without considering interventions), unconfoundedness is less of a concern. The focus is on predicting observed performance given current characteristics, not estimating causal effects.
+Scenario 1 (Chicago): If you are only making predictions, unconfoundedness is not a concern. 
 
 Scenario 2 (Dallas): If the Texas DOE wants to understand the effect of small versus large classes, the assignment of students to class sizes must be unconfounded (ideally random). If not, other factors—--such as school resources or parental involvement—could confound the relationship between class size and math scores, making it hard to interpret the effect as causal.
 
