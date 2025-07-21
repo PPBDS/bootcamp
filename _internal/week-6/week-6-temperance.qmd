@@ -1,17 +1,18 @@
 ---
-title: "Week 6"
+title: "Class Size Experiment"
+format: html
 execute: 
   echo: false
 ---
-
-STILL A DRAFT
-
-Day 1: Covers Wisdom and Justice
 
 ```{r}
 #| message: false
 
 library(tidyverse)
+library(tidymodels)
+library(broom)
+library(marginaleffects)
+library(easystats)
 
 x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv",
               show_col_types = FALSE) |>
@@ -31,18 +32,6 @@ The legislature and the educational community of Tennessee were mindful of a pro
 
 The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools."
 
-<!-- A potentially useful image from the documentation about the data:
-```{r}
-knitr::include_graphics("data/STAR-variables.png")
-```
-
-*Variable names and descriptions from the Tennessee STAR Project dataset, including student demographics, class type, and key academic outcomes.* -->
-<!-- AT: Delete or keep the image? -->
-
-<!-- ### Data Summary
-The Tennessee STAR dataset comes from a large-scale, multi-year educational experiment conducted in the 1980s across dozens of Tennessee schools. In the study, over 6,000 kindergarten through third-grade students were randomly assigned to either small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. The goal was to determine whether smaller class sizes improved academic performance, particularly in mathematics and reading. Academic outcomes were measured using standardized and curriculum-based tests, and the dataset also includes key student and classroom characteristics such as race, sex, school, and class assignment.  -->
-<!-- AT: Should I use the data summary or the backround info or both? -->
-
 ### Scenarios
 
 1) Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether reducing the students per class will likely boost math achievement next year in your school.
@@ -51,40 +40,90 @@ The Tennessee STAR dataset comes from a large-scale, multi-year educational expe
 
 <!-- AT: Check examples. -->
 
-### Tasks
+### Data Generating Mechanism
 
-* Come up with one question which this person might want to answer.
-
-* Explore the data. What is the outcome variable? How it is distributed?
+Fit a linear regression model to estimate effect of class size on math scores
 
 ```{r}
-
+fit_cs <- linear_reg() |>
+  fit(g4math ~ kind + race + yearssmall + g4reading, data = x)
 ```
 
-* Iterate on the question, given the data.
+```{r}
+fit_cs
+```
 
-### Preceptor Table
+View tidy summary of the model (including coefficient estimates & CIs). Discuss the `estimate` values for `Intercept` and `kindsmall`. 
 
-* Causal or predictive?
+```{r}
+tidy(fit_cs, conf.int = TRUE)
+```
 
-* Units:
 
-* Outcome:
+### Counter-Arguments
 
-* Covariates:
+Before relying on the STAR data to answer these scenarios, consider the following counter-arguments that challenge whether the study’s findings can be applied directly to each context:
 
-* Treatment:
+Scenario 1) The STAR experiment was conducted in the 1980s, and your school in Nashville in 2000 may have different student demographics, curricula, or teaching practices. As a result, the relationship between class size and math achievement may not be stable over time, and the effect observed in STAR may not apply directly to your school next year.
 
-### Population Table
+Scenario 2) Dallas schools in the 2020s may differ substantially from Tennessee schools in the 1980s in terms of resources, cultural context, and student needs. The representativeness assumption may not hold—meaning the effect of small class size observed in the STAR study might not generalize to Dallas today due to differences in population and educational environment.
 
-* Describe Population Table in words.
+### Data Summary
 
-* Counter-argument to the assumption of validity:
+  The Tennessee STAR dataset comes from a landmark randomized controlled experiment conducted in the 1980s to study the impact of class size on student achievement in early elementary school. Over 6,000 students in approximately 80 Tennessee schools were randomly assigned to one of three classroom settings from kindergarten through third grade: small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. Students’ academic performance was tracked over several years, with a particular focus on standardized test scores in reading and mathematics. This dataset allows us to investigate how reducing class size affects academic outcomes and whether these effects differ by student characteristics such as race or socioeconomic status.
 
-* Counter-argument to the assumption of stability:
+Libraries
+```{r}
+#| label: setup
+#| message: false
 
-* Counter-argument to the assumption of representativeness:
+library(tidyverse)
+library(gt)
+library(tidybayes)
+library(broom)
+library(tidymodels)
+```
 
-* Counter-argument to the assumption of unconfoundedness:
 
-* Describe the mathematical structure of the model:  
+Load your data
+
+```{r}
+x <- read_csv("data/STAR.csv", show_col_types = FALSE)
+```
+
+Fit a linear regression model to estimate effect of class size on math scores
+
+```{r}
+fit_cs <- linear_reg() |>
+  set_engine("lm") |>
+  fit(g4math ~ kind, data = x)
+```
+
+View tidy summary of the model (including coefficient estimates & CIs). Discuss the `estimate` values for `Intercept` and `kindsmall`. 
+
+```{r}
+tidy(fit_cs, conf.int = TRUE)
+```
+
+This is my data generating mechanism. 
+$$
+\begin{equation}
+\begin{aligned}
+\mathbb{E}[\text{g4math}] =\; & \beta_0 
+\; + \; \beta_1 \cdot \text{kind}_{\text{small}}
+\; + \; \beta_2 \cdot \text{kind}_{\text{regular with aid}} \\
+& + \; \beta_3 \cdot \text{race}
+\; + \; \beta_4 \cdot \text{yearssmall}
+\; + \; \beta_5 \cdot \text{g4reading}
+\end{aligned}
+\end{equation}
+$$
+
+
+## Temperance
+
+What are the questions you want to answer?
+
+How can you use the **marginaleffects** package to answer them?
+
+Consider using `predictions()` to generate the predicted scores for new scenarios and use `plot_predictions()` to plot the effect of class type on predicted scores. 

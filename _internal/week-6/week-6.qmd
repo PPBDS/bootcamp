@@ -56,9 +56,8 @@ Preceptor Table:
   
   * Causal/predictive: a causal model  
   
-  * Covariates: class structure, sex, zip code, birth weight, family income, parent education, race 
-    <!-- AT: Birth Weight? Maybe add school district or teacher experience-->
-  
+  * Covariates: class structure, sex, zip code, birth weight, family income, parent education, race, teacher experiance, school district
+    
   * Treatment: assignment to a small versus regular classroom 
 
 ## Example Preceptor Table

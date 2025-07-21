@@ -1,14 +1,17 @@
-## Day 2: Courage
+---
+title: "Week 6"
+execute: 
+  echo: false
+---
+
+STILL A DRAFT
+
+Day 1: Covers Wisdom and Justice
 
 ```{r}
 #| message: false
 
 library(tidyverse)
-library(tidymodels)
-library(broom)
-library(marginaleffects)
-library(easystats)
-library(gt)
 
 x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv",
               show_col_types = FALSE) |>
@@ -28,6 +31,18 @@ The legislature and the educational community of Tennessee were mindful of a pro
 
 The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools."
 
+<!-- A potentially useful image from the documentation about the data:
+```{r}
+knitr::include_graphics("data/STAR-variables.png")
+```
+
+*Variable names and descriptions from the Tennessee STAR Project dataset, including student demographics, class type, and key academic outcomes.* -->
+<!-- AT: Delete or keep the image? -->
+
+<!-- ### Data Summary
+The Tennessee STAR dataset comes from a large-scale, multi-year educational experiment conducted in the 1980s across dozens of Tennessee schools. In the study, over 6,000 kindergarten through third-grade students were randomly assigned to either small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. The goal was to determine whether smaller class sizes improved academic performance, particularly in mathematics and reading. Academic outcomes were measured using standardized and curriculum-based tests, and the dataset also includes key student and classroom characteristics such as race, sex, school, and class assignment.  -->
+<!-- AT: Should I use the data summary or the backround info or both? -->
+
 ### Scenarios
 
 1) Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether reducing the students per class will likely boost math achievement next year in your school.
@@ -36,9 +51,51 @@ The second phase of the project, called the Lasting Benefits Study, was begun in
 
 <!-- AT: Check examples. -->
 
-### Counter-Arguments
+### Tasks
 
-## Scenario 1
+* Come up with one question which this person might want to answer.
+>**Scenario 1: “If I move some classes from 22 to 15 students, what change in average math scores should I expect next year?”**
+
+>**Scenario 2: “If Dallas implemented small class sizes now, would we likely see similar math achievement gains as in Tennessee in the 1980s?”**
+
+* Explore the data. What is the outcome variable? How it is distributed?
+>**The main outcome is g4math, the student’s grade 4 math score (continuous, roughly normal, ~650–750).**
+
+>**Distribution can be visualized**
+```{r}
+x |> 
+  ggplot(aes(x = g4math, fill = kind)) + 
+    geom_histogram(bins = 30, alpha = 0.6, position = "identity")
+```
+
+```{r}
+
+```
+
+* Iterate on the question, given the data.
+>**Refine the question to account for possible confounding, population differences, or generalizability. For example: “Would the effect be the same for minority vs. majority students, or in modern urban settings vs. 1980s Tennessee?”**
+
+### Preceptor Table
+
+* Causal or predictive?
+>**Causal**
+
+* Units:
+>**Individual students in elementary schools. (Specify further: for scenario 1, Nashville in 2000; for scenario 2, Dallas students today.)**
+
+* Outcome:
+>**Math achievement score (e.g., 4th grade math score) for each student.**
+
+* Covariates: 
+>**class structure, sex, zip code, birth weight, family income, parent education, race, teacher experiance, school district**
+    
+* Treatment: 
+>**assignment to a small versus regular classroom**
+
+### Population Table Scenario 1
+
+* Describe Population Table in words.
+>**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
 
 * Counter-argument to the assumption of validity:
 >**The definition of “small class” or the math achievement test used in Nashville in 2000 may not perfectly match those from the STAR study in Tennessee, so the measured outcome may not be directly comparable.**
@@ -52,7 +109,14 @@ The second phase of the project, called the Lasting Benefits Study, was begun in
 * Counter-argument to the assumption of unconfoundedness:
 >**In practice, it may not be possible to randomly assign students to small classes in Nashville, and other factors (like which schools or students are chosen for small classes) could affect math scores, making it hard to isolate the causal effect.**
 
-## Scenario 2
+* Describe the mathematical structure of the model:  
+>**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
+
+### Population Table Scenario 2
+
+* Describe Population Table in words.
+>**The Population Table includes all possible combinations of elementary students and school years in Dallas, Texas, for the present or upcoming school year. Each row represents a Dallas student, showing their potential math scores under both regular and small class sizes, as well as student and classroom characteristics.**
+
 * Counter-argument to the assumption of validity:
 >**“Small class” and “math achievement” in Dallas today might be defined or measured differently than in 1980s Tennessee, so using STAR results directly may not be valid.**
 
@@ -65,126 +129,5 @@ The second phase of the project, called the Lasting Benefits Study, was begun in
 * Counter-argument to the assumption of unconfoundedness:
 >**If Dallas does not implement small classes randomly, schools or students selected for the intervention might differ in important ways, making it difficult to separate the effect of class size from other influences.**
 
-
-### Example Preceptor Tables
-  
-```{r}
-tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  score_regular = c("706*", "565", "...", "654*", "547*", "...", "568"),
-  score_small = c("638", "620*", "...", "710", "567", "...", "743*"),
-  observed_class = c("Small", "Regular", "...", "Small", "Small", "...", "Regular"),
-  sex = c("female", "male", "...", "male", "female", "...", "female"),
-  race = c("white", "black", "...", "black", "white", "...", "white"),
-  school = c("A", "B", "...", "C", "A", "...", "B")
-) |>
-  gt() |>
-  tab_header(title = "Preceptor Table: Potential Outcomes by Class Size") |>
-  cols_label(
-    ID = md("ID"),
-    score_regular = md("Score if Regular Class"),
-    score_small = md("Score if Small Class"),
-    observed_class = md("Observed Class Size"),
-    sex = md("Sex"),
-    race = md("Race"),
-    school = md("School")
-  ) |>
-  tab_spanner(label = "Potential Outcomes", columns = c(score_regular, score_small)) |>
-  tab_spanner(label = "Covariates", columns = c(sex, race, school)) |>
-  fmt_markdown(columns = everything()) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  tab_footnote(
-    footnote = md("A * indicates a potential outcome we do not observe."),
-    locations = cells_column_spanners(spanners = "Potential Outcomes")
-  )
-```
-
-
-```{r}
-tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  score_regular = c("685", "672*", "...", "689", "661", "...", "670*"),
-  score_small   = c("700*", "679", "...", "695*", "675*", "...", "678"),
-  gain_if_small = c("15*", "7", "...", "6*", "14*", "...", "8"),
-  observed_class = c("Regular", "Small", "...", "Regular", "Regular", "...", "Small"),
-  race = c("white", "black", "...", "white", "black", "...", "white"),
-  yearssmall = c("0", "4", "...", "0", "0", "...", "4"),
-  school = c("A", "B", "...", "C", "A", "...", "B")) |>
-  gt() |>
-  tab_header(title = "Preceptor Table: Causal Effect of Small Class Size") |>
-  cols_label(
-    ID = md("ID"),
-    score_regular = md("Score if Regular Class"),
-    score_small = md("Score if Small Class"),
-    gain_if_small = md("Gain if Small Class"),
-    observed_class = md("Observed Class Size"),
-    race = md("Race"),
-    yearssmall = md("Years in Small Class"),
-    school = md("School")
-  ) |>
-  tab_spanner(label = "Potential Outcomes", columns = c(score_regular, score_small)) |>
-  tab_spanner(label = "Estimated Causal Effect", columns = c(gain_if_small)) |>
-  tab_spanner(label = "Covariates", columns = c(observed_class, race, yearssmall, school)) |>
-  fmt_markdown(columns = everything()) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  tab_footnote(
-    footnote = md("A * indicates a potential outcome or gain we do not observe."),
-    locations = cells_column_spanners(spanners = c("Potential Outcomes", "Estimated Causal Effect"))
-  )
-
-```
-
-## Example Population Tables
-
-```{r}
-tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  math_score = c("638", "565", "...", "654", "547", "...", "743"),
-  class_size = c("Small", "Regular", "...", "Small", "Small", "...", "Regular"),
-  sex = c("female", "male", "...", "male", "female", "...", "female"),
-  race = c("white", "black", "...", "black", "white", "...", "white"),
-  yearssmall = c("4", "0", "...", "4", "4", "...", "0"),
-  school = c("A", "B", "...", "C", "A", "...", "B")) |>
-  gt() |>
-  tab_header(title = "Population Table: Observed Outcomes and Covariates") |>
-  cols_label(
-    ID = md("ID"),
-    math_score = md("Observed Math Score"),
-    class_size = md("Observed Class Size"),
-    sex = md("Sex"),
-    race = md("Race"),
-    yearssmall = md("Years in Small Class"),
-    school = md("School")
-  ) |>
-  fmt_markdown(columns = everything()) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  tab_spanner(label = "Observed Data", columns = c(math_score, class_size, sex, race, yearssmall, school))
-```
-
-
-```{r}
-tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  math_score = c("685", "679", "...", "689", "661", "...", "678"),
-  class_size = c("Regular", "Small", "...", "Regular", "Regular", "...", "Small"),
-  race = c("white", "black", "...", "white", "black", "...", "white"),
-  yearssmall = c("0", "4", "...", "0", "0", "...", "4")) |>
-  gt() |>
-  tab_header(title = "Population Table: Alternate Version") |>
-  cols_label(
-    ID = md("ID"),
-    math_score = md("Observed Math Score"),
-    class_size = md("Observed Class Size"),
-    race = md("Race"),
-    yearssmall = md("Years in Small Class")
-  ) |>
-  fmt_markdown(columns = everything()) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  tab_spanner(label = "Observed Data", columns = c(math_score, class_size, race, yearssmall))
-```
-
-
+* Describe the mathematical structure of the model:  
+>**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
