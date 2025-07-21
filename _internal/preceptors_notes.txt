@@ -626,15 +626,23 @@ Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance.
 
 * Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
 
-1) Please fill out this spreadsheet: https://shorturl.at/mqKea. It is OK if you are not certain what your outcome variable is or which covariates you plan to use. We just want to get a sense of what is in your data. (There should be at least two covariates which help to explain your outcome variable.)
+1) We will be forking this repo to get started:
 
-2) See #course-announcements channel for information about this week's data source.
+https://github.com/bootcamp-2025-06/STAR-wisdom
+
+This is how we start each class for the next two weeks. If you want, you can just use one repo each week and add the relevant code "by hand," i.e., by just copying the good stuff from each day's new QMD.
+
+1) Please fill out this spreadsheet before class on Wednesday: 
+
+https://docs.google.com/spreadsheets/d/18G_6nmHJe-ilmca2cNLTLVZ51Njj6ZH5ml_zbOqhSHA/edit?usp=sharing
+
+It is OK if you are not certain what your outcome variable is or which covariates you plan to use. We just want to get a sense of what is in your data. (There should be at least two covariates which help to explain your outcome variable.)
+
+2) See #announcements channel for information about this week's data source.
 
 Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol. 5, no. 2, pp. 113–127. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
 
-
-
-4) Today we consider Wisdom and Justice. Courage follows on Wednesday, Temperance on Thursdays.
+3) Today we consider Wisdom and Justice. Courage follows on Wednesday, Temperance on Thursdays.
 
 
 ### Day 17
