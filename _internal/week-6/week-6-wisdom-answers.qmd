@@ -1,5 +1,5 @@
 ---
-title: "Week 6"
+title: "Wisdom about Tennessee STAR"
 execute: 
   echo: false
 ---
@@ -8,7 +8,12 @@ execute:
 ```{r}
 #| message: false
 
-library(tidyverse)
+library(tidyverse)      
+library(gt)             
+library(tidymodels)     
+library(broom)          
+library(marginaleffects) 
+library(easystats)   
 
 x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv",
               show_col_types = FALSE) |> 
@@ -59,76 +64,184 @@ x |>
 
 ### Preceptor Table
 
-<!-- DK: Remove bold. Fix Chicago and date.  Make nice sentences. -->
-
-In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictice? What are units? What are the outcomes? What are the covariates? What are the treatments?
+In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments?
 
 * Causal or predictive?
->**Causal**
+Scenario 1: Predictive — We are forecasting outcomes for current Chicago students using available data.
+
+Scenario 2: Causal — We want to estimate the effect of being in a small class vs. a regular class in Dallas, based on data.
 
 * Units:
->**Individual students in elementary schools. (Specify further: for scenario 1, Nashville in 2000; for scenario 2, Dallas students today.)**
+Individual students in elementary schools.
+
+(For Scenario 1: Chicago; For Scenario 2: Dallas, Texas, in the present day.)
 
 * Outcome:
->**Math achievement score (e.g., 4th grade math score) for each student.**
+Standardized Math test score (e.g., 4th grade math score) for each student.
 
 * Covariates: 
->**class structure, sex, zip code, birth weight, family income, parent education, race, teacher experience, school district**
+Possible covariates include class type (kind), years spent in small classes (yearssmall), race, sex, teacher experience, and school. If available, factors like parent education, birth weight, family income, and zip code can also be included. 
     
 * Treatment: 
->**assignment to a small versus regular classroom**
+The treatment is whether a student is assigned to a small class, a regular class, or a regular class with a teacher’s aid.
 
+Scenario 1 Preceptor Table
+```{r}
+tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  score_observed = c("715", "684", "...", "698", "710", "...", "669"),
+  kind = c("small", "regular", "...", "small", "regular with aid", "...", "small"),
+  race = c("white", "black", "...", "black", "white", "...", "black"),
+  sex = c("female", "male", "...", "male", "female", "...", "female")
+)|>
+  gt() |>
+  tab_header(title = "Preceptor Table: Predicting 4th Grade Math Scores") |>
+  cols_label(
+    ID = md("ID"),
+    score_observed = md("Observed Math Score"),
+    kind = md("Class Type"),
+    race = md("Race"),
+    sex = md("Sex")
+  ) |>
+  tab_spanner(label = "Observed Outcomes", columns = c(score_observed)) |>
+  tab_spanner(label = "Covariates", columns = c(kind, race, sex)) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  fmt_markdown(columns = everything())
+```
 
-<!-- DK: Insert two Preceptor Tables -->
+Scenario 2 Preceptor Table
+```{r}
+tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  math_if_small = c("740*", "701", "...", "730", "720*", "...", "695"),
+  math_if_regular = c("725", "689*", "...", "715*", "702", "...", "680*"),
+  math_if_regular_aid = c("728", "695", "...", "719*", "715", "...", "684"),
+  treatment = c("Small", "Regular", "...", "Small", "Regular", "...", "Regular with aid"),
+  title1 = c("Yes", "No", "...", "Yes", "No", "...", "Yes"),
+  parent_college = c("No", "Yes", "...", "No", "Yes", "...", "Yes")
+) |>
+  gt() |>
+  tab_header(title = "Preceptor Table: Dallas, TX — Potential Math Scores by Class Size") |>
+  cols_label(
+    ID = md("ID"),
+    math_if_small = md("Math if Small Class"),
+    math_if_regular = md("Math if Regular Class"),
+    math_if_regular_aid = md("Math if Regular w/ Aid"),
+    treatment = md("Assigned Class Size"),
+    title1 = md("Title I School"),
+    parent_college = md("Parent has College Degree")
+  ) |>
+  tab_spanner(label = "Potential Outcomes", columns = c(math_if_small, math_if_regular, math_if_regular_aid)) |>
+  tab_spanner(label = "Covariates", columns = c(title1, parent_college)) |>
+  fmt_markdown(columns = everything()) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome which we do not observe for that student."),
+    locations = cells_column_spanners(spanners = "Potential Outcomes")
+  )
+```
+
 
 ### Population Table 
 
 A paragraph indicating what to do. Describe in words the Population Table. For each of the four key assumption of Justice --- validity, stability, representativeness, and unconfoundedness --- provide a counter-example, if relevant.
 
-<!-- DK: Insert two Population Tables. -->
+Scenario 1 Population Table:
+```{r}
+tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  score_observed = c("715", "684", "...", "698", "710", "...", "669"),
+  kind = c("small", "regular", "...", "small", "Regular with aid", "...", "small"),
+  race = c("white", "black", "...", "black", "white", "...", "black"),
+  sex = c("female", "male", "...", "male", "female", "...", "female"),
+) |>
+  gt() |>
+  tab_header(title = "Population Table: Chicago Students' Observed Math Scores") |>
+  cols_label(
+    ID = md("ID"),
+    score_observed = md("Observed Math Score"),
+    kind = md("Class Type"),
+    race = md("Race"),
+    sex = md("Sex"),
+  ) |>
+  tab_spanner(label = "Observed Data", columns = c(score_observed, kind, race, sex)) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  fmt_markdown(columns = everything())
 
-<!-- DK: Change text to counter-examples to cover both cases, or give separate counter-examples, but probably the former, except for unconfoundedness. -->
+```
 
-* Describe Population Table in words.
->**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
+Scenario 2 Population Table
 
-* Counter-argument to the assumption of validity:
->**The definition of “small class” or the math achievement test used in Nashville in 2000 may not perfectly match those from the STAR study in Tennessee, so the measured outcome may not be directly comparable.**
+```{r}
+tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  math_observed = c("725", "701", "...", "730", "702", "...", "695"),
+  assigned_class = c("Regular", "Small", "...", "Small", "Regular", "...", "Regular with aid"),
+  title1 = c("Yes", "No", "...", "Yes", "No", "...", "Yes"),
+  parent_college = c("No", "Yes", "...", "No", "Yes", "...", "Yes")) |>
+  gt() |>
+  tab_header(title = "Population Table: Dallas, TX — Observed Math Scores") |>
+  cols_label(
+    ID = md("ID"),
+    math_observed = md("Observed Math Score"),
+    assigned_class = md("Assigned Class Size"),
+    title1 = md("Title I School"),
+    parent_college = md("Parent has College Degree")
+  ) |>
+  fmt_markdown(columns = everything()) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  tab_spanner(label = "Observed Data", columns = c(math_observed, assigned_class, title1, parent_college))
+```
 
-* Counter-argument to the assumption of stability:
->**The effect of reducing class size on math achievement could be different in Nashville in 2000 than it was in Tennessee in the 1980s, due to differences in students, teachers, or school environments.**
+Describe the Population Table in words:
 
-* Counter-argument to the assumption of representativeness:
->**Nashville’s students in 2000 may differ in key ways from students in the STAR study—such as demographics, family backgrounds, or school funding—which could limit how well the STAR results apply to Nashville.**
+The Population Table includes all possible combinations of elementary students and school years in the relevant context—--either Chicago students today (Scenario 1) or Dallas students today (Scenario 2). Each row corresponds to a student in a given year, showing their math score (or potential math scores under different class sizes) and key student characteristics (such as race, prior achievement, gender, etc.).
 
-* Counter-argument to the assumption of unconfoundedness:
->**In practice, it may not be possible to randomly assign students to small classes in Nashville, and other factors (like which schools or students are chosen for small classes) could affect math scores, making it hard to isolate the causal effect.**
+Counter-example to the assumption of validity:
 
-* Describe the mathematical structure of the model:  
->**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
+The definition of “small class” or the assessment of “math achievement” might differ between Chicago/Dallas today and the original STAR project, so direct comparisons may not be fully valid.
 
-### Population Table Scenario 2
+Counter-example to the assumption of stability:
 
-* Describe Population Table in words.
->**The Population Table includes all possible combinations of elementary students and school years in Dallas, Texas, for the present or upcoming school year. Each row represents a Dallas student, showing their potential math scores under both regular and small class sizes, as well as student and classroom characteristics.**
+The effect of class size on math achievement could be different today in Chicago or Dallas compared to 1980s Tennessee, due to changes in curriculum, student backgrounds, teacher training, or educational resources.
 
-* Counter-argument to the assumption of validity:
->**“Small class” and “math achievement” in Dallas today might be defined or measured differently than in 1980s Tennessee, so using STAR results directly may not be valid.**
+Counter-example to the assumption of representativeness:
 
-* Counter-argument to the assumption of stability:
->**The relationship between class size and math achievement may have changed over time or may differ across locations, so the effect observed in 1980s Tennessee may not be stable in Dallas today.**
+Students in Chicago or Dallas today may not be fully comparable to those in the original STAR study. Differences in demographics, community factors, or funding might limit how well STAR’s findings generalize to these new populations.
 
-* Counter-argument to the assumption of representativeness:
+Counter-example to the assumption of unconfoundedness:
 
->**The STAR study participants from Tennessee might not be representative of Dallas students today—differences in socioeconomic status, educational resources, or community factors could affect generalizability.**
+Scenario 1 (Chicago): If you are only making predictions about current students (without considering interventions), unconfoundedness is less of a concern. The focus is on predicting observed performance given current characteristics, not estimating causal effects.
 
-* Counter-argument to the assumption of unconfoundedness:
+Scenario 2 (Dallas): If the Texas DOE wants to understand the effect of small versus large classes, the assignment of students to class sizes must be unconfounded (ideally random). If not, other factors—--such as school resources or parental involvement—could confound the relationship between class size and math scores, making it hard to interpret the effect as causal.
 
->**If Dallas does not implement small classes randomly, schools or students selected for the intervention might differ in important ways, making it difficult to separate the effect of class size from other influences.**
+Describe the Mathematical Structure of the Model:
 
-* Describe the mathematical structure of the model:  
+Scenario 1: Predictive Model
 
->**The Population Table consists of all possible combinations of elementary students and school years in Nashville for the year 2000. Each row represents a student in a given year, showing what their math score would be under both regular and small class sizes, along with other characteristics (race, prior achievement, etc.).**
+The model predicts a student’s 4th grade math score based on their observed characteristics:
+
+$$
+\mathbb{E}[\text{g4math}_i] = \beta_0 + \beta_1 \cdot \text{race}_i + \beta_2 \cdot \text{yearssmall}_i + \beta_3 \cdot \text{school}_i + \ldots
+$$
+
+Here, the model is **predictive**—--it forecasts outcomes for current students, given what we observe. There is no intervention or “potential outcome” setup.
+
+---
+
+Scenario 2: Causal Model 
+
+The model estimates the **causal effect** of small class size on 4th grade math score, controlling for student characteristics:
+
+$$
+\mathbb{E}[\text{g4math}_i \mid \text{SmallClass}_i] = \beta_0 + \beta_1 \cdot \text{SmallClass}_i + \beta_2 \cdot \text{race}_i + \beta_3 \cdot \text{yearssmall}_i + \ldots
+$$
+
+Here, `SmallClass` is an indicator for being assigned to a small class. The coefficient $\beta_1$ captures the **causal effect**, under the relevant assumptions.
 
 ## More Information
 
