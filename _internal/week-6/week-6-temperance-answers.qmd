@@ -1,0 +1,199 @@
+---
+title: "Class Size Experiment"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(broom)
+library(marginaleffects)
+library(easystats)
+
+x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv",
+              show_col_types = FALSE) |>
+                mutate(kind = recode(classtype,
+                       `1` = "small",
+                       `2` = "regular",
+                       `3` = "regular_with_aid"))
+```
+
+## Background Information
+
+Frederick Mosteller (1995) “The Tennessee study of class size in the early school grades.” The Future of Children, vol. 5, no. 2, pp. 113–127. Data cleaned and discussed in "Quantitative Social Science: An Introduction" by Kosuke Imai.
+
+"The Tennessee class size project is a three-phase study designed to determine the effect of smaller class size in the earliest grades on short-term and long-term pupil performance. The first phase of this project, termed Project STAR (for Student-Teacher Achievement Ratio), was begun in 1985, when Lamar Alexander was governor of Tennessee. Governor Alexander, who later served as secretary of education in the cabinet of President George Bush, had made education a top priority for his second term.
+
+The legislature and the educational community of Tennessee were mindful of a promising study of the benefits of small class size carried out in nearby Indiana, but were also aware of the costs associated with additional classrooms and teachers. Wishing to obtain data on the effectiveness of reduced class size before committing additional funds, the Tennessee legislature authorized this four-year study in which results obtained in kindergarten, first, second, and third grade classrooms of 13 to 17 pupils were compared with those obtained in classrooms of 22 to 25 pupils and in classrooms of this larger size where the teacher was assisted by a paid aide. Both standardized and curriculum-based tests were used to assess and compare the performance of some 6,500 pupils in about 330 classrooms at approximately 80 schools in the areas of reading, mathematics, and basic study skills. After four years, it was clear that smaller classes did produce substantial improvement in early learning and cognitive studies and that the effect of small class size on the achievement of minority children was initially about double that observed for majority children, but in later years, it was about the same.
+
+The second phase of the project, called the Lasting Benefits Study, was begun in 1989 to determine whether these perceived benefits persisted. Observations made as a part of this phase confirmed that the children who were originally enrolled in smaller classes continued to perform better than their grade-mates (whose school experience had begun in larger classes) when they were returned to regular-sized classes in later grades. Under the third phase, Project Challenge, the 17 economically poorest school districts were given small classes in kindergarten, first, second, and third grades. These districts improved their end-of-year standing in rank among the 139 districts from well below average to above average in reading and mathematics. This article briefly summarizes the Tennessee class size project, a controlled experiment which is one of the most important educational investigations ever carried out and illustrates the kind and magnitude of research needed in the field of education to strengthen schools."
+
+### Scenarios
+
+1) Imagine that you are an elementary school principal in Nashville in 2000. You want to predict whether reducing the students per class will likely boost math achievement next year in your school.
+
+2) Imagine you work for the Texas Department of Education. You want to use the STAR data to predict what might happen if Dallas adopted small class sizes, but you are worried about whether the findings from 1980s Tennessee would apply to Dallas today.
+
+<!-- AT: Check examples. -->
+
+### Data Generating Mechanism
+
+Fit a linear regression model to estimate effect of class size on math scores
+
+```{r}
+fit_cs <- linear_reg() |>
+  fit(g4math ~ kind + race + yearssmall + g4reading, data = x)
+```
+
+```{r}
+fit_cs
+```
+
+View tidy summary of the model (including coefficient estimates & CIs). Discuss the `estimate` values for `Intercept` and `kindsmall`. 
+
+```{r}
+tidy(fit_cs, conf.int = TRUE)
+```
+
+
+### Counter-Arguments
+
+Before relying on the STAR data to answer these scenarios, consider the following counter-arguments that challenge whether the study’s findings can be applied directly to each context:
+
+Scenario 1) The STAR experiment was conducted in the 1980s, and your school in Nashville in 2000 may have different student demographics, curricula, or teaching practices. As a result, the relationship between class size and math achievement may not be stable over time, and the effect observed in STAR may not apply directly to your school next year.
+
+Scenario 2) Dallas schools in the 2020s may differ substantially from Tennessee schools in the 1980s in terms of resources, cultural context, and student needs. The representativeness assumption may not hold—meaning the effect of small class size observed in the STAR study might not generalize to Dallas today due to differences in population and educational environment.
+
+### Data Summary
+
+  The Tennessee STAR dataset comes from a landmark randomized controlled experiment conducted in the 1980s to study the impact of class size on student achievement in early elementary school. Over 6,000 students in approximately 80 Tennessee schools were randomly assigned to one of three classroom settings from kindergarten through third grade: small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. Students’ academic performance was tracked over several years, with a particular focus on standardized test scores in reading and mathematics. This dataset allows us to investigate how reducing class size affects academic outcomes and whether these effects differ by student characteristics such as race or socioeconomic status.
+
+Libraries
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(gt)
+library(tidybayes)
+library(broom)
+library(tidymodels)
+```
+
+
+Load your data
+
+```{r}
+x <- read_csv("data/STAR.csv", show_col_types = FALSE)
+```
+
+Fit a linear regression model to estimate effect of class size on math scores
+
+```{r}
+fit_cs <- linear_reg() |>
+  set_engine("lm") |>
+  fit(g4math ~ kind, data = x)
+```
+
+View tidy summary of the model (including coefficient estimates & CIs). Discuss the `estimate` values for `Intercept` and `kindsmall`. 
+
+```{r}
+tidy(fit_cs, conf.int = TRUE)
+```
+
+This is my data generating mechanism. 
+$$
+\begin{equation}
+\begin{aligned}
+\mathbb{E}[\text{g4math}] =\; & \beta_0 
+\; + \; \beta_1 \cdot \text{kind}_{\text{small}}
+\; + \; \beta_2 \cdot \text{kind}_{\text{regular with aid}} \\
+& + \; \beta_3 \cdot \text{race}
+\; + \; \beta_4 \cdot \text{yearssmall}
+\; + \; \beta_5 \cdot \text{g4reading}
+\end{aligned}
+\end{equation}
+$$
+
+
+## Temperance
+
+What are the questions you want to answer?
+
+How can you use the **marginaleffects** package to answer them?
+
+Consider using `predictions()` to generate the predicted scores for new scenarios and use `plot_predictions()` to plot the effect of class type on predicted scores. 
+
+## TF Notes
+**Scene 1**
+Fork the repo. Render the Quarto document. Use Cmd/Ctrl + Enter to load everything in the Console.
+
+Describe the Population Table in words:
+
+Population Table:
+Each row represents a student-year combination for students in grades K–3 in a large urban school district, including variables for observed math score, assigned class type (small/regular/regular_with_aid), years spent in small classes, race, school, and previous reading scores.
+
+**Scene 2**
+Write a summary paragraph:
+
+Using the fitted linear regression model, we can estimate the expected 4th grade math score for a student based on their class size, years in small classes, race, and prior reading achievement. This allows us to predict and compare the outcomes for hypothetical changes in classroom assignment policies, such as moving more students into small classes.
+
+Use the marginaleffects package to explore predictions:
+
+
+```{r}
+# Generate predicted scores for all students in the data
+head(predictions(fit_cs))
+```
+
+```{r}
+# Generate predictions by class type
+predictions(fit_cs, by = "kind")
+```
+
+```{r}
+# Visualize average predicted math score by class type
+plot_predictions(fit_cs, by = "kind")
+```
+
+**Scene 3**
+
+Start experimenting with more detailed plots:
+
+```{r}
+# Visualize predicted math scores by class type and race
+plot_predictions(fit_cs, by = c("kind", "race"))
+```
+
+```{r}
+# Visualize predicted math scores by class type, race, and years in small class
+plot_predictions(fit_cs, by = c("kind", "race", "yearssmall"))
+```
+
+Explain the difference between by and condition:
+
+The by argument groups and averages predictions by observed subgroups in the data, such as class type or race.
+
+The condition argument generates predictions across a user-defined grid, allowing you to see how outcomes would change if you hypothetically set predictor values to particular combinations.
+```{r}
+# Example using condition
+plot_predictions(fit_cs, condition = c("kind", "race"))
+```
+
+**Scene 4**
+
+Create an “interesting” plot using three predictors:
+
+
+```{r}
+# Predict scores for different combinations of class type, race, and previous reading score
+plot_predictions(fit_cs, by = c("kind", "race", "g4reading"))
+```
+
+Summary Paragraph Example:
+
+The model estimates how much, on average, a student’s 4th grade math score would increase or decrease if they were in a small class rather than a regular-sized class, after accounting for race, years in small classes, and prior reading performance. The marginaleffects package allows us to explore these differences across various subgroups and scenarios, helping answer questions about the expected impact of class size changes in different policy contexts.
