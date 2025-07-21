@@ -229,8 +229,6 @@ Scenario 1 (Chicago): If you are only making predictions, unconfoundedness is no
 
 Scenario 2 (Dallas): If the Texas DOE wants to understand the effect of small versus large classes, the assignment of students to class sizes must be unconfounded (ideally random). If not, other factors—--such as school resources or parental involvement—could confound the relationship between class size and math scores, making it hard to interpret the effect as causal.
 
-Describe the Mathematical Structure of the Model:
-
 Scenario 1: Predictive Model
 
 The model predicts a student’s 4th grade math score based on their observed characteristics:

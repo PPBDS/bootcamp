@@ -15,6 +15,10 @@
 
 * Sign up for Zoom which has enough slots of students. Can wait until enrollment firms up.
 
+* Consider switching weeks 5 and 6. The data for 6 supplies few (and simple) covariates. So, you can only use a very simple model. THe data for 5 is richer.
+
+* Convert weeks 5, 6 and 7 to new process. One answer file for each day, with the questions bunched together in paragraphs. Each day, take the answer file, strip away the answers, then upload the new qmd to a new repo. Students then fork that repo to start the day.
+
 ## Enrollment
 
 * Start registration process three weeks before course starts. After a week, let people know that registration ends in a week, a week before class starts. Close registration a week ahead. Of course, you can let in, by hand, some extra students, but the sooner you nail down the students, the better.
