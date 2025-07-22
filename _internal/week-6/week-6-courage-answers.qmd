@@ -1,0 +1,93 @@
+## Day 2: Courage
+
+```{r}
+#| message: false
+
+library(tidyverse)      
+library(gt)             
+library(tidymodels)     
+library(broom)          
+library(marginaleffects) 
+library(easystats)   
+
+x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/master/_internal/data/STAR.csv",
+              show_col_types = FALSE) |> 
+      mutate(kind = recode(classtype,
+                         `1` = "small",
+                         `2` = "regular",
+                         `3` = "regular with aid")) |> 
+      mutate(race = recode(race,
+                       `1` = "white",
+                       `2` = "black",
+                       `3` = "hispanic",
+                       `4` = "hispanic",
+                       `5` = "others",
+                       `6` = "others")) |> 
+      select(g4math, kind, race, yearssmall)     
+```
+
+<!-- DK: Change code and other stuff to be consistent.  -->
+
+
+## Background Information
+
+The Tennessee STAR dataset comes from a large-scale, multi-year educational experiment conducted in the 1980s across dozens of Tennessee schools. In the study, over 6,000 kindergarten through third-grade students were randomly assigned to either small classes (13–17 students), regular-sized classes (22–25 students), or regular-sized classes with a teacher’s aide. The goal was to determine whether smaller class sizes improved academic performance, particularly in mathematics and reading. Academic outcomes were measured using standardized and curriculum-based tests, and the dataset also includes key student and classroom characteristics such as race, sex, school, and class assignment. 
+
+### Scenarios
+
+1) Imagine that you are an elementary school principal in Chicago. You want to predict student performance. Fortunately, you have data today for your current students like the data available in the STAR project.
+
+2) Imagine you work for the Texas Department of Education. You want to understand student performance in small classes, relative to big classes, in Dallas. In Texas, there is data available like the data in the STAR project.
+
+## Models to Explore
+
+Because `g4math` is a continuous (numeric) variable, we want a linear regression model, which we create with `linear_reg()`. Note that the default value of `engine` is `"lm"`, which is the standard approach for fitting linear models in R.
+
+* Estimate a model in which `g4math` is the dependent variable and `kind` (class type) is the independent variable. How do you interpret the results? How can you see some confidence intervals for the unknown parameters?
+
+```{r}
+linear_reg() |> 
+  fit(g4math ~ kind, data = x) |> 
+  tidy(conf.int = TRUE)
+```
+
+* Estimate a model in which `g4math` is the dependent variable and both `kind` and `race` are the independent variables. How do you interpret the results? How can you see some confidence intervals for the unknown parameters?
+
+```{r}
+linear_reg() |> 
+  fit(g4math ~ kind + race, data = x) |> 
+  tidy(conf.int = TRUE)
+```
+
+````
+Output: Summary of Predicted 4th Grade Math Scores
+  Black in regular class: 696 (95% CI: 691–701)
+  White in regular class: 712 (95% CI: 709–715)
+  Black in small class: 695 (95% CI: 690–701)
+  White in small class: 712 (95% CI: 708–715)
+````
+Note that you can use functions from **marginaleffects** to make these calculations as well:
+
+```{r}
+linear_reg() |> 
+  fit(g4math ~ kind + race, data = x) |> 
+  avg_predictions(by = c("kind", "race"))
+```
+
+Indeed, this is one of the big benefits of the **marginaleffects** package.
+
+* Change the independent variables to be `kind + race + yearssmall + kind*race`. How do you interpret the results, especially the interaction term? How can you see some confidence intervals for the unknown parameters?
+
+```{r}
+linear_reg() |> 
+  fit(g4math ~ kind + race + yearssmall + kind*race, data = x) |> 
+  tidy(conf.int = TRUE)
+```
+
+ Show the output of this code to AI. Ask for help in interpreting it. What do the coefficients for kind and race suggest? Are any effects statistically significant? How certain or uncertain should I be about these estimates? I get: 
+
+ ````
+The model shows students in small classes have a slightly higher average math score, but the effect is not statistically significant (estimate = -8.24, 95% CI: -21.0 to 4.51, p = 0.21). White students have higher scores (estimate = 13.2, 95% CI: 5.02 to 21.3, p = 0.0015), and each year spent in a small class gives a small, significant boost (estimate = 2.25, 95% CI: 0.16 to 4.34, p = 0.035). Most interactions between class type and race are not significant, so we don’t see strong evidence that the class size effect differs by race.
+ ````
+
+ 

@@ -122,28 +122,23 @@ $$
 
 ## Temperance
 
-What are the questions you want to answer?
-
-How can you use the **marginaleffects** package to answer them?
-
-Consider using `predictions()` to generate the predicted scores for new scenarios and use `plot_predictions()` to plot the effect of class type on predicted scores. 
-
-## TF Notes
-**Scene 1**
-Fork the repo. Render the Quarto document. Use Cmd/Ctrl + Enter to load everything in the Console.
-
 Describe the Population Table in words:
 
 Population Table:
 Each row represents a student-year combination for students in grades K–3 in a large urban school district, including variables for observed math score, assigned class type (small/regular/regular_with_aid), years spent in small classes, race, school, and previous reading scores.
 
-**Scene 2**
 Write a summary paragraph:
 
 Using the fitted linear regression model, we can estimate the expected 4th grade math score for a student based on their class size, years in small classes, race, and prior reading achievement. This allows us to predict and compare the outcomes for hypothetical changes in classroom assignment policies, such as moving more students into small classes.
 
-Use the marginaleffects package to explore predictions:
+What are the questions you want to answer?
 
+How can you use the **marginaleffects** package to answer them?
+
+Start playing with marginaleffects package. Run predictions(). What does the output mean? AI can help.
+
+
+Use the marginaleffects package to explore predictions:
 
 ```{r}
 # Generate predicted scores for all students in the data
@@ -160,8 +155,6 @@ predictions(fit_cs, by = "kind")
 plot_predictions(fit_cs, by = "kind")
 ```
 
-**Scene 3**
-
 Start experimenting with more detailed plots:
 
 ```{r}
@@ -174,26 +167,14 @@ plot_predictions(fit_cs, by = c("kind", "race"))
 plot_predictions(fit_cs, by = c("kind", "race", "yearssmall"))
 ```
 
-Explain the difference between by and condition:
+Explain the difference between `by` and `condition`:
 
-The by argument groups and averages predictions by observed subgroups in the data, such as class type or race.
+The `by` argument groups and averages predictions by observed subgroups in the data, such as class type or race.
 
-The condition argument generates predictions across a user-defined grid, allowing you to see how outcomes would change if you hypothetically set predictor values to particular combinations.
+The `condition` argument generates predictions across a user-defined grid, allowing you to see how outcomes would change if you hypothetically set predictor values to particular combinations.
+
 ```{r}
 # Example using condition
 plot_predictions(fit_cs, condition = c("kind", "race"))
 ```
 
-**Scene 4**
-
-Create an “interesting” plot using three predictors:
-
-
-```{r}
-# Predict scores for different combinations of class type, race, and previous reading score
-plot_predictions(fit_cs, by = c("kind", "race", "g4reading"))
-```
-
-Summary Paragraph Example:
-
-The model estimates how much, on average, a student’s 4th grade math score would increase or decrease if they were in a small class rather than a regular-sized class, after accounting for race, years in small classes, and prior reading performance. The marginaleffects package allows us to explore these differences across various subgroups and scenarios, helping answer questions about the expected impact of class size changes in different policy contexts.
