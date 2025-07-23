@@ -142,7 +142,7 @@ tibble(
 
 ## Models to Explore
 
-* What type of regression model should we use for predicting `g4math` scores, and why?
+* What type of regression model should we use for predicting `g4math` scores, and why? How do we code this?
 
 Because `g4math` is a continuous (numeric) variable, we want a linear regression model, which we create with `linear_reg()`. Note that the default value of `engine` is `"lm"`, which is the standard approach for fitting linear models in R.
 
