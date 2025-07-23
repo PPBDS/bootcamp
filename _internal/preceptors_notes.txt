@@ -659,6 +659,12 @@ https://docs.google.com/spreadsheets/d/18G_6nmHJe-ilmca2cNLTLVZ51Njj6ZH5ml_zbOqh
 
 Discuss in the breakout rooms. Reminder: https://davidkane.info/writings/data-for-projects.html
 
+3) Homework for Thursday:
+
+Complete the “Stops” tutorial (131-stops) from the primer.tutorials package.
+
+
+
 
 
 ### Day 18

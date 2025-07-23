@@ -28,7 +28,9 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
                        `4` = "hispanic",
                        `5` = "others",
                        `6` = "others")) |> 
-      select(g4math, kind, race, yearssmall)          
+      select(g4math, kind, race, yearssmall)   
+    
+#  DK: Edit data to combine others and Hispanic into just others. 
 ```
 
 ### Data Summary
@@ -71,11 +73,12 @@ $$
 
 ## Temperance
 
-Fork repo. Render QMD. Cmd/Ctrl + Enter to get everything in the Console.
+
 
 Generate predicted scores for all students in the data
+
 ```{r}
-(predictions(fit_cs))
+predictions(fit_cs)
 ```
 
 Generate predictions by class type. What does this tell you about the effect of class types on student `g4math` scores?
