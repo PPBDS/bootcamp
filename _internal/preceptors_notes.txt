@@ -649,16 +649,15 @@ Frederick Mosteller (1995) “The Tennessee study of class size in the early sch
 
 Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Today is Courage. Tomorrow is Temperance.
 
-1) Check out the repo from Monday: https://github.com/Bootcamp-June-2024/class-size. Note that the repo is always added to the Preceptor's Notes for that class, after the class is over and I clean things up a bit. Check out my answers to the questions. They aren't the only answers, but they are good.
+1) We will be forking this repo to get started:
 
-2) Check out this #course-announcement: https://shorturl.at/f1VTX
+https://github.com/bootcamp-2025-06/STAR-courage
 
-3) We need to modify our variables so that things are easier to understand when we create our model.
+2) You better have filled out this form: 
 
-4) 
+https://docs.google.com/spreadsheets/d/18G_6nmHJe-ilmca2cNLTLVZ51Njj6ZH5ml_zbOqhSHA/edit?usp=sharing
 
-
-Repo
+Discuss in the breakout rooms. Reminder: https://davidkane.info/writings/data-for-projects.html
 
 
 
