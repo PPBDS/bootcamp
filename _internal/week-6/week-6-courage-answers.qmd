@@ -26,8 +26,6 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
       select(g4math, kind, race, yearssmall)     
 ```
 
-<!-- DK: Change code and other stuff to be consistent. Done  -->
-
 
 ## Background Information
 
@@ -36,6 +34,8 @@ The Tennessee STAR dataset comes from a large-scale, multi-year educational expe
 ### Scenarios
 
 1) Imagine that you are an elementary school principal in Chicago. You want to predict student performance. Fortunately, you have data today for your current students like the data available in the STAR project.
+
+<!-- DK: Insert both Preceptor Tables and Population Tables. -->
 
 2) Imagine you work for the Texas Department of Education. You want to understand student performance in small classes, relative to big classes, in Dallas. In Texas, there is data available like the data in the STAR project.
 
@@ -51,7 +51,9 @@ linear_reg() |>
   tidy(conf.int = TRUE)
 ```
 
-* Estimate a model in which `g4math` is the dependent variable and both `kind` and `race` are the independent variables. How do you interpret the results? How can you see some confidence intervals for the unknown parameters?
+<!-- DK: Add interpretations, and any answers to questions you ask. -->
+
+* Estimate a model in which `g4math` is the dependent variable and both `kind` and `race` are the independent variables. How do you interpret the results? 
 
 ```{r}
 linear_reg() |> 
@@ -59,24 +61,7 @@ linear_reg() |>
   tidy(conf.int = TRUE)
 ```
 
-````
-Output: Summary of Predicted 4th Grade Math Scores
-  Black in regular class: 696 (95% CI: 691–701)
-  White in regular class: 712 (95% CI: 709–715)
-  Black in small class: 695 (95% CI: 690–701)
-  White in small class: 712 (95% CI: 708–715)
-````
-Note that you can use functions from **marginaleffects** to make these calculations as well:
-
-```{r}
-linear_reg() |> 
-  fit(g4math ~ kind + race, data = x) |> 
-  avg_predictions(by = c("kind", "race"))
-```
-
-Indeed, this is one of the big benefits of the **marginaleffects** package.
-
-* Change the independent variables to be `kind + race + yearssmall + kind*race`. How do you interpret the results, especially the interaction term? How can you see some confidence intervals for the unknown parameters?
+* Change the independent variables to be `kind + race + yearssmall + kind*race`. How do you interpret the results, especially the interaction term? 
 
 ```{r}
 linear_reg() |> 
