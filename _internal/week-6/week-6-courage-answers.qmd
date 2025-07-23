@@ -26,7 +26,7 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
       select(g4math, kind, race, yearssmall)     
 ```
 
-<!-- DK: Change code and other stuff to be consistent.  -->
+<!-- DK: Change code and other stuff to be consistent. Done  -->
 
 
 ## Background Information
