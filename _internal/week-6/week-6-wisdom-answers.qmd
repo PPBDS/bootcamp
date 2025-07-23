@@ -126,9 +126,7 @@ tibble(
   math_if_small = c("740*", "701", "...", "730", "720*", "...", "695"),
   math_if_regular = c("725", "689*", "...", "715*", "702", "...", "680*"),
   math_if_regular_aid = c("728", "695", "...", "719*", "715", "...", "684"),
-  treatment = c("Small", "Regular", "...", "Small", "Regular", "...", "Regular with aid"),
-  title1 = c("Yes", "No", "...", "Yes", "No", "...", "Yes"),
-  parent_college = c("No", "Yes", "...", "No", "Yes", "...", "Yes")
+  treatment = c("Small", "Regular", "...", "Small", "Regular", "...", "Regular with aid")
 ) |>
   gt() |>
   tab_header(title = "Preceptor Table: Dallas, TX — Potential Math Scores by Class Size") |>
@@ -137,12 +135,9 @@ tibble(
     math_if_small = md("Math if Small Class"),
     math_if_regular = md("Math if Regular Class"),
     math_if_regular_aid = md("Math if Regular w/ Aid"),
-    treatment = md("Assigned Class Size"),
-    title1 = md("Title I School"),
-    parent_college = md("Parent has College Degree")
+    treatment = md("Assigned Class Size")
   ) |>
   tab_spanner(label = "Potential Outcomes", columns = c(math_if_small, math_if_regular, math_if_regular_aid)) |>
-  tab_spanner(label = "Covariates", columns = c(title1, parent_college)) |>
   fmt_markdown(columns = everything()) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(ID)) |>
@@ -161,26 +156,28 @@ Scenario 1 Population Table
 
 ```{r}
 tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  score_observed = c("715", "684", "...", "698", "710", "...", "669"),
-  kind = c("small", "regular", "...", "small", "Regular with aid", "...", "small"),
-  race = c("white", "black", "...", "black", "white", "...", "black"),
-  sex = c("female", "male", "...", "male", "female", "...", "female"),
+  source = c("...", "Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
+  year = c("2020", "2021", "2021", "...", "2022", "2022", "..."),
+  ID = c("...", "1", "2", "...", "10", "11", "..."),
+  score_observed = c("...", "715", "684", "...", "?", "?", "..."),
+  kind = c("...", "small", "regular", "...", "small", "regular with aid", "..."),
+  race = c("...", "white", "black", "...", "black", "white", "..."),
+  sex = c("...", "female", "male", "...", "male", "female", "...")
 ) |>
   gt() |>
-  tab_header(title = "Population Table: Chicago Students' Observed Math Scores") |>
+  tab_header(title = "Population Table: Chicago, All Years") |>
   cols_label(
+    source = md("Source"),
+    year = md("Year"),
     ID = md("ID"),
     score_observed = md("Observed Math Score"),
     kind = md("Class Type"),
     race = md("Race"),
-    sex = md("Sex"),
+    sex = md("Sex")
   ) |>
-  tab_spanner(label = "Observed Data", columns = c(score_observed, kind, race, sex)) |>
+  fmt_markdown(columns = everything()) |>
   cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  fmt_markdown(columns = everything())
-
+  cols_align(align = "left", columns = c(source))
 ```
 
 Scenario 2 Population Table
@@ -209,7 +206,7 @@ tibble(
 
 Describe the Population Table in words:
 
-The Population Table includes all possible combinations of elementary students and school years in the relevant context—--either Chicago students today (Scenario 1) or Dallas students today (Scenario 2). Each row corresponds to a student in a given year, showing their math score (or potential math scores under different class sizes) and key student characteristics (such as race, prior achievement, gender, etc.).
+The Population Table includes possible combinations of elementary students and school years in the relevant context—--either Chicago students today (Scenario 1) or Dallas students today (Scenario 2). Each row corresponds to a student in a given year, showing their math score (or potential math scores under different class sizes) and key student characteristics (such as race, prior achievement, gender, etc.).
 
 Counter-example to the assumption of validity:
 
