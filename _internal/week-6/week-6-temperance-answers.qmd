@@ -21,7 +21,6 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
                       `1` = "small",
                       `2` = "regular",
                       `3` = "regular with aid")) |> 
-  # DK: Edit data to combine "others" and "hispanic" into just "others". Done
   mutate(race = recode(race,
                       `1` = "white",
                       `2` = "black",
@@ -46,21 +45,21 @@ Note: Since there were very few data points for both "Hispanic" and "Other" stud
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
-  score_observed = c("715", "684", "...", "698", "710", "...", "669"),
+  score_predicted = c("715", "684", "...", "698", "710", "...", "669"),
   kind = c("small", "regular", "...", "small", "regular with aid", "...", "small"),
   race = c("white", "black", "...", "black", "white", "...", "black"),
   sex = c("female", "male", "...", "male", "female", "...", "female")
 )|>
   gt() |>
-  tab_header(title = "Preceptor Table: Predicting 4th Grade Math Scores") |>
+  tab_header(title = "Preceptor Table: Predicted 4th Grade Math Scores for 2029 in Chicago") |>
   cols_label(
     ID = md("ID"),
-    score_observed = md("Observed Math Score"),
+    score_predicted = md("Predicted Math Score"),
     kind = md("Class Type"),
     race = md("Race"),
     sex = md("Sex")
   ) |>
-  tab_spanner(label = "Observed Outcomes", columns = c(score_observed)) |>
+  tab_spanner(label = "Predicted Outcomes", columns = c(score_predicted)) |>
   tab_spanner(label = "Covariates", columns = c(kind, race, sex)) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(ID)) |>
@@ -70,25 +69,30 @@ tibble(
 
 ```{r}
 tibble(
-  source = c("...", "Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
-  year = c("2020", "2021", "2021", "...", "2022", "2022", "..."),
-  ID = c("...", "1", "2", "...", "10", "11", "..."),
-  score_observed = c("...", "715", "684", "...", "?", "?", "..."),
-  kind = c("...", "small", "regular", "...", "small", "regular with aid", "..."),
-  race = c("...", "white", "black", "...", "black", "white", "..."),
-  sex = c("...", "female", "male", "...", "male", "female", "...")
+  source = c("Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
+  year = c("1985", "1985", "...", "2029", "2029", "..."),
+  location = c("Tennessee", "Tennessee", "...", "Chicago", "Chicago", "..."),
+  ID = c("1", "2", "...", "10", "11", "..."),
+  score_observed = c("715", "684", "...", "?", "?", "..."),
+  kind = c("small", "regular", "...", "small", "regular with aid", "..."),
+  race = c("white", "black", "...", "black", "white", "..."),
+  sex = c("female", "male", "...", "male", "female", "...")
 ) |>
   gt() |>
-  tab_header(title = "Population Table: Chicago, All Years") |>
+  tab_header(title = "Population Table: All Years and Locations") |>
   cols_label(
     source = md("Source"),
     year = md("Year"),
+    location = md("Location"),
     ID = md("ID"),
-    score_observed = md("Observed Math Score"),
+    score_observed = md("Math Score"),
     kind = md("Class Type"),
     race = md("Race"),
     sex = md("Sex")
   ) |>
+  tab_spanner(label = "Unit & Time", columns = c(year, location, ID)) |>
+  tab_spanner(label = "Outcomes", columns = c(score_observed)) |>
+  tab_spanner(label = "Covariates", columns = c(kind, race, sex)) |>
   fmt_markdown(columns = everything()) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(source))
@@ -100,13 +104,13 @@ tibble(
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
-  math_if_small = c("740*", "701", "...", "730", "720*", "...", "695"),
-  math_if_regular = c("725", "689*", "...", "715*", "702", "...", "680*"),
-  math_if_regular_aid = c("728", "695", "...", "719*", "715", "...", "684"),
+  math_if_small = c("740", "701*", "...", "730", "720*", "...", "695*"),
+  math_if_regular = c("725*", "689", "...", "715*", "702", "...", "680*"),
+  math_if_regular_aid = c("728*", "695*", "...", "719*", "715*", "...", "684"),
   treatment = c("Small", "Regular", "...", "Small", "Regular", "...", "Regular with aid")
 ) |>
   gt() |>
-  tab_header(title = "Preceptor Table: Dallas, TX — Potential Math Scores by Class Size") |>
+  tab_header(title = "Preceptor Table: Dallas, TX, 2025: Potential Math Scores Under Each Class Type Assignment") |>
   cols_label(
     ID = md("ID"),
     math_if_small = md("Math if Small Class"),
@@ -115,9 +119,9 @@ tibble(
     treatment = md("Assigned Class Size")
   ) |>
   tab_spanner(label = "Potential Outcomes", columns = c(math_if_small, math_if_regular, math_if_regular_aid)) |>
-  fmt_markdown(columns = everything()) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(ID)) |>
+  fmt_markdown(columns = everything()) |>
   tab_footnote(
     footnote = md("A * indicates a potential outcome which we do not observe for that student."),
     locations = cells_column_spanners(spanners = "Potential Outcomes")
@@ -127,36 +131,50 @@ tibble(
 
 ```{r}
 tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  math_observed = c("725", "701", "...", "730", "702", "...", "695"),
-  assigned_class = c("Regular", "Small", "...", "Small", "Regular", "...", "Regular with aid"),
-  title1 = c("Yes", "No", "...", "Yes", "No", "...", "Yes"),
-  parent_college = c("No", "Yes", "...", "No", "Yes", "...", "Yes")) |>
+  source = c("Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
+  year = c("1985", "1985", "...", "2025", "2025", "..."),
+  location = c("Tennessee", "Tennessee", "...", "Dallas, TX", "Dallas, TX", "..."),
+  ID = c("1", "2", "...", "10", "11", "..."),
+  math_if_small = c("740*", "701", "...", "730", "720*", "..."),
+  math_if_regular = c("725", "689*", "...", "715*", "702", "..."),
+  math_if_regular_aid = c("728*", "695*", "...", "719*", "715*", "..."),
+  assigned_class = c("Regular", "Small", "...", "Small", "Regular", "...")
+) |>
   gt() |>
-  tab_header(title = "Population Table: Dallas, TX — Observed Math Scores") |>
+  tab_header(title = "Population Table: Dallas, TX (2025) — Potential 4th Grade Math Scores by Class Assignment") |>
   cols_label(
+    source = md("Source"),
+    year = md("Year"),
+    location = md("Location"),
     ID = md("ID"),
-    math_observed = md("Observed Math Score"),
-    assigned_class = md("Assigned Class Size"),
-    title1 = md("Title I School"),
-    parent_college = md("Parent has College Degree")
+    math_if_small = md("Math if Small Class"),
+    math_if_regular = md("Math if Regular Class"),
+    math_if_regular_aid = md("Math if Regular w/ Aid"),
+    assigned_class = md("Assigned Class Size")
   ) |>
+  tab_spanner(label = "Unit & Time", columns = c(year, location, ID)) |>
+  tab_spanner(label = "Potential Outcomes", columns = c(math_if_small, math_if_regular, math_if_regular_aid)) |>
+  tab_spanner(label = "Covariates", columns = c(assigned_class)) |>
   fmt_markdown(columns = everything()) |>
   cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  tab_spanner(label = "Observed Data", columns = c(math_observed, assigned_class, title1, parent_college))
+  cols_align(align = "left", columns = c(source)) |>
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome which we do not observe for that student."),
+    locations = cells_column_spanners(spanners = "Potential Outcomes")
+  )
 ```
 
 ### Data Generating Mechanism
 
-Fit a linear regression model in which math score (`g4math`) is the outcome, and the predictors are class type (`kind`), race, years spent in small classes (`yearssmall`), and all interactions between class type and race (`kind*race`). Fit this model to an object named `fit_cs`.
+Fit a linear regression model in which math score (`g4math`) is the outcome, and the predictors are class type (`kind`), race, and years spent in small classes (`yearssmall`). Fit this model to an object named `fit_cs`.
 
 ```{r}
 fit_cs <- linear_reg() |> 
-  fit(g4math ~ kind + race + yearssmall + kind*race, data = x) 
+  fit(g4math ~ kind + race + yearssmall, data = x) 
 ```
 
-After fitting the model, run `fit_cs` and besure to display the confidence intervals. 
+After fitting the model, run `fit_cs` and be sure to display the confidence intervals. 
+
 ```{r}
 fit_cs |> 
   tidy(conf.int = TRUE)
@@ -166,15 +184,14 @@ Give the R code you used to fit your regression model to AI and ask it to create
 
 Paste the LaTeX equation from AI below.
 $$
-\begin{equation}
-\begin{aligned}
-\mathbb{E}[\text{g4math}_i] =\;& \beta_0 
-+ \beta_1 \cdot \text{kind}_i 
-+ \beta_2 \cdot \text{race}_i \\
-&+ \beta_3 \cdot \text{yearssmall}_i 
-+ \beta_4 \cdot (\text{kind}_i \times \text{race}_i)
-\end{aligned}
-\end{equation}
+\[
+\widehat{\text{g4math}} = 695\ -\ 1.95\,
+\text{I}(\text{kind} = \text{regular with aid})\ -\ 7.66\,
+\text{I}(\text{kind} = \text{small})\ +\ 38.7\,
+\text{I}(\text{race} = \text{others})\ +\ 16.3\,
+\text{I}(\text{race} = \text{white})\ +\ 2.18\,
+\text{yearssmall}
+\]
 $$
 
 ## Marginal Effects
@@ -183,13 +200,14 @@ Start writing summary paragraph. (AI may be helpful for individual sentences but
 
 Generate predicted scores for all students in the data. What does each row in the output represent?
 
+Each row represents one student. 
+
 ```{r}
 predictions(fit_cs)
 ```
 
-Generate predictions by class type. What does this tell you about the effect of class types on student `g4math` scores?
+Generate predictions by class type (`kind`). 
 
-The predicted math scores are nearly the same for all class types, and their confidence intervals overlap a lot. This means class type has little or no effect on math scores here.
 ```{r}
 predictions(fit_cs, by = "kind")
 ```
@@ -200,27 +218,88 @@ Visualize average predicted math score by class type using `plot_predictions()`.
 plot_predictions(fit_cs, by = "kind")
 ```
 
-Start experimenting with more detailed plots. Visualize predicted math scores by class type and race
+The default `plot_predictions()` plots can be boring or hard to read. To create your own custom plot, start by extracting the prediction data using the `draw = FALSE` option. Save the resulting tibble as `pred_data`. Run `pred_data` to see the output.
+
+```{r}
+pred_data <- plot_predictions(fit_cs, by = "kind", draw = FALSE)
+pred_data
+```
+
+Give AI the output of `pred_data` and ask it to make a nice looking plot. Make sure that it has an accurate title, subtitle, axis labels, and caption. Paste your plot in the code chunk below.
+
+```{r}
+pred_data <- pred_data |>
+  mutate(kind = recode(kind,
+    "regular" = "Regular (22)",
+    "regular with aid" = "Regular with Aid",
+    "small" = "Small (15)"
+  ))
+
+ggplot(pred_data, aes(x = kind, y = estimate)) +
+  geom_col(fill = "#4A90E2", width = 0.6) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.18) +
+  labs(
+    title = "Predicted 4th Grade Math Scores by Class Type",
+    subtitle = "Class size differences produce only little to no differences in predicted math scores.",
+    x = "Class Type",
+    y = "Predicted Math Score",
+    caption = "Data: Tennessee STAR class size experiment (1980s). Error bars: 95% confidence intervals."
+  ) +
+  coord_cartesian(ylim = c(704, 713)) +  # Focus on the relevant score range
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 17),
+    plot.subtitle = element_text(size = 13),
+    axis.title = element_text(face = "bold")
+  )
+```
+
+What does this plot tell you about the effect of class types on student `g4math` scores?
+
+The predicted math scores are nearly the same for all class types, and their confidence intervals overlap a lot. This means class type has little or no effect on math scores here.
+
+Start experimenting with more detailed plots. Visualize predicted math scores by class type and race. Just use the basic `plot_predictions()` for now.
 
 ```{r}
 plot_predictions(fit_cs, by = c("kind", "race"))
 ```
 
-Those default plots can look messy and hard to read. You can use `draw = FALSE` in your code to get the prediction data, then use AI to make a nice lookng plot. Paste your code in the R code chunk below. 
+Now use `plot_predictions()` with `draw = FALSE` to get the raw predictions by class type. Save the resulting tibble as `pred_data2`. Run `pred_data2` to see the output. 
 
 ```{r}
-pred_data <- plot_predictions(fit_cs, by = c("kind", "race"), draw = FALSE)
-ggplot(pred_data, aes(x = kind, y = estimate, fill = race)) +
+pred_data2 <- plot_predictions(fit_cs, by = c("kind", "race"), draw = FALSE)
+pred_data2
+```
+
+Take the output from `pred_data2` and provide it to AI. Ask it to make a high-quality plot with a descriptive title, subtitle, caption, and labels. Paste your new plot below: 
+
+```{r}
+pred_data2 <- pred_data2 |>
+  mutate(kind = recode(kind,
+    "regular" = "Regular (22-25 Students)",
+    "regular with aid" = "Regular with Aid",
+    "small" = "Small (13-17 Students)"
+  ))
+ggplot(pred_data2, aes(x = kind, y = estimate, fill = race)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6) +
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), 
-                position = position_dodge(width = 0.7), width = 0.2) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high),
+                position = position_dodge(width = 0.7), width = 0.25) +
   labs(
-    title = "Predicted Math Scores by Class Type and Race",
+    title = "Predicted 4th Grade Math Scores by Class Type and Race",
+    subtitle = "Class type has almost no meaningful effect on math scores.",
     x = "Class Type",
     y = "Predicted Math Score",
-    fill = "Race"
+    fill = "Race",
+    caption = "Predicted math scores are based on data from the Tennessee STAR experiment. Error bars indicate 95% confidence intervals."
   ) +
-  theme_minimal(base_size = 14)
+  coord_cartesian(ylim = c(680, 765)) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18),
+    plot.subtitle = element_text(size = 13),
+    axis.title = element_text(face = "bold"),
+    legend.position = "top"
+  )
 ```
 
 After finalizing your summary paragraph, paste it in the section below:
@@ -228,8 +307,6 @@ After finalizing your summary paragraph, paste it in the section below:
 ```
 We analyzed the Tennessee STAR dataset using a linear regression model to examine how class type, race, and years in small classes relate to fourth grade math scores. Our results show that class size (small, regular, or regular with aid) has little effect on math scores—predicted values and their confidence intervals are similar across groups. Race does matter, with white and “others” students scoring higher on average than Black students. Interaction terms showed no significant evidence that class size impacts races differently. Overall, class size reductions did not yield meaningful math score improvements in this analysis.
 ```
-
-<!-- AT: Is there anything else I should add? Some students finished a little early last class. -->
 
  ## More Information
 
