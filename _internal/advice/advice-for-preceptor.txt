@@ -1,47 +1,48 @@
+## Things To Do Before Next class
 
-## Class Preparation
-
-* Identify one or more head TFs, and also some Senior TFs.
-
-* Seek TF volunteers.
-
-* Set up new google account: month.YYYY.kdsb.
-
-* New Google form in new account.
-
-* New Github organization: bootcamp-yyyy-mm
-
-* Check the old bootcamp server. Just use it again.
-
-* Sign up for Zoom which has enough slots of students. Can wait until enrollment firms up.
+* Ensure that tutorial names, ids and directories are in-sync and reasonable. I think we have decided that ids and directories should always match so that calling the tutorial (which uses the directory) uses the same string as the answers you get back (which uses the id). Both directory and id should have a prefaced number, I think.
 
 * Consider switching weeks 5 and 6. The data for 6 supplies few (and simple) covariates. So, you can only use a very simple model. THe data for 5 is richer.
 
 * Convert weeks 5, 6 and 7 to new process. One answer file for each day, with the questions bunched together in paragraphs. Each day, take the answer file, strip away the answers, then upload the new qmd to a new repo. Students then fork that repo to start the day.
 
+* Reach out to faculty/administrators at a couple of target schools: Boston Latin, Newton North and South.
+
+## Class Preparation
+
+* Identify one or more Head TFs, and also some Senior TFs.
+
+* Seek TF volunteers.
+
+* Set up new google account: month.YYYY.kdsb. Or maybe just use last year's since Google won't like it when you send out lots of emails from a new account, as you will want to do. Or maybe we just set up a permanent account.
+
+* New Google form in new account.
+
+* New Github organization: bootcamp-yyyy-mm
+
+* Check the old bootcamp Discord server. Probably just use it again.
+
+* Sign up for Zoom which has enough slots of students. Can wait until enrollment firms up.
+
+
+
 ## Enrollment
 
 * Start registration process three weeks before course starts. After a week, let people know that registration ends in a week, a week before class starts. Close registration a week ahead. Of course, you can let in, by hand, some extra students, but the sooner you nail down the students, the better.
 
-* Require submission of the "Tutorials with Positron" tutorial in order to "register" for the class. This guarantees that you will have a spot, but you still need to do all the work. 
+* Require submission of the "Getting Started" tutorial in order to "register" for the class. This guarantees that you will have a spot, but you still need to do all the work. 
 
 * Inform about the survey and the homework for class 1 at the same time you close registration, which is the Monday before.
 
-* On Wednesday, email them a link to the class survey which includes, full name, email (to use for assignments), age, birth country, city/country from where you will take the course, programming experience (either zero or some). Tell them they have 24 hours to complete the (trivial!) survey, or you reserve the right to remove them from the class. The big advantage of this is that the vast majority will do the survey, allowing the head TF to get going on the 
+* On Wednesday, email them a link to the class survey which includes, full name, email (tell them this is a key ID and that they need to use the same one in all their assignments), sex, age, birth country, city/country from where you will take the course, programming experience (either zero or some). Also ask them for any information which you use to make breakout rooms. For example, you can ask them about any friends they want to be grouped with. If we focus on a couple of schools, then ask them about their school so we can group on that dimension.
+
+* Tell students that they have 24 hours to complete the (trivial!) survey, or you reserve the right to remove them from the class. The big advantage of this is that the vast majority will do the survey, allowing the Head TF to get going on the class roster.
 
 * Require submission of the "Introduction" and "01-code" tutorial in order to get a Zoom link for the first class. Require this be submitted by Sunday at midnight.
 
-* Think harder about the questions in the survey. I forgot to ask about sex this time, as well as: Is there anyone you want to work with.
+* Spend Monday getting the class list organized. Need to put students into breakout rooms and assign rooms to TFs. Details will depend on # of students and of TFs. 
 
-* Spend Monday getting the class list organized. Need to put students into 
-breakout rooms and assign rooms to TFs. Details will depend on # of students 
-and of TFs. 
-
-
-
-* Solicit email from "special" students who should be grouped together. 
-Two common examples are younger ones (<=14) and older ones (>22). Put these 
-together in separate groups.
+* Solicit email from "special" students who should be grouped together. Two common examples are younger ones (<=14) and older ones (>22). Put these together in separate groups.
 
 * Create a new location for example reprexes at Posit Community for the Getting 
 Help tutorial. Here is the most recent one: 
@@ -117,63 +118,37 @@ start Wednesday's class from the same starting line.
 the Preceptor Notes.
 
 
+
+* Finally, we distribute after class the repo (again) and the published answer page.
+
 ## Schedule
 
-### Week 1: Github/Rpubs using library data
+### Weeks 1-3
 
-We are only using data from a package: connectedness data from primer.data.  
-Use R projects and Github repos. Finish with a nice plot, available on Rpubs. 
-Students going faster can make more plots, especially a scatterplot, 
-even one with facets by state, but just for a few bigger, more interesting 
-states.
-
-### Week 2: Github/Rpubs using downloaded data
-
-Students must download and save their own copy of some Census data, 
-which we give them via link to Github. First day is the Terminal and messing 
-with the data. Second day, create a simple plot. Third day is beeswarm plot, 
-perhaps with data from a different geographic area.
-
-Really ought to show a map, either this week or next week.
-
-### Week 3: Github/Quarto Website using different data sources
-
-Download data as part of a larger project. This is mimicing the process by 
-which students create their data projects for next week. Create a Quarto 
-website which will look alot like the data projects. If we use Census, we 
-could encourage to pick different data items. We do this three times, even 
-though finishing a whole website is tricky. Use a different data source each 
-day, the better to introduce students to good data sources for their projects: 
-one day (and maybe two days) is Census. One day might be text, if we have 
-assigned them at least one tutorial from tidytext book.
-
-Include several different scripts and saved images.
+See the individual `days` QMD files.  
 
 ### Week 4: Data Projects
 
 Need to think more about the best way to spend M/W of this week. Certainly 
-want to have, for Monday, a rough draft of room assignments. Spend money 
+want to have, for Monday, a rough draft of room assignments. Spend time 
 looking at projects within the breakout rooms, especially since students 
 don't see their breakout room peers' projects on Demo Day.
 
-### Week 5: First Model
+### Weeks 5-7
 
-First four chapters of Primer. This gets the basics down and also gives us 
-the easiest brms model in the models chapter. Focus on the Cardinal Virtues. 
-Understand the whole process. Learn all the key terms. Finish with an RPubs 
-that does and shows an entire model. Maybe use recent survey data? Could 
-always use presidential approval.
+The class material for weeks 5 through 7 is already (mostly) created. Recall that we do Wisdom/Justice on Monday, Courage on Wednesday, and then finish with Temperance on Thursday. We have already prepared the "answers" QMD for each day. (These should probably be renamed, using the main topic, like "STAR" or "resumes," in place of the week number. And we might consider switching the material for weeks 6 and 5 since the STAR data only really allows for a very simple model. At the least, we need to revisit the data.)
 
-### Week 6
+* Confirm that the answer QMD for that day looks good. In general, we post this as a rendered HTML after class is over so that students can review.
 
-Each of weeks 6 and 7 we complete the entire modeling process. Starting with 
-some data and a question. Finishing with an graphic which shows the answer to 
-the question. Entire thing becomes a Quarto website by the end of the week. 
-The more we show students what a good Model Project looks like, the better 
-theirs will be. 
+* Save the answer QMD as a new file, often called something like STAR-courage.qmd. Delete all the answers that we don't want students to see.
 
-### Week 7
+* Create a new repo in the bootcamp organization, often called something like STAR-courage-repo. Upload STAR-courage.qmd to this repo. In class, have students fork this repo and then download to their computers. 
 
+* This is somewhat messy in the sense that students end up with three repos for one project, constructed over the course of the week. But it seems like weaker students need this structure. 
+
+* Stronger students can be instructed to (or challenged to) not fork at all. Instead, they can have one repo and then copy/paste code from the QMD in our repos as needed. 
+
+* After class, the answers QMD is uploaded to STAR-courage-repo. We then `quarto publish gh-pagaes STAR-courage-answers.qmd. 
 
 ### Week 8: Model Projects
 
