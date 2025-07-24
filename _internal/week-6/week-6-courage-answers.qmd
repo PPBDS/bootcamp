@@ -1,4 +1,8 @@
-## Day 2: Courage
+---
+title: "Courage about Tennessee STAR"
+execute: 
+  echo: false
+---
 
 ```{r}
 #| message: false
@@ -35,7 +39,6 @@ The Tennessee STAR dataset comes from a large-scale, multi-year educational expe
 
 1) Imagine that you are an elementary school principal in Chicago. You want to predict student performance. Fortunately, you have data today for your current students like the data available in the STAR project. (Predictive)
 
-Scenario 1 Preceptor Table
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
@@ -60,7 +63,7 @@ tibble(
   fmt_markdown(columns = everything())
 ```
 
-Scenario 1 Population Table
+
 ```{r}
 tibble(
   source = c("...", "Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
@@ -89,7 +92,6 @@ tibble(
 
 2) Imagine you work for the Texas Department of Education. You want to understand student performance in small classes, relative to big classes, in Dallas. In Texas, there is data available like the data in the STAR project. (Causal)
 
-Scenario 2 Preceptor Table
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
@@ -117,7 +119,6 @@ tibble(
   )
 ```
 
-Scenario 2 Population Table
 ```{r}
 tibble(
   ID = c("1", "2", "...", "10", "11", "...", "N"),
@@ -155,8 +156,6 @@ linear_reg() |>
   fit(g4math ~ kind, data = x) |> 
   tidy(conf.int = TRUE)
 ```
-
-<!-- DK: Add interpretations, and any answers to questions you ask. Done -->
 
 * Estimate a model in which `g4math` is the dependent variable and both `kind` and `race` are the independent variables. How do you interpret the results? 
 
