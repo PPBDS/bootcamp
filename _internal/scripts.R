@@ -7,7 +7,7 @@ homework <- function(pattern = "."){
   
   
   x <- process_submissions("~/Downloads/responses", 
-                           pattern = pattern, 
+                           title = pattern, 
                            key_vars = c("name", 
                                         "email", 
                                         "minutes"), 
