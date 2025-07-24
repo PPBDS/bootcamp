@@ -665,73 +665,23 @@ Complete the “Stops” tutorial (131-stops) from the primer.tutorials package.
 
 
 
-
-
 ### Day 18
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Wednesday was Courage. Today is Temperance.
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Yesterday was Courage. Today is Temperance.
 
-1) Two plots we might make today: https://shorturl.at/qQiov
+1) We will be forking this repo to get started:
 
-2) If your breakout room is fast, try to make a nice looking html and publish it to Rpubs. Put a link in the #course-work channel if you succeed. Follow the strategy given in the tutorials, i.e., write a paragraph, add the mathematics of the model, create a gtsummary table and create some nice plots.
+https://github.com/bootcamp-2025-06/STAR-temperance
 
-3) You don't have to make your code look like mine, but here is my key code from the first two days. Feel free to just copy it so that you are caught up.
+2) You better have filled out this form: 
 
----
-title: "Class Size"
-author: "David Kane"
-format: html
-execute: 
-  echo: false
----
+https://docs.google.com/spreadsheets/d/18G_6nmHJe-ilmca2cNLTLVZ51Njj6ZH5ml_zbOqhSHA/edit?usp=sharing
 
-```{r}
-#| label: setup
-#| message: false
+Discuss in the breakout rooms. Reminder: https://davidkane.info/writings/data-for-projects.html
 
-library(tidyverse)
-library(brms)
-library(tidybayes)
+3) Homework for Monday:
 
-raw_df <- read_csv("data/STAR.csv", show_col_types = FALSE)
-```
-
-
-```{r}
-x <- raw_df |> 
-  mutate(kinder = recode(classtype,
-                         `1` = "small",
-                         `2` = "regular",
-                         `3` = "regular with aid")) |> 
-  mutate(race = recode(race,
-                       `1` = "white",
-                       `2` = "black",
-                       `3` = "hispanic",
-                       `4` = "hispanic",
-                       `5` = "others",
-                       `6` = "others")) |> 
-  filter(kinder %in% c("small", "regular")) |> 
-  select(g4math, kinder) |> 
-  drop_na()  
-```
-
-```{r}
-#| cache: true
-fit_cs <- brm(formula = g4math ~ kinder,
-             data = x,
-             family = gaussian(),
-             silent = 2,
-             refresh = 0,
-             seed = 9)
-```
-
-Repo:
-
-### Day 18
-
-Class website: 
-Class Github: 
-AI Log:
+From the r4ds.tutorials package, complete the “Arrow” (`22-arrow`) and “Hierarchical data” (`23-hierarchical-data`) tutorials.
 
 
 ## Week 7
