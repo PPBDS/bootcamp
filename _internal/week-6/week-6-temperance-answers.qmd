@@ -22,16 +22,16 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
                       `2` = "regular",
                       `3` = "regular with aid")) |> 
   mutate(race = recode(race,
-                      `1` = "white",
-                      `2` = "black",
-                      `3` = "others",
-                      `4` = "others",
-                      `5` = "others",
-                      `6` = "others")) |> 
+                      `1` = "White",
+                      `2` = "Black",
+                      `3` = "Others",
+                      `4` = "Others",
+                      `5` = "Others",
+                      `6` = "Others")) |> 
   select(g4math, kind, race, yearssmall) 
 ```
 
-Note: Since there were very few data points for both "Hispanic" and "Other" students, we have combined these groups into a single "Others" category. Going forward, our analysis will use three race categories: ""White", "Black", and "Others".
+Note: Since there were very few data points for both "Hispanic" and "Other" students, we have combined these groups into a single "Others" category. Going forward, our analysis will use three race categories: "White", "Black", and "Others".
 
 ### Data Summary
 
@@ -39,8 +39,7 @@ Note: Since there were very few data points for both "Hispanic" and "Other" stud
 
 ### Scenarios
 
-1) Imagine that you are an elementary school principal in Chicago. You want to predict student performance. Fortunately, you have data today for your current students like the data available in the STAR project. (Predictive)
-
+1) Imagine that you are an elementary school principal in Chicago. You want to predict student performance. Fortunately, you have data today for your current students like the data available in the STAR project. 
 
 ```{r}
 tibble(
@@ -98,7 +97,7 @@ tibble(
   cols_align(align = "left", columns = c(source))
 ```
 
-2) Imagine you work for the Texas Department of Education. You want to understand student performance in small classes, relative to big classes, in Dallas. In Texas, there is data available like the data in the STAR project. (Causal)
+2) Imagine you work for the Texas Department of Education. You want to understand student performance in small classes, relative to big classes, in Dallas. In Texas, there is data available like the data in the STAR project. 
 
 
 ```{r}
