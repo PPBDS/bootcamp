@@ -79,7 +79,7 @@ tibble(
   sex = c("female", "male", "...", "male", "female", "...")
 ) |>
   gt() |>
-  tab_header(title = "Population Table: All Years and Locations") |>
+  tab_header(title = "Population Table: Predicting 4th Grade Math Scores by Student and Class Type for Chicago in 2029") |>
   cols_label(
     source = md("Source"),
     year = md("Year"),
