@@ -683,6 +683,40 @@ Discuss in the breakout rooms. Reminder: https://davidkane.info/writings/data-fo
 
 From the r4ds.tutorials package, complete the “Arrow” (`22-arrow`) and “Hierarchical data” (`23-hierarchical-data`) tutorials.
 
+Post in #projects channel on Discord your data set and a model fitted with your data set. Example:
+
+````
+> trains
+# A tibble: 115 × 14
+   treatment att_start att_end sex    race  liberal party        age income line       station    hisp_perc
+   <fct>         <dbl>   <dbl> <chr>  <chr> <lgl>   <chr>      <int>  <dbl> <chr>      <chr>          <dbl>
+ 1 Treated          11      11 Female White FALSE   Democrat      31 135000 Framingham Grafton       0.0264
+ 2 Treated           9      10 Female White FALSE   Republican    34 105000 Framingham Southboro…    0.0154
+ 3 Treated           3       5 Male   White TRUE    Democrat      63 135000 Framingham Grafton       0.0191
+ 4 Treated          11      11 Male   White FALSE   Democrat      45 300000 Framingham Grafton       0.0191
+ 5 Control           8       5 Male   White TRUE    Democrat      55 135000 Framingham Grafton       0.0191
+ 6 Treated          13      13 Female White FALSE   Democrat      37  87500 Framingham Grafton       0.0231
+ 7 Control          13      13 Female White FALSE   Republican    53  87500 Framingham Grafton       0.0304
+ 8 Treated          10      11 Male   White FALSE   Democrat      36 135000 Framingham Grafton       0.0247
+ 9 Control          12      12 Female White FALSE   Democrat      54 105000 Framingham Grafton       0.0247
+10 Treated           9      10 Male   White FALSE   Republican    42 135000 Framingham Grafton       0.0259
+# ℹ 105 more rows
+# ℹ 2 more variables: ideology_start <int>, ideology_end <int>
+# ℹ Use `print(n = ...)` to see more rows
+> linear_reg() |> fit(att_end ~ att_start + treatment + sex, data = trains)
+parsnip model object
+
+
+Call:
+stats::lm(formula = att_end ~ att_start + treatment + sex, data = data)
+
+Coefficients:
+     (Intercept)         att_start  treatmentTreated           sexMale  
+          1.6479            0.7910            0.9262           -0.3412  
+>
+````
+
+
 
 ## Week 7
 

@@ -21,7 +21,7 @@ x <- read_csv("https://raw.githubusercontent.com/PPBDS/bootcamp/refs/heads/maste
                       `1` = "small",
                       `2` = "regular",
                       `3` = "regular with aid")) |> 
-  # DK: Edit data to combine "others" and "hispanic" into just "others". Done
+  # Edit data to combine "others" and "hispanic" into just "others". 
   mutate(race = recode(race,
                       `1` = "white",
                       `2` = "black",
