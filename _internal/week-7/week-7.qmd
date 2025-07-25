@@ -10,23 +10,15 @@ execute:
 
 library(tidyverse)
 library(gt)
-library(tidybayes)
-library(brms) #AT: remove brms add broom eventually
+library(broom)
+library(tidymodels)
 ```
 
 ### For Next Year
 
 * Figure out what cleaned up data you want to use. Ensure that, on Day 1, during the EDA, we look at those variables and then write the code which cleans up the data so that we have a clean tibble to start with on Wednesday.
 
-<!-- AT: Discuss? -->
-
 ### Background Information
-
-This document includes background material for Week 7. I will copy selected parts of the material out to a document which is shared with students, and then give them the answers later. The main audience for this document is Teaching Fellows so that they are better prepared to lead discussions.
-
-Day 1: Covers Wisdom and Justice
-Day 2: Courage
-Day 3: Temperance
 
 Barfort, S., Klemmensen, R., and Larsen, E. G. (2021). Longevity returns to political office. Political Science Research and Methods 9, 658–664.
 
@@ -37,8 +29,6 @@ Does political office cause worse or better longevity prospects? Two perspective
 
 Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
 Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
-
-<!-- AT: Will students be instructed to read this before class? -->
 
 ### Day 1 Discussion 
 
@@ -57,8 +47,7 @@ Preceptor Table:
   
   * Causal/predictive: a causal model  
   
-  * Covariates: gender, year, incumbent, race, income, marital status, health, votes received
-    <!-- AT: add age? -->
+  * Covariates: gender, year, incumbent, race, income, marital status, health, votes received, age
 
   * Treatment: win or lose a close election 
 
@@ -188,7 +177,6 @@ Below is the code which catches all students up with where we want them to be at
 #| message: false
 library(tidyverse)
 library(primer.data)
-library(brms)
 library(tidybayes)
 library(gtsummary)
 
@@ -223,19 +211,16 @@ Fit a **brms** model in which age at death is a function of some of the variable
 #| warning: false
 #| echo: true
  
-fit_elec_1 <- brm(formula = death_age ~ treatment + win_margin + 
-                  election_age + party + sex, 
-                  data = x, 
-                  family = gaussian(), 
-                  refresh = 0, 
-                  silent = 2, 
-                  seed = 9) 
+fit_elec_1 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(death_age ~ treatment + win_margin + election_age + party + sex, data = x)
+
 ```
 <!-- AT: This takes forever to run. -->
 
 ```{r}
 #| echo: true
-fixef(fit_elec_1)
+tidy(fit_elec_1, conf.int = TRUE)
 ```
 
 This model is interesting, but `election_age` and `sex` are no longer significant. When we remove them, we see:
@@ -245,26 +230,17 @@ This model is interesting, but `election_age` and `sex` are no longer significan
 #| warning: false
 #| echo: true 
 
-fit_elec_2 <- brm(formula = death_age ~ treatment + win_margin + 
-                  party, 
-                  data = x, 
-                  family = gaussian(), 
-                  refresh = 0, 
-                  silent = 2, 
-                  seed = 9) 
-
-fixef(fit_elec_2)
+fit_elec_2 <- linear_reg() |>
+  set_engine("lm") |>
+  fit(death_age ~ treatment + win_margin + party, data = x)
 ```
 
 ```{r}
 #| echo: true
-fixef(fit_elec_2)
+tidy(fit_elec_2, conf.int = TRUE)
 ```
 
 This is a pretty good model. Everything is significant. And the addition of party allows for a more full-featured Temperance section since we will be able to estimate 6 posteriors: 2 treatments times 3 parties.
-
-
-
 
 ```{r}
 #| warning: false
@@ -306,8 +282,9 @@ ndata <- tibble(expand_grid(treatment = c("win", "lose"),
 Create draws for the posterior probability of the expected value of the age of death for all combinations of treatment and party.
 
 ```{r}
-fit_elec_2 |>
-  add_epred_draws(newdata = ndata)
+ndata <- ndata |>
+  mutate(.pred = predict(fit_elec_2, new_data = ndata)$.pred)
+ndata
 ```
 
 Look at the resulting object. Note the 24,000 rows. We have estimate 6 posteriors, each of which needs a draw of 4,000. In each case, the posterior is the expected death age depending on the value of treatment and party, and conditional on the race being close to a perfect toss up.
@@ -321,21 +298,34 @@ Create a plot of the posteriors. (Note that this was inspired by the plots in ch
 
 
 ```{r}
-fit_elec_2 |>
-  add_epred_draws(newdata = ndata) |> 
-  ungroup() |>
-  select(treatment, party, .epred) |> 
-  ggplot(aes(x = .epred, 
-             y = factor(party, levels = c("Third party", "Republican", "Democrat"), ordered = TRUE))) +
-    stat_slab(aes(fill = treatment),
-              position = 'dodge') +
-    labs(
-        title = "Expected Lifespan Given Election Outcome",
-        subtitle = "Winning is associated with about 8 extra years",
-        x = "Expected Lifespan",
-        y = NULL,
-        fill = "Election Result") +
-    scale_y_discrete(expand = expansion(mult = c(0.1, 0.4)))
+preds <- predict(fit_elec_2, new_data = ndata, type = "conf_int")
+ndata_plot <- bind_cols(ndata, preds)
+ggplot(
+  ndata_plot,
+  aes(
+    x = .pred,
+    y = factor(party, levels = c("Third party", "Republican", "Democrat"), ordered = TRUE),
+    color = treatment
+  )
+) +
+  geom_point(
+    position = position_dodge(width = 0.6),
+    size = 3
+  ) +
+  geom_errorbarh(
+    aes(xmin = .pred_lower, xmax = .pred_upper),
+    position = position_dodge(width = 0.6),
+    height = 0.3
+  ) +
+  labs(
+    title = "Expected Lifespan Given Election Outcome",
+    subtitle = "Winning is associated with about 8 extra years",
+    x = "Expected Lifespan",
+    y = NULL,
+    color = "Election Result"
+  ) +
+  scale_y_discrete(expand = expansion(mult = c(0.1, 0.4))) +
+  theme_minimal()
 ```
 
 This isn't a great plot, but it is not bad. 

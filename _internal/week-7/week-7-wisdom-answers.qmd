@@ -1,0 +1,125 @@
+---
+title: "Wisdom about Tennessee STAR"
+execute: 
+  echo: false
+---
+
+
+```{r}
+#| label: setup
+#| message: false
+
+
+library(tidyverse)
+library(gt)
+library(broom)
+library(tidymodels)
+```
+
+### For Next Year
+
+* Figure out what cleaned up data you want to use. Ensure that, on Day 1, during the EDA, we look at those variables and then write the code which cleans up the data so that we have a clean tibble to start with on Wednesday.
+
+## Background Information
+
+This dataset is drawn from an experiment designed to estimate the causal effect of winning a close election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. The primary goal is to answer the forward causal question: “What is the effect of winning a close election on expected lifespan?” while remaining mindful that the underlying assumptions--—such as representativeness, stability, and unconfoundedness—--play a crucial role in the validity of any causal claims.
+
+Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
+Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
+
+### Scenarios
+
+1) Imagine you are a journalist in Washington, D.C., and want to forecast how long a newly elected governor might live based on their age, party, and whether they won or lost a close election. This dataset helps you make informed predictions about expected lifespan for current candidates.
+
+2) Imagine you are a public health researcher. You want to know if winning a close election actually causes candidates to live longer than those who narrowly lose. Using this dataset, you can estimate the effect of electoral victory on longevity.
+
+
+### Data
+
+* Explore the data. What is the outcome variable? How it is distributed?
+
+```{r}
+governors
+```
+
+```{r}
+summary(governors)
+table(governors$party)
+table(governors$region)
+table(governors$sex)
+```
+
+```{r}
+governors |> 
+  ggplot(aes(x = death_age)) + 
+    geom_histogram(bins = 30) +
+      coord_cartesian(xlim = c(0, 110))
+```
+
+### Preceptor Table
+
+What sorts of questions are we trying to answer?
+
+In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments? Describe the mathematical Structure of the model.
+
+* Causal or predictive?
+
+Scenario 1: Predictive — We are forecasting the expected lifespan of current political candidates using their personal characteristics and election outcomes.
+
+Scenario 2: Causal — We want to estimate the causal effect of narrowly winning versus narrowly losing an election on a candidate’s lifespan, using data from close elections.
+
+* Units:
+
+Individual political candidates who have run in gubernatorial elections.
+
+(For Scenario 1: Current candidates; For Scenario 2: Candidates in close elections in the United States.)
+
+* Outcome:
+
+Age at death (`death_age`) for each candidate.
+
+* Covariates: 
+
+Possible covariates include age at election, party affiliation, sex, vote margin, region, year of election, and other factors such as incumbent status or prior health, if available.
+    
+* Treatment: 
+
+Whether a candidate narrowly won or lost the election (`win_margin`).
+
+Scenario 1 Preceptor Table
+
+```{r}
+tibble(
+  ID = c("1", "2", "...", "10", "11", "...", "N"),
+  attitude_after_control = c("70*", "56", "...", "65*", "54*", "...", "56"),
+  attitude_after_treated = c("63", "62*", "...", "71", "56", "...", "74*"),
+  treatment = c("Win", "Lose", "...", "Win", "Win", "...", "Lose"),
+  win_margin = c(2.5, -3.2, "...", 5.8, 1.7, "...", -4.5), # Example margins
+  close_win = c("Yes", "Yes", "...", "No", "Yes", "...", "Yes") # Based on -5 to 5
+) |>
+  gt() |>
+  tab_header(title = "Preceptor Table") |> 
+  cols_label(
+    ID = md("ID"),
+    attitude_after_control = md("Years Lived if Lose Election"),
+    attitude_after_treated = md("Years Lived if Win Election"),
+    treatment = md("Treatment"),
+    win_margin = md("Win Margin"),
+    close_win = md("Close Win")
+  ) |>
+  tab_style(cell_borders(sides = "right"),
+            location = cells_body(columns = c(ID))) |>
+  tab_style(style = cell_text(align = "left", v_align = "middle", size = "large"), 
+            locations = cells_column_labels(columns = c(ID))) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(ID)) |>
+  fmt_markdown(columns = everything()) |>
+  tab_spanner(label = "Potential Outcomes", columns = c(attitude_after_control, attitude_after_treated)) |>
+  tab_spanner(label = "Covariate", columns = c(treatment, win_margin, close_win)) |> 
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome which we do not observe."),
+    locations = cells_column_spanners(spanners = "Potential Outcomes")
+  )
+```
+
+
