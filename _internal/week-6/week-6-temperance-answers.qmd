@@ -165,7 +165,7 @@ tibble(
 
 ### Data Generating Mechanism
 
-Fit a linear regression model in which math score (`g4math`) is the outcome, and the predictors are class type (`kind`), race, and years spent in small classes (`yearssmall`). Fit this model to an object named `fit_cs`.
+Fit a linear regression model in which math score (`g4math`) is the outcome, and the predictors are class type (`kind`), `race`, and years spent in small classes (`yearssmall`). Fit this model to an object named `fit_cs`.
 
 ```{r}
 fit_cs <- linear_reg() |> 
@@ -181,16 +181,16 @@ fit_cs |>
 
 Give the R code you used to fit your regression model to AI and ask it to create a LaTeX version of the regression equation that matches your model. 
 
+<!-- DK: Fix this not to use I() garbage. -->
+
 Paste the LaTeX equation from AI below.
 $$
-\[
 \widehat{\text{g4math}} = 695\ -\ 1.95\,
 \text{I}(\text{kind} = \text{regular with aid})\ -\ 7.66\,
 \text{I}(\text{kind} = \text{small})\ +\ 38.7\,
 \text{I}(\text{race} = \text{others})\ +\ 16.3\,
 \text{I}(\text{race} = \text{white})\ +\ 2.18\,
 \text{yearssmall}
-\]
 $$
 
 ## Marginal Effects
@@ -279,32 +279,28 @@ pred_data2 <- pred_data2 |>
     "regular with aid" = "Regular with Aid",
     "small" = "Small (13-17 Students)"
   ))
-ggplot(pred_data2, aes(x = kind, y = estimate, fill = race)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6) +
+ggplot(pred_data2, aes(x = kind, y = estimate, color = race)) +
+  geom_point(position = position_dodge(width = 0.3), size = 3) +
   geom_errorbar(aes(ymin = conf.low, ymax = conf.high),
-                position = position_dodge(width = 0.7), width = 0.25) +
-  labs(
-    title = "Predicted 4th Grade Math Scores by Class Type and Race",
-    subtitle = "Class type has almost no meaningful effect on math scores.",
-    x = "Class Type",
-    y = "Predicted Math Score",
-    fill = "Race",
-    caption = "Predicted math scores are based on data from the Tennessee STAR experiment. Error bars indicate 95% confidence intervals."
-  ) +
-  coord_cartesian(ylim = c(680, 765)) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(face = "bold", size = 18),
-    plot.subtitle = element_text(size = 13),
-    axis.title = element_text(face = "bold"),
-    legend.position = "top"
-  )
+                position = position_dodge(width = 0.3),
+                width = 0.2) +
+  labs(title = "Fourth Grade Math Scores and Class Structure",
+       subtitle = "Class structure has no effect on math scores",
+       caption = "Data from Tennessee STAR program in 1985",
+       x = NULL,
+       y = "Math Score",
+       color = "Race") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "bottom")
 ```
 
 After finalizing your summary paragraph, paste it in the section below:
 
+<!-- DK: These plots are not that good. -->
+
 ```
-We analyzed the Tennessee STAR dataset using a linear regression model to examine how class type, race, and years in small classes relate to fourth grade math scores. Our results show that class size (small, regular, or regular with aid) has little effect on math scores—predicted values and their confidence intervals are similar across groups. Race does matter, with white and “others” students scoring higher on average than Black students. Interaction terms showed no significant evidence that class size impacts races differently. Overall, class size reductions did not yield meaningful math score improvements in this analysis.
+We analyzed the Tennessee STAR dataset using a linear regression model to examine how class type, race, and years in small classes relate to fourth grade math scores. Our results show that class size (small, regular, or regular with aid) has little effect on math scores. Race does matter, with white and “others” students scoring higher on average than black students.
 ```
 
  ## More Information
