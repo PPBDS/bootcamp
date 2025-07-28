@@ -694,15 +694,21 @@ Using the governors data set.
 
 ### Day 19
 
-1) Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today is Wisdom and Justice. Wednesday is Courage. Thursday is Temperance.
+* Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today is Wisdom and Justice. Wednesday is Courage. Thursday is Temperance.
 
-2) Make sure the project spreadsheet is up-to-date: https://shorturl.at/mqKea
+* Tough to create a good statistical model with only 50 observations.
 
-3) Homework for Wednesday (chapters 24 and 25) and Thursday (chapters 26 and 27) from R for Data Science.
+* Make sure the project spreadsheet is up-to-date: 
 
-4) For Wednesday, you must have the results of a call to brm() which you can share with us. 
+https://docs.google.com/spreadsheets/d/18G_6nmHJe-ilmca2cNLTLVZ51Njj6ZH5ml_zbOqhSHA
 
-5) Background on this week's class exercise:
+* Homework for Wednesday:
+
+Fom the r4ds.tutorials package, complete the “Web scraping” (24-web-scraping) tutorial.
+
+* Post in #projects channel on Discord your data set and a model fitted with your data set.
+
+* Background on this week's class exercise:
 
 Barfort, S., Klemmensen, R., and Larsen, E. G. (2021). Longevity returns to political office. Political Science Research and Methods 9, 658–664.
 
@@ -768,9 +774,9 @@ Repo: https://github.com/Bootcamp-June-2024/election
 
 ## Week 8
 
-### Day 1
 
-* Positron, a next-generation data science IDE, will replace RStudio in the next few years, mainly because it works as well with Python as it does with R. It is the future. The next version of this course will probably use it. I recommend you all take a look: https://github.com/posit-dev/positron
+
+### Day 1
 
 * The official definition of completing this class is having a final project listed here: https://bootcamp.davidkane.info/projects.html
 
