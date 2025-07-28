@@ -1,5 +1,5 @@
 ---
-title: "Wisdom about Tennessee STAR"
+title: "Wisdom and Governors"
 execute: 
   echo: false
 ---
@@ -9,26 +9,23 @@ execute:
 #| label: setup
 #| message: false
 
-
 library(tidyverse)
 library(gt)
-library(broom)
-library(tidymodels)
 library(primer.data)
 ```
 
 ## Background Information
 
-This dataset is drawn from an experiment designed to estimate the causal effect of winning a close election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. The primary goal is to answer the forward causal question: “What is the effect of winning a close election on expected lifespan?” while remaining mindful that the underlying assumptions--—such as representativeness, stability, and unconfoundedness—--play a crucial role in the validity of any causal claims.
+This dataset is drawn from an attempt to estimate the causal effect of winning an election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. The primary goal is to answer the forward causal question: “What is the effect of winning a close election on expected lifespan?” while remaining mindful that the underlying assumptions--—such as representativeness, stability, and unconfoundedness—--play a crucial role in the validity of any causal claims.
 
 Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
 Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
 ### Scenarios
 
-1) Imagine you are a journalist in Washington, D.C., and want to forecast how long a newly elected Senator might live based on their age, party, and other variables. 
+1) Imagine you work for a life insurer, and want to forecast how long a newly elected Senator might live based on their age, party, and other variables. 
 
-2) Imagine you are a public health researcher. You want to know if winning an election changes a candidates longevity. 
+2) Imagine you are a researcher. You want to know if winning candidates live longer. 
 
 ### Data
 
@@ -54,11 +51,12 @@ governors |>
       coord_cartesian(xlim = c(0, 110))
 ```
 
+
 ### Preceptor Table
 
 What sorts of questions are we trying to answer?
 
-In order to build the Preceptor Table, we need to answer some questions: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments? Describe the mathematical Structure of the model.
+In order to build the Preceptor Table, we need to know: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments? Describe the mathematical Structure of the model.
 
 * Causal or predictive?
 
@@ -83,7 +81,22 @@ Possible covariates include age at election, party affiliation, sex, vote margin
 The treatment is whether or not the political candidate won or lost their election (`win_margin > 0`).
 
 Scenario 1 Preceptor Table
+
+<!-- DK: Read latest version of make_p_table() instructions in TODO.txt in primer.tutorials. -->
+
+<!-- DK: Add spanner for "Units" and "Treatment". -->
+
+<!-- DK: Change Treatment variable to something like "Election Result" -->
+
+<!-- DK: Use backticks to make variable names with spaces, so we don't need to use col_label(). -->
+
+<!-- DK: Experiment with tribble for entering data. -->
+
 <!-- AT: For scneario 1 we only ocus on candidates who have won. Doesn't that mean that the treatment cannot be (Win/Lose) -->
+
+<!-- DK: First Preceptor Table (and Population Table) is predictive, so only "Outcome". -->
+
+<!-- DK: The treatment variable from the causal model is always included among the Covariates in the corresponding predictive model. -->
 
 ```{r}
 tibble(
@@ -91,7 +104,7 @@ tibble(
   attitude_after_control = c("70*", "56", "...", "65*", "54*", "...", "56"),
   attitude_after_treated = c("63", "62*", "...", "71", "56", "...", "74*"),
   treatment = c("Win", "Lose", "...", "Win", "Win", "...", "Lose"),
-  win_margin = c(2.5, -3.2, "...", 5.8, 1.7, "...", -4.5),
+  `Win Margin` = c(2.5, -3.2, "...", 5.8, 1.7, "...", -4.5),
   age = c(55, 62, "...", 49, 67, "...", 51),
   party = c("Democrat", "Republican", "...", "Democrat", "Third", "...", "Republican")
 ) |>
@@ -102,7 +115,6 @@ tibble(
     attitude_after_control = md("Years Lived if Lose Election"),
     attitude_after_treated = md("Years Lived if Win Election"),
     treatment = md("Treatment"),
-    win_margin = md("Win Margin"),
     age = md("Age at Election"),
     party = md("Party")
   ) |>
@@ -119,7 +131,7 @@ tibble(
   ) |>
   tab_spanner(
     label = "Covariate",
-    columns = c(win_margin, age, party)
+    columns = c(`Win Margin`, age, party)
   ) |> 
   tab_footnote(
     footnote = md("A * indicates a potential outcome which we do not observe."),
@@ -254,6 +266,9 @@ Describe the Population Table in words:
   For scenario 2, each row corresponds to a candidate/year, with columns for potential years lived after winning or losing the election (even for outcomes not observed for every candidate), along with relevant covariates (`age`, `party`, `sex`, w`in margin`, and treatment assignment).
 
 Counter-example to the assumption of validity:
+
+<!-- DK: Quote about using July ` for missing birth dates. -->
+
   If the outcome column (“years lived after election”) is recorded using different sources or methods for different candidates—such as missing dates, estimated ages, or unclear definitions for older records—then the outcome doesn’t have a consistent meaning for every row. This violates validity because the column is not defined the same way across the population table.
 
 Counter-example to the assumption of stability:
@@ -264,6 +279,9 @@ Counter-example to the assumption of representativeness:
 
 Counter-example to the assumption of unconfoundedness:
   Imagine that candidates from wealthier backgrounds are more likely to win and also tend to live longer because they have better access to healthcare. If we don’t account for wealth in our model, it might look like winning the election leads to a longer life, when in fact it’s actually the candidate’s wealth that explains both winning and living longer.
+  DK: Add more to this by tying it closely to the definition.
+
+<!-- Change question to all one paragraph which lists the four assumptions and asks for their definitions and one counter-example for each. -->
 
 Scenario 1: Predictive Model:
 
