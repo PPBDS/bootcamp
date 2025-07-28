@@ -204,7 +204,7 @@ x <- governors |>
 ## Scene 3
 
 
-Fit a **brms** model in which age at death is a function of some of the variables. Use the gaussian family since age is a continuous variable. Use `cache: true` as a code chunk option. Consider using the `refresh`, `silent` and `seed` arguments. Look at the fitted model.
+Fit a model in which age at death is a function of some of the variables. Use the gaussian family since age is a continuous variable. Use `cache: true` as a code chunk option. Consider using the `refresh`, `silent` and `seed` arguments. Look at the fitted model.
 
 ```{r}
 #| cache: true
@@ -216,7 +216,6 @@ fit_elec_1 <- linear_reg() |>
   fit(death_age ~ treatment + win_margin + election_age + party + sex, data = x)
 
 ```
-<!-- AT: This takes forever to run. -->
 
 ```{r}
 #| echo: true
