@@ -4,7 +4,6 @@ execute:
   echo: false
 ---
 
-
 ```{r}
 #| label: setup
 #| message: false
@@ -16,7 +15,7 @@ library(primer.data)
 
 ## Background Information
 
-This dataset is drawn from an attempt to estimate the causal effect of winning an election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. The primary goal is to answer the forward causal question: “What is the effect of winning a close election on expected lifespan?” while remaining mindful that the underlying assumptions--—such as representativeness, stability, and unconfoundedness—--play a crucial role in the validity of any causal claims.
+This dataset is drawn from an attempt to estimate the causal effect of winning an election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. 
 
 Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
 Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
@@ -31,7 +30,7 @@ Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
 For this assignment, we will use the `governors` dataset, which contains information on U.S. gubernatorial candidates and their election outcomes. This dataset comes from published research and is available in the `primer.data` package.
 
-* Explore the data. What is the outcome variable? How it is distributed?
+* Explore the data. What is the outcome variable? How is it distributed?
 
 ```{r}
 governors
@@ -70,7 +69,7 @@ The units in this analysis are individual political candidates. Each row in the 
 
 * Outcome:
 
-The outcome variable of interest is the ****age at death** (`death_age`) for each candidate. This is a continuous variable representing the candidate's total lifespan.
+The outcome variable of interest is the **age at death** (`death_age`) for each candidate. This is a continuous variable representing the candidate's total lifespan.
 
 * Covariates: 
 
@@ -82,8 +81,6 @@ The treatment is whether or not the political candidate won or lost their electi
 
 Scenario 1 Preceptor Table
 
-<!-- DK: Read latest version of make_p_table() instructions in TODO.txt in primer.tutorials. -->
-
 <!-- DK: Add spanner for "Units" and "Treatment". -->
 
 <!-- DK: Change Treatment variable to something like "Election Result" -->
@@ -92,90 +89,76 @@ Scenario 1 Preceptor Table
 
 <!-- DK: Experiment with tribble for entering data. -->
 
-<!-- AT: For scneario 1 we only ocus on candidates who have won. Doesn't that mean that the treatment cannot be (Win/Lose) -->
-
 <!-- DK: First Preceptor Table (and Population Table) is predictive, so only "Outcome". -->
 
 <!-- DK: The treatment variable from the causal model is always included among the Covariates in the corresponding predictive model. -->
 
 ```{r}
-tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  attitude_after_control = c("70*", "56", "...", "65*", "54*", "...", "56"),
-  attitude_after_treated = c("63", "62*", "...", "71", "56", "...", "74*"),
-  treatment = c("Win", "Lose", "...", "Win", "Win", "...", "Lose"),
-  `Win Margin` = c(2.5, -3.2, "...", 5.8, 1.7, "...", -4.5),
-  age = c(55, 62, "...", 49, 67, "...", 51),
-  party = c("Democrat", "Republican", "...", "Democrat", "Third", "...", "Republican")
+tribble(
+  ~`ID`, ~`Years Lived After Election`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`,
+  "...", "...", "...", "...", "...", "...",
+  "1",   "70",   "Win",   "2.5",   "55",   "Democrat",
+  "2",   "56",   "Win",   "3.2",   "62",   "Republican",
+  "10",  "65",   "Win",   "5.8",   "49",   "Democrat",
+  "11",  "54",   "Win",   "1.7",   "67",   "Third",
+  "N",   "56",   "Win",   "4.5",   "51",   "Republican"
 ) |>
   gt() |>
-  tab_header(title = "Preceptor Table: Predicted Years Lived After Winning Senate Election by Age, Party, and Win Margin") |> 
-  cols_label(
-    ID = md("ID"),
-    attitude_after_control = md("Years Lived if Lose Election"),
-    attitude_after_treated = md("Years Lived if Win Election"),
-    treatment = md("Treatment"),
-    age = md("Age at Election"),
-    party = md("Party")
+  tab_header(title = "Preceptor Table: Predicted Years Lived After Senate Election") |>
+  tab_spanner(
+    label = "Units",
+    columns = c(`ID`)
   ) |>
-  tab_style(cell_borders(sides = "right"),
-            location = cells_body(columns = c(ID))) |>
-  tab_style(style = cell_text(align = "left", v_align = "middle", size = "large"), 
-            locations = cells_column_labels(columns = c(ID))) |>
+  tab_spanner(
+    label = "Outcome",
+    columns = c(`Years Lived After Election`)
+  ) |>
+  tab_spanner(
+    label = "Treatment",
+    columns = c(`Election Result`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Win Margin`, `Age at Election`, `Party`)
+  ) |>
   cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  fmt_markdown(columns = everything()) |>
-  tab_spanner(
-    label = "Potential Outcomes",
-    columns = c(attitude_after_control, attitude_after_treated)
-  ) |>
-  tab_spanner(
-    label = "Covariate",
-    columns = c(`Win Margin`, age, party)
-  ) |> 
-  tab_footnote(
-    footnote = md("A * indicates a potential outcome which we do not observe."),
-    locations = cells_column_spanners(spanners = "Potential Outcomes")
-  )
+  cols_align(align = "left", columns = c(`ID`)) |>
+  fmt_markdown(columns = everything())
 ```
-
 
 Scenario 2 Preceptor Table:
 
 ```{r}
-tibble(
-  ID = c("1", "2", "...", "10", "11", "...", "N"),
-  lived_after_if_lose = c("12*", "24", "...", "15*", "11*", "...", "17"),
-  lived_after_if_win = c("18", "26*", "...", "21", "13", "...", "24*"),
-  treatment = c("Win", "Lose", "...", "Win", "Win", "...", "Lose"),
-  age_at_election = c(55, 62, "...", 49, 67, "...", 51),
-  win_margin = c(2.5, -3.2, "...", 1.7, 0.5, "...", -4.5)
+tribble(
+  ~`ID`, ~`Years Lived After Election if Lose`, ~`Years Lived After Election if Win`, ~`Election Result`, ~`Age at Election`, ~`Win Margin`,
+  "...", "...", "...", "...", "...", "...",
+  "1",   "12*",   "18",    "Win",   "55",   "2.5",
+  "2",   "24",    "26*",   "Lose",  "62",   "-3.2",
+  "10",  "15*",   "21",    "Win",   "49",   "1.7",
+  "11",  "11*",   "13",    "Win",   "67",   "0.5",
+  "N",   "17",    "24*",   "Lose",  "51",   "-4.5"
 ) |>
   gt() |>
-  tab_header(title = "Preceptor Table: Potential Years Lived After Election by Treatment (Win/Lose), Age at Election, and Win Margin") |> 
-  cols_label(
-    ID = md("ID"),
-    lived_after_if_lose = md("Years Lived After Election if Lose"),
-    lived_after_if_win = md("Years Lived After Election if Win"),
-    treatment = md("Treatment"),
-    age_at_election = md("Age at Election"),
-    win_margin = md("Win Margin")
+  tab_header(title = "Preceptor Table: Potential Years Lived After Election") |>
+  tab_spanner(
+    label = "Units",
+    columns = c(`ID`)
   ) |>
-  tab_style(cell_borders(sides = "right"),
-            location = cells_body(columns = c(ID))) |>
-  tab_style(style = cell_text(align = "left", v_align = "middle", size = "large"), 
-            locations = cells_column_labels(columns = c(ID))) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(ID)) |>
-  fmt_markdown(columns = everything()) |>
   tab_spanner(
     label = "Potential Outcomes",
-    columns = c(lived_after_if_lose, lived_after_if_win)
+    columns = c(`Years Lived After Election if Lose`, `Years Lived After Election if Win`)
   ) |>
   tab_spanner(
-    label = "Covariate",
-    columns = c(age_at_election, win_margin)
-  ) |> 
+    label = "Treatment",
+    columns = c(`Election Result`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Age at Election`, `Win Margin`)
+  ) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(`ID`)) |>
+  fmt_markdown(columns = everything()) |>
   tab_footnote(
     footnote = md("A * indicates a potential outcome which we do not observe."),
     locations = cells_column_spanners(spanners = "Potential Outcomes")
@@ -187,89 +170,90 @@ tibble(
 Scenario 1 Population Table
 
 ```{r}
-tibble(
-  source = c("Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
-  year = c("2002", "1995", "...", "2025", "2025", "..."),
-  ID = c("1", "2", "...", "10", "11", "..."),
-  years_lived = c("77", "70", "...", "?", "?", "..."),
-  win_margin = c(3.1, 2.7, "...", "2.5", "6.2", "..."),
-  age_at_election = c(51, 59, "...", "53", "48", "..."),
-  party = c("Republican", "Democrat", "...", "Democrat", "Republican", "..."),
-  sex = c("Male", "Female", "...", "Male", "Female", "...")
+tribble(
+  ~`Source`, ~`Year`, ~`ID`, ~`Years Lived After Election`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`, ~`Sex`,
+  "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Data", "2002", "1", "77", "Win", "3.1", "51", "Republican", "Male",
+  "Data", "1995", "2", "70", "Win", "2.7", "59", "Democrat", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Preceptor Table", "2025", "10", "?", "Win", "2.5", "53", "Democrat", "Male",
+  "Preceptor Table", "2025", "11", "?", "Win", "6.2", "48", "Republican", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "..."
 ) |>
   gt() |>
-  tab_header(title = "Population Table: Predicted Years Lived After Senate Election.") |>
-  cols_label(
-    source = md("Source"),
-    year = md("Year"),
-    ID = md("ID"),
-    years_lived = md("Years Lived"),
-    win_margin = md("Win Margin"),
-    age_at_election = md("Age at Election"),
-    party = md("Party"),
-    sex = md("Sex")
+  tab_header(title = "Population Table: Predicted Years Lived After Senate Election") |>
+  tab_spanner(
+    label = "Units/Time",
+    columns = c(`Year`, `ID`)
   ) |>
-  tab_spanner(label = "Unit & Time", columns = c(year, ID)) |>
-  tab_spanner(label = "Outcome", columns = c(years_lived)) |>
-  tab_spanner(label = "Covariates", columns = c(win_margin, age_at_election, party, sex)) |>
-  fmt_markdown(columns = everything()) |>
+  tab_spanner(
+    label = "Outcome",
+    columns = c(`Years Lived After Election`)
+  ) |>
+  tab_spanner(
+    label = "Treatment",
+    columns = c(`Election Result`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Win Margin`, `Age at Election`, `Party`, `Sex`)
+  ) |>
   cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(source))
+  cols_align(align = "left", columns = c(`Source`)) |>
+  fmt_markdown(columns = everything())
 ```
 
 Scenario 2 Population Table
 
 ```{r}
-tibble(
-  source = c("Data", "Data", "...", "Preceptor Table", "Preceptor Table", "..."),
-  year = c("1992", "2000", "...", "2025", "2025", "..."),
-  ID = c("1", "2", "...", "10", "11", "..."),
-  lived_after_if_lose = c("14*", "22", "...", "15*", "17*", "..."),
-  lived_after_if_win = c("19", "26*", "...", "21", "16", "..."),
-  treatment = c("Win", "Lose", "...", "Win", "Lose", "..."),
-  win_margin = c(2.2, -3.8, "...", "1.5", "-0.9", "..."),
-  age_at_election = c(60, 57, "...", "64", "70", "..."),
-  party = c("Republican", "Democrat", "...", "Democrat", "Republican", "..."),
-  sex = c("Male", "Female", "...", "Male", "Female", "...")
+tribble(
+  ~`Source`, ~`Year`, ~`ID`, ~`Years Lived After Election if Lose`, ~`Years Lived After Election if Win`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`, ~`Sex`,
+  "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Data", "1992", "1", "14*", "19", "Win", "2.2", "60", "Republican", "Male",
+  "Data", "2000", "2", "22", "26*", "Lose", "-3.8", "57", "Democrat", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Preceptor Table", "2025", "10", "15*", "21", "Win", "1.5", "64", "Democrat", "Male",
+  "Preceptor Table", "2025", "11", "17*", "16", "Lose", "-0.9", "70", "Republican", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "...", "..."
 ) |>
   gt() |>
-  tab_header(title = "Population Table: Potential Years Lived After Gubernatorial Election by Treatment, Age, Win Margin, Party, and Sex (2024)") |>
-  cols_label(
-    source = md("Source"),
-    year = md("Year"),
-    ID = md("ID"),
-    lived_after_if_lose = md("Lived After if Lose"),
-    lived_after_if_win = md("Lived After if Win"),
-    treatment = md("Treatment"),
-    win_margin = md("Win Margin"),
-    age_at_election = md("Age at Election"),
-    party = md("Party"),
-    sex = md("Sex")
+  tab_header(title = "Population Table: Potential Years Lived After Election") |>
+  tab_spanner(
+    label = "Unit/Time",
+    columns = c(`Year`, `ID`)
   ) |>
-  tab_spanner(label = "Unit & Time", columns = c(year, ID)) |>
-  tab_spanner(label = "Potential Outcomes", columns = c(lived_after_if_lose, lived_after_if_win)) |>
-  tab_spanner(label = "Covariates", columns = c(treatment, win_margin, age_at_election, party, sex)) |>
-  fmt_markdown(columns = everything()) |>
+  tab_spanner(
+    label = "Potential Outcomes",
+    columns = c(`Years Lived After Election if Lose`, `Years Lived After Election if Win`)
+  ) |>
+  tab_spanner(
+    label = "Treatment",
+    columns = c(`Election Result`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Win Margin`, `Age at Election`, `Party`, `Sex`)
+  ) |>
   cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(source)) |>
+  cols_align(align = "left", columns = c(`Source`)) |>
+  fmt_markdown(columns = everything()) |>
   tab_footnote(
     footnote = md("A * indicates a potential outcome which we do not observe."),
     locations = cells_column_spanners(spanners = "Potential Outcomes")
   )
 ```
 
-Answer the Following Questions:
+Answer each question mentioned below:
+  Describe the Population Table in your own words—what does each row represent in this context? Then, for each of the four key assumptions (validity, stability, representativeness, and unconfoundedness), provide both a definition in your own words and one specific counter-example for each assumption. 
 
+<!-- AT: Delete everything below: -->
 Describe the Population Table in words:
   For scenario 1, each row corresponds to a candidate in a given year (e.g., a newly elected senator in 2025), showing their predicted years lived after election and covariates such as `age at election`, `party`, `sex`, and `win margin`.
 
-  For scenario 2, each row corresponds to a candidate/year, with columns for potential years lived after winning or losing the election (even for outcomes not observed for every candidate), along with relevant covariates (`age`, `party`, `sex`, w`in margin`, and treatment assignment).
+  For scenario 2, each row corresponds to a candidate/year, with columns for potential years lived after winning or losing the election (even for outcomes not observed for every candidate), along with relevant covariates (`age`, `party`, `sex`, `win margin`, and treatment assignment).
 
 Counter-example to the assumption of validity:
-
-<!-- DK: Quote about using July ` for missing birth dates. -->
-
-  If the outcome column (“years lived after election”) is recorded using different sources or methods for different candidates—such as missing dates, estimated ages, or unclear definitions for older records—then the outcome doesn’t have a consistent meaning for every row. This violates validity because the column is not defined the same way across the population table.
+  In the governors dataset, if a candidate’s actual birth date or death date is unknown, researchers often substitute July 1 as the default day. This means some “years lived after election” values are based on estimates rather than exact dates. As a result, the outcome column is not defined consistently for every row, since some values represent true lifespans and others are just approximations. This weakens the validity assumption because not all entries have the same underlying meaning.
 
 Counter-example to the assumption of stability:
   If the relationship between winning an election and longevity was different in earlier decades (e.g., in the 1950s) compared to today—perhaps because political office was more stressful or medical care for politicians was less advanced—then estimates using data from the past may not be stable over time.
@@ -281,30 +265,7 @@ Counter-example to the assumption of unconfoundedness:
   Imagine that candidates from wealthier backgrounds are more likely to win and also tend to live longer because they have better access to healthcare. If we don’t account for wealth in our model, it might look like winning the election leads to a longer life, when in fact it’s actually the candidate’s wealth that explains both winning and living longer.
   DK: Add more to this by tying it closely to the definition.
 
-<!-- Change question to all one paragraph which lists the four assumptions and asks for their definitions and one counter-example for each. -->
+### Modeling 
 
-Scenario 1: Predictive Model:
+The outcome variable in this study is `death_age`, which is the age each political candidate died. What kind of regression model should you use to predict or explain death_age? Explain your choice based on what kind of variable `death_age` is?
 
-Ask AI to write a LaTeX equation for a predictive linear regression model that estimates a candidate’s expected years lived after election using their age at election, party, sex, and win margin as predictors. Insert your equation below.
-
-$$
-\[
-\mathbb{E}[\text{YearsLived}_i] = \beta_0 + \beta_1 \cdot \text{ageAtElection}_i + \beta_2 \cdot \text{party}_i + \beta_3 \cdot \text{sex}_i + \beta_4 \cdot \text{winMargin}_i + \ldots
-\]
-$$
-
-Here, the model is predictive—it forecasts lifespan for current candidates, given their observed characteristics. There is no intervention or “potential outcome” framework; the goal is accurate prediction.
-
----
-
-Scenario 2: Causal Model:
-
-Ask AI to write a LaTeX equation for a causal linear regression model that estimates the effect of winning an election (`win`, an indicator variable) on a candidate’s expected years lived after election, controlling for age at election, party, and sex. Insert your equation below.
-
-$$
-\[
-\mathbb{E}[\text{YearsLived}_i \mid \text{Win}_i] = \beta_0 + \beta_1 \cdot \text{Win}_i + \beta_2 \cdot \text{ageAtElection}_i + \beta_3 \cdot \text{party}_i + \beta_4 \cdot \text{sex}_i + \ldots
-\]
-$$
-
-Here, `win` is an indicator for winning the election. The coefficient $\beta_1$ estimates the causal effect of winning (versus losing), assuming all necessary causal inference assumptions hold.
