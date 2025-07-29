@@ -174,7 +174,11 @@ tribble(
   )
 ```
 
+<!-- DK: Used `live_after` everywhere. -->
+
 ## Models to Explore
+
+<!-- DK: Put a * for anything that the teacher should not delete. -->
 
 Keep in mind that we will be using a linear regression model for this, since `death_age` and `lived_after` are both continuous variables. In tidymodels, this is done with `linear_reg().`
 
@@ -182,9 +186,11 @@ Estimate a regression model where `death_age` is the outcome and `sex` is the pr
 
 The model shows that male governors are, on average, 1.9 years younger when they die. However the confidence interval includes zero, suggesting this difference is not statistically significant.
 
+<!-- DK: Use x -->
+
 ```{r}
 linear_reg() |> 
-  fit(death_age ~ sex, data = governors) |> 
+  fit(lived_after ~ sex, data = x) |> 
   tidy(conf.int = TRUE)
 ```
 
@@ -194,9 +200,10 @@ The intercept represents the predicted death age for a Democratic governor who l
 
 ```{r}
 fit_elec <- linear_reg() |>
-  fit(death_age ~ election_result + win_margin + election_age + party, data = governors)
+  fit(lived_after ~ election_result +  election_age + party, data = subset(x, abs(win_margin) < 5))
 tidy(fit_elec, conf.int = TRUE)
 ```
+
 
 Use the `tbl_regression()` function to display a clean, reader-friendly summary of the fitted regression model, including estimated coefficients, confidence intervals, and p-values for each variable.
 
