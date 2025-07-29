@@ -11,6 +11,7 @@ execute:
 library(tidyverse)
 library(gt)
 library(primer.data)
+
 ```
 
 ## Background Information
@@ -81,26 +82,15 @@ The treatment is whether or not the political candidate won or lost their electi
 
 Scenario 1 Preceptor Table
 
-<!-- DK: Add spanner for "Units" and "Treatment". -->
-
-<!-- DK: Change Treatment variable to something like "Election Result" -->
-
-<!-- DK: Use backticks to make variable names with spaces, so we don't need to use col_label(). -->
-
-<!-- DK: Experiment with tribble for entering data. -->
-
-<!-- DK: First Preceptor Table (and Population Table) is predictive, so only "Outcome". -->
-
-<!-- DK: The treatment variable from the causal model is always included among the Covariates in the corresponding predictive model. -->
-
 ```{r}
 tribble(
   ~`ID`, ~`Years Lived After Election`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`,
-  "...", "...", "...", "...", "...", "...",
   "1",   "70",   "Win",   "2.5",   "55",   "Democrat",
   "2",   "56",   "Win",   "3.2",   "62",   "Republican",
+  "...", "...", "...", "...", "...", "...",
   "10",  "65",   "Win",   "5.8",   "49",   "Democrat",
   "11",  "54",   "Win",   "1.7",   "67",   "Third",
+  "...", "...", "...", "...", "...", "...",
   "N",   "56",   "Win",   "4.5",   "51",   "Republican"
 ) |>
   gt() |>
@@ -112,10 +102,6 @@ tribble(
   tab_spanner(
     label = "Outcome",
     columns = c(`Years Lived After Election`)
-  ) |>
-  tab_spanner(
-    label = "Treatment",
-    columns = c(`Election Result`)
   ) |>
   tab_spanner(
     label = "Covariates",
@@ -131,11 +117,12 @@ Scenario 2 Preceptor Table:
 ```{r}
 tribble(
   ~`ID`, ~`Years Lived After Election if Lose`, ~`Years Lived After Election if Win`, ~`Election Result`, ~`Age at Election`, ~`Win Margin`,
-  "...", "...", "...", "...", "...", "...",
   "1",   "12*",   "18",    "Win",   "55",   "2.5",
   "2",   "24",    "26*",   "Lose",  "62",   "-3.2",
+  "...", "...", "...", "...", "...", "...",
   "10",  "15*",   "21",    "Win",   "49",   "1.7",
   "11",  "11*",   "13",    "Win",   "67",   "0.5",
+  "...", "...", "...", "...", "...", "...",
   "N",   "17",    "24*",   "Lose",  "51",   "-4.5"
 ) |>
   gt() |>
@@ -147,10 +134,6 @@ tribble(
   tab_spanner(
     label = "Potential Outcomes",
     columns = c(`Years Lived After Election if Lose`, `Years Lived After Election if Win`)
-  ) |>
-  tab_spanner(
-    label = "Treatment",
-    columns = c(`Election Result`)
   ) |>
   tab_spanner(
     label = "Covariates",
@@ -246,7 +229,6 @@ tribble(
 Answer each question mentioned below:
   Describe the Population Table in your own words—what does each row represent in this context? Then, for each of the four key assumptions (validity, stability, representativeness, and unconfoundedness), provide both a definition in your own words and one specific counter-example for each assumption. 
 
-<!-- AT: Delete everything below: -->
 Describe the Population Table in words:
   For scenario 1, each row corresponds to a candidate in a given year (e.g., a newly elected senator in 2025), showing their predicted years lived after election and covariates such as `age at election`, `party`, `sex`, and `win margin`.
 
@@ -262,10 +244,11 @@ Counter-example to the assumption of representativeness:
   If most of the data comes from governors in large states, but you want to make predictions or causal estimates for senators or candidates in smaller states, your results may not be representative. For example, candidates in less competitive or less affluent states may have different health backgrounds or access to healthcare.
 
 Counter-example to the assumption of unconfoundedness:
-  Imagine that candidates from wealthier backgrounds are more likely to win and also tend to live longer because they have better access to healthcare. If we don’t account for wealth in our model, it might look like winning the election leads to a longer life, when in fact it’s actually the candidate’s wealth that explains both winning and living longer.
-  DK: Add more to this by tying it closely to the definition.
+  Unconfoundedness means that, after accounting for all covariates, winning should be independent of how long a candidate would live. If wealthier candidates are more likely to win and live longer, but wealth isn’t included in the model, the estimate for the effect of winning will be biased—because winning and lifespan are confounded by wealth.
 
 ### Modeling 
 
 The outcome variable in this study is `death_age`, which is the age each political candidate died. What kind of regression model should you use to predict or explain death_age? Explain your choice based on what kind of variable `death_age` is?
+
+  You should use a linear regression model, because `death_age` is a continuous (numeric) variable. Linear regression is appropriate for predicting or explaining outcomes measured on a numeric scale like age.
 

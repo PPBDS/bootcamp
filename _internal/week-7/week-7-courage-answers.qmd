@@ -1,0 +1,203 @@
+---
+title: "Wisdom and Governors"
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(gt)
+library(primer.data)
+library(gtsummary)
+library(tidymodels)
+
+governors <- governors |> 
+  mutate(election_result = ifelse(win_margin > 0, "win", "lose"))
+```
+
+
+
+## Background Information
+
+This dataset is drawn from an attempt to estimate the causal effect of winning an election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. 
+
+Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
+Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
+
+### Scenarios
+
+1) Imagine you work for a life insurer, and want to forecast how long a newly elected Senator might live based on their age, party, and other variables. 
+
+```{r}
+tribble(
+  ~`ID`, ~`Years Lived After Election`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`,
+  "1",   "70",   "Win",   "2.5",   "55",   "Democrat",
+  "2",   "56",   "Win",   "3.2",   "62",   "Republican",
+  "...", "...", "...", "...", "...", "...",
+  "10",  "65",   "Win",   "5.8",   "49",   "Democrat",
+  "11",  "54",   "Win",   "1.7",   "67",   "Third",
+  "...", "...", "...", "...", "...", "...",
+  "N",   "56",   "Win",   "4.5",   "51",   "Republican"
+) |>
+  gt() |>
+  tab_header(title = "Preceptor Table: Predicted Years Lived After Senate Election") |>
+  tab_spanner(
+    label = "Units",
+    columns = c(`ID`)
+  ) |>
+  tab_spanner(
+    label = "Outcome",
+    columns = c(`Years Lived After Election`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Win Margin`, `Age at Election`, `Party`)
+  ) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(`ID`)) |>
+  fmt_markdown(columns = everything())
+```
+
+```{r}
+tribble(
+  ~`Source`, ~`Year`, ~`ID`, ~`Years Lived After Election`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`, ~`Sex`,
+  "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Data", "2002", "1", "77", "Win", "3.1", "51", "Republican", "Male",
+  "Data", "1995", "2", "70", "Win", "2.7", "59", "Democrat", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Preceptor Table", "2025", "10", "?", "Win", "2.5", "53", "Democrat", "Male",
+  "Preceptor Table", "2025", "11", "?", "Win", "6.2", "48", "Republican", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "..."
+) |>
+  gt() |>
+  tab_header(title = "Population Table: Predicted Years Lived After Senate Election") |>
+  tab_spanner(
+    label = "Units/Time",
+    columns = c(`Year`, `ID`)
+  ) |>
+  tab_spanner(
+    label = "Outcome",
+    columns = c(`Years Lived After Election`)
+  ) |>
+  tab_spanner(
+    label = "Treatment",
+    columns = c(`Election Result`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Win Margin`, `Age at Election`, `Party`, `Sex`)
+  ) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(`Source`)) |>
+  fmt_markdown(columns = everything())
+```
+
+2) Imagine you are a researcher. You want to know if winning candidates live longer. 
+
+```{r}
+tribble(
+  ~`ID`, ~`Years Lived After Election if Lose`, ~`Years Lived After Election if Win`, ~`Election Result`, ~`Age at Election`, ~`Win Margin`,
+  "1",   "12*",   "18",    "Win",   "55",   "2.5",
+  "2",   "24",    "26*",   "Lose",  "62",   "-3.2",
+  "...", "...",   "...",   "...",   "...",  "...",
+  "10",  "15*",   "21",    "Win",   "49",   "1.7",
+  "11",  "11*",   "13",    "Win",   "67",   "0.5",
+  "...", "...", "...", "...", "...", "...",
+  "N",   "17",    "24*",   "Lose",  "51",   "-4.5"
+) |>
+  gt() |>
+  tab_header(title = "Preceptor Table: Potential Years Lived After Election") |>
+  tab_spanner(
+    label = "Units",
+    columns = c(`ID`)
+  ) |>
+  tab_spanner(
+    label = "Potential Outcomes",
+    columns = c(`Years Lived After Election if Lose`, `Years Lived After Election if Win`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Age at Election`, `Win Margin`)
+  ) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(`ID`)) |>
+  fmt_markdown(columns = everything()) |>
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome which we do not observe."),
+    locations = cells_column_spanners(spanners = "Potential Outcomes")
+  )
+```
+
+```{r}
+tribble(
+  ~`Source`, ~`Year`, ~`ID`, ~`Years Lived After Election if Lose`, ~`Years Lived After Election if Win`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`, ~`Sex`,
+  "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Data", "1992", "1", "14*", "19", "Win", "2.2", "60", "Republican", "Male",
+  "Data", "2000", "2", "22", "26*", "Lose", "-3.8", "57", "Democrat", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Preceptor Table", "2025", "10", "15*", "21", "Win", "1.5", "64", "Democrat", "Male",
+  "Preceptor Table", "2025", "11", "17*", "16", "Lose", "-0.9", "70", "Republican", "Female",
+  "...", "...", "...", "...", "...", "...", "...", "...", "...", "..."
+) |>
+  gt() |>
+  tab_header(title = "Population Table: Potential Years Lived After Election") |>
+  tab_spanner(
+    label = "Unit/Time",
+    columns = c(`Year`, `ID`)
+  ) |>
+  tab_spanner(
+    label = "Potential Outcomes",
+    columns = c(`Years Lived After Election if Lose`, `Years Lived After Election if Win`)
+  ) |>
+  tab_spanner(
+    label = "Treatment",
+    columns = c(`Election Result`)
+  ) |>
+  tab_spanner(
+    label = "Covariates",
+    columns = c(`Win Margin`, `Age at Election`, `Party`, `Sex`)
+  ) |>
+  cols_align(align = "center", columns = everything()) |>
+  cols_align(align = "left", columns = c(`Source`)) |>
+  fmt_markdown(columns = everything()) |>
+  tab_footnote(
+    footnote = md("A * indicates a potential outcome which we do not observe."),
+    locations = cells_column_spanners(spanners = "Potential Outcomes")
+  )
+```
+
+## Models to Explore
+
+Keep in mind that we will be using a linear regression model for this, since `death_age` and `lived_after` are both continuous variables. In tidymodels, this is done with `linear_reg().`
+
+Estimate a regression model where `death_age` is the outcome and `sex` is the predictor. Display the model results and confidence intervals. Interpret the estimate and what its confidence interval tells you.
+
+The model shows that male governors are, on average, 1.9 years younger when they die. However the confidence interval includes zero, suggesting this difference is not statistically significant.
+
+```{r}
+linear_reg() |> 
+  fit(death_age ~ sex, data = governors) |> 
+  tidy(conf.int = TRUE)
+```
+
+Fit a linear regression model with `death_age` as the outcome and predictors `treatment`, `win_margin`, `election_age`, and `party`. Fit the result to `fit_elec`. Then interpret what the coefficients mean. Make sure to show the confidence intervals as well.
+
+The intercept represents the predicted death age for a Democratic governor who lost, with win margin and election age set to zero. The coefficient for win margin is negative and statistically significant, meaning that governors with larger win margins are predicted to die slightly younger. Election age is positive and highly significant, indicating that the older a candidate is at the time of election, the older they are predicted to be at death. For party effects, being Republican (compared to Democrat) is associated with living about 1.2 years longer, while being a third-party governor is associated with living about 6 years less.
+
+```{r}
+fit_elec <- linear_reg() |>
+  fit(death_age ~ election_result + win_margin + election_age + party, data = governors)
+tidy(fit_elec, conf.int = TRUE)
+```
+
+Use the `tbl_regression()` function to display a clean, reader-friendly summary of the fitted regression model, including estimated coefficients, confidence intervals, and p-values for each variable.
+
+The output from `tbl_regression()` presents the regression results in a well-formatted table. Each row corresponds to a variable in your model, with columns showing the coefficient estimate, its confidence interval, and the p-value. This makes it easy to quickly see which variables are statistically significant predictors of the outcome and the direction and size of each effect. This format is helpful for interpretation and presentation in reports.
+
+```{r}
+fit_elec |> 
+  tbl_regression()
+```
