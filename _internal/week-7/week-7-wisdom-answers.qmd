@@ -23,7 +23,7 @@ Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
 ### Scenarios
 
-1) Imagine you work for a life insurer, and want to forecast how long a newly elected Senator might live based on their age, party, and other variables. 
+1) Imagine you work for a life insurer, and want to forecast how long candidates for the US Senate might live based on their age, party, election result, and other variables. 
 
 2) Imagine you are a researcher. You want to know if winning candidates live longer. 
 
@@ -56,21 +56,23 @@ governors |>
 
 What sorts of questions are we trying to answer?
 
-In order to build the Preceptor Table, we need to know: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments? Describe the mathematical Structure of the model.
+In order to build the Preceptor Table, we need to know: Is the model causal or predictive? What are units? What are the outcomes? What are the covariates? What are the treatments? Describe the mathematical structure of the model.
 
 * Causal or predictive?
 
 Scenario 1: Predictive — We are forecasting the expected lifespan of current political candidates using their personal characteristics.
 
-Scenario 2: Causal — We want to estimate the causal effect of winning versus losing an election on a candidate’s lifespan.
+Scenario 2: Causal — Although the wording is ambiguous, let's assume that we want to estimate the causal effect of winning versus losing an election on a candidate’s lifespan.
 
 * Units:
 
-The units in this analysis are individual political candidates. Each row in the Preceptor Table represents one candidate.
+The units differ. In the first scenario, we only care about (currently serving? currently alive even if retired? serving or will servce in the next few years?) US Senators. The second scenario is about political candidates (for all offices? outside the US?). We need to go back and forth with our boss/client/colleague. What exactly do they want?
+
+Each row is a person, in both cases.
 
 * Outcome:
 
-The outcome variable of interest is the **age at death** (`death_age`) for each candidate. This is a continuous variable representing the candidate's total lifespan.
+The outcome variable of interest is the **age at death** (`death_age`) for each candidate. This is a continuous variable representing the candidate's total lifespan. Or is it `lived_after`? It is not obvious which is better. Alot depends on if `election_age` is included in the model. Probably best to try both and see how much your final answers differ.
 
 * Covariates: 
 
@@ -80,7 +82,6 @@ Possible covariates include age at election, party affiliation, sex, vote margin
 
 The treatment is whether or not the political candidate won or lost their election (`win_margin > 0`).
 
-Scenario 1 Preceptor Table
 
 ```{r}
 tribble(
@@ -244,11 +245,12 @@ Counter-example to the assumption of representativeness:
   If most of the data comes from governors in large states, but you want to make predictions or causal estimates for senators or candidates in smaller states, your results may not be representative. For example, candidates in less competitive or less affluent states may have different health backgrounds or access to healthcare.
 
 Counter-example to the assumption of unconfoundedness:
-  Unconfoundedness means that, after accounting for all covariates, winning should be independent of how long a candidate would live. If wealthier candidates are more likely to win and live longer, but wealth isn’t included in the model, the estimate for the effect of winning will be biased—because winning and lifespan are confounded by wealth.
+  Imagine that candidates from wealthier backgrounds are more likely to win and also tend to live longer because they have better access to healthcare. If we don’t account for wealth in our model, it might look like winning the election leads to a longer life, when in fact it’s actually the candidate’s wealth that explains both winning and living longer.
+
 
 ### Modeling 
 
-The outcome variable in this study is `death_age`, which is the age each political candidate died. What kind of regression model should you use to predict or explain death_age? Explain your choice based on what kind of variable `death_age` is?
+The outcome variable in this study is `lived_after`, which the years lived after the election. What kind of regression model should you use to predict or explain `lived_after`? Explain your choice based on what kind of variable `lived_after` is.
 
   You should use a linear regression model, because `death_age` is a continuous (numeric) variable. Linear regression is appropriate for predicting or explaining outcomes measured on a numeric scale like age.
 
