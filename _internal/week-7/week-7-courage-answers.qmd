@@ -57,21 +57,21 @@ tribble(
   ) |>
   tab_spanner(
     label = "Covariates",
-    columns = c(`Win Margin`, `Age at Election`, `Party`)
+    columns = c(`Election Result`, `Win Margin`, `Age at Election`, `Party`)
   ) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(`ID`)) |>
   fmt_markdown(columns = everything())
 ```
 
-<!-- DK: Sort by year. -->
+<!-- DK: Sort by year. Done -->
 
 ```{r}
 tribble(
   ~`Source`, ~`Year`, ~`ID`, ~`Years Lived After Election`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`, ~`Sex`,
   "...", "...", "...", "...", "...", "...", "...", "...", "...",
   "Data", "2002", "1", "77", "Win", "3.1", "51", "Republican", "Male",
-  "Data", "1995", "2", "70", "Win", "2.7", "59", "Democrat", "Female",
+  "Data", "2002", "2", "70", "Win", "2.7", "59", "Democrat", "Female",
   "...", "...", "...", "...", "...", "...", "...", "...", "...",
   "Preceptor Table", "2025", "10", "?", "Win", "2.5", "53", "Democrat", "Male",
   "Preceptor Table", "2025", "11", "?", "Win", "6.2", "48", "Republican", "Female",
@@ -125,7 +125,7 @@ tribble(
   ) |>
   tab_spanner(
     label = "Covariates",
-    columns = c(`Age at Election`, `Win Margin`)
+    columns = c(`Election Result`, `Age at Election`, `Win Margin`)
   ) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(`ID`)) |>
@@ -141,7 +141,7 @@ tribble(
   ~`Source`, ~`Year`, ~`ID`, ~`Years Lived After Election if Lose`, ~`Years Lived After Election if Win`, ~`Election Result`, ~`Win Margin`, ~`Age at Election`, ~`Party`, ~`Sex`,
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
   "Data", "1992", "1", "14*", "19", "Win", "2.2", "60", "Republican", "Male",
-  "Data", "2000", "2", "22", "26*", "Lose", "-3.8", "57", "Democrat", "Female",
+  "Data", "1992", "2", "22", "26*", "Lose", "-3.8", "57", "Democrat", "Female",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
   "Preceptor Table", "2025", "10", "15*", "21", "Win", "1.5", "64", "Democrat", "Male",
   "Preceptor Table", "2025", "11", "17*", "16", "Lose", "-0.9", "70", "Republican", "Female",
@@ -184,7 +184,7 @@ The model shows that male governors are, on average, 1.9 years younger when they
 
 ```{r}
 linear_reg() |> 
-  fit(death_age ~ sex, data = governors) |> 
+  fit(death_age ~ sex, data = x) |> 
   tidy(conf.int = TRUE)
 ```
 
@@ -194,15 +194,16 @@ The intercept represents the predicted death age for a Democratic governor who l
 
 ```{r}
 fit_elec <- linear_reg() |>
-  fit(death_age ~ election_result + win_margin + election_age + party, data = governors)
+  fit(death_age ~ election_result + win_margin + election_age + party, data = x)
 tidy(fit_elec, conf.int = TRUE)
 ```
 
-Use the `tbl_regression()` function to display a clean, reader-friendly summary of the fitted regression model, including estimated coefficients, confidence intervals, and p-values for each variable.
+Review the regression results in the table below. Which variables do you think are the most important predictors in this model? Use the table to justify your answer.
+If you’re unsure about how to interpret the coefficients or p-values, try asking the AI assistant for help in understanding what the output means.
 
-The output from `tbl_regression()` presents the regression results in a well-formatted table. Each row corresponds to a variable in your model, with columns showing the coefficient estimate, its confidence interval, and the p-value. This makes it easy to quickly see which variables are statistically significant predictors of the outcome and the direction and size of each effect. This format is helpful for interpretation and presentation in reports.
+<!-- AT: Still need to add example answer -->
 
 ```{r}
-fit_elec |> 
-  tbl_regression()
+tidy(fit_elec, conf.int = TRUE) |> 
+  gt()
 ```
