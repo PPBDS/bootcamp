@@ -11,13 +11,14 @@ execute:
 library(tidyverse)
 library(gt)
 library(primer.data)
-library(gtsummary)
 library(tidymodels)
 
-governors <- governors |> 
-  mutate(election_result = ifelse(win_margin > 0, "win", "lose"))
-```
+x <- governors |> 
+  mutate(election_result = ifelse(win_margin > 0, "Win", "Lose")) |> 
+  filter(year > 1945)
 
+# In the causal model, they filter for abs(win_margin) < 5.
+```
 
 
 ## Background Information
@@ -29,7 +30,9 @@ Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
 ### Scenarios
 
-1) Imagine you work for a life insurer, and want to forecast how long a newly elected Senator might live based on their age, party, and other variables. 
+
+
+1) Imagine you work for a life insurer, and want to forecast how long a Senator might live based on their age, party, and other variables. 
 
 ```{r}
 tribble(
@@ -37,13 +40,13 @@ tribble(
   "1",   "70",   "Win",   "2.5",   "55",   "Democrat",
   "2",   "56",   "Win",   "3.2",   "62",   "Republican",
   "...", "...", "...", "...", "...", "...",
-  "10",  "65",   "Win",   "5.8",   "49",   "Democrat",
+  "10",  "65",   "Lose",   "-5.8",   "49",   "Democrat",
   "11",  "54",   "Win",   "1.7",   "67",   "Third",
   "...", "...", "...", "...", "...", "...",
-  "N",   "56",   "Win",   "4.5",   "51",   "Republican"
+  "N",   "56",   "Lose",   "-4.5",   "51",   "Republican"
 ) |>
   gt() |>
-  tab_header(title = "Preceptor Table: Predicted Years Lived After Senate Election") |>
+  tab_header(title = "Preceptor Table: Predicted Years Lived For Senators") |>
   tab_spanner(
     label = "Units",
     columns = c(`ID`)
@@ -60,6 +63,8 @@ tribble(
   cols_align(align = "left", columns = c(`ID`)) |>
   fmt_markdown(columns = everything())
 ```
+
+<!-- DK: Sort by year. -->
 
 ```{r}
 tribble(
