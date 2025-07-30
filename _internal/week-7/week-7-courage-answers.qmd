@@ -32,7 +32,7 @@ Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
 ```{r}
 tribble(
-  ~`Candidate`, ~`Years Lived`, ~`Election Result`, ~`Win Margin`, ~`Age`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
+  ~`Senator`, ~`Years Lived`, ~`Election Result`, ~`Win Margin`, ~`Age`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
   "Sanders",        "16",   "Win", "7.2",  "56", "100%", "Democrat", "Male", "...",
   "Warren",     "34",   "Win", "3.5",  "48", "67%",  "Democrat",   "Female", "...",
     "..."               , "..." , "..." , "..." , "..." , "..." , "..." , "...", "...",
@@ -43,18 +43,18 @@ tribble(
   tab_spanner(label = "Outcome", columns = c(`Years Lived`)) |>
   tab_spanner(label = "Covariates", columns = c(`Election Result`, `Win Margin`, `Age`, `Win %`, `Party`, `Sex`, `Other`)) |>
   cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(`Candidate`)) |>
+  cols_align(align = "left", columns = c(`Senator`)) |>
   fmt_markdown(columns = everything()) |>
   tab_footnote(
     footnote = md("Each row is a current Senator. Age is at election."),
-    locations = cells_column_labels(columns = `Candidate`)
+    locations = cells_column_labels(columns = `Senator`)
   ) |>
   tab_footnote(
-    footnote = md("Years lived (or predicted to live) after being elected governor."),
+    footnote = md("Years lived (or predicted to live) after being elected."),
     locations = cells_column_spanners(spanners = "Outcome")
   ) |>
   tab_footnote(
-    footnote = md("Win % is percentage of gubernatorial elections won. Sex indicates biological sex at election."),
+    footnote = md("Win % is percentage of elections won. Sex indicates biological sex at election."),
     locations = cells_column_spanners(spanners = "Covariates")
   )
 ```
@@ -62,7 +62,7 @@ tribble(
 
 ```{r}
 tribble(
-  ~`Source`, ~`Candidate`, ~`Year`, ~`Years Lived`, ~`Election Result`, ~`Win Margin`, ~`Age`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
+  ~`Source`, ~`Person`, ~`Year`, ~`Years Lived`, ~`Election Result`, ~`Win Margin`, ~`Age`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
   "Data", "Earl Warren",  "1946", "21", "Lose", "-7.2", "56", "100%", "Republican", "Male", "...",
   "Data", "George Wallace", "1946", "24", "Win", "3.5", "48", "67%", "Democrat", "Male", "...",
@@ -78,7 +78,7 @@ tribble(
 ) |>
   gt() |>
   tab_header(title = "Population Table") |>
-  tab_spanner(label = "Unit/Time", columns = c(`Candidate`, `Year`)) |>
+  tab_spanner(label = "Unit/Time", columns = c(`Person`, `Year`)) |>
   tab_spanner(label = "Outcome", columns = c(`Years Lived`)) |>
   tab_spanner(label = "Covariates", columns = c(`Election Result`, `Win Margin`, `Age`, `Win %`, `Party`, `Sex`, `Other`)) |>
   cols_align(align = "center", columns = everything()) |>
@@ -174,40 +174,9 @@ tribble(
 
 * Scenario 1 (Predictive):
 
-* Suppose you want to build a model to predict how long a senator is expected to live after being elected. Look at the preceptor table below. Decide which candidates (rows) should be included in your analysis, and which covariates you should use to filter the data. Consider which cases will provide the most relevant and reliable predictions. Write down your filtering approach and the specific variable(s) you would use. After discussing with your group, be prepared to explain your choice. Once you filter your data, assign the result to a data frame named `x_pred`.
+* Suppose you want to build a model to predict how long a senator is expected to live after being elected. Which rows should you delete from your data? Why? (There is no right answer to this question!)
 
-```{r}
-tribble(
-  ~`Candidate`, ~`Years Lived`, ~`Election Result`, ~`Win Margin`, ~`Age`, ~`Win %`, ~`Party`, ~`Other`,
-  "Earl Warren",        "21",   "Win", "7.2",  "56", "100%", "Republican", "...",
-  "George Wallace",     "24",   "Win", "3.5",  "48", "67%",  "Democrat",   "...",
-  "Nelson Rockefeller", "16",   "Lose","-9.0",  "54", "80%",  "Republican", "...",
-  "Pat Brown",          "22",   "Win", "2.9",  "51", "50%",  "Democrat",   "...",
-  "Winthrop Rockefeller","18",  "Lose", "-5.1",  "59", "100%", "Republican", "...",
-  "..."               , "..." , "..." , "..." , "..." , "..." , "..." , "..."
-) |>
-  gt() |>
-  tab_header(title = "Preceptor Table: Predicted Years Lived for Governors") |>
-  tab_spanner(label = "Outcome", columns = c(`Years Lived`)) |>
-  tab_spanner(label = "Covariates", columns = c(`Election Result`, `Win Margin`, `Age`, `Win %`, `Party`, `Other`)) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(`Candidate`)) |>
-  fmt_markdown(columns = everything()) |>
-  tab_footnote(
-    footnote = md("Each row is a real governor who won at least one election. Age is at election."),
-    locations = cells_column_labels(columns = `Candidate`)
-  ) |>
-  tab_footnote(
-    footnote = md("Years lived (or predicted to live) after being elected governor."),
-    locations = cells_column_spanners(spanners = "Outcome")
-  ) |>
-  tab_footnote(
-    footnote = md("Win % is percentage of gubernatorial elections won."),
-    locations = cells_column_spanners(spanners = "Covariates")
-  )
-```
-
-we want to keep only candidates who have actually served as governor (won at least one election). We should filter to cases after 1945 to make sure our data is consistent and reliable. Ask AI if you are having trouble filtering the data. 
+We want to keep only candidates who have actually served as governor (won at least one election). We should filter to cases after 1945 to make sure our data is consistent and reliable. Ask AI if you are having trouble filtering the data. Assign the result to `x_pred`.
 
 ```{r}
 x_pred <- x |>
@@ -219,43 +188,8 @@ x_pred <- x |>
 
 * Scenario 2 (Causal):
 
-* Now imagine you want to estimate the causal effect of winning an election on how long a candidate lives after the election. Using the preceptor table below, determine which rows should be included for this analysis. What filtering strategy and variables will you use? Discuss with your group, record your answer, and be ready to share your reasoning. Once you filter your data, assign the result to a data frame named `x_causal`.
+* Now imagine you want to estimate the causal effect of winning an election on how long a candidate lives after the election.  What filtering strategy and variables will you use? Discuss with your group, record your answer, and be ready to share your reasoning. Once you filter your data, assign the result to a data frame named `x_causal`.
 
-```{r}
-tribble(
-  ~`Candidate`, ~`Years Lived (Lose)`, ~`Years Lived (Win)`, ~`Election Result`, ~`Age`, ~`Win Margin`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
-  "Earl Warren",        "18*",   "23",   "Win",  "56", "7.2",  "100%", "Republican", "Male", "...",
-  "George Wallace",     "22",    "28*",  "Lose", "48", "-3.5",  "67%",  "Democrat",   "Male", "...",
-  "Nelson Rockefeller", "14*",   "17",   "Win",  "54", "9.0",  "80%",  "Republican", "Male", "...",
-  "Pat Brown",          "20*",   "25",   "Win",  "51", "2.9",  "50%",  "Democrat",   "Male", "...",
-  "Winthrop Rockefeller","16",   "20*",  "Lose", "59", "-5.1",  "100%", "Republican", "Male", "...",
-  "...",               "..." , "..." , "..." , "..." , "..." , "..." , "..." , "..." , "..."
-) |>
-  gt() |>
-  tab_header(title = "Preceptor Table: Potential Years Lived After Election") |>
-  tab_spanner(label = "Potential Outcomes", columns = c(`Years Lived (Lose)`, `Years Lived (Win)`)) |>
-  tab_spanner(label = "Treatment", columns = c(`Election Result`)) |>
-  tab_spanner(label = "Covariates", columns = c(`Age`, `Win Margin`, `Win %`, `Party`, `Sex`, `Other`)) |>
-  cols_align(align = "center", columns = everything()) |>
-  cols_align(align = "left", columns = c(`Candidate`)) |>
-  fmt_markdown(columns = everything()) |>
-  tab_footnote(
-    footnote = md("Each row is a real gubernatorial candidate. Age is at election."),
-    locations = cells_column_labels(columns = `Candidate`)
-  ) |>
-  tab_footnote(
-    footnote = md("A * indicates a potential outcome that is not observed."),
-    locations = cells_column_spanners(spanners = "Potential Outcomes")
-  ) |>
-  tab_footnote(
-    footnote = md("Years lived: Years lived (or predicted to live) after election, for both possible election results."),
-    locations = cells_column_spanners(spanners = "Potential Outcomes")
-  ) |>
-  tab_footnote(
-    footnote = md("Other = additional covariates not listed here."),
-    locations = cells_column_labels(columns = `Other`)
-  )
-```
 
 For causal inference, we should keep only close elections (win margin ≤ 5%), and include both winners and losers. Again, we’ll filter to data after 1945 for consistency. The key variables to filter on are win margin (for closeness) and year.
 
@@ -265,7 +199,7 @@ x_causal <- governors |>
   filter(abs(win_margin) <= 5, year > 1945)
 ```
 
-* Keep in mind that we will be using a linear regression model for this, since `lived_after`, our outcome variable, is a continuous variable. In tidymodels, this is done with `linear_reg().`
+* Keep in mind that we will be using a linear regression model for this, since `lived_after`, our outcome variable, is a continuous variable. In Tidymodels, this is done with `linear_reg().`
 
 * Estimate a regression model where `lived_after` is the outcome and `sex` is the predictor. Display the model results and confidence intervals. Interpret the estimate and what its confidence interval tells you. For now just use the original `x` data set. 
 
@@ -289,11 +223,12 @@ fit_causal <- linear_reg() |>
   fit(lived_after ~ election_result + win_margin + election_age + party, data = x_causal)
 ```
 
-* After fitting your models, view the output with confidence intervals. Make sure each covariate is statistically significant. If not, adjust your model. Interpret what each covariate’s estimate means in context.
+* After fitting your models, view the output with confidence intervals. Are the covariates statistically significant. Interpret what each covariate’s estimate means in context.
 
 <!-- AT: In the predictive model almost none of the variables are statistically significant.  -->
 
 Scenario 1:
+
 For the predictive model, the only strong predictor is age at election; each additional year older at election is linked to about 0.8 fewer years lived after. None of the other coefficients (winning the election, win margin, or party) are statistically significant since their confidence intervals include zero. This means that, in this sample of governors who have won at least once, age at election is the main factor for predicting years lived after election.
 
 Scenario 2: 
