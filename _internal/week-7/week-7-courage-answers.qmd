@@ -1,5 +1,5 @@
 ---
-title: "Temperance and Governors"
+title: "Courage and Governors"
 execute: 
   echo: false
 ---
@@ -22,7 +22,8 @@ x <- governors |>
 
 This dataset is drawn from an attempt to estimate the causal effect of winning an election on the subsequent lifespan of political candidates. The study includes data from candidates who participated in competitive elections, with the treatment defined as winning versus losing a narrowly decided race. By focusing on close contests, the analysis aims to approximate random assignment, helping to address confounding variables that might otherwise bias estimates. The dataset records each candidate’s age at election, party affiliation, gender, vote margin, and eventual age at death, allowing for regression-based modeling of the relationship between electoral outcomes and longevity. 
 
-Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
+Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf 
+
 Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
 ### Scenarios
@@ -32,22 +33,20 @@ Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 ```{r}
 tribble(
   ~`Candidate`, ~`Years Lived`, ~`Election Result`, ~`Win Margin`, ~`Age`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
-  "Earl Warren",        "21",   "Win", "7.2",  "56", "100%", "Republican", "Male", "...",
-  "George Wallace",     "24",   "Win", "3.5",  "48", "67%",  "Democrat",   "Male", "...",
-  "Nelson Rockefeller", "16",   "Lose","-9.0",  "54", "80%",  "Republican", "Male", "...",
-  "Pat Brown",          "22",   "Win", "2.9",  "51", "50%",  "Democrat",   "Male", "...",
-  "Winthrop Rockefeller","18",  "Lose", "-5.1",  "59", "100%", "Republican", "Male", "...",
-  "..."               , "..." , "..." , "..." , "..." , "..." , "..." , "...", "..."
+  "Sanders",        "16",   "Win", "7.2",  "56", "100%", "Democrat", "Male", "...",
+  "Warren",     "34",   "Win", "3.5",  "48", "67%",  "Democrat",   "Female", "...",
+    "..."               , "..." , "..." , "..." , "..." , "..." , "..." , "...", "...",
+  "McConnell", "12",   "Win","-9.0",  "54", "80%",  "Republican", "Male", "..."
 ) |>
   gt() |>
-  tab_header(title = "Preceptor Table: Predicted Years Lived for Governors") |>
+  tab_header(title = "Preceptor Table") |>
   tab_spanner(label = "Outcome", columns = c(`Years Lived`)) |>
   tab_spanner(label = "Covariates", columns = c(`Election Result`, `Win Margin`, `Age`, `Win %`, `Party`, `Sex`, `Other`)) |>
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(`Candidate`)) |>
   fmt_markdown(columns = everything()) |>
   tab_footnote(
-    footnote = md("Each row is a real governor who won at least one election. Age is at election."),
+    footnote = md("Each row is a current Senator. Age is at election."),
     locations = cells_column_labels(columns = `Candidate`)
   ) |>
   tab_footnote(
@@ -68,13 +67,17 @@ tribble(
   "Data", "Earl Warren",  "1946", "21", "Lose", "-7.2", "56", "100%", "Republican", "Male", "...",
   "Data", "George Wallace", "1946", "24", "Win", "3.5", "48", "67%", "Democrat", "Male", "...",
   "Data", "Nelson Rockefeller", "1946", "16", "Lose", "-9.0", "54", "80%", "Republican", "Male", "...",
+  "Data", "Pat Brown", "1967", "22", "Win", "2.9", "51", "50%", "Democrat", "Male", "...",
+  "Data", "Winthrop Rockefeller", "1967", "18", "Win", "5.1", "59", "100%", "Republican", "Male", "...",
+   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
+  "Preceptor Table", "Sanders",   "2025",      "16",   "Win", "7.2",  "56", "100%", "Democrat", "Male", "...",
+  "Preceptor Table", "Warren", "2025",      "34",   "Win", "3.5",  "48", "67%",  "Democrat",   "Female", "...",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
-  "Preceptor Table", "Pat Brown", "1967", "22", "Win", "2.9", "51", "50%", "Democrat", "Male", "...",
-  "Preceptor Table", "Winthrop Rockefeller", "1967", "18", "Win", "5.1", "59", "100%", "Republican", "Male", "...",
+    "Preceptor Table","McConnell","2025",   "12",   "Win","-9.0",  "54", "80%",  "Republican", "Male", "...",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..."
 ) |>
   gt() |>
-  tab_header(title = "Population Table: Predicted Years Lived After Senate Election") |>
+  tab_header(title = "Population Table") |>
   tab_spanner(label = "Unit/Time", columns = c(`Candidate`, `Year`)) |>
   tab_spanner(label = "Outcome", columns = c(`Years Lived`)) |>
   tab_spanner(label = "Covariates", columns = c(`Election Result`, `Win Margin`, `Age`, `Win %`, `Party`, `Sex`, `Other`)) |>
@@ -100,15 +103,12 @@ tribble(
 ```{r}
 tribble(
   ~`Candidate`, ~`Years Lived (Lose)`, ~`Years Lived (Win)`, ~`Election Result`, ~`Age`, ~`Win Margin`, ~`Win %`, ~`Party`, ~`Sex`, ~`Other`,
-  "Earl Warren",        "18*",   "23",   "Win",  "56", "7.2",  "100%", "Republican", "Male", "...",
-  "George Wallace",     "22",    "28*",  "Lose", "48", "-3.5",  "67%",  "Democrat",   "Male", "...",
-  "Nelson Rockefeller", "14*",   "17",   "Win",  "54", "9.0",  "80%",  "Republican", "Male", "...",
-  "Pat Brown",          "20*",   "25",   "Win",  "51", "2.9",  "50%",  "Democrat",   "Male", "...",
-  "Winthrop Rockefeller","16",   "20*",  "Lose", "59", "-5.1",  "100%", "Republican", "Male", "...",
+  "Joe Smith",        "18*",   "23",   "Win",  "56", "7.2",  "100%", "Republican", "Male", "...",
+  "David Jones",     "22",    "28*",  "Lose", "48", "-3.5",  "67%",  "Democrat",   "Male", "...",
   "...",               "..." , "..." , "..." , "..." , "..." , "..." , "..." , "..." , "..."
 ) |>
   gt() |>
-  tab_header(title = "Preceptor Table: Potential Years Lived After Election") |>
+  tab_header(title = "Preceptor Table") |>
   tab_spanner(label = "Potential Outcomes", columns = c(`Years Lived (Lose)`, `Years Lived (Win)`)) |>
   tab_spanner(label = "Treatment", columns = c(`Election Result`)) |>
   tab_spanner(label = "Covariates", columns = c(`Age`, `Win Margin`, `Win %`, `Party`, `Sex`, `Other`)) |>
@@ -141,8 +141,8 @@ tribble(
   "Data", "George Wallace", "1946", "22", "28*", "Lose", "-3.5", "48", "67%", "Democrat", "Male", "...",
   "Data", "Nelson Rockefeller", "1946", "14*", "17", "Win", "9.0", "54", "80%", "Republican", "Male", "...",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
-  "Preceptor Table", "Pat Brown", "1967", "20*", "25", "Win", "2.9", "51", "50%", "Democrat", "Male", "...",
-  "Preceptor Table", "Winthrop Rockefeller", "1967", "16", "20*", "Lose", "-5.1", "59", "100%", "Republican", "Male", "...",
+  "Preceptor Table", "Joe Smith",  "2025",      "18*",   "23",   "Win",  "56", "7.2",  "100%", "Republican", "Male", "...",
+    "Preceptor Table",  "David Jones",  "2025",    "22",    "28*",  "Lose", "48", "-3.5",  "67%",  "Democrat",   "Male", "...",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..."
 ) |>
   gt() |>
@@ -154,10 +154,6 @@ tribble(
   cols_align(align = "center", columns = everything()) |>
   cols_align(align = "left", columns = c(`Source`)) |>
   fmt_markdown(columns = everything()) |>
-  tab_footnote(
-    footnote = md("Units: Each row is a gubernatorial candidate (win or lose) from 1945–present."),
-    locations = cells_column_spanners(spanners = "Unit/Time")
-  ) |>
   tab_footnote(
     footnote = md("A * indicates a potential outcome that is not observed."),
     locations = cells_column_spanners(spanners = "Potential Outcomes")

@@ -723,40 +723,27 @@ Repo:
 
 ### Day 20
 
-1) Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Today is Courage. Tomorrow is Temperance.
+* Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Today is Courage. Tomorrow is Temperance.
 
-2) There is a new version of gtsummary available. Please re-install to be sure that you have it:
+* Repo to fork: https://github.com/bootcamp-2025-06/governors-courage
 
-```
-install.packages("gtsummary")
-```
+* Homework for Thursday:
 
-3) My setup code chunk:
+From the r4ds.tutorials package, complete the “Functions” (25-functions) tutorial.
 
-```{r}
-#| label: setup
-#| message: false
-library(tidyverse)
-library(primer.data)
-library(brms)
-library(tidybayes)
-library(gtsummary)
-
-x <- governors |> 
-  select(death_age, election_age, win_margin, sex) |> 
-  mutate(treatment = ifelse(win_margin > 0, "win", "lose")) |> 
-  filter(abs(win_margin) < 5) 
-```
-
-5) Key links: 
+* Class project links: 
 
 Paper: https://github.com/PPBDS/primer.data/blob/master/inst/papers/governors.pdf
 Commentary: http://www.stat.columbia.edu/~gelman/research/published/causal_paths_3.pdf
 Response: https://erikgahner.dk/2020/a-response-to-andrew-gelman/
 
-6) Homework for Thursday is to read chapters 26 and 27 from R for Data Science (2e) and, from the r4ds.tutorials package, complete the “Iteration” and "A field guide to base R" tutorials.
+* Final project links:
 
-Repo: https://github.com/Bootcamp-June-2024/election
+Projects: https://docs.google.com/spreadsheets/d/18G_6nmHJe-ilmca2cNLTLVZ51Njj6ZH5ml_zbOqhSHA
+Advice: https://davidkane.info/writings/data-for-projects.html
+
+
+
 
 ### Day 21
 
@@ -764,11 +751,8 @@ Repo: https://github.com/Bootcamp-June-2024/election
 
 2) Last homework assignment is Model Project tutorial from primer.tutorials. DO NOT START IT YET. I will finish it by Saturday at midnight and put an note in the #annoucements channel. But no worries. You can't even start this tutorial until you have a draft of your project. Do you have one yet?
 
-3) Put your brm() call and a fixef() of the resulting object into the #projects channel. If you bracket the code with three backticks, it will look nice.
 
-4) I updated the Temperance section of the Cardinal Virtues chapter with a discussion about scaling and intervals. Highly recommended! https://shorturl.at/EXyPu
 
-5) See the analysis.qmd file in my repo if you want a working version of the Courage code from Wednesday.
 
 Repo: https://github.com/Bootcamp-June-2024/election
 
