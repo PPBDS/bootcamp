@@ -181,17 +181,18 @@ fit_cs |>
 
 Give the R code you used to fit your regression model to AI and ask it to create a LaTeX version of the regression equation that matches your model. 
 
-<!-- DK: Fix this not to use I() garbage. -->
+<!-- DK: Fix this not to use I() garbage. Done -->
 
 Paste the LaTeX equation from AI below.
 $$
-\widehat{\text{g4math}} = 695\ -\ 1.95\,
-\text{I}(\text{kind} = \text{regular with aid})\ -\ 7.66\,
-\text{I}(\text{kind} = \text{small})\ +\ 38.7\,
-\text{I}(\text{race} = \text{others})\ +\ 16.3\,
-\text{I}(\text{race} = \text{white})\ +\ 2.18\,
-\text{yearssmall}
+\widehat{\text{g4math}} = 695
+- 1.95\, \text{kind}_{\text{regular with aid}}
+- 7.66\, \text{kind}_{\text{small}}
++ 38.7\, \text{race}_{\text{others}}
++ 16.3\, \text{race}_{\text{white}}
++ 2.18\, \text{yearssmall}
 $$
+
 
 ## Marginal Effects
 
