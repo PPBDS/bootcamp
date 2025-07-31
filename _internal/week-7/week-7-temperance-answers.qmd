@@ -97,4 +97,41 @@ tribble(
   )
 ```
 
+## DGM
+
+* Take a look at our fitted model. Use `tidy()` to examine the confidence intervals of the parameters. Are they any changes we might consider making?
+
+
+```{r}
+fit_causal
+```
+
+```{r}
+fit_causal |> 
+  tidy(conf.int = TRUE)
+```
+
+The model looks OK! You might think that the non-significant confidence interval for `partyThird` means that we should drop the `party` variable. After all, it (easily) includes zero. But that would be wrong! When you have a categorical variable like `party`, you should keep it as long as at least one of the 0/1 dummy variables is significant. In this case, `partyRepublican` is signicant --- Republicans seem to live longer than non-Republican --- so we should keep `party`.
+
+
+* Use AI to create a nice looking table of the parameter values.
+
+
+
+* Use AI to create LaTeX code for our DGM.
+
+
+## Questions and Answers
+
+
+
+
+
+
+
+## Humility
+
+
+
+
 

@@ -747,14 +747,30 @@ Advice: https://davidkane.info/writings/data-for-projects.html
 
 ### Day 21
 
-1) Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Wednesday was Courage. Today is Temperance.
+* Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Monday was Wisdom and Justice. Wednesday was Courage. Today is Temperance.
 
-2) Last homework assignment is Model Project tutorial from primer.tutorials. DO NOT START IT YET. I will finish it by Saturday at midnight and put an note in the #annoucements channel. But no worries. You can't even start this tutorial until you have a draft of your project. Do you have one yet?
+* Monday homework:
+
+  1) From the primer.tutorials package, complete the “Project” tutorial before class, or you will be removed the course. There are no extensions for this assignment. Note that, when you download your answers, there may be a conflict with the first time you did this tutorial 3 weeks ago. Don't sweat it. You can submit your HTML answers named however you like.
+
+  2) You must have a draft of your final project, including a Quarto website and your paragraph introduction.
+
+  3) From the r4ds.tutorials package, complete the “Iteration” (26-iteration) tutorial.
+
+* This is the link for the `991-project` tutorial homework, due Monday:
+
+https://docs.google.com/spreadsheets/d/1jFafWAaz-cdzvJ8tfyALY_XrZ9h-NjEYqAOfG0lNJNs
+
+This is the spreadsheet which you fill out with information about your final project.
+
+* Repo to fork: https://github.com/bootcamp-2025-06/governors-temperance
+
+* Demo Day next Thursday. Get excited! We will send email invitations on Monday.
+
+* Remember: To officially comlete the course, you must submit a final project. If you can't present on Demo Day, that is OK. But we all hope you can be there!
 
 
-
-
-Repo: https://github.com/Bootcamp-June-2024/election
+Repo: 
 
 ## Week 8
 
