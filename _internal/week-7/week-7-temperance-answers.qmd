@@ -12,6 +12,8 @@ library(tidyverse)
 library(gt)
 library(primer.data)
 library(tidymodels)
+library(broom)
+library(marginaleffects)
 
 # Filter the data to make the assumptions of stability and unconfoundedness more reasonable.
 
@@ -114,24 +116,117 @@ fit_causal |>
 The model looks OK! You might think that the non-significant confidence interval for `partyThird` means that we should drop the `party` variable. After all, it (easily) includes zero. But that would be wrong! When you have a categorical variable like `party`, you should keep it as long as at least one of the 0/1 dummy variables is significant. In this case, `partyRepublican` is signicant --- Republicans seem to live longer than non-Republican --- so we should keep `party`.
 
 
-* Use AI to create a nice looking table of the parameter values.
+* Use AI to create a nice looking table of the parameter values. (Only work on this question if your group is going very fast and has extra time.)
 
+```{r}
+fit_causal |> 
+  tidy(conf.int = TRUE) |>
+  gt() |>
+  tab_header(
+    title = "Linear Regression Results",
+    subtitle = "Predicting Years Lived After Election"
+  ) |>
+  cols_label(
+    term = "Term",
+    estimate = "Estimate",
+    std.error = "SE",
+    statistic = "t-statistic",
+    p.value = "p-value",
+    conf.low = "95% CI Lower",
+    conf.high = "95% CI Upper"
+  ) |>
+  fmt_number(
+    columns = c(estimate, std.error, statistic, conf.low, conf.high),
+    decimals = 2
+  ) |>
+  fmt_scientific(
+    columns = p.value,
+    decimals = 2
+  ) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels()
+  ) |>
+  tab_style(
+    style = cell_fill(color = "lightgray"),
+    locations = cells_body(
+      columns = estimate
+    )
+  ) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(
+      columns = estimate,
+      rows = p.value < 0.05
+    )
+  ) |>
+  tab_footnote(
+    footnote = "Bold estimates indicate statistical significance (p < 0.05)",
+    locations = cells_column_labels(columns = estimate)
+  ) |>
+  tab_options(
+    table.font.size = 12,
+    heading.align = "center",
+    column_labels.border.top.style = "solid",
+    column_labels.border.bottom.style = "solid",
+    table_body.border.bottom.style = "solid"
+  )
+``` 
 
+* Use AI to create LaTeX code for our DGM. (Only work on this question if your group is going very fast and has extra time.)
 
-* Use AI to create LaTeX code for our DGM.
-
+$$
+\begin{align}
+\text{lived\_after} &= 67.56 + 8.63 \cdot \text{election\_result}_{\text{Win}} - 1.46 \cdot \text{win\_margin} \nonumber \\
+&\quad - 0.89 \cdot \text{election\_age} + 4.04 \cdot \text{party}_{\text{Republican}} - 9.50 \cdot \text{party}_{\text{Third party}}
+\end{align}
+$$
 
 ## Questions and Answers
 
+Recall our original question: Do winning candidates live longer? Well, do they? And do other candidate characteristics matter?
+
+* First, let's look at individual variables which are included in our DGM. Hint: Use `plot_predictions()`
+
+```{r}
+fit_causal |> 
+  predictions()
+```
+
+```{r}
+fit_causal |> 
+  plot_predictions(condition = c("election_result"))
+```
+
+```{r}
+fit_causal |> 
+  plot_predictions(condition = c("party"))
+```
+
+```{r}
+fit_causal |> 
+  plot_predictions(condition = c("election_age"))
+```
 
 
+* Second, combine several variables --- and think about which ones you should select --- into a nice looking plot. There is no wrong answer! But some plots look better than others.
 
+```{r}
+fit_causal |> 
+  plot_predictions(condition = c("election_age",  "election_result", "party"))
+```
+
+* If there is time, use the `draw = FALSE` option to `plot_predictions()` to pull out the raw data. Then, tell an AI about that tibble and ask for some nice ggplot code. Pay special attention to the subtitle.
 
 
 
 ## Humility
 
+* What is, truly, your best guess as to the causal effect of winning an election on longevity?
 
+My answer: I predict that candidate who win an election live a few years longer than they would have otherwise, but I would not be surprised if, in fact, the effect is actually negative. My best guess is 3 years +/-5.
+
+Why is my 
 
 
 
