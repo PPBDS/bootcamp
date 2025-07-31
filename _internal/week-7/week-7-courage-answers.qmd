@@ -36,7 +36,7 @@ tribble(
   "Sanders",        "16",   "Win", "7.2",  "56", "100%", "Democrat", "Male", "...",
   "Warren",     "34",   "Win", "3.5",  "48", "67%",  "Democrat",   "Female", "...",
     "..."               , "..." , "..." , "..." , "..." , "..." , "..." , "...", "...",
-  "McConnell", "12",   "Win","-9.0",  "54", "80%",  "Republican", "Male", "..."
+  "McConnell", "12",   "Win","9.0",  "54", "80%",  "Republican", "Male", "..."
 ) |>
   gt() |>
   tab_header(title = "Preceptor Table") |>
@@ -73,7 +73,7 @@ tribble(
   "Preceptor Table", "Sanders",   "2025",      "16",   "Win", "7.2",  "56", "100%", "Democrat", "Male", "...",
   "Preceptor Table", "Warren", "2025",      "34",   "Win", "3.5",  "48", "67%",  "Democrat",   "Female", "...",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...",
-    "Preceptor Table","McConnell","2025",   "12",   "Win","-9.0",  "54", "80%",  "Republican", "Male", "...",
+    "Preceptor Table","McConnell","2025",   "12",   "Win","9.0",  "54", "80%",  "Republican", "Male", "...",
   "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..."
 ) |>
   gt() |>
