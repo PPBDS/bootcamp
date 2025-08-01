@@ -218,15 +218,61 @@ fit_causal |>
 
 * If there is time, use the `draw = FALSE` option to `plot_predictions()` to pull out the raw data. Then, tell an AI about that tibble and ask for some nice ggplot code. Pay special attention to the subtitle.
 
+```{r}
+fit_causal |> 
+  plot_predictions(condition = c("election_age", "election_result", "party"),
+                   draw = FALSE) |>
+  ggplot(aes(x = election_age, y = estimate, color = election_result, fill = election_result)) +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2, color = NA) +
+  geom_line(linewidth = 1.2) +
+  facet_wrap(~ party, scales = "free") +
+  scale_color_manual(
+    values = c("Lose" = "#E31A1C", "Win" = "#1F78B4"),
+    name = "Election Result"
+  ) +
+  scale_fill_manual(
+    values = c("Lose" = "#E31A1C", "Win" = "#1F78B4"),
+    name = "Election Result"
+  ) +
+  scale_x_continuous(
+    name = "Age at Election",
+    breaks = seq(30, 80, 10),
+    labels = seq(30, 80, 10)
+  ) +
+  scale_y_continuous(
+    name = "Predicted Years Lived After Election"
+  ) +
+  labs(
+    title = "Predicted Longevity by Election Age and Outcome",
+    subtitle = "How winning or losing an election affects predicted years of life remaining",
+    caption = "Shaded areas represent 95% confidence intervals"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5, margin = margin(b = 5)),
+    plot.subtitle = element_text(size = 12, color = "gray40", hjust = 0.5, margin = margin(b = 20)),
+    plot.caption = element_text(size = 10, color = "gray50", hjust = 1),
+    strip.text = element_text(size = 12, face = "bold", color = "gray20"),
+    strip.background = element_rect(fill = "gray95", color = NA),
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(color = "gray90", linewidth = 0.5),
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.text = element_text(size = 11),
+    axis.title = element_text(face = "bold", size = 11),
+    axis.text = element_text(size = 10),
+    panel.spacing = unit(1, "lines")
+  )
+```
 
 
 ## Humility
 
 * What is, truly, your best guess as to the causal effect of winning an election on longevity?
 
-My answer: I predict that candidate who win an election live a few years longer than they would have otherwise, but I would not be surprised if, in fact, the effect is actually negative. My best guess is 3 years +/-5.
+My answer: I predict that candidates who win an election live a few years longer than they would have otherwise, but I would not be surprised if, in fact, the effect is actually negative. My best guess is 3 years +/-5.
 
-Why is my 
+
 
 
 
