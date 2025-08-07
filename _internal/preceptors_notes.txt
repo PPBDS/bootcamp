@@ -792,28 +792,21 @@ Repo:
 
 ### Day 2
 
-* Tell me a number (with a sensible number of signficant digits), and your certainty about that number. Every summary sentence should do this. Data science means numbers, and uncertainty!
+* Tell your audience e a number (with a sensible number of signficant digits), and your certainty about that number. Every summary sentence should do this. Data science means numbers, and uncertainty!
 
-* Confirm your participation in Demo Day here: https://shorturl.at/LMVRO
+* Confirm your presence/absence for Demo Day: https://docs.google.com/spreadsheets/d/1jFafWAaz-cdzvJ8tfyALY_XrZ9h-NjEYqAOfG0lNJNs
 
-* Make sure that you arrive no later than 7:50 for class tomorrow. 
+* Run this code: `as.Date(Sys.Date() + runif(1, 5*365, 6*365))`
 
-* I am considering teaching two different courses this fall. 
+* Make sure that you arrive no later than 7:50 for Demo Day. 
 
-  + This class, but over the course of 12 weeks, with less work each week.
-  + An introductory philosophy class which would read some Great Books and then use generative AI to create cool multimedia essays/art.
-  
-However, I am not sure who would take either class. As you can see, most of my students are in high school or college. Such students are usually too busy to work during the fall semester. I suspect that the most likely potential students would be either home-schooled or at private/charter school (with flexible rules) which might be willing to work with me to teach a group of their students (for free) all at once.
-
-If you know someone who might be interested (like your uncle works at a high school), please have them email me (dave.kane@gmail.com) to discuss. I will also send out a message about this to the Substack list this week-end.
-
-* Below is a draft email. Modify as you like. We will send this email during class tonight.
+* Below is a draft email. Modify as you like. We will send this email during class tonight. You must bcc your TF.
 
 ---
-Please come watch me present my final project for Kane’s Data Science Course at 8:00 PM EDT on Thursday, August 8. Links: 
+Please come watch me present my final project for Kane’s Data Science Course at 8:00 PM EDT on Thursday, August 7. Links: 
 
 Zoom: https://us06web.zoom.us/j/81184262640
-Room Assignments: 
+Room Assignments: https://docs.google.com/spreadsheets/d/1EJyE1rZFA9X6x9J5cMiTEfIiLMc4MfwpnfgAXrXAN7c
 Projects: https://bootcamp.davidkane.info/projects.html
 Background: http://bootcamp.davidkane.info/demo_day.html
 
@@ -824,6 +817,6 @@ No worries if you can't make it!
 
 * We will do a quick dry run of the start of Demo Day tonight. First, we will all go out to the correct rooms, just to be sure that we can get there. Second, TFs will then adjust room placement depending on who is absent. (They will do this, either by moving someone from the "last" room to the missing spot or, better, by assigning a TF to fill that spot. When the latter happens, the TF will always be in Group B.)
 
-* Then, after some time in the main room, we will practice our presentations a couple of times BUT GOING IN REVERSE ORDER, the better to see different students present. Of course, tomorrow we will go in the correct order. Give good feedback to each other!
+* Then, after some time in the main room, we will practice our presentations a couple of times. Give good feedback to each other!
 
-
+* We will probably change around the room assignments for tomorrow so that you can to see different presentations. Check the spreadsheet at the start of Demo Day.
