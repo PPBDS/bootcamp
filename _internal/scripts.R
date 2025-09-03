@@ -4,16 +4,17 @@ library(tutorial.helpers)
 library(tidyverse)
 
 homework <- function(pattern = "."){
-  
-  
-  x <- process_submissions("~/Downloads/responses", 
+
+
+   x <- submissions_summary("~/Downloads/responses", 
                            title = pattern, 
-                           key_vars = c("name", 
-                                        "email", 
-                                        "minutes"), 
-                           verbose = 2, 
-                           keep_file_name = "Space")
+                           vars = c("name", 
+                                    "email", 
+                                    "minutes"), 
+                           verbose = TRUE, 
+                           keep_file_name = "Space") 
   
+
   
   ret_df <- x |> 
     distinct(source, email, .keep_all = TRUE) |> 
@@ -34,6 +35,7 @@ homework <- function(pattern = "."){
 }
 
 
+# Not sure the below scripts still work.
 
 assignments <- 
   c("getting-started",
