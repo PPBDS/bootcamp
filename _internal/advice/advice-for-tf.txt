@@ -1,6 +1,6 @@
 # TF Advice
 
-Someone is always sharing their screen. Someone is always telling that screen sharer what to type. There is always one "sharer" and one "driver." And those roles switch often, at least every time we go back to breakout rooms from the main room. Your most important job is to make that happen, and make sure that all students participate.
+One student is always sharing their screen. Another student is always telling that screen sharer what to type. There is always one "sharer" and one "driver." And those roles switch often, at least every time we go back to breakout rooms from the main room. Your most important job is to make that happen, and make sure that all students participate.
 
 Motto: Always tell. Never ask.
 
@@ -10,11 +10,13 @@ That is, do not ask "Who wants to share their screen?" Instead, say "Joe, please
 
 Start by telling someone to share their screen. If they are messed up somehow, switch to a different person. Tell another person to drive. If they are clueless, no worries! Just say, "No worries. John (new person), please direct Sarah." If John is clueless, switch immediately to a new person. After a few minutes, have a different person share their screen. Choose a different driver. Never share your screen. Never, or at least rarely, drive. Never waste time with people who are having weird difficulties. Fix weird difficulties after class is over.
 
+Use AI as much as possible. You should often tell everyone in the room: "Ask your favorite AI X." They can use whatever AI they like. Then you call on someone to share their screen and you all look, together, at how they asked the question and what the AI said. You offer commentary. Cold-calling like this ensures that everyone actually asks their AI.
+
 Keep the Head TF informed. They will create a spreadsheet in which you can indicate what days, if any, you are missing. Most important day to not miss is the last Demo Day (August 7). Try to be there, if you can. But, always remember: Family comes first!
 
 When we are doing a data science project, emphasize how there are often a variety of plausible approaches. Reasonable people will often, for example differ in the rows of the Preceptor Table or in the variables they include in the model. We see that in how different breakout rooms make different choices. But it is easiest if every student in a single breakout room makes the same choices for that day's class. So, you should guide each of your breakout rooms to do so. In fact, it is best to guide all rooms toward the path in our answer. If they get too far off-track, it may be tough to bring them back. 
 
-Use AI as much as possible. You should often tell everyone in the room: "Ask your favorite AI X." They can use whatever AI they like. Then you call on someone to share their screen and you all look, together, at how they asked the question and what the AI said. You offer commentary. Cold-calling like this ensures that everyone actually asks their AI.
+
 
 
 ### Before Week 1
