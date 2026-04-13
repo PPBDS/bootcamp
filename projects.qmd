@@ -74,8 +74,6 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Grant Quattlebaum](https://github.com/GrantQ9): [Quality of Magic: the Gathering Cards for Draft](https://grantq9.github.io/MTG-Draft-Card-Quality/). For rare Magic cards, a one mana higher cost is associated with a 0.55% increase in winning the game, give or take 0.25%.  
 
-[SriRitvik Yellamilli](https://github.com/Pineapplespace789/average-wages): [Average Hourly Wages Yearly in the US](https://pineapplespace789.quarto.pub/wages-in-usa/). Men generally earn higher wages than women in all observed categories, with men averaging $15,000 and women averaging $12,000 per month, reflecting a significant gender wage gap.  
-
 [Sophie Zhu](https://github.com/sophiezla): [Sepsis Survival Predictions](https://sophiezla.github.io/sepsis-survival-predictions/). A 60 year old female with 1 case of Sepsis is predicted to have a 95.86% chance of survival, though this may be between 95.25% to 96.41%. 
 
 [Harshil Kurapati](https://github.com/hkurapat): [Income correlated to Race and Gender](https://hkurapat.quarto.pub/income-based-on-race-and-gender/). The analysis reveals that both race and gender significantly influence income levels, with disparities evident across different racial groups and between genders.  
