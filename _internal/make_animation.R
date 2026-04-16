@@ -21,6 +21,6 @@ gap_anim <- gapminder %>%
   labs(title = "Year: {frame_time}") +
   shadow_wake(wake_length = 0.1, alpha = FALSE)
 
-gap_anim
 
-write_rds(gap_anim, file = "images/animation.rds")
+
+anim_save("images/animation.gif", gap_anim)
