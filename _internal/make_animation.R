@@ -17,10 +17,18 @@ gap_anim <- gapminder %>%
        x = "GDP per Capita, USD",
        y = "Life Expectancy, Years") +
   theme_linedraw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   transition_time(year) +
   labs(title = "Year: {frame_time}") +
   shadow_wake(wake_length = 0.1, alpha = FALSE)
 
 
 
-anim_save("images/animation.gif", gap_anim)
+anim <- animate(gap_anim, 
+                width = 800, 
+                height = 500, 
+                res = 150,
+                nframes = 100,
+                fps = 10)
+
+anim_save("images/animation.gif", anim)

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 **Kane's (Free) Data Science Course** runs for 8 weeks, mostly each summer. The next session should start on June 15, 2026. The workload is 10 hours per week: 3 hours in class with [former Harvard Preceptor David Kane](https://www.davidkane.info/), lecturing live on Zoom at 8:00 PM ET on M/W/Th and 7 hours of work completed by students on their own. By the end of this course, students will be able use generative AI to do data science! **There is no charge.**
 
-![](images/animation.gif)
+![](images/animation.gif){width=100%}
 
 Check out the [final projects](https://bootcamp.davidkane.info/projects.html) created by prior students. Want to make something like that? Take the course! See [here](https://davidkane.info/writings/philosophy.html) for details on my teaching philosophy.
 
