@@ -150,8 +150,8 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://www.davidkane.info">David Kane</a> is the former Preceptor in Statistical Methods and Mathematics in the Department of Government at Harvard University.</p>
 </section>
 </section>
-<section id="senior-teaching-fellows" class="level1">
-<h1>Senior Teaching Fellows</h1>
+<section id="senior-staff" class="level1">
+<h1>Senior Staff</h1>
 <section id="aadhira-satheesh" class="level2">
 <h2 class="anchored" data-anchor-id="aadhira-satheesh">Aadhira Satheesh</h2>
 <div class="cell">
@@ -216,6 +216,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p><a href="https://github.com/sruthigandhi">Sruthi Gandhi</a>(sruthi.gandhi at outlook.com) recently graduated from Ryle High School with an interest in computer science, machine learning, and data science.</p>
+</section>
+<section id="aaditya-gupta-1" class="level2">
+<h2 class="anchored" data-anchor-id="aaditya-gupta-1">Aaditya Gupta</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/aaditya.jpeg" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://github.com/AadityaG2011">Aaditya Gupta</a> (aadi10may@gmail.com) is a sophomore at Rocklin High School with an interest in computer science, mathematics, and business.</p>
 
 
 </section>
@@ -295,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/bootcamp\.davidkane\.info");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

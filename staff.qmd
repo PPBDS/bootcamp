@@ -61,3 +61,11 @@ knitr::include_graphics("images/sgandhi.jpg")
 ```
 
 [Sruthi Gandhi](https://github.com/sruthigandhi)(sruthi.gandhi at outlook.com) recently graduated from Ryle High School with an interest in computer science, machine learning, and data science.
+
+## Aaditya Gupta
+
+```{r}
+knitr::include_graphics("images/aaditya.jpeg")
+```
+
+[Aaditya Gupta](https://github.com/AadityaG2011) (aadi10may@gmail.com) is a sophomore at Rocklin High School with an interest in computer science, mathematics, and business.
