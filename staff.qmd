@@ -69,3 +69,11 @@ knitr::include_graphics("images/aaditya.jpeg")
 ```
 
 [Aaditya Gupta](https://github.com/AadityaG2011) (aadi10may@gmail.com) is a sophomore at Rocklin High School with an interest in computer science, mathematics, and business.
+
+## Satvika Upperla
+
+```{r}
+knitr::include_graphics("images/satvika.jpeg")
+```
+
+[Satvika Upperla](https://github.com/USATVIKA) (upperlasatvika@gmail.com) is a senior at Allen High School with an interest in environmental science, data science, machine learning, and just about anything honestly. 

@@ -1,0 +1,51 @@
+---
+title: "SAT Score Distribution by Race, 2018–2025"
+format:
+  html:
+    toc: false
+    fig-width: 11
+    fig-height: 9
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(dplyr)
+library(readr)
+library(purrr)
+library(ggplot2)
+```
+
+```{r}
+#| label: plot
+#| echo: false
+#| message: false
+#| warning: false
+
+years <- 2018:2025
+files <- sprintf("../scores/data/sat/%d.csv", years)
+
+bucket_levels <- c("400-590", "600-790", "800-990",
+                   "1000-1190", "1200-1390", "1400-1600")
+
+race_levels <- c("Asian", "White", "Two or More Races",
+                 "Hispanic/Latino", "Native Hawaiian/Other Pacific Islander",
+                 "Black/African American", "American Indian/Alaska Native")
+
+plot_df <- map_dfr(files, read_csv, show_col_types = FALSE) |>
+  filter(score_range != "all", race %in% race_levels) |>
+  mutate(score_range = factor(score_range, levels = bucket_levels),
+         race        = factor(race,        levels = race_levels),
+         year        = factor(year))
+
+ggplot(plot_df, aes(x = score_range, y = percent, fill = year)) +
+  geom_col(position = position_dodge(width = 0.85), width = 0.8) +
+  facet_wrap(~ race, ncol = 2) +
+  scale_fill_viridis_d(option = "viridis", name = "Year") +
+  labs(x = "Total score",
+       y = "Percent of group",
+       caption = "Source: College Board, SAT Suite Annual Reports 2018–2025") +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1),
+        legend.position = "bottom")
+```
