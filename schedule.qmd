@@ -6,6 +6,7 @@ title: "Schedule"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+**DRAFT: Will be revised in over the coming weeks. Mostly leftover from last year.**
 
 
 **Submit each of your homework answers, as an html file, via [this Google form](https://forms.gle/j3hBXL1XT3JMiscN8) before midnight on the day before the class for which the homework was assigned.**
@@ -13,21 +14,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Key resources: [*R for Data Science (2e)*](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/) by David Kane, [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/) by Kyle Walker. 
 
-See the home pages for [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/), [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/), [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/), and [**tidycensus.tutorials**](https://ppbds.github.io/tidycensus.tutorials/) for installation instructions.
+See the home pages for [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) and [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/).
 
 Always reinstall the relevant package before starting a new tutorial. Example for **primer.tutorials**:
 
 ```
 remove.packages("primer.tutorials")
-remotes::install_github("PPBDS/primer.tutorials")
+remotes::install_github("PPBDS/primer", subdir = "primer.tutorials")
 ```
 
 We are always fixing mistakes. You want to use the latest version.
 
-If you do not complete the tutorials on time, you will be removed from the class. Send in your tutorial answers saved in *html* format. Please try to ensure that the name of the file is the default name, like `positron_answers.html`. Avoid using the name which will be assigned to the file if you download the same answers twice (or more), stuff like `positron_answers (2).html`. You can just change the name of the file by hand if this happens.
+If you do not complete the tutorials on time, you will be removed from the class. Send in your tutorial answers saved in *html* format. Please try to ensure that the name of the file is the default name, like `01-code_answers.html`. Avoid using the name which will be assigned to the file if you download the same answers twice (or more), stuff like `01-code_answers (2).html`. You can just change the name of the file by hand if this happens.
 
 
-# Week 1: June 16
+# Week 1: June 15
 
 Introduction to the tools we use for doing data science.
 
@@ -37,58 +38,46 @@ Introduction to the tools we use for doing data science.
 
 * Read the Introduction from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Introduction" (`00-introduction`) tutorial. 
+* From the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package, complete the "Introduction to R" tutorial. 
 
-* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and Code" (`01-code`) tutorial. Make sure that you have already completed the "Introduction" tutorial above before you start the "Positron and Code" tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Code" (`01-code`) tutorial. Make sure that you have already completed the "Introduction to R" tutorial above before you start the "Code" tutorial.
 
 ## Wednesday
 
-* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and Quarto" (`02-quarto`) and "Terminal" (`03-terminal`) tutorials.
-
-* Read Chapters 1 - 3 from [*R for Data Science (2e)*](https://r4ds.hadley.nz/). 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data visualization" (`01-data-visualization`) and "Data transformation" (`03-data-transformation`) tutorials. 
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto" (`02-quarto`) and "Terminal" (`03-terminal`) tutorials. 
 
 **Reminder**: All work must be completed before class. Failure to submit your tutorial answers will result in you being removed from the course. It is not fair to your fellow students, with whom you will be working in small groups, for you to not be prepared for class.
 
 ## Thursday 
 
-Going forward, we recommend that you read the chapters in [*R for Data Science (2e)*](https://r4ds.hadley.nz/) associated with each tutorial we assign from the **r4ds.tutorials** package. However, we stop listing them explicitly.
-
-* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and GitHub Introduction" (`04-github-1`) tutorial.
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data tidying" (`05-data-tidying`). 
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Introduction" (`04-github-1`) tutorial.
 
 
-# Week 2: June 23
+# Week 2: June 22
 
 Finish learning about tools like Quarto and GitHub Pages. Start learning about models and inference.
 
 ## Monday 
 
-* Read [Chapter 1 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial (`011-rubin-causal-model`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Read [Chapter 1 Probability](https://ppbds.github.io/primer/probability.html) and complete the "Probability" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
-* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Positron and GitHub Advanced" (`05-github-2`) tutorial.
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Data import" (`07-data-import`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Advanced" (`05-github-2`) tutorial.
 
 ## Wednesday
 
-* Read [Chapter 2 Probability](https://ppbds.github.io/primer/probability.html) and complete the "Probability" tutorial (`021-probability`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Read [Chapter 2 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
-* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the and "Layers" (`09-layers`) tutorial. 
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
 
 ## Thursday 
 
-* Read [Chapter 3 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial (`031-sampling`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+ * Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
-* From the [**positron.tutorials**](https://ppbds.github.io/positron.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
  
 * Read about the [Cardinal Virtues](https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html).
 
-# Week 3: June 30
+# Week 3: June 29
 
 Identify the data which you will use for your Data Project. The U.S. Census is a great source.
 
@@ -96,7 +85,7 @@ Identify the data which you will use for your Data Project. The U.S. Census is a
 
 Note that chapters 4 and higher from the *Primer* are a mess, using packages/functions which we no longer recommend. We are re-writing the *Primer* this summer. In the meantime, don't feel obligated to read any more of it, although you do have to complete the tutorials, which are up-to-date. We just list the chapters in this schedule for your reference.
 
-* Complete the "Models" tutorial (`041-models`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Complete the "Models" tutorial (`041-models`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
 * Read chapters 1 -- 3 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. 
 
@@ -107,7 +96,7 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 ## Wednesday
 
-* Complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "Two Parameters" tutorial (`051-two-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
 * Read chapters 4 and 5 from from [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/index.html) by Kyle Walker. 
 
@@ -116,26 +105,20 @@ Note that chapters 4 and higher from the *Primer* are a mess, using packages/fun
 
 ## Thursday 
 
-* Complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
+* Complete the "Three Parameters: Causal" tutorial (`061-three-parameters-causal`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
 
-# Week 4: July 7
+# Week 4: July 6
 
 The main focus on the 4th week is individual presentations of your Data Project. Do you love soccer or wine or NYC politics? The Data Project provides you with an opportunity to study that topic in depth. Your Data Project will be, for most of you, the first item in your professional portfolio, something so impressive that you will be eager to show it to graduate schools or potential employers.
 
  
 
-## Monday 
-
-* From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Project" tutorial (`991-project`) before class, or you will be removed the course. There are no extensions for this assignment.
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Exploratory data analysis" (`10-exploratory-data-analysis`) and the "Communication" (`11-communication`)  tutorials.  
+## Monday  
 
 * You must have a draft of your final project, including a Quarto website and your paragraph introduction. 
 
 ## Wednesday 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Logical vectors" (``12-logical-vectors`) and the "Numbers" (`13-numbers`) tutorials.  
 
 * Practice presentations and feedback. You must have your presentation ready to go! 
 
@@ -143,76 +126,55 @@ The main focus on the 4th week is individual presentations of your Data Project.
 
 * Data project presentations. You must invite someone, and bcc your TF when you do so.
 
-# Week 5: July 14
+# Week 5: July 13
 
 Renewed focus on models for inference.
 
 ## Monday
 
-* Complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package.  
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Strings" (`14-strings`), "Regular expressions" (`15-regular-expressions`), and "Factors" (`16-factors`) tutorials. 
+* Complete the "Mechanics" tutorial (`071-mechanics`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
 ## Wednesday
 
-* Complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Dates and times" (`17-dates-and-times`) and "Missing values" (`18-missing-values`) tutorials.
+* Complete the "Four Parameters: Categorical" tutorial (`081-four-parameters-categorical`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
 
 ## Thursday
 
-* Complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Joins" (`19-joins`) tutorial.
+* Complete the "Five Parameters" tutorial (`091-five-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
 
-# Week 6: July 21
+# Week 6: July 20
 
 ## Monday
 
-* Complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Spreadsheets" (`20-spreadsheets`) and "Databases" (`21-databases`) tutorials.
+* Complete the "N Parameters" tutorial (`101-n-parameters`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
 ## Wednesday
 
-* Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "Cumulative" tutorial (`111-cumulative`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
 ## Thursday
 
-* Complete the "Stops" tutorial (`131-stops`) from the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package. 
+* Complete the "Stops" tutorial (`131-stops`) from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
 
-
-
-# Week 7: July 28
+# Week 7: July 27
 
 ## Monday
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Arrow" (`22-arrow`) and "Hierarchical data" (`23-hierarchical-data`) tutorials. 
 
 ## Wednesday
-
-* Fom the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Web scraping" (`24-web-scraping`) tutorial. 
 
 ## Thursday 
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Functions" (`25-functions`) tutorial. 
-
-# Week 8: August 4
+# Week 8: August 3
 
 ## Monday 
 
-* From the [**primer.tutorials**](https://ppbds.github.io/primer.tutorials/) package, complete the "Project" tutorial before class, or you will be removed the course. There are no extensions for this assignment.
-
 * You must have a draft of your final project, including a Quarto website and your paragraph introduction. 
 
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "Iteration" (`26-iteration`) tutorial. 
-
 ## Wednesday 
-
-* From the [**r4ds.tutorials**](https://ppbds.github.io/r4ds.tutorials/) package, complete the "A field guide to base R" (`27-a-field-guide-to-base-R`) tutorial. 
 
 * Practice presentations and feedback. You must have your presentation ready to go! 
 
