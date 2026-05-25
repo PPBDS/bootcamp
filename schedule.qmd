@@ -40,7 +40,7 @@ Introduction to the tools we use for doing data science.
 
 * From the [**tutorial.helpers**](https://ppbds.github.io/tutorial.helpers/) package, complete the "Introduction to R" tutorial. 
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Code" (`01-code`) tutorial. Make sure that you have already completed the "Introduction to R" tutorial above before you start the "Code" tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Code" tutorial. Make sure that you have already completed the "Introduction to R" tutorial above before you start the "Code" tutorial.
 
 ## Wednesday
 
@@ -50,7 +50,7 @@ Introduction to the tools we use for doing data science.
 
 ## Thursday 
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Introduction" (`04-github-1`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Introduction" tutorial.
 
 
 # Week 2: June 22
@@ -61,19 +61,19 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 * Read [Chapter 1 Probability](https://ppbds.github.io/primer/probability.html) and complete the "Probability" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Advanced" (`05-github-2`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Advanced" tutorial.
 
 ## Wednesday
 
 * Read [Chapter 2 Sampling](https://ppbds.github.io/primer/probability.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package. 
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Introduction" (`06-websites-1`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Introduction" tutorial.
 
 ## Thursday 
 
  * Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.  
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" tutorial.
  
 * Read about the [Cardinal Virtues](https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html).
 

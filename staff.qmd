@@ -38,14 +38,6 @@ knitr::include_graphics("images/syao.jpg")
 
 [Sophia Yao](https://github.com/sophiay14) (sophia.jiani.yao at gmail.com) is a sophomore at Abbey Park High School with interests in music and electrical engineering.
 
-## Aaditya Gupta
-
-```{r}
-knitr::include_graphics("images/agupta.jpg")
-```
-
-[Aaditya Gupta](https://github.com/AadityaG2011) (aadi10may@gmail.com) is a sophomore at Rocklin High School.
-
 ## Anish Talla
 
 ```{r}
