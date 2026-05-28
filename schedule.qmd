@@ -9,14 +9,19 @@ knitr::opts_chunk$set(echo = TRUE)
 **DRAFT: Will be revised in over the coming weeks. Mostly leftover from last year.**
 
 
-**Submit each of your homework answers, as an html file, via [this Google form](https://forms.gle/j3hBXL1XT3JMiscN8) before midnight on the day before the class for which the homework was assigned.**
+**Submit each of your homework answers, as an html file, via [this Google form](https://forms.gle/zzcXYPYiNNNwi8947) before midnight on the day before the class for which the homework was assigned.**
 
 
-Key resources: [*R for Data Science (2e)*](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/) by David Kane, [*Analyzing US Census Data: Methods, Maps, and Models in R*](https://walker-data.com/census-r/) by Kyle Walker. 
+Key resources: [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/), [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/), and [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/).
 
-See the home pages for [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) and [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/).
+Always reinstall the relevant package before starting a new tutorial. Example:
 
-Always reinstall the relevant package before starting a new tutorial. Example for **primer.tutorials**:
+```
+remove.packages("vscode.tutorials")
+remotes::install_github("PPBDS/vscode.tutorials")
+```
+
+**primer.tutorials** is a little trickier:
 
 ```
 remove.packages("primer.tutorials")
