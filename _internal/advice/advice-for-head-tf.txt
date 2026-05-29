@@ -2,7 +2,7 @@ Thanks for volunteering to be a Head TF!
 
 ## Technical Set Up
 
-Make a separate Google email account for the course. This will be shared among Preceptor and the TFs, but you will still be in charge of it. Make the address something like june.2025.kdsb (where the letters stand for Kane's Data Science Bootcamp). The month is the start month of the course. All lowercase letters. The password is like june.2025.kdsbPWD.
+Make a separate Google email account for the course. This will be shared among Preceptor and the TFs, but you will still be in charge of it. Make the address something like june.2025.kdsb (where the letters stand for Kane's Data Science Bootcamp). The month is the start month of the course. All lowercase letters. The password is like june.2025.kdsbPASSWORD.
 
 In this account, set up a Google form which will be used for students submitting homework. It has two questions: "Name", and "Email". It then asks students to submit one or more html files. See previous examples. https://forms.gle/j3hBXL1XT3JMiscN8
 
@@ -22,15 +22,29 @@ Make sure you have rights to the repo.
 
 Recruit a set of senior TFs. At your discretion, one or more might be co-Head TFs, but that is up to you. These will generally be TFs from previous courses, but don't hesitate to select new TFs who seem enthusiastic and/or who might be interested in being Head TF next year. 
 
-Key point is that you will want to delegate some of your responsibilities to these senior TFs. Spreading the work around makes your life easier! Of course, you still need to supervise and ensure that everything gets done. Some possible Senior TF roles include:
+Key point is that you will want to delegate some of your responsibilities to these senior TFs. Spreading the work around makes your life easier! Of course, you still need to supervise and ensure that everything gets done. It is probably best if you personally handle TF scheduling, ensuring that there is a TF assigned to each breakout room for each class.
 
-* In charge of homework checking and Zoom link sending. This person needs access to the Google account and needs to be able to use process_submissions() from tutorial.helpers.
 
-* In charge of the Discord, with a special focus on answering student questions. This person should have admin rights to the Discord.
 
-* Responsible for TF scheduling and ensuring that there is a TF assigned to each breakout room for each class.
 
-* In charge of class materials. This mainly involves writing/checking the "script" for each class session---which is generally a QMD file---and then distributing it to the teaching staff ahead of class. They would then also post the potentially cleaned up 
+Some possible Senior TF roles include:
+
+* Arrange breakout room and TF assignments at start of course. Adjust going forward. Keep careful track of students in the course. There is one spreadsheet in which tracks everything. Good for someone who wants to be head TF next year.
+
+* Homework processing, sending out Zoom link for class, dealing with exceptions. This person needs access to the Google account and needs to be able to use process_submissions() from tutorial.helpers.
+
+* Handle Preceptor Notes. Publish a draft. Update after class with links to my repo and plot, if any.
+
+* Assignment quality control. Do each assignment a week ahead of time. Submit a PR with fixes. (2 or 3 TFs)
+
+* Class material preparation. Prepare and distribute (to TFs) material for classes. This mainly involves writing/checking the "script" for each class session---which is generally a QMD file---and then distributing it to the teaching staff ahead of class. They would then also post the potentially cleaned up 
+
+* Manage Discord. Take care of TF roles. Answer questions. Arrange Study Halls. This person should have admin rights to the Discord.
+
+* Run Demo Day. This involves figuring out who is attending, assigning them to breakout rooms, creating a webpage of the different projects, ensuring TFs are assigned to rooms, and so on.
+
+* Coding Projects, especially those related to making TF lives easier. 
+
 
 
 ## Your TFs
@@ -44,7 +58,6 @@ Get the links from last year's key spreadsheets.
 Separate out the young kids and older students into their own breakout rooms.
 
 Pay attention to which TFs and students are responsible (and flakey!). Try to make the flakey ones less flakey. Try to involve the responsible TFs in course administration.
-
 
 
 We should probably have one Head TF for each 50 students, which is about 5 TFs.
@@ -89,7 +102,3 @@ First, ask TFs if there is another TF who they want to partner with on Demo Day.
 Second, clarify just how many students these two TFs have. That determines how many rooms they need to be assigned. If there is some uncertainty, assign this pair an extra room or two. The worst case is that those rooms remain unused.
 
 Third, set up the first draft of a public spreadsheet which specifies which block of rooms each TF pair is responsible for and which students are assigned to which rooms. Ask TFs to review the spreadsheet. Require students to find themselves in the spreadsheet and then post their room assignment to the #class-work channel. Also, require students to add "Confirmed" to the column next to their room assignments. (As always, make spreadsheets which never have more than one student in a given row.)
-
-
-Notes from Navya
-

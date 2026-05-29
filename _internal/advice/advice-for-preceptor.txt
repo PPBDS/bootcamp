@@ -1,5 +1,7 @@
 ## Things To Do Before Next class
 
+* Read the advice for Head TFs and regular TFs. 
+
 * Ensure that tutorial names, ids and directories are in-sync and reasonable. I think we have decided that ids and directories should always match so that calling the tutorial (which uses the directory) uses the same string as the answers you get back (which uses the id). Both directory and id should have a prefaced number, I think.
 
 * Consider switching weeks 5 and 6. The data for 6 supplies few (and simple) covariates. So, you can only use a very simple model. THe data for 5 is richer.
@@ -14,7 +16,7 @@
 
 * Seek TF volunteers.
 
-* Set up new google account: month.YYYY.kdsb. Or maybe just use last year's since Google won't like it when you send out lots of emails from a new account, as you will want to do. Or maybe we just set up a permanent account.
+* Set up new google account: month.YYYY.kdsb. Or maybe just use last year's since Google won't like it when you send out lots of emails from a new account, as you will want to do. Or maybe we just set up a permanent account. Password is usually same name followed by PASSWORD. Still using june.2025.kdsb.
 
 * New Google form in new account.
 
@@ -23,6 +25,7 @@
 * Check the old bootcamp Discord server. Probably just use it again.
 
 * Sign up for Zoom which has enough slots of students. Can wait until enrollment firms up.
+
 
 
 
@@ -38,17 +41,11 @@
 
 * Tell students that they have 24 hours to complete the (trivial!) survey, or you reserve the right to remove them from the class. The big advantage of this is that the vast majority will do the survey, allowing the Head TF to get going on the class roster.
 
-* Require submission of the "Introduction" and "01-code" tutorial in order to get a Zoom link for the first class. Require this be submitted by Sunday at midnight.
+* Require submission of the "Introduction to R" and "01-code" tutorial in order to get a Zoom link for the first class. Require this be submitted by Sunday at midnight.
 
 * Spend Monday getting the class list organized. Need to put students into breakout rooms and assign rooms to TFs. Details will depend on # of students and of TFs. 
 
 * Solicit email from "special" students who should be grouped together. Two common examples are younger ones (<=14) and older ones (>22). Put these together in separate groups.
-
-* Create a new location for example reprexes at Posit Community for the Getting 
-Help tutorial. Here is the most recent one: 
-https://forum.posit.co/t/thread-for-students-posting-practice-reprexes-please-do-not-answer-them/196503
-
-* Update Getting Help tutorial links.
 
 * Set up class list and cold_call function.
 
@@ -75,10 +72,6 @@ The more power and responsibility the TFs have, the better. But then we are requ
 
 * Require students show up 10 minutes ahead of Demo Day. They then confirm attendance in the room assignment spreadsheet. Anyone who doesn't by T-5 minutes is deleted from the list. The TF in charge of each room group can then re-arrange things to make up for the absence.
 
-
-* Add a tidytext tutorial, if only to set the groundwork for a class exercise 
-in week 3.
-
 * Standardize (either in a tutorial or as a spreadsheet) students submitting 
 their data project ideas (and a URL) before class #7.
 
@@ -94,8 +87,7 @@ construction of something cool.
 
 * Use AI.
 
-* Keep careful track of students in the course. There is one spreadsheet in 
-which the head TF keeps track of students in the class.
+
 
 ## Zoom Issues
 
@@ -118,8 +110,6 @@ start Wednesday's class from the same starting line.
 the Preceptor Notes.
 
 
-
-* Finally, we distribute after class the repo (again) and the published answer page.
 
 ## Schedule
 
