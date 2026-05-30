@@ -16,7 +16,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 [Sign up for our e-mail list](https://davidkane.substack.com/) to receive updates about the course going forward.
 
-**Kane's (Free) Data Science Course** runs for 8 weeks, mostly each summer. The next session should start on June 15, 2026. The workload is 10 hours per week: 3 hours in class with [former Harvard Preceptor David Kane](https://www.davidkane.info/), lecturing live on Zoom at 8:00 PM ET on M/W/Th and 7 hours of work completed by students on their own. By the end of this course, students will be able use generative AI to do data science! **There is no charge.**
+**Kane's (Free) Data Science Course** runs for 8 weeks, mostly each summer. The next session will start on June 15, 2026. The workload is 10 hours per week: 3 hours in class with [former Harvard Preceptor David Kane](https://www.davidkane.info/), lecturing live on Zoom at 8:00 PM ET on M/W/Th and 7 hours of work completed by students on their own. By the end of this course, students will be able use generative AI to do data science! **There is no charge.**
+
+To register for the class, you must:
+
+Read the [Getting Started](https://ppbds.github.io/primer/getting-started.html) chapter from the *[Primer](https://ppbds.github.io/primer/)* and follow the instructions. Those instructions show you how to complete the “Getting Started” and “Introduction to R” tutorials from the **tutorial.helpers** package. Submit your downloaded answers to these two tutorials via [this Google form](https://forms.gle/zzcXYPYiNNNwi8947).
 
 ![](images/animation.gif){width=100%}
 
