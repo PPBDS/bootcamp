@@ -10,7 +10,7 @@ Test the email and the Google form from your personal account. Have the TFs subm
 
 Familiarize yourself with the website repo: https://github.com/PPBDS/bootcamp. You will be submitting pull requests to this repo. (I will accept the PRs and publish the site.) Not sure what a PR is? Read: https://ppbds.github.io/primer/set-up.html
 
-Prove that you can submit PRs by submitting one which adds your name to the top of this text file, which is located in _internal/advice-for-head-tf.txt.
+Prove that you can submit PRs by submitting one which adds your name to the bottom of this text file, which is located in _internal/advice-for-head-tf.txt.
 
 Familiarize yourself with the tutorial.helpers package, especially the process_submissions() function. This is what you will use to monitor homework completion and, thereby, determine which students to mail out the Zoom link to for the next class.
 
@@ -32,17 +32,17 @@ Key point is that you will want to delegate some of your responsibilities to the
 * Arrange breakout room and TF assignments at start of course. Adjust going forward. Keep careful track of students in the course. There is one spreadsheet in which tracks everything. Good for someone who wants to be head TF next year. 
 Aaditya
 
-* Homework processing, sending out Zoom link for class, dealing with exceptions. This person needs access to the Google account and needs to be able to use process_submissions() from tutorial.helpers. Aadhira
+* Homework processing, sending out Zoom link for class, dealing with exceptions. This person needs access to the Google account and needs to be able to use process_submissions() from tutorial.helpers. 
 
 * Handle Preceptor Notes. Publish a draft. Update after class with links to my repo and plot, if any.
 
-* Assignment quality control. Do each assignment a week ahead of time. Submit a PR with fixes. (2 or 3 TFs)
+* Assignment quality control. Do each assignment a week ahead of time. Submit a PR with fixes.
 
 * Class material preparation. Prepare and distribute (to TFs) material for classes. This mainly involves writing/checking the "script" for each class session---which is generally a QMD file---and then distributing it to the teaching staff ahead of class. They would then also post the potentially cleaned up answers. Anish
 
-* Manage Discord. Take care of TF roles. Answer questions. Arrange Study Halls. This person should have admin rights to the Discord. Aadhira
+* Manage Discord. Take care of TF roles. Answer questions. Arrange Study Halls. This person should have admin rights to the Discord. 
 
-* Run Demo Day. This involves figuring out who is attending, assigning them to breakout rooms, creating a webpage of the different projects, ensuring TFs are assigned to rooms, and so on.
+* Run Demo Day. This involves figuring out who is attending, assigning them to breakout rooms, creating a webpage of the different projects, ensuring TFs are assigned to rooms, and so on. Jack
 
 * Coding projects, especially those related to making TF lives easier. This is mostly adding more functionality to the tutorial.helpers package. 
 

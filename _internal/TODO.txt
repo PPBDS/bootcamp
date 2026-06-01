@@ -1,6 +1,13 @@
+## Priorities
+
+Create a skill file for data projects and model projects which students can use to check their projects.
+
+Create a skill file which we use to provide feedback (and grading) on projects.
+
+
+
 ## Things to do when class is Over
 
-Change the id's in r4ds.tutorials so that they match the folder names, like 00-introduction because it is best if how you call the tutorial matches the default file name.
 
 
 ## Priorities for June Class
@@ -27,25 +34,13 @@ Week 8: Demo Day
   
   + 3) Where do we populate information about work completed? That is, we want to be able to report who has submitted each homework, perhaps also with the number of answers. We need to put that information somewhere, update it with scripts, and then allow TFs to be able to access it. 
 
-Who is in charge of data suggestions?
-
-Get Data Project and Model Project tutorials ready. Or maybe there is just one tutorial, and you can skip the model questions if they are not relevant.
-
 Add tutorial running instructions in each README for tutorial packages.
 
 https://www.youtube.com/channel/UC7nH64nO2LVaWWhJLtiV-mg
 https://youtube.com/shorts/Q-VBR3yb7r0?feature=share
 https://youtube.com/shorts/CCbE6rqD5G8?feature=share
 
-Update Getting Help tutorial links
 
-Setup Excel spreadsheet for Data and Model Projects
-
-figure out tidycensus tutorials
-
-email R4DS authors, looking for a retweet
-
-ask our one user for a retweet.
 
 See discussion below about centering the course around social capital data.
 
@@ -85,6 +80,4 @@ Is whimsical a useful tool for teaching the class itself?
 Rweekly.
 
 #rstats
-
-Anish Talla
 

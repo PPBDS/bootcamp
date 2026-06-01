@@ -2,8 +2,6 @@
 
 * Read the advice for Head TFs and regular TFs. 
 
-* Ensure that tutorial names, ids and directories are in-sync and reasonable. I think we have decided that ids and directories should always match so that calling the tutorial (which uses the directory) uses the same string as the answers you get back (which uses the id). Both directory and id should have a prefaced number, I think.
-
 * Consider switching weeks 5 and 6. The data for 6 supplies few (and simple) covariates. So, you can only use a very simple model. THe data for 5 is richer.
 
 * Convert weeks 5, 6 and 7 to new process. One answer file for each day, with the questions bunched together in paragraphs. Each day, take the answer file, strip away the answers, then upload the new qmd to a new repo. Students then fork that repo to start the day.
@@ -33,7 +31,7 @@
 
 * Start registration process three weeks before course starts. After a week, let people know that registration ends in a week, a week before class starts. Close registration a week ahead. Of course, you can let in, by hand, some extra students, but the sooner you nail down the students, the better.
 
-* Require submission of the "Getting Started" tutorial in order to "register" for the class. This guarantees that you will have a spot, but you still need to do all the work. 
+* Require submission of the "Getting Started" and "Introduction to R" tutorials in order to "register" for the class. This guarantees that you will have a spot, but you still need to do all the work. 
 
 * Inform about the survey and the homework for class 1 at the same time you close registration, which is the Monday before.
 
@@ -41,7 +39,7 @@
 
 * Tell students that they have 24 hours to complete the (trivial!) survey, or you reserve the right to remove them from the class. The big advantage of this is that the vast majority will do the survey, allowing the Head TF to get going on the class roster.
 
-* Require submission of the "Introduction to R" and "01-code" tutorial in order to get a Zoom link for the first class. Require this be submitted by Sunday at midnight.
+* Require submission of the "01-code" and "02-quarto" tutorials in order to get a Zoom link for the first class. Require this be submitted by Sunday at midnight.
 
 * Spend Monday getting the class list organized. Need to put students into breakout rooms and assign rooms to TFs. Details will depend on # of students and of TFs. 
 
@@ -49,12 +47,10 @@
 
 * Set up class list and cold_call function.
 
-* Set up empty project for first class so your set up looks like student set up.
+* Clean up your "student" GitHub account so that it looks like a real student's account.
 
 * Setup Excel spreadsheet for Data and Model Projects.
 
-This document provides an overview of the course --- its structure, schedule and
-philosophy. 
 
 ## Empower the TFs
 
@@ -67,13 +63,11 @@ The more power and responsibility the TFs have, the better. But then we are requ
 3) Would be super cool if TFs could press a button, and then get a browser, with a tab showing the url for each of their student's URL submissions in a given homework. We need to make it easier for TFs to check student work.
 
 
-
 ## Next Time
 
 * Require students show up 10 minutes ahead of Demo Day. They then confirm attendance in the room assignment spreadsheet. Anyone who doesn't by T-5 minutes is deleted from the list. The TF in charge of each room group can then re-arrange things to make up for the absence.
 
-* Standardize (either in a tutorial or as a spreadsheet) students submitting 
-their data project ideas (and a URL) before class #7.
+* Standardize (either in a tutorial or as a spreadsheet) students submitting their data project ideas (and a URL) before class #7.
 
 
 ## Key Ideas
@@ -93,21 +87,15 @@ construction of something cool.
 
 The business license allows for 300 users, which is mostly enough. The large meeting licence would give us 500, or more.
 
-When using breakout rooms, just pick the option that allows people to move 
-wherever they want. No need to pre-assign or grant co-host status, I think.
+When using breakout rooms, just pick the option that allows people to move wherever they want. No need to pre-assign or grant co-host status, I think.
 
 ## Running the Class
 
-* Class is organized by week. What do we want to accomplish by the end of the 
-week? The goal will always be a completed project, published to Github Pages.
+* Class is organized by week. What do we want to accomplish by the end of the week? The goal will always be a completed project, published to Github Pages.
 
-* We have a target goal for each day, but we also have "extra" work/questions 
-which we can use to challenge students who are going too fast. We never want 
-students on Monday to start doing the work for Wednesday's class. All students 
-start Wednesday's class from the same starting line.
+* We have a target goal for each day, but we also have "extra" work/questions  which we can use to challenge students who are going too fast. We never want students on Monday to start doing the work for Wednesday's class. All students start Wednesday's class from the same starting line.
 
-* Good extra/work questions are written ahead of time and, perhaps, included in 
-the Preceptor Notes.
+* Good extra/work questions are written ahead of time and, perhaps, included in the Preceptor Notes.
 
 
 
