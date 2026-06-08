@@ -6,7 +6,7 @@ library(tidyverse)
 homework <- function(pattern = "."){
 
 
-   x <- submissions_summary("~/Downloads/responses", 
+   x <- submissions_summary("~/Downloads/submissions", 
                            title = pattern, 
                            vars = c("name", 
                                     "email", 
@@ -29,7 +29,7 @@ homework <- function(pattern = "."){
   cat(paste(emails, collapse = ","))
   cat("\n\n")
   cat(paste0('"', paste(names, collapse = " # "), '"'))
-  
+  cat("\n\n")
   
   return(ret_df)  
 }

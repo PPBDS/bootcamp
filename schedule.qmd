@@ -62,7 +62,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 ## Monday 
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Advanced" (`05-github-2`) and "Quarto Websites Introduction" (`06-websites-1`) tutorials.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Advanced" (`05-github-2`) and "AI" (`06-ai`) tutorials.
 
 ## Wednesday
 
@@ -71,7 +71,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 ## Thursday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`07-websites-2`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Introduction" (`07-websites-1`) tutorial.
 
 
 # Week 3: June 29
@@ -84,7 +84,7 @@ Finish learning about tools like Quarto and GitHub Pages. Start learning about m
 
 ## Wednesday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "AI" (`08-ai`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`08-websites-2`) tutorial.
 
 ## Thursday
 
