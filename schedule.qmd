@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 **Submit each of your homework answers, as an html file, via [this Google form](https://forms.gle/zzcXYPYiNNNwi8947) before midnight on the day before the class for which the homework was assigned.**
 
 
-Key resources: [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/), [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/), and [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/).
+Key resources: [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.github.io/primer/),  [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/), and [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/).
 
 Always reinstall the relevant package before starting a new tutorial. Example:
 
@@ -51,7 +51,7 @@ Introduction to the tools we use for doing data science.
 
 ## Thursday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Introduction" (`04-github-1`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "AI Introduction" (`04-ai-1`) tutorial.
 
 
 # Week 2: June 22
@@ -60,16 +60,16 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 ## Monday 
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Advanced" (`05-github-2`) and "AI" (`06-ai`) tutorials.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "GitHub Introduction" (`05-github-1`) and "GitHub Advanced" (`06-github-2`) tutorials.
 
 ## Wednesday
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 1" (`r4ds-1`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "AI and Git" (`07-ai-2`) tutorial.
 
 
 ## Thursday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Introduction" (`07-websites-1`) tutorial.
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 1" (`r4ds-1`) tutorial.
 
 
 # Week 3: June 29
@@ -78,37 +78,41 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 ## Monday
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 2" (`r4ds-2`) and "Census" (`census`) tutorials.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Introduction" (`08-websites-1`) tutorial.
+
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 2" (`r4ds-2`) tutorial.
 
 ## Wednesday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`08-websites-2`) tutorial.
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "Census" (`census`) tutorial.
 
 ## Thursday
 
-* Read [Chapter 1 Probability](https://ppbds.github.io/primer/01-probability.html) and complete the "Probability" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`09-websites-2`) tutorial.
 
 
 # Week 4: July 6
 
 ## Monday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`09-infrastructure`) tutorial.
+* Read [Chapter 1 Probability](https://ppbds.github.io/primer/01-probability.html) and complete the "Probability" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
-* Read [Chapter 2 Sampling](https://ppbds.github.io/primer/02-sampling.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`10-infrastructure`) tutorial.
 
 ## Wednesday
 
-* Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/03-rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* Read [Chapter 2 Sampling](https://ppbds.github.io/primer/02-sampling.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 ## Thursday
 
-* Read [Chapter 4 Cardinal Virtues](https://ppbds.github.io/primer/04-cardinal-virtues.html) and complete the "Cardinal Virtues" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/03-rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 
 # Week 5: July 13
 
 ## Monday
+
+* Read [Chapter 4 Cardinal Virtues](https://ppbds.github.io/primer/04-cardinal-virtues.html) and complete the "Cardinal Virtues" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 * From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 3" (`r4ds-3`) tutorial.
 
