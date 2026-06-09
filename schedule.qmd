@@ -114,11 +114,11 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 * Read [Chapter 4 Cardinal Virtues](https://ppbds.github.io/primer/04-cardinal-virtues.html) and complete the "Cardinal Virtues" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 3" (`r4ds-3`) tutorial.
+* Read [Chapter 5 Recruits](https://ppbds.github.io/primer/05-recruits.html) and complete the "Recruits" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 ## Wednesday
 
-* Read [Chapter 5 Recruits](https://ppbds.github.io/primer/05-recruits.html) and complete the "Recruits" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 3" (`r4ds-3`) tutorial.
 
 ## Thursday
 
@@ -153,8 +153,6 @@ Finish learning about tools like Quarto and GitHub Pages.
 ## Thursday
 
 * Read [Chapter 10 Shaming](https://ppbds.github.io/primer/10-shaming.html) and complete the "Shaming" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
-
-
 
 # Week 8: August 3
 
