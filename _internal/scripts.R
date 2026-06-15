@@ -18,7 +18,8 @@ homework <- function(pattern = "."){
   
   ret_df <- x |> 
     distinct(source, email, .keep_all = TRUE) |> 
-    arrange(source, email)
+    arrange(source, email) |>
+    mutate(minutes = as.numeric(minutes))
   
   emails <- sort(unique(ret_df$email))
   names <- sort(unique(ret_df$name))
