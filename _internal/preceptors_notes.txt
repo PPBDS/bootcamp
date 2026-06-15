@@ -7,8 +7,6 @@ Make more use of #projects channel as a location for students to prove that they
 
 Reigstration ends two weeks before. 00-introduction is due Sunday night (then you get Discord link and head TF email). 01-code is due Wednesday before the start.
 
-Only 3 tutorials due Wednesday.
-
 
 ## Outline
 
@@ -44,14 +42,6 @@ See the big_picture.txt file.
 
 * Set up new Github organization under your personal account. Use this for class repos. Follow `bootcamp-2025-06` as a naming convention, using the start month of the class.
 
-* Update link in Data Project tutorial which goes to the spreadsheet students fill out.
-
-* Update link in Final Project tutorial which goes to the spreadsheet.
-
-* Update link in Terminal tutorial (and Primer) for rtools.
-
-* Set up empty project for first class so your set up looks like student set up.
-
 * Be careful about forks. If you have students fork from repo class-2022-08-01, you can not then change the name of this tutorial to class-2022-08-02 and then have them fork from it again. The reason is that these are the same repo, but with a name change, and you can't fork twice from the same repo.
 
 # First TF Meeting
@@ -64,14 +54,11 @@ Confirm that everyone can see #staff channel and that their Discord display name
 
 Confirm that everyone has a sensible Zoom display name.
 
-Confirm that everyone can attend Demo Days.
-
+Confirm that everyone can attend Demo Day on Aug 6
 
 Anyone interested in Older breakout room? Younger room?
 
 We will be making extensive use of AI. I recommend the free version of ChatGPT. Unless you feel strongly, use this so students can do the same. But, if you are using a paid version of this, or another AI, that is fine to. 
-
-Thanks to Tejas (tejasnm07@gmail.com) for volunteering to be Head TF. 
 
 Show breakout room spreadsheet, including TF schedule sheet. Fill out attendance spreadsheet as best as possible. You can change it later.
 
@@ -124,9 +111,9 @@ The goal for the first part of the course is to get good enough at R/RStudio/Git
 
 ### Day 1
 
-Link for breakout rooms: https://tinyurl.com/4py8abtu 
+Link for breakout rooms: https://shorturl.at/eOMVq 
 
-(Find the room which you have been assigned to. If you are not listed, stay in the main room with me.)
+Find the room which you have been assigned to. If you are not listed, stay in the main room with me.
 
 Call me "Preceptor."
 
@@ -134,38 +121,28 @@ No eight week course does a better job of increasing your odds of getting the fu
 
 Video on --- unless there is something going on in your life which prevents it. In which case, discuss with your TF.
 
-Class always begins by looking at the Preceptor's Notes for the day, available here, in Discord.
+Class always begins by looking at the Preceptor's Notes for the day, available here, in Discord. Please ask and answer questions on Discord, mainly in the #tutorials channel.
 
-1) After today, we start on time, often by going to breakout rooms immediately. Let's go now! Introduce yourself to your fellow students with one sentence.  
+0) Go to https://github.com/PPBDS/codespace-starter. Use as a template to start a new repo named class-2026-06-15. Go to that repo and launch a new Codespace. We do that now since it takes a few minutes. 
 
-2) Link to consider today (was distributed earlier at #general)
+1) After today, we start on time, often by going to breakout rooms immediately. Let's go now! Introduce yourself to your fellow students with one sentence. Tell your TF how you heard about the course. Discuss what final projects you might be interested in. We may change some room assignments as enrollment changes. Email Aadhira if you have concerns/requests.
 
-https://tinyurl.com/muafxp9u
+2) Check the schedule: https://bootcamp.davidkane.info/schedule.html. See the key links. Homework due Tuesday at midnight:
 
-Over the last four decades, the financial circumstances into which children have been born have increasingly determined where they have ended up as adults. But an expansive new study, based on billions of social media connections, has uncovered a powerful exception to that pattern that helps explain why certain places offer a path out of poverty.
+  * From the vscode.tutorials package, complete the “Terminal” (03-terminal) and “AI Introduction” (04-ai-1) tutorials.
 
-For poor children, living in an area where people have more friendships that cut across class lines significantly increases how much they earn in adulthood, the new research found.
+Skip any questions which gives you trouble. Don't forget to answer the questions about your name, email and the number of minutes it took to complete the tutorial. Use the default name for your HTML submissions, e.g., `02-quarto_answers.html`.
 
-3) Update these packages now from the R Console.
+3) Submit the assignments or you will be removed from the class. Central metaphor of the class is Ulysses and the Sirens. 
 
-```
-remotes::install_github("PPBDS/positron.tutorials")
-remotes::install_github("PPBDS/r4ds.tutorials")
-```
+4) If you don't have a paid subscription to an AI service like Gemini.
 
-This should be the last time you need to mess with these packages.
+5) Thanks to Kinson Gao and others for pointing out errors in the tutorials. Much appreciated!
 
-4) Submit the assignments or you will be removed from the class. Central metaphor of the class is Ulysses and the Sirens. There are several tutorials due on Tuesday at midnight. Skip any questions which gives you trouble. Don't forget to answer the questions about your name, email and the number of minutes it took to complete the tutorial. 
-
-Use the default name for your HTML submissions, e.g., `02-quarto_answers.html`
-
-5) Sign up for free version of chatGPT (https://chatgpt.com/) as well as other services.
-
-6) Thanks to Ansh Patel, Ali Ahmad, Naveed Ahmad, Annus Haider, Faisal Jan, Paramanyu Gupta, posh989, and others.
 
 ### Day 2
 
-Breakout Room assignments: https://tinyurl.com/4py8abtu (Thanks for your patience in working through various issues.)
+Breakout Room assignments: https://shorturl.at/eOMVq (Thanks for your patience in working through various issues.)
 
 Homework for Thursday:
 

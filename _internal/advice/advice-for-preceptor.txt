@@ -1,3 +1,10 @@
+## Lessons
+
+Have students get Gemini accounts. Only use Gemini accounts for the chat interface. Deepseek and other second class models currently produce a lot of slop.
+
+
+
+
 ## Things To Do Before Next class
 
 * Read the advice for Head TFs and regular TFs. 

@@ -5,98 +5,63 @@ author: "David Kane"
 
 ## Goal
 
-Explore the connectedness data from the primer.data package. Answer some questions. Students will have completed the Introduction and the 01-code tutorials, so they have been exposed to both ggplot2 and to the pipe and to R scripts. Make a histogram of county population. Share the plot in #class-work.
+Do something with World Cup data. Students have done some stuff with AI in the quarto tutorial. Make a plot. Share the image in #class-work. Check out #tutorials and #announcements (only for course staff).
 
-New Positron project which includes a new Quarto document. Publish to #class-work channel a nice looking histogram of county population. 
+### Advice
 
-```{r}
-library(tidyverse)
-library(primer.data)
+Class exercises need to be very paced, with lots of tiny steps, each a script replacement. Always have a student share their screen. make sure that the text is big enough for people to easily see. You drive. You tell the student what to look at. You tell the student what to copy/paste. You tell the student what to ask the AI. Switch from student to student to ensure that everyone is engaged. Unlike last year, another student does not drive, at least this week. You drive. 
 
-connectedness |> 
-  drop_na() |> 
-  ggplot(aes(x = population)) +
-    geom_histogram(bins = 100) +
-    scale_x_log10(labels = scales::comma_format()) +
-    labs(title = "US County Populations in 2018",
-         subtitle = "Populations are highly skewed",
-         x = "Population",
-         y = "Number of Counties",
-         caption = "Opportunity Insights")
-```
+### Scene 0
 
-## Session 1
+Go through Preceptor Notes. Stop at after 1). Make sure people can share.
 
-Go to the Preceptor's Notes. Talk through items 1 and 2. Finish with room assignments. Send them to those rooms to meet each other. Each person gives one sentence about themselves. 
+### Scene 1
 
-Make 36 rooms. Allow participants to assign themselves.
+Preceptor Notes 2 and 3.
 
-## Session 2
+* Tell AI to be concise and to use R and the tidyverse. Don't let it spit back a page of all sorts of different analysis.
+
+* Outputs names of USMNT members. OK if it hard codes the names in the script.
+
+* Outputs their names to a file. Should be 26. There will be 27 rows in file, including the column names.
+
+### Scene 2
+
+Preceptor Notes 4 and 5.
+
+* Create quarto doc which reads the file and outputs the contents to the HTML. This is our pipeline. Once the pipeline works from start to finish, we can go back and fix individual parts. First, create the MVP --- the minimal viable product --- and then iterate on it.
+
+* Change the script to get their names from Wikipedia and then output to the csv file. Check that the QMD still renders.
+
+### Scene 3
+
+* Download name, dob, ages and club team. Rewrite csv file to include this data.
+
+* Change quarto document to create a histogram of ages. Maybe a horizontal dot plot with each dot labelled would look cooler. Or how about a bar chart of birth modnths?
+
+* Make the quarto document look nice. 
+
+### Scene 4
+
+* Download for all teams. Should be 48 teams, meaning 26*48 = 1248 rows, plus one row of column names.
+
+* Change quarto document to read in all data. Is it correct? How do we know?
+
+* Copy/paste graphic to #class-work channel.
+
+### Scene 5
+
+What other data might we grab? What questions might we look at? Do we have enough data to determine who are the better teams?
+
+
+## Topics to Mention 
 
 Cold call to tell me one thing about one student in the breakout room.
 
-Review breakout room behavior. One person always sharing, and then doing nothing but what they are told. Another person driving, telling the screen-sharer what to do. There is a "Sharer" and a "Driver."
+Review breakout room behavior. One person always sharing, and then doing nothing but what they are told. The TF is "driving,"" telling the screen-sharer what to do. There is a "Sharer" and a "Driver." IN a few weeks, we will have another student do the driving. All other students are doing the work as well.
 
-Give a quick tour of Poistron. (Make sure that you are starting your session in an empty project and with no code visible.) 
 
-Type 2 + 2. 
-
-Tell them to update the two packages:
-
-```
-remotes::install_github("PPBDS/positron.tutorial")
-remotes::install_github("PPBDS/r4ds.tutorial")
-```
-
-Send them to breakout rooms to do the same.
-
-But do this together! One person shares their screen. One other person drives.
-
-There may be problems, especially for students who are using a different computer from the one they used when they did the Getting Started chapter.
-
-After a student shares their screen, ask to see their Terminal. Does it look like it should? If not (especially common for Windows users), send them to: https://ppbds.github.io/primer/getting-started-with-positron.html#the-terminal
-
-## Session 3
-
-Review items 4 (Ulysses), 5 (AI).
-
-Show them library(tidyverse). Discuss those weird messages. Explain the concept of the Tidyverse. Mention that we load up this package (i.e., this collection of packages) whenever we use R.
-
-Show them library(primer.data). 
-
-Make sure all students have primer.data installed. They certainly need this for the next class. Show page in Getting Started for doing so.
-
-Pull up AI. Require them to sign up for one of the services. No need to pay! Free service is fine. Mention that I use Claude. 
-
-Send them to breakout rooms to do the same. Tell them to help (by having them share their screen) whomever is having the most problems.
-
-Ask AI something goofy. Like write an haiku about what a cool language R is. I will cold call.
-
-## Session 4
-
-Cold call for the goofy thing.
-
-Type connectedness. Run ?connectedness. 
-
-See Preceptor Notes for links.
-
-How should we explore this data? Let's ask AI: What functions are useful for exploring a new tibble in R? 
-
-Go to breakout rooms. Explore data. Different people share. Different people drive.
-
-## Session 5
-
-Cold call: What functions did you explore?
-
-Make a new project. Create a script. Want to make a histogram of county population? Ask AI!
-
-Go to breakout rooms. Different people share. Different people drive.
-
-## Session 6
-
-How are your plots looking? Show them to AI and ask for advice!
-
-Iterate between the main room and breakout rooms. Everyone needs to make a script which makes a nice looking plot? If a student is behind, have him share his screen and have a different student drive. Tell students to use AI. Ask to see their screens to see what they asked and what they got back.
+Iterate between the main room and breakout rooms. Everyone needs to make a project which makes a nice looking plot. If a student is behind, have him share his screen and you help by driving. 
 
 Titles should tell about the variables.
 Subtitles give a key takeaway about the plot.
@@ -104,30 +69,3 @@ Captions describe the source.
 Axis labels should look nice.
 
 Finish with each student posting a nice image to #class-work.
-
-Example script:
-
-```{r}
-library(tidyverse)
-library(primer.data)
-
-connectedness |> 
-  drop_na() |> 
-  ggplot(aes(x = population)) +
-    geom_histogram(bins = 100) +
-    scale_x_log10(labels = scales::comma_format()) +
-    labs(title = "US County Populations in 2018",
-         subtitle = "Populations are highly skewed",
-         x = "Population",
-         y = "Number of Counties",
-         caption = "Opportunity Insights")
-```
-
-## Other Questions
-
-What is the third biggest, by population, county in the US?
-
-What are the counties with the lowest connectedness? Why is that? Maybe ask chatGPT.
-
-
-
