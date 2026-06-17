@@ -142,32 +142,24 @@ Skip any questions which gives you trouble. Don't forget to answer the questions
 
 ### Day 2
 
-Breakout Room assignments: https://shorturl.at/eOMVq (Thanks for your patience in working through various issues.)
+1) Breakout Room assignments: https://shorturl.at/eOMVq 
 
-Homework for Thursday:
+2) Requests for extensions should be made via email to the Head TFs. They will almost always grant them. But you still need to catch up on the work before the next class.
 
-From the positron.tutorials package, complete the “Positron and GitHub Introduction” (04-github-1) tutorial.
+3) Didn't get a Zoom link and really want one? Contact either the Head TFs or Aaditya (the senior TF in charge of homework). They will almost always give you a break.
 
-From the r4ds.tutorials package, complete the “Data tidying” (05-data-tidying).
+4) Homework for Thursday: From the vscode.tutorials package, complete the “GitHub Introduction” (05-github-1) tutorial.
 
-Don't worry about the difference between how you call a tutorial, with `05-data-tidying` and the default file name of the answers, which is `data-tidying.html`. Just accept the default file name for the answer.
+5) I have a new approach to creating repos. I will provide a demo in class. You should all follow along and do the same. It is also newly documented in the Getting Started chapter.
 
-DONT FORGET YOUR NAME, EMAIL, AND THE NUMBER OF MINUTES!
-STUDENTS WHO DON'T SUBMIT AT LEAST 04-github-1 BEFORE 7:00 PM TOMORROW WON'T BE GIVEN A ZOOM LINK.
+6) Big thanks to all the students (including Gokul, nikb, erika, Pushpendu, Ishika Ravat, Kinson Gao, Anthony Gao, Ilvika, and others) asking and answering questions on Discord! You are a good person to do so. And, also, you only really understand something once you have explained it to someone else. See. Do. Teach. 
 
-0) Big thanks to all the students (including YouSeeABee, Naveed Ahmad, Faisal Jan, Aftab A. Ali Mukhi, Ahmed, Ansh Patel, M Numan, umaira, and others) answering questions on Discord! You are a good person to do so. And, also, you only really understand something once you have explained it to someone else. See. Do. Teach. 
+7) Change your Discord and Zoom display name to be the name which we should use in addressing you. We are a community! 
 
-1) Change your Discord and Zoom display name to be the name which we should use in addressing you. We are a community! 
+8) Make friends with the students in your breakout room. If you miss class, you can check with them about what happened. And it is OK to miss class on occasion. You have other obligations! But email the Head TFs and your TF ahead of time so that we know. (TF emails available on the staff page.)
 
-2) Make friends with the students in your breakout room. If you miss class, you can check with them about what happened. And it is OK to miss class on occasion. You have other obligations! But email Navya and your TF ahead of time so that we know. (TF emails available on the staff page.)
+9) Never stress about the tutorials! Just do your best. Skip any questions which give you trouble. Ask lots of questions on Discord.
 
-3) Never stress about the tutorials! Just do your best. Skip any questions which give you trouble. Ask lots of questions on Discord.
-
-4) In the breakout rooms, one person shares a screen and the others tell her what to type. Then, next time, someone else shares and a different person "drives." If you are sharing your screen, you never type anything unless you are told explicitly to do so.
-
-6) Do not start working on the primer.tutorials tutorials, which are due next week. We are still writing them. If you want to get ahead, work on the tutorials from r4ds.tutorials and positron.tutorials.
-
-6) In the first class, we worked on script. Today, we work from a Quarto document. 
 
 
 ### Day 3
