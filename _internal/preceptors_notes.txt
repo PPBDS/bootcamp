@@ -164,46 +164,18 @@ Skip any questions which gives you trouble. Don't forget to answer the questions
 
 ### Day 3
 
-Next year: Install primer.data together. Then, install primer.tutorials. Show options download time trick.
+1) Homework due Monday (meaning Sunday at midnight): From the vscode.tutorials package, complete the “GitHub Advanced” (06-github-2) and “AI and Git” (07-ai-2) tutorials. (Of course, for ai, you should be using `agy` in place of `gemini`. The questions won't match perfectly. Just do your best.) If you are behind, you must catch up. Only use new Codespaces.
 
-1) Homework due Monday (updated!):
+2) If you need to miss class, email one of the Head TFs and your TF. Missing class (on occasion) is OK! School, family and prom (!) come first. Not submitting your homework will cause me to remove you from the course.
 
-* Read Chapter 1 Rubin Causal Model and complete the “Rubin Causal Model” tutorial (011-rubin-causal-model) from the primer.tutorials package. THIS IS REALLY GOOD!
+3) Ask lots of questions on Discord. Other students benefit from both your question and the resulting answers. 
 
-* From the positron.tutorials package, complete the “Positron and GitHub Advanced” (05-github-2) tutorial.
+4) AI is confusing! Google's Gemini was discontinued for regular users like us. I did not know that was coming! Fortunately, GitHub Copilot seems to be working better in the built-in chat window than it was a month ago. (Both VS Code and GitHub are owned by Microsoft.) Google's new AI tool, Antigravity (`agy` at the bash Terminal) seems OK, but I am not sure about cost. It is free so far!
 
-* From the r4ds.tutorials package, complete the “Data import” (07-data-import) tutorial.
-
-2) If you need to miss class, email Navya and your TF. Missing class (on occasion) is OK! School, family and prom (!) come first. Not submitting your homework will cause me to remove you from the course.
-
-3) Ask lots of questions on Discord. Other students benefit from both your question and the resulting answers. Answer lots of questions on Discord! Your fellow students (and I) appreciate it. Moreover, you only really understand something once you have taught it. See. Do. Teach. Thanks to Ansh Patel, Rashid, Naveed Ahmad, YouSeeABee, Jeff Swensen and others for participating on Discord!
-
-4) For picking final projects, ask yourself some questions: What topic are you most interested in? What do you follow on social media? What do you care about even though no one is forcing you to care about it? Tell us, and we can help you find relevant data. Use the #final-projects channel on Discord. Also, I am trying an experiment in which I will personally work with a small number of students who are interested in performing a replication of an academic article as their final project. Email if you are interested in this.
-
-5) Before you start a new Primer tutorial, run:
-
-remotes::install_github("PPBDS/primer.tutorials")
-
-Do not start the Primer tutorials which are due next week until Saturday. (We will make an announcement on the #course-annoucements channel.) We are re-writing them.
-
-6) Professional data scientists use GitHub. Goal today is to publish our two graphics from Monday and Wednesday (and other graphics as well?). See the #class-work channel.
-
-7) You must catch up with all homework, including the three tutorials due for Monday's class, by midnight EDT on Sunday. 
-
-
+5) In class today, we will focus on Antigravity, doing the same World Cup data gathering and plotting again. `agy` works differently from `gemini`. But the important thing is to practice. Professionals have experience using a variety of AI tools.
 
 
 ## Week 2
-
-Monday: Get the data downloaded and placed in a data directory.
-
-Wednesday: Fork the repo from Monday, read in the data. Explore and understand the data. Maybe make some rough plots.
-
-Thursday: Use the same project as Wednesday. Make a nice plot. Publish it.
-
-See the daily scripts for more details. Key things this week are getting comfortable with rendering qmd, using Git/Github and then publishing the page to the web. 
-
-Review RCM and probability.
 
 
 ### Day 4
