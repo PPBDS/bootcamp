@@ -184,37 +184,30 @@ Call me "Preceptor."
 
 No eight week course does a better job of increasing your odds of getting the future you want.
 
-0) Tell your TF and Navya (not me) if you will be missing a class, need an extension on the assignments and so on. They are nice people! They will always say "Yes," but you need to tell/ask them.
+0) Tell your TF if you will be missing a class, need an extension on the assignments and so on. They are nice people! They will always say "Yes," but you need to tell/ask them. You can also check with our co-Head TFs, Aadhira and Anish, if your TF is not around.
 
-1) Big thanks to those (including Abdul Hannan, Yasir Khan, Muhammad Numan, **Hassan Ali**, Naveed Ahmad and others) pointing our typos and errors in the tutorials, and to those helping out their classmates. Much appreciated!
+1) Big thanks to those (including Sakithyan, Imre, Leo, Pushpendu, Isabella, and others) asking/answering questions on Discord, pointing our typos and errors in the tutorials, and so on. Much appreciated!
 
 2) Homework for Wednesday:
 
-  * Read Chapter 2 Probability and complete the “Probability” tutorial (021-probability) from the primer.tutorials package.
+From the misc.tutorials package, complete the “R for Data Science 1” (r4ds-1) tutorial. 
 
-  * From the positron.tutorials package, complete the “Quarto Websites Introduction” (06-websites-1) tutorial.
+Only vscode.tutorials is pre-installed in the starter codespace. So, you will need to install misc.tutorials by hand:
 
-  * From the r4ds.tutorials package, complete the and “Layers” (09-layers) tutorial.
+```
+remove.packages("misc.tutorials")
+remotes::install_github("PPBDS/misc.tutorials")
+```
 
-3) Before you start a new Primer tutorial, run:
+3) Not everything you need will always come pre-installed in your Codespace, or on your local machine. You will need to manage those installations yourself, either on your own or, better, with help from AI. 
 
-remotes::install_github("PPBDS/primer.tutorials")
+4) Make your Zoom and Discord display name the same thing as how you want to be addressed.
 
-The other packages are stable and don't need to be reinstalled.
+5) Check the #annoucements channel for [a cool graphic](https://www.nytimes.com/interactive/2021/06/29/upshot/portland-seattle-vancouver-weather.html) from the *New York Times*. Can we make a graphic like that, and publish it? Start with a new Codespace . . . from https://github.com/PPBDS/codespace-starter
 
-4) Key goal today is to practice some of the techniques you learned in the Terminal tutorial. You completed that right . . .
+6) Don't do next week's homework yet. I am making changes.
 
-5) File we will be using:
 
-https://raw.githubusercontent.com/PPBDS/primer.data/master/data-raw/nyc_tracts.csv 
-
-6) This is sloppy. Stop doing it:
-
-Removing file(s) '05-github-2_answers - Junaid(1).html' due to missing key variables. Removing file(s) 'data-import_answers - Junaid(1).html' due to missing key variables. Removing file(s) 'rubin-causal-model_answers - Muhammad Numan.html' due to missing key variables.
-
-7) Make your Zoom and Discord display name the same thing as how you want to be addressed.
-
-8) If you are using Windows and your Terminal does not look like mine: https://ppbds.github.io/primer/getting-started-with-positron.html#the-terminal
 
 ### Day 5
 

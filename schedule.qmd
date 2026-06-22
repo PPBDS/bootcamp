@@ -77,41 +77,26 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 # Week 3: June 29
 
-
-
 ## Monday
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 2" (`r4ds-2`) and "Census" (`census`) tutorials.
+* Read [Chapter 1 Probability](https://ppbds.github.io/primer/01-probability.html) and complete the "Probability" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+
+* Read [Chapter 2 Sampling](https://ppbds.github.io/primer/02-sampling.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 ## Wednesday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`09-websites-2`) tutorial.
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 2" (`r4ds-2`) tutorial.
 
 ## Thursday
 
-* Read [Chapter 1 Probability](https://ppbds.github.io/primer/01-probability.html) and complete the "Probability" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/03-rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 
 # Week 4: July 6
 
 ## Monday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`10-infrastructure`) tutorial.
-
-* Read [Chapter 2 Sampling](https://ppbds.github.io/primer/02-sampling.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
-
-## Wednesday
-
-* Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/03-rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
-
-## Thursday
-
 * Read [Chapter 4 Cardinal Virtues](https://ppbds.github.io/primer/04-cardinal-virtues.html) and complete the "Cardinal Virtues" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
-
-
-# Week 5: July 13
-
-## Monday
 
 * Read [Chapter 5 Recruits](https://ppbds.github.io/primer/05-recruits.html) and complete the "Recruits" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
@@ -121,25 +106,26 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 ## Thursday
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 4" (`r4ds-4`) tutorial.
+* Read [Chapter 6 Trains](https://ppbds.github.io/primer/06-trains.html) and complete the "Trains" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
 
-# Week 6: July 20
+# Week 5: July 13
 
 ## Monday
 
-* Read [Chapter 6 Trains](https://ppbds.github.io/primer/06-trains.html) and complete the "Trains" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* Read [Chapter 7 Colleges](https://ppbds.github.io/primer/07-colleges.html) and complete the "Colleges" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+
 
 ## Wednesday
 
-* Read [Chapter 7 Colleges](https://ppbds.github.io/primer/07-colleges.html) and complete the "Colleges" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Quarto Websites Advanced" (`09-websites-2`) tutorial.
 
 ## Thursday
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 5" (`r4ds-5`) tutorial.
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "Census" (`census`) tutorial.
 
 
-# Week 7: July 27
+# Week 6: July 20
 
 ## Monday
 
@@ -149,9 +135,25 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 * Read [Chapter 9 Smokes](https://ppbds.github.io/primer/09-smokes.html) and complete the "Smokes" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
+
 ## Thursday
 
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 4" (`r4ds-4`) tutorial.
+
+
+# Week 7: July 27
+
+## Monday
+
 * Read [Chapter 10 Shaming](https://ppbds.github.io/primer/10-shaming.html) and complete the "Shaming" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
+
+## Wednesday
+
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`10-infrastructure`) tutorial.
+
+## Thursday
+
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 5" (`r4ds-5`) tutorial.
 
 # Week 8: August 3
 
