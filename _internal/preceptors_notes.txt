@@ -242,6 +242,10 @@ remotes::install_github("PPBDS/primer", subdir = "primer.tutorials")
 
 3) Run `/nick yourname` to change your Discord name in this server. 
 
+4) We have merged breakout room 9 into breakout room 7.
+
+5) Today's project is to connect to your already existing basketball repo in a new codespace and then create a website with game score information. Make it look cool and professional. But you also need to understand everything there . . .
+
 
 ## Week 3
 
