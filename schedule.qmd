@@ -18,13 +18,13 @@ Other resources: [*Preceptor's Primer for Bayesian Data Science*](https://ppbds.
 Always install the relevant package before starting a new *misc* or *primer* tutorial. Example:
 
 ```
-remotes::install_github("PPBDS/misc.tutorials")
+pak::pkg_install("PPBDS/misc.tutorials")
 ```
 
 **primer.tutorials** is a little trickier:
 
 ```
-remotes::install_github("PPBDS/primer", subdir = "primer.tutorials")
+pak::pkg_install("PPBDS/primer/primer.tutorials")
 ```
 
 We are always fixing mistakes. You want to use the latest version.
