@@ -81,11 +81,9 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 * Read [Chapter 2 Sampling](https://ppbds.github.io/primer/02-sampling.html) and complete the "Sampling" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
-## Wednesday
+## Thursday
 
 * From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 2" (`r4ds-2`) tutorial.
-
-## Thursday
 
 * Read [Chapter 3 Rubin Causal Model](https://ppbds.github.io/primer/03-rubin-causal-model.html) and complete the "Rubin Causal Model" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
@@ -129,12 +127,9 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 * Read [Chapter 8 Seguro Popular](https://ppbds.github.io/primer/08-sps.html) and complete the "Seguro Popular" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
 
-## Wednesday
+## Thursday
 
 * Read [Chapter 9 Smokes](https://ppbds.github.io/primer/09-smokes.html) and complete the "Smokes" tutorial from the [**primer.tutorials**](https://ppbds.github.io/primer/tutorials/) package.
-
-
-## Thursday
 
 * From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 4" (`r4ds-4`) tutorial.
 
