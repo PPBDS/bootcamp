@@ -98,7 +98,7 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 ## Wednesday
 
-* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 3" (`r4ds-3`) tutorial.
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`10-infrastructure`) tutorial.
 
 ## Thursday
 
@@ -142,7 +142,7 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 ## Wednesday
 
-* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`10-infrastructure`) tutorial.
+* From the [**misc.tutorials**](https://ppbds.github.io/misc.tutorials/) package, complete the "R for Data Science 3" (`r4ds-3`) tutorial.
 
 ## Thursday
 

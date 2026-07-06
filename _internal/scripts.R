@@ -2,6 +2,7 @@
 
 library(tutorial.helpers)
 library(tidyverse)
+library(janitor)
 
 homework <- function(pattern = "."){
 
@@ -37,55 +38,25 @@ homework <- function(pattern = "."){
 
 
 assignments <-
-  c("01-code_answers",
+  c("getting-started_answers",
+    "introduction-to-r_answers",
+    "01-code_answers",
     "02-quarto_answers",
     "03-terminal_answers",
-    "04-github-1_answers",
-    "05-github-2_answers",
-    "06-websites-1_answers",
-    "07-websites-2_answers")
+    "04-ai-1_answers",
+    "05-github-1_answers",
+    "06-github-2_answers",
+    "07-ai-2_answers",
+    "r4ds-1_answers",
+    "08-websites-1_answers",
+    "01-probability_answers",
+    "02-sampling_answers",
+    "r4ds-2_answers",
+    "03-rubin-causal-model_answers")
 
 # Not sure the below scripts still work.
 
-assignments <- 
-  c("data-visualization_answers",
-    "data-transformation_answers", 
-    "data-tidying_answers",
-    "data-import_answers",
-    "getting-help_answers",
-    "layers_answers",
-    "exploratory-data-analysis_answers",
-    "communication_answers",
-    "an-introduction-to-tidycensus_answers",
-    "logical-vectors_answers",
-    "quarto-websites_answers",
-    "numbers_answers",
-    "strings_answers",
-    "regular-expressions_answers",
-    "factors_answers",
-    "dates-and-times_answers",
-    "data-project_answers",
-    "missing-values_answers",
-    "joins_answers",
-    "spreadsheets_answers",
-    "databases_answers",
-    "arrow_answers",
-    "hierarchical-data_answers",
-    "web-scraping_answers",
-    "functions_answers",
-    "iteration_answers")
 
-assignments <- c(
-  "rubin-causal-model_answers",
-  "probability",
-  "sampling",
-  "models",
-  "two-parameters",
-  "three-parameters-causal",
-  "mechanics",
-  "four-parameters-categorical",
-  "five-parameters",
-  "n-parameters")
 
 z |> 
   janitor::clean_names() |> 
