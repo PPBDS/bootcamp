@@ -327,52 +327,28 @@ Please submit by midnight on Sunday. We know how to build things. Time to learn 
 
 ## Week 4
 
-Note that this will be week 3 next time, without the data science stuff.
-
-Key goal is to show them how to build a final project, from start to finish. First day is just building a Quarto website. This should go fairly fast since they all should have done it in the tutorial already. We do the exact same thing on days 11 and 12, going faster each time and leaving more time for discussion and playing around with the resulting website. 
-
-Whole thing worked very well last time. It is really good to make them comfortable making websites. It is really good to show them how to split out component parts in scripts like download-data.R and make-plots.R.
-
+First run through of Cardinal Virtues
 
 ### Day 10
 
-Please check that these links work for you.
+1) Homework change for Wednesday:
 
-Demo Day Room Assignments: https://shorturl.at/zHfCR
-Demo Day Projects: https://shorturl.at/wHsAp
-Demo Day Zoom: https://shorturl.at/PDzd1
+* From the [**vscode.tutorials**](https://ppbds.github.io/vscode.tutorials/) package, complete the "Infrastructure" (`10-infrastructure`) tutorial.
 
-1) After class, download/install latest Positron: https://positron.posit.co/download.html
+2) Recall our promise to you:
 
-2) Confirm your attendance (or otherwise) on the Demo Day Room Assignment Sheet: https://shorturl.at/zHfCR
+No course does more to increase your odds of getting the future you want.
 
-3) Check out the data projects: https://shorturl.at/wHsAp. Add your material, even just your name, if you have not already. We need to know who is presenting what. You will not be allowed to continue in class if this is not done, or you have discussed your absence with your TF.
+It used to be that we kept that promise by teaching students how to code. But that doesn't help anymore! The causal effect of knowing how to code is zero. Instead, we now teach two topics: infrastructure and how to use data.
 
-4) All my/TF comments today will seem more critical than we intend them to be. Sorry! We love your projects and all the hard work you have done. Our comments are meant to be constructive, but they will mostly be things you should change . . .
+3) Each week for the next four we will go through a data science problem, step-by-step. You will also practice these steps in tutorials many times. In a world of AI, you get paid for the knowledge in your head which allows you to solve problems that other people can't solve.
 
-5) You must invite at least one friend or family member to Demo Day. You must bcc Aadhira (june.2025.kdsb@gmail.com) and your TF when you send the email.
+4) Fork this repo:
 
-Below is a draft email. Modify as you like. We will send this email during class tonight.
+5) Run `connect-repo.sh` on that repo so that you can work on it in your Codespace.
 
----
-Please come watch me present my final project for Kane’s Data Science Course at 8:00 PM EDT on Thursday, July 10. Links: 
+6) You must type in your own answers in your own QMD. TFs will require each of you to share your screen. They may also have a different student take over the "driving" of the conversation, telling the sharer what to type.
 
-Zoom: https://shorturl.at/PDzd1
-(Draft) Room Assignments: https://shorturl.at/zHfCR
-Background: http://bootcamp.davidkane.info/demo_day.html
-
-No worries if you can't make it!
----
-
-5) Goal today is to take a look at other's draft projects. We will do practice presentations on Wednesday and then public presentations on Thursday. 
-
-6) Make sure you have as many lines of comments as you have lines of code. There is no better way to distinguish between student and professional code than by looking at the comments.
-
-7) Consider splitting your project up, as you learned to do in the Quarto Websites tutorials. You don't want your `index.qmd` file to take a lot of time to process. Use scripts for data download/cleaning and, possibly, for graphic creation.
-
-8) Feeling brave! Volunteer to have me provide feedback on your project by putting the URL for your project in the Zoom chat. Highly recommended!
-
-9) Good comments are the easiest way to distinguish professional from amateur code: https://ppbds.github.io/primer/style-guide.html#comments
 
 ### Day 11
 
