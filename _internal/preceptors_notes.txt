@@ -352,36 +352,43 @@ It used to be that we kept that promise by teaching students how to code. But th
 
 ### Day 11
 
-Demo Day Room Assignments: https://docs.google.com/spreadsheets/d/1GV2JuZr-kLLskIID58w9QqReXhJ40R13Bweb7CpSWvA
-Demo Day Projects: https://docs.google.com/spreadsheets/d/1JuIMh0_HaJ1YNVy7LXYl6Y3iKTNwcLZAdZdjRRqwbSk
-Demo Day Zoom: https://us06web.zoom.us/j/81184262640
+1) Homework due for Thursday:
 
-* Check your room assignment.
-* Make sure your entry on the Projects file is correct.
+Read Chapter 6 Trains and complete the “Trains” tutorial from the primer.tutorials package.
 
--1) Read the instructions: https://bootcamp.davidkane.info/demo_day.html
+2) Fork this repo:
 
-0) Reinstall r4ds.tutorials package. Thanks to Ansh Patel for pointing out an error.
+https://github.com/davidkane9/governors-courage
 
-  remotes::install_github("PPBDS/r4ds.tutorials")
+3) Run `connect-repo.sh governors-courage` on that repo so that you can work on it in your Codespace.
 
-  You can start Monday's homework as soon as you do.
+4) You must type in your own answers in your own QMD. TFs will require each of you to share your screen. They may also have a different student take over the "driving" of the conversation, telling the sharer what to type.
 
-1) Don't start the primer.tutorials assignments until Saturday July 12. We are making a bunch of changes. Before you start the next homework, reinstall the package with:
+5) We will go through the entire data science sequence in class this week using this example. But the real learning happens when you work on the tutorials.
 
-remotes::install_github("PPBDS/primer.tutorials")
+6) Having trouble? Read the chapters in *Primer*. They are good! And they take things slowly.
 
-2) No homework due tomorrow. But, for Monday, we have:
+### Day 12
 
-  Complete the “Mechanics” tutorial (071-mechanics) from the primer.tutorials package.
+0) We are at the end of Week 1 of 4 devoted to the Cardinal Virtues as a guide for conducting inference. We will walk this path over-and-over again. For 5 years, I have failed to teach these topics adequately. No more!
 
-  From the r4ds.tutorials package, complete the “Strings” (14-strings), “Regular expressions” (15-regular-expressions), and “Factors” (16-factors) tutorials.
+1) Homework due for Monday:
 
-3) Your data for tomorrow is whatever it is. No worries. But your data for the Final Project must be rich enough to allow for the creation of a statistical model. Advice: https://davidkane.info/writings/data-for-projects.html
+Read Chapter 7 Colleges and complete the “Colleges” tutorial from the primer.tutorials package.
 
-4) Everyone should practice saying their one paragraph introduction.
+2) Fork this repo:
 
+https://github.com/davidkane9/governors-temperance
 
+3) Run `connect-repo.sh governors-temperance` on that repo so that you can work on it in your Codespace.
+
+4) You must type in your own answers in your own QMD. We will not get to all the questions, but we will provide answers to all the questions. If you are ahead of your group, then work on answering more of the questions.
+
+5) The real learning happens when you work on the tutorials.
+
+6) Having trouble? Read the answers for the entire week's exercises closely. They are not perfect. But they are good. Still confused? Ask questions in Discord and meet with your TF.
+
+7) I have asked Aadhira to remove from class anyone who is not doing the homework. If you have some extenuating circumstances, then email her to discuss.
 
 
 
