@@ -56,7 +56,7 @@ knitr::include_graphics("images/syao.jpg")
 knitr::include_graphics("images/sgandhi.jpg")
 ```
 
-[Sruthi Gandhi](https://github.com/sruthigandhi)(sruthi.gandhi at outlook.com) recently graduated from Ryle High School with an interest in computer science, machine learning, and data science.
+[Sruthi Gandhi](https://github.com/sruthigandhi) (sruthi.gandhi at outlook.com) recently graduated from Ryle High School with an interest in computer science, machine learning, and data science.
 
 ## Aaditya Gupta
 
@@ -64,7 +64,7 @@ knitr::include_graphics("images/sgandhi.jpg")
 knitr::include_graphics("images/aaditya.jpeg")
 ```
 
-[Aaditya Gupta](https://github.com/AadityaG2011) (aadi10may@gmail.com) is a sophomore at Rocklin High School with an interest in computer science, mathematics, and business.
+[Aaditya Gupta](https://github.com/AadityaG2011) (aadi10may at gmail.com) is a sophomore at Rocklin High School with an interest in computer science, mathematics, and business.
 
 ## Jack Xu
 
@@ -82,4 +82,4 @@ knitr::include_graphics("images/jackxu.png")
 knitr::include_graphics("images/satvika.jpeg")
 ```
 
-[Satvika Upperla](https://github.com/USATVIKA) (upperlasatvika@gmail.com) is a senior at Allen High School with an interest in environmental science, data science, machine learning, and just about anything honestly. 
+[Satvika Upperla](https://github.com/USATVIKA) (upperlasatvika at gmail.com) is a senior at Allen High School with an interest in environmental science, data science, machine learning, and just about anything honestly. 

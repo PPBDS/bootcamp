@@ -16,7 +16,7 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Eric Butte](https://github.com/ebutte18): [Goal Scoring in Hockey](https://ebutte18.github.io/hockey-goals/). For the hockey player Sam Reinhart, each additional foot away from the net he attempted a shot, the log-odds of scoring a goal decreased by 0.033, with a 95% confidence interval from -0.045 to -0.022.  
 
-[Rishith Bethina](https://github.com/Rishibethina): [Restaurant thriving analysis](https://rishibethina.github.io/restaurant-analysis-clean/). This analysis reveals that delivery capability became 192% more important for restaurant success during COVID-19 (coefficient increasing from 0.12 to 0.35), while price sensitivity intensified by 88%, demonstrating that operational flexibility.  
+[Rishith Bethina](https://github.com/Rishibethina): [Restaurant thriving analysis](https://rishibethina.github.io/restaurant-analysis-clean/). This analysis reveals that delivery capability became 192% more important for restaurant success during COVID-19 (coefficient increasing from 0.12 to 0.35), while price sensitivity intensified by 88%, demonstrating the importance of operational flexibility.  
 
 [Surya Fraser](https://github.com/sfraser8910): [Internet Access in the US](https://sfraser8910.github.io/us_internet_access/). While increases in income were associated with only a small increase in the log-odds of internet access, one year increases in age were associated with a 0.0339 decreased log-odds of internet access with a 95% confidence interval of -0.0341 to -0.0338.  
 
@@ -24,7 +24,7 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Hassan Ali](https://github.com/alisoni007/): [Greenhouse gas emission](https://alisoni007.github.io/chem-ghg-electronics/). The analysis identified the predominant chemical species and highlighted significant facility-level and temporal trends in the industry by focusing on reported emissions in metric tons. A limited number of chemicals contribute disproportionately to total emissions, as indicated by exploratory data analysis, whereas annual patterns reveal variability associated with facility operations and manufacturing cycles.  
 
-[Ansh Patel](https://github.com/brunchmaster-ap): [Global Commodity Trade`](https://brunchmaster-ap.github.io/Global-Commodity-Trade/). Following the 2008 financial crisis, U.S. live animal imports dropped by over 25% between 2008 and 2010, and remained on average 15% lower in the years after, indicating a lasting shift in agricultural trade behavior.  
+[Ansh Patel](https://github.com/brunchmaster-ap): [Global Commodity Trade](https://brunchmaster-ap.github.io/Global-Commodity-Trade/). Following the 2008 financial crisis, U.S. live animal imports dropped by over 25% between 2008 and 2010, and remained on average 15% lower in the years after, indicating a lasting shift in agricultural trade behavior.  
 
 [Faran Abbas](https://github.com/faranabbas-repo): [Global Economic Growth Analysis (2000–2023)](https://faranabbas-repo.github.io/global-economic-growth-analysis/). Investment is the single most powerful driver of economic growth, with each percentage point increase in gross capital formation (as % of GDP) associated with 0.2-0.3 percentage points higher GDP growth, making it the key policy lever for sustainable development.  
 
@@ -46,7 +46,7 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Faisal Jan](https://github.com/FaisaljanBaloch): [LEP on Income](https://faisaljanbaloch.github.io/lep-on-income/). Across all education levels, males earn 20–50% more than females, with the largest gender and language-based income gaps appearing at the graduate level where English Proficient males earn over $70,000, nearly 50% more than their female counterparts.  
 
-[Inam Khan](https://github.com/inammarwat): [Predicting Life Expectany](https://inammarwat.github.io/predicting-life-expectancy/). A country’s income and resource capacity has the strongest impact on life expectancy—each 0.1-point increase predicts 1.1 additional years of life, outweighing health risks like HIV prevalence.  
+[Inam Khan](https://github.com/inammarwat): [Predicting Life Expectancy](https://inammarwat.github.io/predicting-life-expectancy/). A country’s income and resource capacity has the strongest impact on life expectancy—each 0.1-point increase predicts 1.1 additional years of life, outweighing health risks like HIV prevalence.  
 
 [Shuntaro Kawakami](https://github.com/skawakamNY/bitcoin_analysis): [Bitcoin Price Trend Analysis](https://skawakamny.github.io/bitcoin_analysis/). Dow Jones Index exhibited a strong positive association (p < 0.001) where increases in stock market performance correlate with higher bitcoin prices and the 10-Year Treasury Yield Granger-causes Bitcoin price (p = 0.032), suggesting it has a statistically significant temporal influence on Bitcoin price.  
 
@@ -115,7 +115,7 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Rajeev Kumar yadav](https://github.com/Rajeev-ky): [Housing Prices](https://rajeev-ky.quarto.pub/housing-prices/). Preferred area housing prices are higher despite the furnishing status of the housing.  
 
-[Hunter Stephens](huner1212 (Hunter Stephens) (github.com)): [Effect of Silver and Bronze Medals on Olympic Placing](https://hunter-stephens.quarto.pub/bronze-and-silver-medals-on-olympic-placing/). Silver medals have a much stronger effect on Placment than Bronze medals  
+[Hunter Stephens](https://github.com/huner1212): [Effect of Silver and Bronze Medals on Olympic Placing](https://hunter-stephens.quarto.pub/bronze-and-silver-medals-on-olympic-placing/). Silver medals have a much stronger effect on Placment than Bronze medals  
 
 [Hao Lin](https://github.com/hlinca/wildfire_model): [Wildfire Model](https://hlinca.quarto.pub/wildfire_model/). Modeling the Impact of Environmental Conditions on Wildfire Incidents in California  
 
@@ -230,7 +230,7 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Matthew Ng](https://github.com/doystudent): [Coke Stocks](https://github.com/doystudent/Coke_Final_Project_draft1). Coca Cola Stocks have a good trend line and it's safe to say that soon, there may be a drop again but it will definitely rise back up in around 10-20 years.  
 
-[Anish Bellamkonda](https://splashyzues5197.quarto.pub/indias-temperature-changes-and-effects/): [Impact of climate change on the world](https://splashyzues5197.quarto.pub/indias-temperature-changes-and-effects/). Climate change is a complex and urgent global issue that requires collective action to mitigate its impacts and prevent further damage to the planet's ecosystems and human societies.  
+Anish Bellamkonda: [Impact of climate change on the world](https://splashyzues5197.quarto.pub/indias-temperature-changes-and-effects/). Climate change is a complex and urgent global issue that requires collective action to mitigate its impacts and prevent further damage to the planet's ecosystems and human societies.  
 
 [Zayan Farooq](https://github.com/Zfarooq08): [How Do Position and Age Correlate With Soccer Injuries?](https://zfarooq-08.quarto.pub/final-project/about.html) Position and age in the Premier League tend to affect the type of injuries that happen to players.  
 
@@ -362,7 +362,7 @@ A total of 184 students have completed previous versions of this class. Congratu
 
 [Isaac Frank](https://github.com/isaac-w18): [Anxiety and the Need for Research](https://anxiety-research.netlify.app/anixety_data.html). Examining the correlation between pharmaceutical spending and anxiety.
 
-[Anmay Gupta](thttps://github.com/AnmayG): [Effect of Various Factors on 3D Print Strength](https://anmayg.github.io/3D_Print/). 3D prints can be strengthened by changing a variety of factors.
+[Anmay Gupta](https://github.com/AnmayG): [Effect of Various Factors on 3D Print Strength](https://anmayg.github.io/3D_Print/). 3D prints can be strengthened by changing a variety of factors.
 
 [Srihith Garlapati](https://github.com/srihithg): [Goverment Department Earnings by Region](https://srihithg.github.io/finalProject/). This is an investigation of the highest earning departments on average per each state in each region in the US.
 

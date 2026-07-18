@@ -399,10 +399,6 @@ The goal for this part for students to be able to take a question and a data set
 
 ## Week 5
 
-Keep in mind that talking about the Cardinal Virtues and a new data science project takes a lot of time. Just having students write down a description of a Preceptor Table is a 5+ minute exercise in the breakout rooms. Try to do Wisdom/Justice on Monday, Courage on Wednesday and Temperance on Thursday, finishing with a published website. 
-
-
-On day 1, it is hard to go beyond just describing the Preceptor Table. That is hard for students to do! Maybe next time don't even bother to set up the project till Day 14. Just describe the questions, the Preceptor Table. Then I describe the data, then ask them to come up with reasons why all the assumptions fail.
 
 ### Day 13
 
@@ -412,70 +408,36 @@ No course does more to increase your odds of getting the future you want.
 
 The central metaphor for this class is Ulysses and the Sirens. You are Ulysses. Ithaca is the future you want. The Sirens are the many distractions of the modern world. I am the rope. 
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we start with Wisdom and, I hope, Justice.
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. 
 
-Wednesday homework:
+1) Wednesday homework:
 
-Complete the “Four Parameters: Categorical” tutorial (081-four-parameters-categorical) from the primer.tutorials package.
+Read Chapter 7 Colleges and complete the “Colleges” tutorial from the primer.tutorials package.
 
-From the r4ds.tutorials package, complete the “Dates and times” (17-dates-and-times) and “Missing values” (18-missing-values) tutorials.
+2) Fork this repo: https://github.com/davidkane9/class-size-wisdom
 
-0) Always write down your notes as you answer these questions. It is OK if everyone in the group has the same answers, but you all need your own notes. I will
+Take a look at `tennessee-star.pdf`. This experiment/data will be our focus this week.
 
-1) Start thinking about the data for your Model Project: https://davidkane.info/writings/data-for-projects.html
+3) We start with Wisdom and Justice. All groups will pretend to be the TDE (Texas Department of Education).
 
-2) Repo -> project -> R script to explore the data. Some useful albeit awkward code:
-
-```
-install.packages("AER")
-library(AER)
-help(package = "AER")
-data("ResumeNames")
-x <- as_tibble(ResumeNames)
-```
-
-3) See #annoucements for an abstract and a link to the paper.
-
-4) "Imagine that you are . . ." Come up with at least two such situations which lead to very different Preceptor Tables. 
-
-5) Describe the Preceptor Table in words. Hint: Think in terms of units, outcomes, covariates, treatments. Useful reference: https://ppbds.github.io/primer.tutorials/articles/cardinal_virtues.html#preceptor-table
-
-6) Explore the data.
-
-7) Write down one reason why validity might not hold.
-
-8) Also, find a reason why stability, representativeness, and unconfoundedness might not hold.
-
-
+4) I am experimenting with adding an AGENTS.md file to your repos. Does it work? Please comment in #class-work.
 
 
 ### Day 14
 
-Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. Today, we do Courage.
+Spaced repetition is our friend: Wisdom, Justice, Courage, Temperance. 
 
-1) You must schedule a 1-on-1 meeting with your TF. Email them now. cc june.2025.kdsb@gmail.com when you do so. In that meeting, you will discuss ideas for your final project. Reminder: https://davidkane.info/writings/data-for-projects.html
+1) Thursday homework:
 
-2) Zoom work is the same as always. Someone is always sharing a screen. That person does not talk. They just type what the "driver" tells them to type. Everyone else is also typing. Switch the "sharer" and the "driver" often, certainly at least every time we go back to the main room.
+From the misc.tutorials package, complete the “Census” (census) tutorial.
 
-3) We will continue work on the repo you created on Monday. Check out mine here:
+2) Fork this repo: https://github.com/davidkane9/class-size-courage
 
-https://github.com/bootcamp-2025-06/resumes
+3) I simplified the material to focus on just the causal question.
 
-Check out my `analysis.qmd`. Use my code to get started.
+4) No class next Wednesday.
 
-4) Homework for Thursday:
-
-Complete the “Five Parameters” tutorial (091-five-parameters) from the primer.tutorials package.
-
-From the r4ds.tutorials package, complete the “Joins” (19-joins) tutorial.
-
-5) Consider two scenarios:
-
-  a) Imagine that you are a contemporary historian studying US employment in the year 2000 in Baltimore. You want to understand the process by which some people got jobs and some did not.
-
-  b) Imagine that you work for a civil rights organization in Chicago. You want to understand the process by which black US citizens are discriminated against in hiring today.
-
-Think about your Preceptor Table and Population Table. Despite the many differences, you can (mostly) use the same data and models to answer your questions.
+5) Have you started work on your final project? Presentations are three weeks from tomorrow!
 
 
 ### Day 15

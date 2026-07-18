@@ -24,7 +24,7 @@ After three and a half minutes, I send a Message saying: 30 seconds left. At fou
 
 Please switch presenters when I ask you to!
 
-The same sequence repeats, with students in Group B sharing their screens and doing the presentations while Group A students listen and ask lots of questions. A warming message comes after with 30 seconds left, followed by a message to "Switch Rooms." The initial room assignments have lasted about 10 minutes.
+The same sequence repeats, with students in Group B sharing their screens and doing the presentations while Group A students listen and ask lots of questions. A warning message comes after with 30 seconds left, followed by a message to "Switch Rooms." The initial room assignments have lasted about 10 minutes.
 
 Student A stays in the room. Student B moves one room up. From room 26 to room 27, for example. (If you are the B student in the highest room, you move to the lowest room number in your grouping which, in this case, might be something like room 22.) Then, Student A presents again. Followed by Student B. (Neither A nor B has seen the other present before.)
 
@@ -58,9 +58,9 @@ Most importantly: ASK LOTS OF QUESTIONS!
 
 Have fun! Demo Day is a joyful occasion. Your (natural) nervousness is unwarranted. Everyone wants you to succeed. Share your screen the entire time. Always start on your project home page. Give your opening paragraph. Pause to see if anyone has any questions. If they don't, spend another paragraph explaining the details of your main graphic. Pause again. Questions are fun, but you have to give people a chance to ask them.
 
-When pausing, use the "Take a sip of water" technique. Stop talking. Imagine that you are reaching for a class of water, lifting it up, taking a sip, and putting it back down. Only after that can you assume that there are no questions.
+When pausing, use the "Take a sip of water" technique. Stop talking. Imagine that you are reaching for a glass of water, lifting it up, taking a sip, and putting it back down. Only after that can you assume that there are no questions.
 
-Sadly, you will sometimes be stuck with an audience too shy to ask questions. That is OK! One of the things you are learning in this class is how to handle different sorts of audiences. To handle a shy audience, you need to have prepared ahead of time 5 minutes worth of things to talk about. This can, and should, include a tour of your Github repository,
+Sadly, you will sometimes be stuck with an audience too shy to ask questions. That is OK! One of the things you are learning in this class is how to handle different sorts of audiences. To handle a shy audience, you need to have prepared ahead of time 5 minutes worth of things to talk about. This can, and should, include a tour of your Github repository.
 
 ### When Listening
 
