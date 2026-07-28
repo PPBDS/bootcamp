@@ -148,8 +148,4 @@ Finish learning about tools like Quarto and GitHub Pages.
 
 ## Wednesday 
 
-* Practice presentations and feedback. You must have your presentation ready to go! 
-
-## Thursday 
-
 * Final project presentations. You must invite someone, and bcc your TF when you do so.
