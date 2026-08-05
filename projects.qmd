@@ -6,7 +6,35 @@ title: "Final Projects"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-A total of 184 students have completed previous versions of this class. Congratulations! 
+A total of 197 students have completed previous versions of this class. Congratulations! 
+
+## August 2026
+
+[Alex Liu](https://github.com/alexx-liu): [Consumer Spending Across Life Stages](https://alexx-liu.github.io/consumer-spending-across-life-stages/). A $10,000 income increase is estimated to change discretionary spending share by roughly −0.4 percentage points for students, −1.6 percentage points for working adults, and near zero for the elderly, though the student and elderly estimates are not statistically distinguishable from zero — suggesting, but not confirming, that income transfer programs may have meaningfully different spending effects depending on who receives them.
+
+[Dhruv Punia](https://github.com/dhruvpunia31): [Figuring Out the Best Soccer Player](https://dhruvpunia31.github.io/best-socccer-player/). The project shows that the best international striker is best judged by a balance of total goals, open-play scoring, and sustained efficiency, not just raw goal count.
+
+[Gokul Patibandla](https://github.com/Gokul737373): [The Art of Goalscoring](https://gokul737373.github.io/The-Art-of-Goalscoring/). Scoring in elite soccer is far rarer than fans think, there's about a 10% chance and there's a confidence interval (0.2386 to 1.0488), and the data shows just how many obstacles—distance, defenders, and positioning—work together to make goals incredibly hard to come by.
+
+[Ishika Ravat](https://github.com/bootstrap-cms): Immunotherapy in Lung Cancer Patients. If you have a TP53 pathway, you are 45.2% more likely to receive immunotherapy after a surgery/biopsy, this estimate is statistically significant which is proven by the low p value of 0.0106 and the confidence interval (0.110 to 0.804) not including the number 0.
+
+[Ilvika Ravat](https://github.com/Ilvika-Ravat): [Gender, Assessment and Performance in Biology](https://ilvika-ravat.github.io/ilvika-project-gender-assessments/). Many factors are associated with academic success, my project focused on gender and academic preparation, and I found that although gender plays a role in academic performance, academic preparation plays a bigger role in academic performance.
+
+[Hazel Maria Honish](https://github.com/hazelMARIAh2010): [Predicting Student Work Placement After College](https://hazelmariah2010.github.io/Predicting-College-Student-Placement/). How much do grades, intelligence, and internship experience actually shape a college student's chances of landing a job? Using data from 10,000 students, CGPA turned out to be the strongest driver of placement (OR = 2.23, 95% CI: 2.12–2.34), IQ played a smaller role (OR = 1.07, 95% CI: 1.07–1.08), and internship experience showed no reliable effect at all (OR = 0.995, 95% CI: 0.88–1.12).
+
+[Anthony Gao](https://github.com/anttoeknee20): [Do Phone Bans at School Really Do Anything?](https://anttoeknee20.github.io/phone-bans/). Statewide "bell-to-bell" phone bans in Louisiana and South Carolina showed minimal overall impact between elementary and middle school versus high school students, with statistically significant gains found only in Louisiana Social Studies (+2.59 percentage points; 95% confidence +0.06% to +5.12%) and South Carolina All Subjects (+3.62 percentage points; 95% confidence +0.74% to +6.51%).
+
+[Henry Yang](https://github.com/henry-yang-hd): [Campaign Channels and Conversion Rates](https://github.com/henry-yang-hd/campaign-channels-and-conversion-rates). Compared to Emails, receiving a Social Media treatment is associated with a 0.0174 percentage point decrease in the probability that you'll buy a product (confidence interval: -2.3284 to 2.2936 percentage points); however, the confidence interval includes zero, so there's not enough evidence of a difference.
+
+[Sakithyan Manimaran](https://github.com/SakithyanM): [Post-Vaccination Symptoms by Age](https://sakithyanm.github.io/vaccine-efficacy/). Many factors are associated with post-vaccination symptom patterns, my project focused on age while accounting for dose number and current health state, and I found that age-related differences exist but are mixed and modest, so no single age group can be identified as clearly best.
+
+[Oluchi Nnadi](https://github.com/olunna29): [Predicting Education Attainment Based on Socioeconomic-Demographics](https://olunna29.github.io/predicting-educational-attainment/). Various sociodemographic factors are associated with varying likelihoods of attaining higher education; for example, my model found that growing up in a suburban environment was associated with a 35.8% to 47.9% increase in the odds of obtaining a bachelor's degree, whereas growing up in a single-parent household was associated with a 40.4% to 47.0% decrease.
+
+[Niket Banda](https://github.com/nbanda25): [Evaluating the Predictive Relevance of Glycemic Biomarkers in Population-Level Diabetes Risk](https://nbanda25.github.io/codespace-starter/). For every 1-unit increase in HbA1c, the odds of having diabetes increase significantly (95% CI: 2.15 to 2.41), proving blood sugar tests predict diabetes much better than age or weight, while a 10% population weight reduction is projected to prevent over 823 potential cases of Diabetes.
+
+[Ethan Yao](https://github.com/ethanyao67): [Does Height Vary and Matter in Hockey?](https://ethanyao67.github.io/hockey-height/). The NHL players that are defensemen are on average 3 cm taller than forwards, at 184 cm. Forwards are on average 181 cm and goalies are usually 179 cm.
+
+[Avinesh Saravana](https://github.com/sp3101-3): [Finding Earth 2.0: Stellar Predictors of Habitable Planets](https://sp3101-3.github.io/habitable-planets/). While stellar characteristics like metallicity and surface gravity exhibit statistically significant relationships with exoplanet orbital eccentricity, these host star properties alone remain suggestive indicators rather than surefire predictors due to eccentricity being ultimately determined by chaotic planetary mechanics rather than fundamental system properties alone.
 
 ## August 2025
 
