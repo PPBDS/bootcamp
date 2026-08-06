@@ -1,5 +1,9 @@
 ## Priorities
 
+Add exercise to send a thankyou email.
+
+Add exercise to add a calendar email to thank Preceptor and/or your TF.
+
 Create a skill file for data projects and model projects which students can use to check their projects.
 
 Create a skill file which we use to provide feedback (and grading) on projects.

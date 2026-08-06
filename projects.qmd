@@ -16,7 +16,7 @@ A total of 197 students have completed previous versions of this class. Congratu
 
 [Gokul Patibandla](https://github.com/Gokul737373): [The Art of Goalscoring](https://gokul737373.github.io/The-Art-of-Goalscoring/). Scoring in elite soccer is far rarer than fans think, there's about a 10% chance and there's a confidence interval (0.2386 to 1.0488), and the data shows just how many obstacles—distance, defenders, and positioning—work together to make goals incredibly hard to come by.
 
-[Ishika Ravat](https://github.com/bootstrap-cms): Immunotherapy in Lung Cancer Patients. If you have a TP53 pathway, you are 45.2% more likely to receive immunotherapy after a surgery/biopsy, this estimate is statistically significant which is proven by the low p value of 0.0106 and the confidence interval (0.110 to 0.804) not including the number 0.
+[Ishika Ravat](https://github.com/bootstrap-cms): [Immunotherapy in Lung Cancer Patients](https://bootstrap-cms.github.io/Ishika-Ravat-Final-Project/). If you have a TP53 pathway, you are 45.2% more likely to receive immunotherapy after a surgery/biopsy, this estimate is statistically significant which is proven by the low p value of 0.0106 and the confidence interval (0.110 to 0.804) not including the number 0.
 
 [Ilvika Ravat](https://github.com/Ilvika-Ravat): [Gender, Assessment and Performance in Biology](https://ilvika-ravat.github.io/ilvika-project-gender-assessments/). Many factors are associated with academic success, my project focused on gender and academic preparation, and I found that although gender plays a role in academic performance, academic preparation plays a bigger role in academic performance.
 
